@@ -1,9 +1,9 @@
 <x-user-layout :title="'Home'">
-    <h1 class="text-xl">Daftar Pembagian Dosen Pembimbing</h1>
+    <a class="text-xl" href="#">Daftar Pembagian Dosen Pembimbing</a>
     <hr class="mt-2 mb-8 border-2 border-primary">
     <img src="/assets/banner.jpeg" alt="">
     <!-- timeline skripsi -->
-    <h1 class="mt-8 text-xl">Timeline Skripsi JTIK 2022/2023</h1>
+    <a class="mt-8 text-xl" href="#">Timeline Skripsi JTIK 2022/2023</a>
     <hr class="mt-2 mb-8 border-2 border-primary">
     <img src="/assets/timeline-skripsi.png" />
 

@@ -33,6 +33,14 @@ Route::get("/home", function () {
     return view('user.home');
 })->name('user.home');
 
+Route::get("/logbook", function () {
+    return view('user.logbook');
+})->name('user.logbook');
+
+Route::get("/pengajuan", function () {
+    return view('user.pengajuan');
+})->name('user.pengajuan');
+
 Route::get("/notification", function () {
     return view('user.notification');
 })->name('user.notification');

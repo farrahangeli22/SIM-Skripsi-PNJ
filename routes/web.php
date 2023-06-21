@@ -37,9 +37,17 @@ Route::get("/logbook", function () {
     return view('user.logbook');
 })->name('user.logbook');
 
-Route::get("/pengajuan", function () {
-    return view('user.pengajuan');
-})->name('user.pengajuan');
+Route::get("/pengajuanJudul", function () {
+    return view('user.pengajuanJudul');
+})->name('user.pengajuanJudul');
+
+Route::get("/pengajuanJudul", function () {
+    return view('user.pengajuanJudul');
+})->name('user.pengajuanJudul');
+
+Route::get("/pengajuanSempro", function () {
+    return view('user.pengajuanSempro');
+})->name('user.pengajuanSempro');
 
 Route::get("/notification", function () {
     return view('user.notification');

@@ -30,11 +30,17 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('user.pengajuan')">
-                            {{ __('Pengjuan Judul') }}
+                        <x-dropdown-link :href="route('user.pengajuanJudul')">
+                            {{ __('Pengajuan Judul dan Dosen Pembimbing') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('user.pengajuan')">
-                            {{ __('Pengjuan Seminar Proposal') }}
+                        <x-dropdown-link :href="route('user.pengajuanSempro')">
+                            {{ __('Pengajuan Seminar Proposal') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('user.pengajuanJudul')">
+                            {{ __('Pengajuan Sidang Skripsi') }}
+                        </x-dropdown-link>
+                        <x-dropdown-link :href="route('user.pengajuanJudul')">
+                            {{ __('Penyerahan Alat dan Dokumen Pelengkap Skripsi') }}
                         </x-dropdown-link>
                     </x-slot>
                 </x-dropdown>

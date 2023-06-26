@@ -49,6 +49,14 @@ Route::get("/pengajuanSempro", function () {
     return view('user.pengajuanSempro');
 })->name('user.pengajuanSempro');
 
+Route::get("/pengajuanSkripsi", function () {
+    return view('user.pengajuanSkripsi');
+})->name('user.pengajuanSkripsi');
+
+Route::get("/penyerahanAlat", function () {
+    return view('user.penyerahanAlat');
+})->name('user.penyerahanAlat');
+
 Route::get("/notification", function () {
     return view('user.notification');
 })->name('user.notification');

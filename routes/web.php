@@ -45,9 +45,9 @@ Route::get("/detail-logbook", function () {
     return view('user.detailLogbook');
 })->name('user.detail-logbook');
 
-Route::get("/upload-skripsi", function () {
-    return view('user.uploadSkripsi');
-})->name('user.upload-skripsi');
+Route::get("/profile", function () {
+    return view('user.profile');
+})->name('user.profile');
 
 Route::get("/pengajuan-judul", function () {
     return view('user.pengajuanJudul');

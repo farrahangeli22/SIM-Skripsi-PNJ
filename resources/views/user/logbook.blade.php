@@ -17,7 +17,7 @@
       </div>
       <div class="text-center bg-card p-4 rounded-b-lg rounded-br-lg shadow">
         <p class="text-[#838383] text-sm mb-11 mt-5">Unggah dokumen skripsi anda disini</p>
-        <a href="{{route('user.upload-skripsi')}}" class="text-header text-sm font-bold underline mt-4">Unggah</a>
+        <a href="{{route('user.profile')}}" class="text-header text-sm font-bold underline mt-4">Unggah</a>
       </div>
     </div>
 

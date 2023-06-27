@@ -36,10 +36,10 @@
                         <x-dropdown-link :href="route('user.pengajuanSempro')">
                             {{ __('Pengajuan Seminar Proposal') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('user.pengajuanJudul')">
+                        <x-dropdown-link :href="route('user.pengajuanSkripsi')">
                             {{ __('Pengajuan Sidang Skripsi') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('user.pengajuanJudul')">
+                        <x-dropdown-link :href="route('user.penyerahanAlat')">
                             {{ __('Penyerahan Alat dan Dokumen Pelengkap Skripsi') }}
                         </x-dropdown-link>
                     </x-slot>

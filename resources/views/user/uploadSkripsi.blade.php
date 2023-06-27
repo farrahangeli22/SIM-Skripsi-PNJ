@@ -1,4 +1,4 @@
-<x-user-layout :title="'Pengajuan Seminar Proposal'">
+<x-user-layout :title="'Unggah Dokumen Skripsi'">
     <div class="flex space-x-20">
         <!-- Card data mahasiswa -->
         <div class="w-80 rounded bg-cardData p-6">
@@ -17,7 +17,7 @@
             </label>
         </div>
 
-        <!-- Form Pengajuan -->
+        <!-- Form Upload -->
         <form class="w-full">
             <h1 class="flex justify-center font-bold text-xl text-font mb-10">Pengajuan Seminar Proposal</h1>
             <div>
@@ -27,32 +27,13 @@
                             Judul Skripsi
                         </label>
                         <x-text-input id="judul" class="block mt-1 w-96 border-black mb-4" type="text" name="judul" placeholder="Masukkan teks..." required autofocus/>
-                        <label class="block text-sm mb-2" for="">
-                            Sub Judul Skripsi
-                        </label>
-                        <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-4" type="text" name="subJudul" placeholder="Masukkan teks..." required autofocus/>
                     </div>
                     <div>
                     <label class="block text-sm mb-2" for="">
                             Anggota Kelompok
                         </label>
                         <x-text-input id="anggota" class="block mt-1 w-96 border-black mb-4" type="text" name="anggota" placeholder="Masukkan teks..." required autofocus/>
-                        <label class="block text-sm mb-2" for="">
-                            Dosen Pembimbing
-                        </label>
-                        <div class="relative">
-                            <select class="w-96 h-10 text-sm text-gray-700 border border-black rounded-md px-3 mb-4" id="">
-                                <option>Dosen 1</option>
-                                <option>Dosen 2</option>
-                                <option>Dosen 3</option>
-                            </select>
-                        </div>
                     </div>
-                </div>
-                <div class="flex justify-end">
-                    <x-primary-button class="flex justify-center w-fit">
-                        {{ __('Kirim') }}
-                    </x-primary-button>
                 </div>
             </div>
         </form>

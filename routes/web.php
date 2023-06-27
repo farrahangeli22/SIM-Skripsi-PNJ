@@ -37,6 +37,10 @@ Route::get("/logbook", function () {
     return view('user.logbook');
 })->name('user.logbook');
 
+Route::get("/uploadSkripsi", function () {
+    return view('user.uploadSkripsi');
+})->name('user.uploadSkripsi');
+
 Route::get("/pengajuanJudul", function () {
     return view('user.pengajuanJudul');
 })->name('user.pengajuanJudul');

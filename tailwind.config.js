@@ -20,6 +20,7 @@ export default {
                 "hover": "#4997A1",
                 "header": "#00A1A1",
                 "footer": "#DAD8D8",
+                "card": "#F8F8F8",
                 "cardData": "#D9D9D9",
                 "font": "#286D75",
                 "submitButton": "#4997A1"

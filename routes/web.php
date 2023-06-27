@@ -37,29 +37,33 @@ Route::get("/logbook", function () {
     return view('user.logbook');
 })->name('user.logbook');
 
-Route::get("/uploadSkripsi", function () {
+Route::get("/form-logbook", function () {
+    return view('user.formLogbook');
+})->name('user.form-logbook');
+
+Route::get("/detail-logbook", function () {
+    return view('user.detailLogbook');
+})->name('user.detail-logbook');
+
+Route::get("/upload-skripsi", function () {
     return view('user.uploadSkripsi');
-})->name('user.uploadSkripsi');
+})->name('user.upload-skripsi');
 
-Route::get("/pengajuanJudul", function () {
+Route::get("/pengajuan-judul", function () {
     return view('user.pengajuanJudul');
-})->name('user.pengajuanJudul');
+})->name('user.pengajuan-judul');
 
-Route::get("/pengajuanJudul", function () {
-    return view('user.pengajuanJudul');
-})->name('user.pengajuanJudul');
-
-Route::get("/pengajuanSempro", function () {
+Route::get("/pengajuan-sempro", function () {
     return view('user.pengajuanSempro');
-})->name('user.pengajuanSempro');
+})->name('user.pengajuan-sempro');
 
-Route::get("/pengajuanSkripsi", function () {
+Route::get("/pengajuan-skripsi", function () {
     return view('user.pengajuanSkripsi');
-})->name('user.pengajuanSkripsi');
+})->name('user.pengajuan-skripsi');
 
-Route::get("/penyerahanAlat", function () {
+Route::get("/penyerahan-alat", function () {
     return view('user.penyerahanAlat');
-})->name('user.penyerahanAlat');
+})->name('user.penyerahan-alat');
 
 Route::get("/notification", function () {
     return view('user.notification');

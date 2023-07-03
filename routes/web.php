@@ -69,4 +69,10 @@ Route::get("/notification", function () {
     return view('user.notification');
 })->name('user.notification');
 
+
+// routes for user dosen
+Route::get("/daftar-mahasiswa", function () {
+    return view('dosen.daftarMahasiswa');
+})->name('dosen.daftar-mahasiswa');
+
 require __DIR__ . '/auth.php';

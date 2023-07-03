@@ -3,7 +3,7 @@
 
     <i class="bi bi-filter-left px-2 bg-gray-900 rounded-md"></i>
 </span>
-<div class="sidebar fixed z-10 top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-sidebar">
+<div class="sidebar fixed z-20 top-0 bottom-0 lg:left-0 p-2 w-[300px] overflow-y-auto text-center bg-sidebar">
     <div class="text-white text-l font-bold">
         <div class="p-1 ml-2 flex items-center space-x-4">
             <img src="/assets/logo-pnj.png" width="42px" height="42px">
@@ -118,7 +118,7 @@
 </div>
 
 <!-- Header -->
-<div class="sticky top-0 bg-white h-16">
+<div class="sticky top-0 bg-white h-16 z-10">
     <div class="flex justify-end p-3 text-sm font-bold space-x-4">
         <div class="mt-2">
             <p>Eriya, S.Kom., M.T.</p>

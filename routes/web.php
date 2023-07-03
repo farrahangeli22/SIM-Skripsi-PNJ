@@ -76,4 +76,37 @@ Route::get("/dosen/daftar-mahasiswa", function () {
     return view('dosen.daftarMahasiswa');
 })->name('dosen.daftar-mahasiswa');
 
+// routes for user admin
+Route::get("/admin/dashboard-admin", function () {
+    return view('admin.dashboardAdmin');
+})->name('admin.dashboard-admin');
+
+Route::get("/admin/manajemen-mahasiswa", function () {
+    return view('admin.manajemenMahasiswa');
+})->name('admin.manajemen-mahasiswa');
+
+Route::get("/admin/manajemen-dosen", function () {
+    return view('admin.manajemenDosen');
+})->name('admin.manajemen-dosen');
+
+Route::get("/admin/edit-konten", function () {
+    return view('admin.editKonten');
+})->name('admin.edit-konten');
+
+Route::get("/admin/tambah-konten", function () {
+    return view('admin.tambahKonten');
+})->name('admin.tambah-konten');
+
+Route::get("/admin/pengajuan-judul", function () {
+    return view('admin.adminJudul');
+})->name('admin.pengajuan-judul');
+
+Route::get("/admin/pengajuan-seminar", function () {
+    return view('admin.adminSeminar');
+})->name('admin.pengajuan-seminar');
+
+Route::get("/admin/pengajuan-sidang", function () {
+    return view('admin.adminSidang');
+})->name('admin.pengajuan-sidang');
+
 require __DIR__ . '/auth.php';

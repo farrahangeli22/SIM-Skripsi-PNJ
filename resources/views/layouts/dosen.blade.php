@@ -22,7 +22,7 @@
     <div class="min-h-screen bg-body">
         @include('layouts.sidebar')
         <!-- Page Content -->
-        <main class="pl-80 pr-5" style="padding-top: 1rem;">
+        <main class="pl-80 pr-5 pb-8" style="padding-top: 1rem;">
             {{ $slot }}
         </main>
     </div>

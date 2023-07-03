@@ -76,4 +76,16 @@ Route::get("/dosen/daftar-mahasiswa", function () {
     return view('dosen.daftarMahasiswa');
 })->name('dosen.daftar-mahasiswa');
 
+Route::get("/dosen/logbook", function () {
+    return view('dosen.logbookMahasiswa');
+})->name('dosen.logbook');
+
+Route::get("/dosen/detail-logbook", function () {
+    return view('dosen.detailLogbook');
+})->name('dosen.detail-logbook');
+
+Route::get("/dosen/detail-mahasiswa", function () {
+    return view('dosen.detailMahasiswa');
+})->name('dosen.detail-mahasiswa');
+
 require __DIR__ . '/auth.php';

@@ -1,4 +1,4 @@
-@props(['dosen'])
+@props(['admin'])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Dosen - {{$title ?? ""}}</title>
+    <title>Admin - {{$title ?? ""}}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -22,7 +22,7 @@
     <div class="min-h-screen bg-body">
         @include('layouts.sidebar')
         <!-- Page Content -->
-        <main class="pl-80 pr-5 pb-8" style="padding-top: 1rem;">
+        <main class="pl-80 pr-5" style="padding-top: 1rem;">
             {{ $slot }}
         </main>
     </div>

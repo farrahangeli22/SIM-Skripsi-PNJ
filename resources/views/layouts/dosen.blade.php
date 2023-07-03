@@ -19,10 +19,10 @@
 </head>
 
 <body class="font-sans antialiased">
-    @include('layouts.sidebar')
-    <div class="min-h-screen bg-body px-12 py-6">
+    <div class="min-h-screen bg-body">
+        @include('layouts.sidebar')
         <!-- Page Content -->
-        <main>
+        <main class="pl-80 pr-5" style="padding-top: 1rem;">
             {{ $slot }}
         </main>
     </div>

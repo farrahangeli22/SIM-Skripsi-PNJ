@@ -70,8 +70,9 @@ Route::get("/notification", function () {
 })->name('user.notification');
 
 
+
 // routes for user dosen
-Route::get("/daftar-mahasiswa", function () {
+Route::get("/dosen/daftar-mahasiswa", function () {
     return view('dosen.daftarMahasiswa');
 })->name('dosen.daftar-mahasiswa');
 

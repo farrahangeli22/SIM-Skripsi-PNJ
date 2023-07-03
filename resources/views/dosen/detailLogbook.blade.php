@@ -1,24 +1,24 @@
 <x-dosen-layout :title="'Daftar Mahasiswa'">
 
-<form class="w-full space-y-4">
+    <form class="w-full space-y-4">
         <div class="flex justify-between mb-2">
             <div>
                 <label class="block text-sm mb-2" for="">
                     Tanggal Bimbingan
                 </label>
-                <x-text-input id="judul" class="block mt-1 w-64 border-black mb-4" type="date" name="date" required autofocus readonly/>
+                <x-text-input id="judul" class="block mt-1 w-64 border-black mb-4" type="date" name="date" required autofocus readonly />
             </div>
             <div>
-            <label class="block text-sm mb-2" for="">
+                <label class="block text-sm mb-2" for="">
                     Dokumentasi
                 </label>
-                <x-text-input id="judul" class="block w-64 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus readonly/>
+                <x-text-input id="judul" class="block w-64 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus readonly />
             </div>
             <div>
-            <label class="block text-sm mb-2" for="">
+                <label class="block text-sm mb-2" for="">
                     Media Bimbingan
                 </label>
-                <x-text-input id="judul" class="block mt-1 w-64 border-black mb-4" type="text" name="judul" placeholder="Online dengan Media Zoom" required autofocus readonly/>
+                <x-text-input id="judul" class="block mt-1 w-64 border-black mb-4" type="text" name="judul" placeholder="Online dengan Media Zoom" required autofocus readonly />
             </div>
         </div>
         <div>
@@ -44,16 +44,18 @@
 
         <!-- button tolak -->
         <div class="w-full">
-            <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"  class="block h-fit w-fit p-2 rounded-lg bg-[#E03131] flex text-sm font-bold text-white shadow hover:bg-[#B51A1A]" type="button">Tolak</button>
+            <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block h-fit w-fit p-2 rounded-lg bg-[#E03131] flex text-sm font-bold text-white shadow hover:bg-[#B51A1A]" type="button">Tolak</button>
         </div>
-        
+
         <!-- Main modal -->
-        <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto h-[calc(100%-1rem)] max-h-full">
+        <div id="authentication-modal" data-modal-backdropClasses="bg-white bg-opacity-0 fixed inset-0 z-10" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto h-[calc(100%-1rem)] max-h-full">
             <div class="relative w-full max-w-md max-h-full">
                 <!-- Modal content -->
                 <div class="relative bg-white rounded-lg shadow">
                     <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-hide="authentication-modal">
-                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                        </svg>
                         <span class="sr-only">Close modal</span>
                     </button>
                     <div class="px-6 py-6 lg:px-8">
@@ -71,11 +73,11 @@
                     </div>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
 
     <!-- Feedback -->
-    <div class="mt-8"> 
+    <div class="mt-8">
         <div class="flex justify-center rounded-t-lg bg-header h-10 p-2">
             <p class="font-bold text-white">Umpan Balik</p>
         </div>

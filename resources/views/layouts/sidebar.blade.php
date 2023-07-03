@@ -29,7 +29,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" height="1.25em" viewBox="0 0 384 512" class="ml-1 mb-1" fill="white"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
             <path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 408c0 13.3-10.7 24-24 24s-24-10.7-24-24V305.9l-31 31c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l72-72c9.4-9.4 24.6-9.4 33.9 0l72 72c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-31-31V408z" />
         </svg>
-        <a class="text-[15px] ml-4 text-gray-200 font-bold" href="">Form Kelengkapan</a>
+        <a class="text-[15px] ml-4 text-gray-200 font-bold" href="#">Form Kelengkapan</a>
     </div>
     <div class="p-2.5 mt-3 flex items-center rounded-md px-4 duration-300 cursor-pointer hover:bg-hover text-white">
         <svg xmlns="http://www.w3.org/2000/svg" height="1.25em" viewBox="0 0 512 512" class="ml-1" fill="white"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -48,7 +48,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" height="1.25em" viewBox="0 0 512 512" fill="white"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
             <path d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM288 96a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM256 416c35.3 0 64-28.7 64-64c0-17.4-6.9-33.1-18.1-44.6L366 161.7c5.3-12.1-.2-26.3-12.3-31.6s-26.3 .2-31.6 12.3L257.9 288c-.6 0-1.3 0-1.9 0c-35.3 0-64 28.7-64 64s28.7 64 64 64zM176 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM96 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm352-32a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z" />
         </svg>
-        <a class="text-[15px] ml-4 text-gray-200 font-bold">Dashboard</a>
+        <a class="text-[15px] ml-4 text-gray-200 font-bold" href="{{route('admin.dashboard-admin')}}">Dashboard</a>
     </div>
     <div class="flex-col">
         <div class="p-2.5 mt-3 rounded-md px-4 duration-300 cursor-pointer text-white hover:bg-hover">
@@ -60,10 +60,10 @@
         </div>
         <ul id="dropdown-user" class="hidden py-2 space-y-2">
             <li>
-                <a href="#" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Mahasiswa</a>
+                <a href="{{route('admin.manajemen-mahasiswa')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Mahasiswa</a>
             </li>
             <li>
-                <a href="#" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Dosen Pembimbing</a>
+                <a href="{{route('admin.manajemen-dosen')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Dosen Pembimbing</a>
             </li>
             <li>
                 <a href="#" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Ketua Program Studi</a>
@@ -74,7 +74,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" height="1.25em" viewBox="0 0 512 512" fill="white"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
             <path d="M0 96C0 60.7 28.7 32 64 32H448c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zm64 64V416H224V160H64zm384 0H288V416H448V160z" />
         </svg>
-        <a class="text-[15px] ml-4 text-gray-200 font-bold">Manajemen Konten</a>
+        <a class="text-[15px] ml-4 text-gray-200 font-bold" href="{{route('admin.edit-konten')}}">Manajemen Konten</a>
     </div>
     <div class="flex-col">
         <div class="p-2.5 mt-3 rounded-md px-4 duration-300 cursor-pointer text-white hover:bg-hover">
@@ -87,13 +87,13 @@
         </div>
         <ul id="dropdown-pengajuan" class="hidden py-2 space-y-2">
             <li>
-                <a href="#" class="flex items-center w-full p-2 text-left text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Judul dan Dosen Pembimbing</a>
+                <a href="{{route('admin.pengajuan-judul')}}" class="flex items-center w-full p-2 text-left text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Judul dan Dosen Pembimbing</a>
             </li>
             <li>
-                <a href="#" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Seminar Proposal</a>
+                <a href="{{route('admin.pengajuan-seminar')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Seminar Proposal</a>
             </li>
             <li>
-                <a href="#" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Sidang Skripsi</a>
+                <a href="{{route('admin.pengajuan-sidang')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Sidang Skripsi</a>
             </li>
         </ul>
     </div>

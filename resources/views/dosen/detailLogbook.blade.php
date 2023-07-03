@@ -1,4 +1,4 @@
-<x-dosen-layout :title="'Daftar Mahasiswa'">
+<x-dosen-layout :title="'Logbook Mahasiswa'">
 
     <form class="w-full space-y-4">
         <div class="flex justify-between mb-2">
@@ -48,7 +48,7 @@
         </div>
 
         <!-- Main modal -->
-        <div id="authentication-modal" data-modal-backdropClasses="bg-white bg-opacity-0 fixed inset-0 z-10" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto h-[calc(100%-1rem)] max-h-full">
+        <div id="authentication-modal" tabindex="-1" aria-hidden="true" class="fixed inset-0 top-0 left-0 right-0 z-50 hidden w-full overflow-x-hidden overflow-y-auto h-[calc(100%-1rem)] max-h-full">
             <div class="relative w-full max-w-md max-h-full">
                 <!-- Modal content -->
                 <div class="relative bg-white rounded-lg shadow">

@@ -1,4 +1,4 @@
-<x-dosen-layout :title="'Daftar Mahasiswa'">
+<x-dosen-layout :title="'Logbook Mahasiswa'">
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-8">
         <table class="w-full text-sm text-center">

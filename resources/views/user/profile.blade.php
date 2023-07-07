@@ -15,6 +15,9 @@
             <label class="block mb-4 font-bold text-sm" for="">Kelas : 
                 <p class="font-normal mt-2">TI 8A</p>
             </label>
+            <label class="block mb-4 font-bold text-sm" for="">Dosen Pembimbing : 
+                <p class="font-normal mt-2">Eriya, S.Kom., M.T</p>
+            </label>
         </div>
 
         <div>
@@ -33,7 +36,7 @@
                             <label class="block text-sm mb-2" for="">
                                 Dokumen Skripsi
                             </label>
-                            <x-text-input id="dokumenSkripsi" class="block w-80 h-10 border border-black cursor-pointer" type="file" name="anggota" placeholder="Masukkan teks..." required autofocus/>
+                            <x-text-input id="dokumenSkripsi" class="block w-80 h-10 p-1 border border-black cursor-pointer" type="file" name="anggota" placeholder="Masukkan teks..." required autofocus/>
                         </div>
                         <div class="mt-7">
                             <x-primary-button class="flex justify-center w-fit h-10">

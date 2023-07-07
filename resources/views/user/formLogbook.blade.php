@@ -10,7 +10,7 @@
                 <x-text-input id="judul" class="block mt-1 w-80 border-black mb-4" type="date" name="date" required autofocus/>
             </div>
             <div>
-            <label class="block text-sm mb-2" for="">
+                <label class="block text-sm mb-2" for="">
                     Dokumentasi
                 </label>
                 <x-text-input id="judul" class="block w-80 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>

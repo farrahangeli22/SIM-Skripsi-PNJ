@@ -15,6 +15,9 @@
             <label class="block mb-4 font-bold text-sm" for="">Kelas : 
                 <p class="font-normal mt-2">TI 8A</p>
             </label>
+            <label class="block mb-4 font-bold text-sm" for="">Dosen Pembimbing : 
+                <p class="font-normal mt-2">Eriya, S.Kom., M.T</p>
+            </label>
         </div>
 
         <!-- Form Pengajuan -->
@@ -35,6 +38,10 @@
                             Anggota Kelompok
                         </label>
                         <x-text-input id="anggota" class="block mt-1 w-96 border-black mb-4" type="text" name="anggota" placeholder="Masukkan teks..." required autofocus/>
+                        <label class="block text-sm mb-2" for="">
+                            Jurnal Referensi
+                        </label>
+                        <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black mb-4 cursor-pointer" type="file" name="judul" required autofocus/>
                     </div>
                     <div>
                         <label class="block text-sm mb-2" for="">

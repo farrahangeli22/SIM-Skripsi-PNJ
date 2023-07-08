@@ -36,7 +36,7 @@
                         <x-dropdown-link :href="route('user.pengajuan-sempro')">
                             {{ __('Pengajuan Seminar Proposal') }}
                         </x-dropdown-link>
-                        <x-dropdown-link :href="route('user.pengajuan-skripsi')">
+                        <x-dropdown-link :href="route('user.pengajuan-sidang')">
                             {{ __('Pengajuan Sidang Skripsi') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('user.penyerahan-alat')">

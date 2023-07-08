@@ -15,6 +15,9 @@
             <label class="block mb-4 font-bold text-sm" for="">Kelas : 
                 <p class="font-normal mt-2">TI 8A</p>
             </label>
+            <label class="block mb-4 font-bold text-sm" for="">Dosen Pembimbing : 
+                <p class="font-normal mt-2">Eriya, S.Kom., M.T</p>
+            </label>
         </div>
 
         <!-- Form Pengajuan -->
@@ -23,73 +26,50 @@
             <div>
                 <div class="flex justify-between">
                     <div>
-                        <label class="block text-sm mb-2" for="">Judul Skripsi</label>
-                        <x-text-input id="judul" class="block mt-1 w-96 border-black dark:bg-gray-300 mb-4" type="text" name="judul" placeholder="Rancang Bangun Sistem...." required autofocus id="" disabled/>
-                        <label class="block text-sm mb-2" for="">Sub Judul Skripsi</label>
-                        <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-4" type="text" name="subJudul" placeholder="Masukkan teks..." required autofocus/>
-                        <label class="block text-sm mb-2" for="">Form 13</label>
-                        <div class="relative">
-                            <x-text-input id="form13" class="block mt-1 w-96 border border-black pl-2 pr-10 py-2" type="text" placeholder="Unggah File..." readonly />
-                            <label for="file" class="absolute inset-y-0 right-0 flex items-center pr-2 cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 15v4.4c0 .4-.2.8-.6 1-.4.2-.8.4-1.2.4H4.8c-.4 0-.8-.2-1-.6s-.4-.8-.4-1.2V15M12 3v12"/>
-                                    <polyline points="9 6 12 3 15 6"/>
-                                </svg>
-                            </label>
-                            <input id="file" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" type="file" name="file" />
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">Format file PDF (<a href="#" class="text-blue-500">Download disini</a>)</p>
-
-                        <label class="block text-sm mt-4" for="">Form 14</label>
-                        <div class="relative mt-3">
-                            <x-text-input id="form14" class="block mt-1 w-96 border border-black pl-2 pr-10 py-2" type="text" placeholder="Unggah File..." readonly />
-                            <label for="file" class="absolute inset-y-0 right-0 flex items-center pr-2 cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 15v4.4c0 .4-.2.8-.6 1-.4.2-.8.4-1.2.4H4.8c-.4 0-.8-.2-1-.6s-.4-.8-.4-1.2V15M12 3v12"/>
-                                    <polyline points="9 6 12 3 15 6"/>
-                                </svg>
-                            </label>
-                            <input id="file" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" type="file" name="file" />
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">Format file PDF (<a href="#" class="text-blue-500">Download disini</a>)</p>
+                        <label class="block text-sm mb-1" for="">
+                            Judul Skripsi
+                        </label>
+                        <x-text-input id="judul" class="block mt-1 w-96 border-black mb-5 bg-[#D9D9D9]" type="text" name="judul" placeholder="Masukkan teks..." readonly/>
+                        <label class="block text-sm mb-1" for="">
+                            Sub Judul Skripsi
+                        </label>
+                        <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-5" type="text" name="subJudul" placeholder="Masukkan teks..." required autofocus/>
+                        <label class="block text-sm mb-1" for="">
+                            Anggota Kelompok
+                        </label>
+                        <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-5" type="text" name="subJudul" placeholder="Masukkan teks..." required autofocus/>
+                        <label class="block text-sm mb-1" for="">
+                            Form F10
+                        </label>
+                        <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
+                        <p class="text-xs text-gray-500 mb-3">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
+                        <label class="block text-sm mb-1" for="">
+                            Form F12
+                        </label>
+                        <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
+                        <p class="text-xs text-gray-500 mb-3">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
                     </div>
                     <div>
-                        <label class="block text-sm mb-2" for="">Dosen Pembimbing</label>
-                        <div class="relative">
-                            <select class="w-96 h-10 text-sm text-gray-700 border border-black dark:bg-gray-300 rounded-md px-3 mb-4" id="" disabled>
-                                <option selected>Eriya,S.Kom., M.T.</option>
-                                <option>Dosen 2</option>
-                                <option>Dosen 3</option>
-                            </select>
-                        </div>
-
-                        <label class="block text-sm mb-2" for="">Anggota Kelompok</label>
-                        <x-text-input id="anggota" class="block mt-1 w-96 border-black mb-4" type="text" name="anggota" placeholder="Masukkan teks..." required autofocus/>
-                        <label class="block text-sm mb-2" for="">Form 15</label>
-                        <div class="relative">
-                            <x-text-input id="form15" class="block mt-1 w-96 border border-black pl-2 pr-10 py-2" type="text" placeholder="Unggah File..." readonly />
-                            <label for="file" class="absolute inset-y-0 right-0 flex items-center pr-2 cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 15v4.4c0 .4-.2.8-.6 1-.4.2-.8.4-1.2.4H4.8c-.4 0-.8-.2-1-.6s-.4-.8-.4-1.2V15M12 3v12"/>
-                                    <polyline points="9 6 12 3 15 6"/>
-                                </svg>
-                            </label>
-                            <input id="file" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" type="file" name="file" />
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">Format file PDF (<a href="#" class="text-blue-500">Download disini</a>)</p>
-
-                        <label class="block text-sm mt-4" for="">Form 16</label>
-                        <div class="relative mt-3">
-                            <x-text-input id="form16" class="block mt-1 mb-3 w-96 border border-black pl-2 pr-10 py-2" type="text" placeholder="Unggah File..." readonly />
-                            <label for="file" class="absolute inset-y-0 right-0 flex items-center pr-2 cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M21 15v4.4c0 .4-.2.8-.6 1-.4.2-.8.4-1.2.4H4.8c-.4 0-.8-.2-1-.6s-.4-.8-.4-1.2V15M12 3v12"/>
-                                    <polyline points="9 6 12 3 15 6"/>
-                                </svg>
-                            </label>
-                            <input id="file" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" type="file" name="file" />
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">Format file PDF (<a href="#" class="text-blue-500">Download disini</a>)</p>
+                        <label class="block text-sm mb-1" for="">
+                            Form F13
+                        </label>
+                        <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
+                        <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
+                        <label class="block text-sm mb-1" for="">
+                            Form F14
+                        </label>
+                        <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
+                        <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
+                        <label class="block text-sm mb-1" for="">
+                            Form F15
+                        </label>
+                        <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
+                        <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
+                        <label class="block text-sm mb-1" for="">
+                            Form F16
+                        </label>
+                        <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
+                        <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
                     </div>
                 </div>
                 <div class="flex justify-end">

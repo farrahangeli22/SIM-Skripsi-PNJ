@@ -57,9 +57,9 @@ Route::get("/pengajuan-sempro", function () {
     return view('user.pengajuanSempro');
 })->name('user.pengajuan-sempro');
 
-Route::get("/pengajuan-skripsi", function () {
-    return view('user.pengajuanSkripsi');
-})->name('user.pengajuan-skripsi');
+Route::get("/pengajuan-sidang", function () {
+    return view('user.pengajuanSidang');
+})->name('user.pengajuan-sidang');
 
 Route::get("/penyerahan-alat", function () {
     return view('user.penyerahanAlat');

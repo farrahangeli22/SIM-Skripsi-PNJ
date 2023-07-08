@@ -34,27 +34,17 @@
                             Sub Judul Skripsi
                         </label>
                         <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-5" type="text" name="subJudul" placeholder="Masukkan teks..." required autofocus/>
+                    </div>
+                    <div>
                         <label class="block text-sm mb-2" for="">
                             Anggota Kelompok
                         </label>
                         <x-text-input id="anggota" class="block mt-1 w-96 border-black mb-5" type="text" name="anggota" placeholder="Masukkan teks..." required autofocus/>
-                    </div>
-                    <div>
                         <label class="block text-sm mb-2" for="">
                             Form F1
                         </label>
                         <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF1" target="_blank" class="text-blue-500">Download disini</a>)</p>
-                        <label class="block text-sm mb-2" for="">
-                            Form F2
-                        </label>
-                        <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
-                        <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF2" target="_blank" class="text-blue-500">Download disini</a>)</p>
-                        <label class="block text-sm mb-2" for="">
-                            Form F3
-                        </label>
-                        <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
-                        <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF3BA" target="_blank" class="text-blue-500">Download disini</a>)</p>
                     </div>
                 </div>
                 <div class="flex justify-end">

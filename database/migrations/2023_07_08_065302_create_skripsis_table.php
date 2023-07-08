@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('skripsi', function (Blueprint $table) {
             $table->id();
-            $table->string('username');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('nama');
-            $table->rememberToken();
+            $table->string('nim');
+            $table->foreign('nim')->references('nim')->on('mahasiswa');
+            $table->string('nip_dospem');
+            $table->foreign('nip_dospem')->references('nip')->on('dosen');
+            $table->string('judul');
+            $table->text('file_skripsi');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('skripsi');
     }
 };

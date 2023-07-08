@@ -102,6 +102,10 @@ Route::get("/admin/manajemen-dosen", function () {
     return view('admin.manajemenDosen');
 })->name('admin.manajemen-dosen');
 
+Route::get("/admin/manajemen-kps", function () {
+    return view('admin.manajemenKPS');
+})->name('admin.manajemen-kps');
+
 Route::get("/admin/edit-konten", function () {
     return view('admin.editKonten');
 })->name('admin.edit-konten');
@@ -121,5 +125,9 @@ Route::get("/admin/pengajuan-seminar", function () {
 Route::get("/admin/pengajuan-sidang", function () {
     return view('admin.adminSidang');
 })->name('admin.pengajuan-sidang');
+
+Route::get("/admin/penyerahan-alat", function () {
+    return view('admin.adminAlat');
+})->name('admin.penyerahan-alat');
 
 require __DIR__ . '/auth.php';

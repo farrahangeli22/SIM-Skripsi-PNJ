@@ -26,11 +26,11 @@
             <div>
                 <div class="flex justify-between">
                     <div>
-                        <label class="block text-sm mb-2" for="">
+                        <label class="block text-sm" for="">
                             Judul Skripsi
                         </label>
-                        <x-text-input id="judul" class="block mt-1 w-96 border-black mb-4" type="text" name="judul" placeholder="Masukkan teks..." required autofocus/>
-                        <label class="block text-sm mb-2" for="">
+                        <x-text-input id="judul" class="block mt-2 w-96 h-10 border-black mb-4" type="text" name="judul" placeholder="Masukkan teks..." required autofocus/>
+                        <label class="block text-sm" for="">
                             Sub Judul Skripsi
                         </label>
                         <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-4" type="text" name="subJudul" placeholder="Masukkan teks..." required autofocus/>

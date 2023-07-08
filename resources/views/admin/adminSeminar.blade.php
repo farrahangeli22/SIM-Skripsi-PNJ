@@ -10,7 +10,10 @@
                 <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Judul</th>
 				<th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Anggota Kelompok</th>
 				<th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Dosen Pembimbing</th>
-                <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Dosen Penguji</th>
+                <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell" style="width: 150px;">Dosen Penguji</th>
+                <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F1</th>
+                <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F2</th>
+                <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F3</th>
                 <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Aksi</th>
             </tr>
 		</thead>
@@ -29,41 +32,52 @@
                         <li style="list-style-type: disc;">Penguji 3</li>
                         </ul>
                 </td>
+                <td>
+                    <div style="text-align: center;">
+                        <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">F1</a>
+                    </div>
+                </td>
+                <td>
+                    <div style="text-align: center;">
+                        <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">F2</a>
+                    </div>
+                </td>
+                <td></td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
 					<span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
 					<button class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>
-				    
+                </td>
                     <!-- modal -->
-                    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto hidden">
+                    <div id="modal" class=" z-50 fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto hidden">
                         <div class="bg-white p-6 rounded-lg">
                             <div class="flex ">
-                                <div class="w-2/3">
+                                <div class="w-1/2">
                                     <h2 class="text-xl font-bold mb-4">Edit Data Mahasiswa</h2>
                                     <!-- Konten kiri -->
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Nama:</label>
                                         <p>Niyara Arinda</p>
                                     </div>
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">NIM:</label>
                                         <p>1907411032</p>
                                     </div>
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Prodi:</label>
                                         <p>Teknik Informatika</p>
                                     </div>
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Kelas:</label>
                                         <p>TI 8A</p>
                                     </div>
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Judul:</label>
                                         <p>Rancang Bangun Sistem Informasi Manajemen Skripsi</p>
                                     </div>
                                 </div>
-                                <div class="w-1/3">
+                                <div class="w-1/2">
                                     <!-- Konten kanan -->
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Dosen Pembimbing:</label>
                                         <select class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
                                             <option>Dosen 1</option>
@@ -71,7 +85,7 @@
                                             <option>Dosen 3</option>
                                         </select>
                                     </div>
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Dosen Penguji 1:</label>
                                         <select class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
                                             <option>Dosen 1</option>
@@ -79,7 +93,7 @@
                                             <option>Dosen 3</option>
                                         </select>
                                     </div>
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Dosen Penguji 2:</label>
                                         <select class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
                                             <option>Dosen 1</option>
@@ -87,7 +101,7 @@
                                             <option>Dosen 3</option>
                                         </select>
                                     </div>
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Dosen Penguji 3:</label>
                                         <select class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
                                             <option>Dosen 1</option>
@@ -95,6 +109,18 @@
                                             <option>Dosen 3</option>
                                         </select>
                                     </div>
+                                     <div class="flex flex-col mb-4 text-sm">
+                                        <label class="font-bold">Form F1:</label>
+                                         <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Form-F1.pdf</a>
+                                     </div>
+                                     <div class="flex flex-col mb-4 text-sm">
+                                        <label class="font-bold">Form F1:</label>
+                                         <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Form-F2.pdf</a>
+                                     </div>
+                                      <label class="block font-bold" for="">
+                                        Form F3:
+                                    </label>
+                                    <x-text-input id="judul" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
                                 </div>
                             </div>
                             <div class="flex">

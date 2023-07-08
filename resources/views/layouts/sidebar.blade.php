@@ -66,7 +66,7 @@
                 <a href="{{route('admin.manajemen-dosen')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Dosen Pembimbing</a>
             </li>
             <li>
-                <a href="#" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Ketua Program Studi</a>
+                <a href="{{route('admin.manajemen-kps')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Ketua Program Studi</a>
             </li>
         </ul>
     </div>
@@ -94,6 +94,9 @@
             </li>
             <li>
                 <a href="{{route('admin.pengajuan-sidang')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Sidang Skripsi</a>
+            </li>
+             <li>
+                <a href="{{route('admin.penyerahan-alat')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Penyerahan Alat</a>
             </li>
         </ul>
     </div>

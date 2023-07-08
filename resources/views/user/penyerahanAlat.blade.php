@@ -22,7 +22,7 @@
 
         <!-- Form Pengajuan -->
         <form class="w-full">
-            <h1 class="flex justify-center font-bold text-xl text-font mb-10">Penyerahan Alat dan Dokumen Pelengkap Skripsi</h1>
+            <h1 class="flex justify-center font-bold text-xl text-font mb-10">Penyerahan Alat</h1>
             <div>
                 <div class="flex justify-between">
                     <div>
@@ -80,4 +80,5 @@
             </div>
         </form>
     </div>
+
 </x-user-layout>

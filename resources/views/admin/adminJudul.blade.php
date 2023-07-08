@@ -10,6 +10,7 @@
                 <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Judul</th>
 				<th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Anggota Kelompok</th>
 				<th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Calon Dosen Pembimbing</th>
+                <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Jurnal Referensi</th>
             </tr>
 		</thead>
 			<tr class="bg-white border border-grey-500 md:border-none block md:table-row text-xs">
@@ -26,6 +27,9 @@
                         <li style="list-style-type: disc;">Dosen Pembimbing 3</li>
                         </ul>
                 </td>
+                <td class="p-2 md:border md:border-grey-500 text-center block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Jurnal Referensi</span>
+                    <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Referensi</a>
+                </td>
             </tr>
 			<tr class="bg-white border border-grey-500 md:border-none block md:table-row text-xs">
 				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Tanggal</span>8 Februari 2023</td>
@@ -41,6 +45,9 @@
                         <li style="list-style-type: disc;">Dosen Pembimbing 3</li>
                         </ul>
                 </td>
+                <td class="p-2 md:border md:border-grey-500 text-center block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Jurnal Referensi</span>
+                    <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Referensi</a>
+                </td>
             </tr>
             <tr class="bg-white border border-grey-500 md:border-none block md:table-row text-xs">
 				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Tanggal</span>8 Februari 2023</td>
@@ -55,6 +62,9 @@
                         <li style="list-style-type: disc;">Dosen Pembimbing 2</li>
                         <li style="list-style-type: disc;">Dosen Pembimbing 3</li>
                         </ul>
+                </td>
+                <td class="p-2 md:border md:border-grey-500 text-center block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Jurnal Referensi</span>
+                    <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Referensi</a>
                 </td>
             </tr>
 		</tbody>

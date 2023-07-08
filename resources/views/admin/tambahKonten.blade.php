@@ -18,10 +18,10 @@
         </div>
          <div>
             <label class="block text-sm mb-2" for="">
-                    File Konten
-                </label>
-                <x-text-input id="judul" class="block w-80 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
-            </div>
+                File Konten
+            </label>
+            <x-text-input id="judul" class="block w-80 h-10 p-1 border border-black cursor-pointer bg-white" type="file" name="judul" required autofocus/>
+        </div>
         <div class="flex justify-end">
             <x-primary-button class="flex justify-center w-fit">
                 {{ __('Kirim') }}

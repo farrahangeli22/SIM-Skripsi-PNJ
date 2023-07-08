@@ -18,9 +18,34 @@
         </div>
 
         <div>
-            <!-- Form Unggah Dokumen Skripsi -->
+            <!-- Form Unggah Nilai Proposal dan Skripsi -->
+            <h1 class="font-bold text-xl text-font mb-8">Unggah Penilaian Mahasiswa</h1>
+            <form class="w-full mb-8">
+                <div class="flex space-x-10">
+                    <div>
+                        <label class="block text-sm mb-2" for="">
+                            F2 (Penilai Proposal)
+                        </label>
+                        <x-text-input id="dokumenSkripsi" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="file" name="anggota" placeholder="Masukkan teks..." required autofocus/>
+                    </div>
+                    <div>
+                        <label class="block text-sm mb-2" for="">
+                            F6 (Penilai Skripsi)
+                        </label>
+                        <x-text-input id="dokumenSkripsi" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="file" name="anggota" placeholder="Masukkan teks..." required autofocus/>
+                    </div>
+                    <div class="mt-7">
+                        <x-primary-button class="flex justify-center w-fit h-10">
+                            {{ __('Kirim') }}
+                        </x-primary-button>
+                    </div>
+                </div>
+            </form>
+
+
+            <!-- Dokumen Skripsi Mahsiswa-->
             <div class="mb-8">
-                <h1 class="font-bold text-xl text-font mb-8">Unggah Dokumen Skripsi</h1>
+                <h1 class="font-bold text-xl text-font mb-8">Dokumen Skripsi Mahasiswa</h1>
                 <div class="">
                     <div class="">
                         <div class="flex space-x-1 text-sm mb-2">

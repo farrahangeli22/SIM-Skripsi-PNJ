@@ -15,9 +15,9 @@
             <label class="block mb-4 font-bold text-sm" for="">Kelas : 
                 <p class="font-normal mt-2">TI 8A</p>
             </label>
-            <label class="block mb-4 font-bold text-sm" for="">Dosen Pembimbing : 
+            <!-- <label class="block mb-4 font-bold text-sm" for="">Dosen Pembimbing : 
                 <p class="font-normal mt-2">Eriya, S.Kom., M.T</p>
-            </label>
+            </label> -->
         </div>
 
         <!-- Form Pengajuan -->

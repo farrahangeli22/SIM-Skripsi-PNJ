@@ -7,8 +7,8 @@
     </h1>
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-8">
-        <table class="w-full text-sm text-left">
-            <thead class="text-xs text-white bg-primary">
+        <table class="w-full text-sm">
+            <thead class="text-xs text-white text-center bg-primary">
                 <tr>
                     <th scope="col" class="px-6 py-3 border">
                         Nama
@@ -94,8 +94,8 @@
     </h1>
 
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-4">
-        <table class="w-full text-sm text-left">
-            <thead class="text-xs text-white bg-primary">
+        <table class="w-full text-sm">
+            <thead class="text-xs text-white text-center bg-primary">
                 <tr>
                     <th scope="col" class="px-6 py-3 border">
                         Nama

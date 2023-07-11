@@ -10,6 +10,8 @@ class PengajuanDospem extends Model
     use HasFactory;
 
     protected $fillable = [
+        'pengajuan_judul_id',
+        'nip_dospem',
         'status',
     ];
 

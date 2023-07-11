@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\PengajuanJudulController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
+use App\Models\PengajuanJudul;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +32,14 @@ Route::get('/dashboard', function () {
 // });
 
 // routes for user role
+
+Route::middleware('auth')->group(function () {
+    // pengajuan judul
+    Route::get('/pengajuan-judul', [PengajuanJudulController::class, 'viewPengajuanJudul'])->name('user.pengajuan-judul');
+    Route::post('/pengajuan-judul', [PengajuanJudulController::class, 'createPengajuanJudul'])->name('user.create-pengajuan-judul');
+});
+
+
 Route::get("/home", function () {
     return view('user.home');
 })->name('user.home');
@@ -49,10 +59,6 @@ Route::get("/detail-logbook", function () {
 Route::get("/profile", function () {
     return view('user.profile');
 })->name('user.profile');
-
-Route::get("/pengajuan-judul", function () {
-    return view('user.pengajuanJudul');
-})->name('user.pengajuan-judul');
 
 Route::get("/pengajuan-sempro", function () {
     return view('user.pengajuanSempro');

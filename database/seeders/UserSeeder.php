@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use App\Models\UserRole;
+use App\Models\Dosen;
+use App\Models\Mahasiswa;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -29,6 +31,16 @@ class UserSeeder extends Seeder
                     'user_id' => $user1->id,
                     'role_id' => 1
                 ]
+            );
+
+            //buat data dosen
+            Dosen::create(
+                [
+                    'nip' => $user1->username,
+                    'user_id' => $user1->id,
+                    'nama' => $user1->nama,
+                    'email' => $user1->email,
+                ]
         );
 
         $user2 = User::create([
@@ -42,6 +54,16 @@ class UserSeeder extends Seeder
                 [
                     'user_id' => $user2->id,
                     'role_id' => 2
+                ]
+            );
+
+            //buat data dosen
+            Dosen::create(
+                [
+                    'nip' => $user2->username,
+                    'user_id' => $user2->id,
+                    'nama' => $user2->nama,
+                    'email' => $user2->email,
                 ]
         );
 
@@ -57,6 +79,19 @@ class UserSeeder extends Seeder
                     'user_id' => $user3->id,
                     'role_id' => 4
                 ]
+            );
+
+            //buat data mahasiswa
+            Mahasiswa::create(
+                [
+                    'nim' => $user3->username,
+                    'user_id' => $user3->id,
+                    'status_id' => 6,
+                    'nama' => $user3->nama,
+                    'prodi' => 'Teknik Informatika',
+                    'kelas' => 'TI 8A',
+                    'email' => $user3->email,
+                ]
         );
 
         $user4 = User::create([
@@ -70,6 +105,19 @@ class UserSeeder extends Seeder
                 [
                     'user_id' => $user4->id,
                     'role_id' => 4
+                ]
+            );
+
+            //buat data mahasiswa
+            Mahasiswa::create(
+                [
+                    'nim' => $user4->username,
+                    'user_id' => $user4->id,
+                    'status_id' => 8,
+                    'nama' => $user4->nama,
+                    'prodi' => 'Teknik Informatika',
+                    'kelas' => 'TI 8A',
+                    'email' => $user4->email,
                 ]
         );
 
@@ -92,6 +140,16 @@ class UserSeeder extends Seeder
                 [
                     'user_id' => $user5->id,
                     'role_id' => 2
+                ]
+            );
+
+            //buat data dosen
+            Dosen::create(
+                [
+                    'nip' => $user5->username,
+                    'user_id' => $user5->id,
+                    'nama' => $user5->nama,
+                    'email' => $user5->email,
                 ]
             );
         

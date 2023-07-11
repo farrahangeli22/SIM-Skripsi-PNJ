@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\UserRole;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -29,7 +30,12 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        // get user roles
+        $roles = UserRole::where('user_id', $request->user()->id)->with('role')->get();
+        session()->put('roles', $roles);
+        session()->put('active_role', $roles[0]);
+
+        return redirect(route('login'));
     }
 
     /**

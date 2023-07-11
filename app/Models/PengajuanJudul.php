@@ -22,6 +22,11 @@ class PengajuanJudul extends Model
 
     function pengajuanDospem()
     {
-        return $this->hasMany(PengajuanDospem::class, 'pengajuan_judul_id', 'id' );
+        return $this->hasMany(PengajuanDospem::class, 'pengajuan_judul_id', 'id');
+    }
+
+    function mahasiswa()
+    {
+        return $this->belongsTo(Mahasiswa::class, 'nim', 'nim');
     }
 }

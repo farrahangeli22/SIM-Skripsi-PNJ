@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\UserRole;
 use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
@@ -21,7 +22,20 @@ class RedirectIfAuthenticated
 
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+                $role = session()->get('active_role');
+                if ($role->role_id == 1) {
+                    return redirect(route('admin.dashboard-admin'));
+                }
+                if ($role->role_id == 2) {
+                    return redirect(route('dosen.daftar-mahasiswa'));
+                }
+                if ($role->role_id == 3) {
+                    return redirect(route('admin.dashboard-admin'));
+                }
+                if ($role->role_id == 4) {
+                    return redirect(route('user.home'));
+                }
+                // return redirect(RouteServiceProvider::HOME);
             }
         }
 

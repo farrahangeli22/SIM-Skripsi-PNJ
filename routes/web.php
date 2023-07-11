@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -129,5 +130,7 @@ Route::get("/admin/pengajuan-sidang", function () {
 Route::get("/admin/penyerahan-alat", function () {
     return view('admin.adminAlat');
 })->name('admin.penyerahan-alat');
+
+Route::get('/role/switch/{roleId}', [RoleController::class, 'switchRole'])->name('switch-role');
 
 require __DIR__ . '/auth.php';

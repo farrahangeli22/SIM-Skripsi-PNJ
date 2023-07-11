@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
 
     // daftar mahasiswa
     Route::get('/daftar-mahasiswa', [DaftarMahasiswaController::class, 'viewDaftarMahasiswa'])->name('dosen.daftar-mahasiswa');
-
+    Route::put('/terima-permintaan-judul/{idPengajuanJudul}', [DaftarMahasiswaController::class, 'terimaPermintaanBimbingan']);
 });
 
 

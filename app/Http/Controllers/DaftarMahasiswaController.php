@@ -7,6 +7,7 @@ use App\Models\Mahasiswa;
 use App\Models\PengajuanDospem;
 use App\Models\PengajuanJudul;
 use App\Http\Controllers\Controller;
+use App\Models\Skripsi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,12 +17,44 @@ class DaftarMahasiswaController extends Controller
     function viewDaftarMahasiswa(Request $request)
     {
         // ambil data pengajuan judul
-        $pengajuan_judul = PengajuanJudul::with(['pengajuanDospem' => function ($query) {
-            $query->where('nip_dospem', Auth::user()->username);
-        }, 'mahasiswa'])->get();
-        // ambil data mahasiswa bimbingan
+        $pengajuanDospem = PengajuanDospem::where('nip_dospem', $request->user()->username)->where('status', 'pengajuan')
+            ->with(['pengajuanJudul' => function ($query) {
+                $query->with('mahasiswa');
+            }])->get();
 
+
+        // ambil data mahasiswa bimbingan dari table skripsi
+        $mahasiswaBimbingan = Skripsi::where('nip_dospem', $request->user()->username)->with('mahasiswa')->get();
+
+        // dd($pengajuan_judul);
         // mengembalikan view dengan data
-        return view('dosen.daftarMahasiswa')->with('pengajuanJudul', $pengajuan_judul);
+        // dd($mahasiswaBimbingan);
+        return view('dosen.daftarMahasiswa')->with('pengajuanDospem', $pengajuanDospem)->with('mahasiswaBimbingan', $mahasiswaBimbingan);
+    }
+
+    function terimaPermintaanBimbingan(Request $request, $idPengajuanJudul)
+    {
+        // ubah status pengajuan dospem dari table pengajuan judul
+        $pengajuanJudul = PengajuanJudul::where('id', $idPengajuanJudul)->first();
+        $pengajuanDospem = PengajuanDospem::where('pengajuan_judul_id', $idPengajuanJudul)->get();
+        foreach ($pengajuanDospem as $val) {
+            if ($val->nip_dospem == $request->user()->username) {
+                $val->status = 'diterima';
+                $val->save();
+            } else {
+                $val->status = 'ditolak';
+                $val->save();
+            }
+        }
+
+        // buat reccord table skripsi
+        Skripsi::create([
+            'nim' => $pengajuanJudul->nim,
+            'nip_dospem' => $request->user()->username,
+            'judul' => $pengajuanJudul->judul,
+            'file_skripsi' => null,
+        ]);
+
+        return redirect()->back();
     }
 }

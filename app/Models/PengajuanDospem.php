@@ -16,4 +16,9 @@ class PengajuanDospem extends Model
     ];
 
     protected $table = 'pengajuan_dospem';
+
+    function pengajuanJudul()
+    {
+        return $this->belongsTo(PengajuanJudul::class, 'pengajuan_judul_id', 'id');
+    }
 }

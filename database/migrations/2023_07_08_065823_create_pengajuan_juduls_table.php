@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('nim');
             $table->foreign('nim')->references('nim')->on('mahasiswa');
             $table->string('judul');
-            $table->string('sub_judul');
+            $table->string('sub_judul')->nullable();
             $table->text('deskripsi');
-            $table->text('anggota');
+            $table->text('anggota')->nullable();
             $table->text('file_referensi');
             $table->timestamps();
         });

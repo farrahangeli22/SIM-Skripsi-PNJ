@@ -28,6 +28,9 @@
                 </tr>
             </thead>
             <tbody>
+            @foreach($pengajuanJudul as $val)
+            {{$val->nim}}
+            @endforeach
                 <tr class="bg-white border-b">
                     <td class="px-6 py-4 border">
                         Syifa Aulia

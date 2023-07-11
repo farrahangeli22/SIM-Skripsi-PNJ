@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PengajuanJudulController;
+use App\Http\Controllers\DaftarMahasiswaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Models\PengajuanJudul;
@@ -37,6 +38,10 @@ Route::middleware('auth')->group(function () {
     // pengajuan judul
     Route::get('/pengajuan-judul', [PengajuanJudulController::class, 'viewPengajuanJudul'])->name('user.pengajuan-judul');
     Route::post('/pengajuan-judul', [PengajuanJudulController::class, 'createPengajuanJudul'])->name('user.create-pengajuan-judul');
+
+    // daftar mahasiswa
+    Route::get('/daftar-mahasiswa', [DaftarMahasiswaController::class, 'viewDaftarMahasiswa'])->name('dosen.daftar-mahasiswa');
+
 });
 
 
@@ -79,9 +84,9 @@ Route::get("/notification", function () {
 
 
 // routes for user dosen
-Route::get("/dosen/daftar-mahasiswa", function () {
-    return view('dosen.daftarMahasiswa');
-})->name('dosen.daftar-mahasiswa');
+// Route::get("/dosen/daftar-mahasiswa", function () {
+//     return view('dosen.daftarMahasiswa');
+// })->name('dosen.daftar-mahasiswa');
 
 Route::get("/dosen/logbook", function () {
     return view('dosen.logbookMahasiswa');

@@ -19,4 +19,9 @@ class PengajuanJudul extends Model
     ];
 
     protected $table = 'pengajuan_judul';
+
+    function pengajuanDospem()
+    {
+        return $this->hasMany(PengajuanDospem::class, 'pengajuan_judul_id', 'id' );
+    }
 }

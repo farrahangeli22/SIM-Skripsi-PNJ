@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\PengajuanJudulController;
+use App\Http\Controllers\PengajuanSidangController;
+use App\Http\Controllers\PenyerahanAlatController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Models\PengajuanJudul;
+use App\Models\PengajuanSidang;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,6 +41,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/pengajuan-judul', [PengajuanJudulController::class, 'viewPengajuanJudul'])->name('user.pengajuan-judul');
     Route::post('/pengajuan-judul', [PengajuanJudulController::class, 'createPengajuanJudul'])->name('user.create-pengajuan-judul');
 });
+    Route::middleware('auth')->group(function () {
+    Route::get('/pengajuan-sidang', [PengajuanSidangController::class, 'viewPengajuanSidang'])->name('user.pengajuan-sidang');
+    Route::post('/pengajuan-sidang', [PengajuanSidangController::class, 'createPengajuanSidang'])->name('user.create-pengajuan-sidang');
+});
+    Route::middleware('auth')->group(function () {
+    Route::get('/penyerahan-alat', [PenyerahanAlatController::class, 'viewPenyerahanAlat'])->name('user.penyerahan-alat');
+    Route::post('/penyerahan-alat', [PenyerahanAlatController::class, 'createPenyerahanAlat'])->name('user.create-penyerahan-alat');
+});
+
 
 
 Route::get("/home", function () {
@@ -64,13 +76,13 @@ Route::get("/pengajuan-sempro", function () {
     return view('user.pengajuanSempro');
 })->name('user.pengajuan-sempro');
 
-Route::get("/pengajuan-sidang", function () {
-    return view('user.pengajuanSidang');
-})->name('user.pengajuan-sidang');
+// Route::get("/pengajuan-sidang", function () {
+//     return view('user.pengajuanSidang');
+// })->name('user.pengajuan-sidang');
 
-Route::get("/penyerahan-alat", function () {
-    return view('user.penyerahanAlat');
-})->name('user.penyerahan-alat');
+// Route::get("/penyerahan-alat", function () {
+//     return view('user.penyerahanAlat');
+// })->name('user.penyerahan-alat');
 
 Route::get("/notification", function () {
     return view('user.notification');

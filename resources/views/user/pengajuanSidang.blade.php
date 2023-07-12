@@ -3,25 +3,30 @@
         <!-- Card data mahasiswa -->
         <div class="w-80 rounded bg-cardData p-6">
             <h1 class="flex justify-center font-bold text-xl text-font mb-6">Data Mahasiswa</h1>
-            <label class="block mb-4 font-bold text-sm" for="">Nama : 
-                <p class="font-normal mt-2">Niyara Arinda</p>
+            <label class="block mb-4 font-bold text-sm" for="">Nama :
+                <p class="font-normal mt-2">{{$mahasiswa->nama}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">NIM : 
-                <p class="font-normal mt-2">1907411032</p>
+                <p class="font-normal mt-2">{{$mahasiswa->nim}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Program Studi : 
-                <p class="font-normal mt-2">Teknik Informatika</p>
+                <p class="font-normal mt-2">{{$mahasiswa->prodi}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Kelas : 
-                <p class="font-normal mt-2">TI 8A</p>
+                <p class="font-normal mt-2">{{$mahasiswa->kelas}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Dosen Pembimbing : 
-                <p class="font-normal mt-2">Eriya, S.Kom., M.T</p>
+                <p class="font-normal mt-2"></p>
             </label>
         </div>
 
+        @if(Session::has('message'))
+        <p>{{ Session::get('message') }}</p>
+        @endif
+
         <!-- Form Pengajuan -->
-        <form class="w-full">
+        <form class="w-full" enctype='multipart/form-data' action="{{route('user.create-pengajuan-sidang')}}" method="post">
+            @csrf
             <h1 class="flex justify-center font-bold text-xl text-font mb-10">Pengajuan Sidang Skripsi</h1>
             <div>
                 <div class="flex justify-between">
@@ -33,17 +38,17 @@
                         <label class="block text-sm" for="">
                             Sub Judul Skripsi
                         </label>
-                        <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-4" type="text" name="subJudul" placeholder="Masukkan teks..." required autofocus/>
+                        <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-4" type="text" name="subJudul" placeholder="Masukkan teks..." autofocus/>
                     </div>
                     <div>
                         <label class="block text-sm mb-2" for="">
                             Anggota Kelompok
                         </label>
-                        <x-text-input id="anggota" class="block mt-1 w-96 border-black mb-4" type="text" name="anggota" placeholder="Masukkan teks..." required autofocus/>
+                        <x-text-input id="anggota" class="block mt-1 w-96 border-black mb-4" type="text" name="anggota" placeholder="Masukkan teks..." autofocus/>
                         <label class="block text-sm mb-2" for="">
                             Form F4
                         </label>
-                        <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
+                        <x-text-input id="file_f4" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="file_f4" accept=".pdf" required autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
                     </div>
                 </div>

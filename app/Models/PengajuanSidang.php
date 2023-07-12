@@ -10,6 +10,7 @@ class PengajuanSidang extends Model
     use HasFactory;
 
     protected $fillable = [
+        'nim',
         'judul',
         'sub_judul',
         'jadwal_sidang',

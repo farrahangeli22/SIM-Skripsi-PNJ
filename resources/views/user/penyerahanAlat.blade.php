@@ -4,24 +4,25 @@
         <div class="w-80 rounded bg-cardData p-6">
             <h1 class="flex justify-center font-bold text-xl text-font mb-6">Data Mahasiswa</h1>
             <label class="block mb-4 font-bold text-sm" for="">Nama : 
-                <p class="font-normal mt-2">Niyara Arinda</p>
+                <p class="font-normal mt-2">{{$mahasiswa->nama}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">NIM : 
-                <p class="font-normal mt-2">1907411032</p>
+                <p class="font-normal mt-2">{{$mahasiswa->nim}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Program Studi : 
-                <p class="font-normal mt-2">Teknik Informatika</p>
+                <p class="font-normal mt-2">{{$mahasiswa->prodi}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Kelas : 
-                <p class="font-normal mt-2">TI 8A</p>
+                <p class="font-normal mt-2">{{$mahasiswa->kelas}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Dosen Pembimbing : 
-                <p class="font-normal mt-2">Eriya, S.Kom., M.T</p>
+                <p class="font-normal mt-2"></p>
             </label>
         </div>
 
         <!-- Form Pengajuan -->
-        <form class="w-full">
+       <form class="w-full" enctype='multipart/form-data' action="{{route('user.create-penyerahan-alat')}}" method="post">
+            @csrf
             <h1 class="flex justify-center font-bold text-xl text-font mb-10">Penyerahan Alat</h1>
             <div>
                 <div class="flex justify-between">
@@ -29,7 +30,7 @@
                         <label class="block text-sm mb-1" for="">
                             Judul Skripsi
                         </label>
-                        <x-text-input id="judul" class="block mt-1 w-96 border-black mb-5 bg-[#D9D9D9]" type="text" name="judul" placeholder="Masukkan teks..." readonly/>
+                        <x-text-input id="judul" class="block mt-1 w-96 border-black mb-5" type="text" name="judul" placeholder="Masukkan teks..." required autofocus />
                         <label class="block text-sm mb-1" for="">
                             Sub Judul Skripsi
                         </label>

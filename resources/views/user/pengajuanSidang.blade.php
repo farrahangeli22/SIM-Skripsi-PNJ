@@ -20,47 +20,55 @@
             </label>
         </div>
 
-        @if(Session::has('message'))
-        <p>{{ Session::get('message') }}</p>
-        @endif
-
-        <!-- Form Pengajuan -->
-        <form class="w-full" enctype='multipart/form-data' action="{{route('user.create-pengajuan-sidang')}}" method="post">
-            @csrf
-            <h1 class="flex justify-center font-bold text-xl text-font mb-10">Pengajuan Sidang Skripsi</h1>
-            <div>
-                <div class="flex justify-between">
-                    <div>
-                        <label class="flex flex-wrap text-sm" for="">
-                            Judul Skripsi
-                            <p class="text-red-600 pl-1">*</p>
-                        </label>
-                        <x-text-input id="judul" class="block mt-2 w-96 h-10 border-black mb-4" type="text" name="judul" placeholder="Masukkan teks..." required autofocus/>
-                        <label class="block text-sm" for="">
-                            Sub Judul Skripsi
-                        </label>
-                        <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-4" type="text" name="subJudul" placeholder="Masukkan teks..." autofocus/>
-                    </div>
-                    <div>
-                        <label class="block text-sm mb-2" for="">
-                            Anggota Kelompok
-                        </label>
-                        <x-text-input id="anggota" class="block mt-1 w-96 border-black mb-4" type="text" name="anggota" placeholder="Masukkan teks..." autofocus/>
-                        <label class="flex flex-wrap text-sm mb-2" for="">
-                            Form F4
-                            <p class="text-red-600 pl-1">*</p>
-                        </label>
-                        <x-text-input id="file_f4" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="file_f4" accept=".pdf" required autofocus/>
-                        <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
-                    </div>
-                </div>
-                <div class="flex justify-end">
-                    <x-primary-button class="flex justify-center w-fit">
-                        {{ __('Kirim') }}
-                    </x-primary-button>
-                </div>
+        <div class="flex-wrap">
+             <!-- Notif pengiriman berhasil -->
+            @if(Session::has('message'))
+            <div class="w-full h-fit p-2 rounded bg-[#40C057] mb-4 font-bold text-white">
+                <p>{{ Session::get('message') }}</p>
             </div>
-        </form>
+            @endif
+
+            <!-- Form Pengajuan -->
+            <form class="w-full" enctype='multipart/form-data' action="{{route('user.create-pengajuan-sidang')}}" method="post">
+                @csrf
+                <h1 class="flex justify-center font-bold text-xl text-font mb-10">Pengajuan Sidang Skripsi</h1>
+                <div>
+                    <div class="flex justify-between space-x-10">
+                        <div>
+                            <label class="flex flex-wrap text-sm" for="">
+                                Judul Skripsi
+                                <p class="text-red-600 pl-1">*</p>
+                            </label>
+                            <x-text-input id="judul" class="block mt-2 w-96 h-10 border-black mb-4" type="text" name="judul" placeholder="Masukkan teks..." required autofocus/>
+                            <label class="block text-sm" for="">
+                                Sub Judul Skripsi
+                            </label>
+                            <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-4" type="text" name="subJudul" placeholder="Masukkan teks..." autofocus/>
+                        </div>
+                        <div>
+                            <label class="block text-sm mb-2" for="">
+                                Anggota Kelompok
+                            </label>
+                            <x-text-input id="anggota" class="block mt-1 w-96 border-black mb-4" type="text" name="anggota" placeholder="Masukkan teks..." autofocus/>
+                            <label class="flex flex-wrap text-sm mb-2" for="">
+                                Form F4
+                                <p class="text-red-600 pl-1">*</p>
+                            </label>
+                            <x-text-input id="file_f4" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="file_f4" accept=".pdf" required autofocus/>
+                            <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
+                        </div>
+                    </div>
+                    <div class="flex justify-end">
+                        <x-primary-button class="flex justify-center w-fit">
+                            {{ __('Kirim') }}
+                        </x-primary-button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+      
     </div>
 
 </x-user-layout>

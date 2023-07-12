@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\PengajuanJudulController;
+use App\Http\Controllers\PengajuanSidangController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DaftarMahasiswaController;
+use App\Http\Controllers\LogBookController;
 use App\Http\Controllers\RoleController;
 use App\Models\PengajuanJudul;
 use App\Models\PengajuanSidang;
@@ -46,12 +49,12 @@ Route::middleware('auth')->group(function () {
     // daftar mahasiswa
     Route::get('/daftar-mahasiswa', [DaftarMahasiswaController::class, 'viewDaftarMahasiswa'])->name('dosen.daftar-mahasiswa');
     Route::put('/terima-permintaan-judul/{idPengajuanJudul}', [DaftarMahasiswaController::class, 'terimaPermintaanBimbingan']);
-});
-    Route::middleware('auth')->group(function () {
+
+    // pengajuan sidang
     Route::get('/pengajuan-sidang', [PengajuanSidangController::class, 'viewPengajuanSidang'])->name('user.pengajuan-sidang');
     Route::post('/pengajuan-sidang', [PengajuanSidangController::class, 'createPengajuanSidang'])->name('user.create-pengajuan-sidang');
-});
-    Route::middleware('auth')->group(function () {
+
+    // penyerahan alat
     Route::get('/penyerahan-alat', [PenyerahanAlatController::class, 'viewPenyerahanAlat'])->name('user.penyerahan-alat');
     Route::post('/penyerahan-alat', [PenyerahanAlatController::class, 'createPenyerahanAlat'])->name('user.create-penyerahan-alat');
 });

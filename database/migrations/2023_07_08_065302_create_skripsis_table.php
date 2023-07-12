@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nip_dospem');
             $table->foreign('nip_dospem')->references('nip')->on('dosen');
             $table->string('judul');
-            $table->text('file_skripsi');
+            $table->text('file_skripsi')->nullable();
             $table->timestamps();
         });
     }

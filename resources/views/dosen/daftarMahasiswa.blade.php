@@ -28,60 +28,32 @@
                 </tr>
             </thead>
             <tbody>
+                @forelse($pengajuanDospem as $val)
                 <tr class="bg-white border-b">
                     <td class="px-6 py-4 border">
-                        Syifa Aulia
+                        {{$val->pengajuanJudul->mahasiswa->nama}}
                     </td>
                     <td class="px-6 py-4 border">
-                        1907411056
+                        {{$val->pengajuanJudul->mahasiswa->nim}}
                     </td>
                     <td class="px-6 py-4 border">
-                        Teknik Multimedia Digital
+                        {{$val->pengajuanJudul->mahasiswa->prodi}}
                     </td>
                     <td class="px-6 py-4 border">
-                        Perancangan Media Pembelajaran Interaktif Untuk Kemagnetan Fisika SMP Kelas IX
+                        {{$val->pengajuanJudul->judul}}
                     </td>
                     <td class="px-6 py-4 space-x-2 flex">
-                        <button class="block h-fit w-fit p-2 rounded-lg bg-[#40C057] flex text-sm font-bold text-white shadow hover:bg-[#17952E]">Terima</button>
+                        <form action="/terima-permintaan-judul/{{$val->pengajuanJudul->id}}" method="post">
+                            @csrf
+                            @method('PUT')
+                            <button class="block h-fit w-fit p-2 rounded-lg bg-[#40C057] flex text-sm font-bold text-white shadow hover:bg-[#17952E]">Terima</button>
+                        </form>
                         <button class="block h-fit w-fit p-2 rounded-lg bg-[#E03131] flex text-sm font-bold text-white shadow hover:bg-[#B51A1A]">Tolak</button>
                     </td>
                 </tr>
-                <tr class="bg-white border-b">
-                    <td class="px-6 py-4 border">
-                        Dwi Adyaksa
-                    </td>
-                    <td class="px-6 py-4 border">
-                        1907411026
-                    </td>
-                    <td class="px-6 py-4 border">
-                        Teknik Multimedia Digital
-                    </td>
-                    <td class="px-6 py-4 border">
-                        RANCANG BANGUN APLIKASI 3D VIRTUAL EXHIBITION SEBAGAI MEDIA PROMOSI KARYA SENI
-                    </td>
-                    <td class="px-6 py-4 space-x-2 flex">
-                        <button class="block h-fit w-fit p-2 rounded-lg bg-[#40C057] flex text-sm font-bold text-white shadow hover:bg-[#17952E]">Terima</button>
-                        <button class="block h-fit w-fit p-2 rounded-lg bg-[#E03131] flex text-sm font-bold text-white shadow hover:bg-[#B51A1A]">Tolak</button>
-                    </td>
-                </tr>
-                <tr class="bg-white border-b">
-                    <td class="px-6 py-4 border">
-                        M Fauzan Rizky Agusta
-                    </td>
-                    <td class="px-6 py-4 border">
-                        1907411022
-                    </td>
-                    <td class="px-6 py-4 border">
-                        Teknik Informatika
-                    </td>
-                    <td class="px-6 py-4 border">
-                        Rancang Bangun Aplikasi Salon Online Muslimah Jamilah Berbasis Android dan Website
-                    </td>
-                    <td class="px-6 py-4 space-x-2 flex">
-                        <button class="block h-fit w-fit p-2 rounded-lg bg-[#40C057] flex text-sm font-bold text-white shadow hover:bg-[#17952E]">Terima</button>
-                        <button class="block h-fit w-fit p-2 rounded-lg bg-[#E03131] flex text-sm font-bold text-white shadow hover:bg-[#B51A1A]">Tolak</button>
-                    </td>
-                </tr>
+                @empty
+                <p>Daftar permintaan mahasiswa bimbingan masih kosong</p>
+                @endforelse
             </tbody>
         </table>
     </div>
@@ -115,57 +87,27 @@
                 </tr>
             </thead>
             <tbody>
+                @forelse($mahasiswaBimbingan as $val)
                 <tr class="bg-white border-b">
                     <td class="px-6 py-4 border">
-                        Farrah Dillah Angeli
+                        {{$val->mahasiswa->nama}}
                     </td>
                     <td class="px-6 py-4 border">
-                        1907411012
+                        {{$val->nim}}
                     </td>
                     <td class="px-6 py-4 border">
-                        Teknik Informatika
+                        {{$val->mahasiswa->prodi}}
                     </td>
                     <td class="px-6 py-4 border">
-                        Rancang Bangun Sistem Informasi Manajemen Skripsi Terintegrasi Berbasis Web
+                        {{$val->judul}}
                     </td>
                     <td class="px-6 py-4 flex justify-center">
-                        <a class="block h-fit w-fit p-2 rounded-lg bg-primary flex text-sm font-bold text-white shadow hover:bg-hover"  href="{{route('dosen.detail-mahasiswa')}}">Detail</a>
+                        <a class="block h-fit w-fit p-2 rounded-lg bg-primary flex text-sm font-bold text-white shadow hover:bg-hover" href="{{route('dosen.detail-mahasiswa')}}">Detail</a>
                     </td>
                 </tr>
-                <tr class="bg-white border-b">
-                    <td class="px-6 py-4 border">
-                        Niyara Arinda
-                    </td>
-                    <td class="px-6 py-4 border">
-                        1907411032
-                    </td>
-                    <td class="px-6 py-4 border">
-                        Teknik Informatika
-                    </td>
-                    <td class="px-6 py-4 border">
-                        Rancang Bangun Sistem Informasi Manajemen Skripsi Terintegrasi Berbasis Web
-                    </td>
-                    <td class="px-6 py-4 flex justify-center">
-                        <a class="block h-fit w-fit p-2 rounded-lg bg-primary flex text-sm font-bold text-white shadow hover:bg-hover"  href="{{route('dosen.detail-mahasiswa')}}">Detail</a>
-                    </td>
-                </tr>
-                <tr class="bg-white border-b">
-                    <td class="px-6 py-4 border">
-                        Rafiqi Auzan
-                    </td>
-                    <td class="px-6 py-4 border">
-                        1907411067
-                    </td>
-                    <td class="px-6 py-4 border">
-                        Teknik Informatika
-                    </td>
-                    <td class="px-6 py-4 border">
-                        Analisis Sentimen Perbandingan Kepuasan Pelanggan Terhadap Tiap Provider Internet
-                    </td>
-                    <td class="px-6 py-4 flex justify-center">
-                        <a class="block h-fit w-fit p-2 rounded-lg bg-primary flex text-sm font-bold text-white shadow hover:bg-hover"  href="{{route('dosen.detail-mahasiswa')}}">Detail</a>
-                    </td>
-                </tr>
+                @empty
+                <p>Belum ada mahasiswa bimbingan</p>
+                @endforelse
             </tbody>
         </table>
     </div>

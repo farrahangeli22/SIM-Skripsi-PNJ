@@ -1,8 +1,6 @@
 <?php
 
 use App\Http\Controllers\PengajuanJudulController;
-use App\Http\Controllers\PengajuanSidangController;
-use App\Http\Controllers\PenyerahanAlatController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use App\Models\PengajuanJudul;
@@ -37,9 +35,17 @@ Route::get('/dashboard', function () {
 // routes for user role
 
 Route::middleware('auth')->group(function () {
+
+    // logbook mahasiswa
+    Route::get("/logbook", [LogBookController::class, 'viewLogBookMahasiswa'])->name('user.logbook');
+
     // pengajuan judul
     Route::get('/pengajuan-judul', [PengajuanJudulController::class, 'viewPengajuanJudul'])->name('user.pengajuan-judul');
     Route::post('/pengajuan-judul', [PengajuanJudulController::class, 'createPengajuanJudul'])->name('user.create-pengajuan-judul');
+
+    // daftar mahasiswa
+    Route::get('/daftar-mahasiswa', [DaftarMahasiswaController::class, 'viewDaftarMahasiswa'])->name('dosen.daftar-mahasiswa');
+    Route::put('/terima-permintaan-judul/{idPengajuanJudul}', [DaftarMahasiswaController::class, 'terimaPermintaanBimbingan']);
 });
     Route::middleware('auth')->group(function () {
     Route::get('/pengajuan-sidang', [PengajuanSidangController::class, 'viewPengajuanSidang'])->name('user.pengajuan-sidang');
@@ -55,10 +61,6 @@ Route::middleware('auth')->group(function () {
 Route::get("/home", function () {
     return view('user.home');
 })->name('user.home');
-
-Route::get("/logbook", function () {
-    return view('user.logbook');
-})->name('user.logbook');
 
 Route::get("/form-logbook", function () {
     return view('user.formLogbook');
@@ -91,9 +93,9 @@ Route::get("/notification", function () {
 
 
 // routes for user dosen
-Route::get("/dosen/daftar-mahasiswa", function () {
-    return view('dosen.daftarMahasiswa');
-})->name('dosen.daftar-mahasiswa');
+// Route::get("/dosen/daftar-mahasiswa", function () {
+//     return view('dosen.daftarMahasiswa');
+// })->name('dosen.daftar-mahasiswa');
 
 Route::get("/dosen/logbook", function () {
     return view('dosen.logbookMahasiswa');

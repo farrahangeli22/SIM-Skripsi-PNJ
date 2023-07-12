@@ -16,11 +16,12 @@ return new class extends Migration
             $table->string('nim');
             $table->foreign('nim')->references('nim')->on('mahasiswa');
             $table->string('judul');
-            $table->string('sub_judul');
-            $table->dateTime('jadwal_sempro');
-            $table->string('status');
+            $table->string('sub_judul')->nullable();
+            $table->string('anggota')->nullable();
+            $table->dateTime('jadwal_sempro')->nullable();
+            $table->string('status')->nullable();
             $table->text('file_f1');
-            $table->text('file_f2');
+            $table->text('file_f2')->nullable();
             $table->timestamps();
         });
     }

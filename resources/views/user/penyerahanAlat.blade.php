@@ -26,29 +26,35 @@
             <div>
                 <div class="flex justify-between">
                     <div>
-                        <label class="block text-sm mb-1" for="">
+                        <label class="flex flex-wrap text-sm mb-1" for="">
                             Judul Skripsi
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="judul" class="block mt-1 w-96 border-black mb-5 bg-[#D9D9D9]" type="text" name="judul" placeholder="Masukkan teks..." readonly/>
-                        <label class="block text-sm mb-1" for="">
+                        <label class="flex flex-wrap text-sm mb-1" for="">
                             Sub Judul Skripsi
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-6" type="text" name="subJudul" placeholder="Masukkan teks..." required autofocus/>
-                        <label class="block text-sm mb-1" for="">
+                        <label class="flex flex-wrap text-sm mb-1" for="">
                             Anggota Kelompok
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-6" type="text" name="subJudul" placeholder="Masukkan teks..." required autofocus/>
-                        <label class="block text-sm mb-1" for="">
+                        <label class="flex flex-wrap text-sm mb-1" for="">
                             Link Video Demo
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-6" type="text" name="subJudul" placeholder="Masukkan teks..." required autofocus/>
-                        <label class="block text-sm mb-1" for="">
+                        <label class="flex flex-wrap text-sm mb-1" for="">
                             Sertifikat PKKP
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
-                        <label class="block text-sm mb-1" for="">
+                        <label class="flex flex-wrap text-sm mb-1" for="">
                             Sertifikat Lomba
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
@@ -59,34 +65,39 @@
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
                     </div>
                     <div>
-                        <label class="block text-sm mb-1" for="">
+                        <label class="flex flex-wrap text-sm mb-1" for="">
                             Form F10
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
-                        <label class="block text-sm mb-1" for="">
+                        <label class="flex flex-wrap text-sm mb-1" for="">
                             Form F12
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
-
-                        <label class="block text-sm mb-1" for="">
+                        <label class="flex flex-wrap text-sm mb-1" for="">
                             Form F13
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
-                        <label class="block text-sm mb-1" for="">
+                        <label class="flex flex-wrap text-sm mb-1" for="">
                             Form F14
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
-                        <label class="block text-sm mb-1" for="">
+                        <label class="flex flex-wrap text-sm mb-1" for="">
                             Form F15
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
-                        <label class="block text-sm mb-1" for="">
+                        <label class="flex flex-wrap text-sm mb-1" for="">
                             Form F16
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>

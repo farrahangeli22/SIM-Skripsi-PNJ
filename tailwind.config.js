@@ -35,6 +35,7 @@ export default {
             fontSize: {
                 h3: "36px",
             },
+            
         },
     },
 

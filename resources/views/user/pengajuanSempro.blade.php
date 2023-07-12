@@ -26,8 +26,9 @@
             <div>
                 <div class="flex justify-between">
                     <div>
-                        <label class="block text-sm mb-2" for="">
+                        <label class="flex flex-wrap text-sm mb-2" for="">
                             Judul Skripsi
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="judul" class="block mt-1 w-96 border-black mb-5" type="text" name="judul" placeholder="Masukkan teks..." required autofocus/>
                         <label class="block text-sm mb-2" for="">
@@ -40,8 +41,9 @@
                             Anggota Kelompok
                         </label>
                         <x-text-input id="anggota" class="block mt-1 w-96 border-black mb-5" type="text" name="anggota" placeholder="Masukkan teks..." required autofocus/>
-                        <label class="block text-sm mb-2" for="">
+                        <label class="flex flex-wrap text-sm mb-2" for="">
                             Form F1
+                            <p class="text-red-600 pl-1">*</p>
                         </label>
                         <x-text-input id="judul" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF1" target="_blank" class="text-blue-500">Download disini</a>)</p>

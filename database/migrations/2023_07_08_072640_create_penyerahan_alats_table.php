@@ -26,8 +26,8 @@ return new class extends Migration
             $table->text('sertifikat_pkkp');
             $table->text('sertifikat_toeic');
             $table->text('sertifikat_lomba');
-            $table->text('sertifikat_kejuaraan');
-            $table->text('sertifikat_organisasi');
+            $table->text('sertifikat_kejuaraan')->nullable();
+            $table->text('sertifikat_organisasi')->nullable();
             $table->timestamps();
         });
     }

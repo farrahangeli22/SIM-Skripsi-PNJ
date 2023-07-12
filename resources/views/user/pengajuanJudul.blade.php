@@ -20,77 +20,91 @@
             </label> -->
         </div>
 
-        @if(Session::has('message'))
-        <p>{{ Session::get('message') }}</p>
-        @endif
-        <!-- Form Pengajuan -->
-        <form class="w-full" enctype='multipart/form-data' action="{{route('user.create-pengajuan-judul')}}" method="post">
-            @csrf
-            <h1 class="flex justify-center font-bold text-xl text-font mb-10">Pengajuan Judul dan Dosen Pembimbing</h1>
-            <div>
-                <div class="flex justify-between">
-                    <div>
-                        <label class="block text-sm mb-2" for="">
-                            Judul Skripsi
-                        </label>
-                        <x-text-input id="judul" class="block mt-1 w-96 border-black mb-4" type="text" name="judul" placeholder="Masukkan teks..." required autofocus />
-                        <label class="block text-sm mb-2" for="">
-                            Sub Judul Skripsi
-                        </label>
-                        <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-4" type="text" name="subJudul" placeholder="Masukkan teks..." autofocus />
-                        <label class="block text-sm mb-2" for="">
-                            Anggota Kelompok
-                        </label>
-                        <x-text-input id="anggota" class="block mt-1 w-96 border-black mb-4" type="text" name="anggota" placeholder="Masukkan teks..." autofocus />
-                        <label class="block text-sm mb-2" for="">
-                            Jurnal Referensi
-                        </label>
-                        <x-text-input id="jurnal" class="block w-96 h-10 p-1 border border-black mb-4 cursor-pointer" type="file" name="jurnal" accept=".pdf" required autofocus />
-                    </div>
-                    <div>
-                        <label class="block text-sm mb-2" for="">
-                            Calon Dosen Pembimbing 1
-                        </label>
-                        <div class="relative">
-                            <select name="dosen1" class="w-96 h-10 text-sm text-gray-700 border border-black rounded-md px-3 mb-4" id="">
-                                @foreach($dosen as $val)
-                                <option value="{{$val->nip}}">{{$val->nama}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <label class="block text-sm mb-2" for="">
-                            Calon Dosen Pembimbing 2
-                        </label>
-                        <div class="relative">
-                            <select name="dosen2" class="w-96 h-10 text-sm text-gray-700 border border-black rounded-md px-3 mb-4" id="">
-                                @foreach($dosen as $val)
-                                <option value="{{$val->nip}}">{{$val->nama}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <label class="block text-sm mb-2" for="">
-                            Calon Dosen Pembimbing 3
-                        </label>
-                        <div class="relative">
-                            <select name="dosen3" class="w-96 h-10 text-sm text-gray-700 border border-black rounded-md px-3 mb-4" id="">
-                                @foreach($dosen as $val)
-                                <option value="{{$val->nip}}">{{$val->nama}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Deskripsi/Abstrak</label>
-                    <textarea name="deskripsi" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tuliskan deskripsi skripsi anda..."></textarea>
-                </div>
-                <div class="flex justify-end">
-                    <x-primary-button class="flex justify-center w-fit">
-                        {{ __('Kirim') }}
-                    </x-primary-button>
-                </div>
+        <div class="flex-wrap">
+            <!-- Notif pengiriman berhasil -->
+            @if(Session::has('message'))
+            <div class="w-full h-fit p-2 rounded bg-[#40C057] mb-4 font-bold text-white">
+                <p>{{ Session::get('message') }}</p>
             </div>
-        </form>
+            @endif
+            
+            <!-- Form Pengajuan -->
+            <form class="w-full" enctype='multipart/form-data' action="{{route('user.create-pengajuan-judul')}}" method="post">
+                @csrf
+                <h1 class="flex justify-center font-bold text-xl text-font mb-10">Pengajuan Judul dan Dosen Pembimbing</h1>
+                <div>
+                    <div class="flex justify-between space-x-10">
+                        <div>
+                            <label class="flex flex-wrap text-sm mb-2" for="">
+                                Judul Skripsi
+                                <p class="text-red-600 pl-1">*</p>
+                            </label>
+                            <x-text-input id="judul" class="block mt-1 w-96 border-black mb-4" type="text" name="judul" placeholder="Masukkan teks..." required autofocus />
+                            <label class="block text-sm mb-2" for="">
+                                Sub Judul Skripsi
+                            </label>
+                            <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-4" type="text" name="subJudul" placeholder="Masukkan teks..." autofocus />
+                            <label class="block text-sm mb-2" for="">
+                                Anggota Kelompok
+                            </label>
+                            <x-text-input id="anggota" class="block mt-1 w-96 border-black mb-4" type="text" name="anggota" placeholder="Masukkan teks..." autofocus />
+                            <label class="flex flex-wrap text-sm mb-2" for="">
+                                Jurnal Referensi
+                                <p class="text-red-600 pl-1">*</p>
+                            </label>
+                            <x-text-input id="jurnal" class="block w-96 h-10 p-1 border border-black mb-4 cursor-pointer" type="file" name="jurnal" accept=".pdf" required autofocus />
+                        </div>
+                        <div>
+                            <label class="flex flex-wrap text-sm mb-2" for="">
+                                Calon Dosen Pembimbing 1
+                                <p class="text-red-600 pl-1">*</p>
+                            </label>
+                            <div class="relative">
+                                <select name="dosen1" class="w-96 h-10 text-sm text-gray-700 border border-black rounded-md px-3 mb-4" id="">
+                                    @foreach($dosen as $val)
+                                    <option value="{{$val->nip}}">{{$val->nama}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <label class="flex flex-wrap text-sm mb-2" for="">
+                                Calon Dosen Pembimbing 2
+                                <p class="text-red-600 pl-1">*</p>
+                            </label>
+                            <div class="relative">
+                                <select name="dosen2" class="w-96 h-10 text-sm text-gray-700 border border-black rounded-md px-3 mb-4" id="">
+                                    @foreach($dosen as $val)
+                                    <option value="{{$val->nip}}">{{$val->nama}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <label class="flex flex-wrap text-sm mb-2" for="">
+                                Calon Dosen Pembimbing 3
+                                <p class="text-red-600 pl-1">*</p>
+                            </label>
+                            <div class="relative">
+                                <select name="dosen3" class="w-96 h-10 text-sm text-gray-700 border border-black rounded-md px-3 mb-4" id="">
+                                    @foreach($dosen as $val)
+                                    <option value="{{$val->nip}}">{{$val->nama}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="flex flex-wrap mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Deskripsi/Abstrak
+                            <p class="text-red-600 pl-1">*</p>
+                        </label>
+                        <textarea name="deskripsi" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tuliskan deskripsi skripsi anda..."></textarea>
+                    </div>
+                    <div class="flex justify-end">
+                        <x-primary-button class="flex justify-center w-fit">
+                            {{ __('Kirim') }}
+                        </x-primary-button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
 
 </x-user-layout>

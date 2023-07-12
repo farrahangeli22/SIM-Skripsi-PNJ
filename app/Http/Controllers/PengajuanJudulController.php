@@ -57,7 +57,7 @@ class PengajuanJudulController extends Controller
             'status' => 'pengajuan'
         ]);
 
-        Session::flash('message', 'Pengajuan judul berhasil terkirim');
+        Session::flash('message', 'Pengajuan judul berhasil terkirim!');
         return redirect(route('user.pengajuan-judul'));
     }
 }

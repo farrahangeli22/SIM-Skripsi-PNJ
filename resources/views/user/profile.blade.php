@@ -34,7 +34,7 @@
                         </div>
                         <div>
                             <label class="block text-sm mb-2" for="">
-                                Dokumen Skripsi
+                                Dokumen Proposal/Skripsi
                             </label>
                             <x-text-input id="dokumenSkripsi" class="block w-80 h-10 p-1 border border-black cursor-pointer" type="file" name="anggota" placeholder="Masukkan teks..." required autofocus/>
                         </div>

@@ -54,9 +54,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/pengajuan-sidang', [PengajuanSidangController::class, 'viewPengajuanSidang'])->name('user.pengajuan-sidang');
     Route::post('/pengajuan-sidang', [PengajuanSidangController::class, 'createPengajuanSidang'])->name('user.create-pengajuan-sidang');
 
-    // penyerahan alat
+    // // penyerahan alat
     Route::get('/penyerahan-alat', [PenyerahanAlatController::class, 'viewPenyerahanAlat'])->name('user.penyerahan-alat');
     Route::post('/penyerahan-alat', [PenyerahanAlatController::class, 'createPenyerahanAlat'])->name('user.create-penyerahan-alat');
+
+    Route::get('/profile', [ProfileController::class, 'viewProfile'])->name('user.profile');
+    Route::post('/profile', [ProfileController::class, 'createProfile'])->name('user.create-profile');
 });
 
 
@@ -73,9 +76,9 @@ Route::get("/detail-logbook", function () {
     return view('user.detailLogbook');
 })->name('user.detail-logbook');
 
-Route::get("/profile", function () {
-    return view('user.profile');
-})->name('user.profile');
+// Route::get("/profile", function () {
+//     return view('user.profile');
+// })->name('user.profile');
 
 Route::get("/pengajuan-sempro", function () {
     return view('user.pengajuanSempro');

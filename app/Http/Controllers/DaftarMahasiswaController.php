@@ -55,6 +55,10 @@ class DaftarMahasiswaController extends Controller
             'file_skripsi' => null,
         ]);
 
+        Mahasiswa::where('nim', $pengajuanJudul->nim)->update([
+            'nip_dospem' => $request->user()->username,
+        ]);
+
         return redirect()->back();
     }
 }

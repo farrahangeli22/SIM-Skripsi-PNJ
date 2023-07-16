@@ -9,6 +9,8 @@ use App\Http\Controllers\DaftarMahasiswaController;
 use App\Http\Controllers\LogBookController;
 use App\Http\Controllers\FormLogbookController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ManajemenKPSController;
+use App\Http\Controllers\ManajemenDosenController;
 use App\Models\PengajuanJudul;
 use App\Models\PengajuanSidang;
 use Illuminate\Support\Facades\Route;
@@ -38,39 +40,45 @@ Route::get('/dashboard', function () {
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-// routes for user role
 
 Route::middleware('auth')->group(function () {
 
-    // logbook mahasiswa
+    // user - logbook mahasiswa 
     Route::get("/logbook", [LogBookController::class, 'viewLogBookMahasiswa'])->name('user.logbook');
 
     // logbook mahasiswa
     // Route::get("/form-logbook", [FormLogbookController::class, 'createFormLogbook'])->name('user.form-logbook');
     
-    // pengajuan judul
+    // user - pengajuan judul
     Route::get('/pengajuan-judul', [PengajuanJudulController::class, 'viewPengajuanJudul'])->name('user.pengajuan-judul');
     Route::post('/pengajuan-judul', [PengajuanJudulController::class, 'createPengajuanJudul'])->name('user.create-pengajuan-judul');
 
-    // pengajuan sempro
+    // user - pengajuan sempro
     Route::get('/pengajuan-sempro', [PengajuanSemproController::class, 'viewPengajuanSempro'])->name('user.pengajuan-sempro');
     Route::post('/pengajuan-sempro', [PengajuanSemproController::class, 'createPengajuanSempro'])->name('user.create-pengajuan-sempro');
     
-    // daftar mahasiswa
+    // dosen - daftar mahasiswa
     Route::get('/daftar-mahasiswa', [DaftarMahasiswaController::class, 'viewDaftarMahasiswa'])->name('dosen.daftar-mahasiswa');
     Route::put('/terima-permintaan-judul/{idPengajuanJudul}', [DaftarMahasiswaController::class, 'terimaPermintaanBimbingan']);
 
-    // pengajuan sidang
+    // user - pengajuan sidang
     Route::get('/pengajuan-sidang', [PengajuanSidangController::class, 'viewPengajuanSidang'])->name('user.pengajuan-sidang');
     Route::post('/pengajuan-sidang', [PengajuanSidangController::class, 'createPengajuanSidang'])->name('user.create-pengajuan-sidang');
 
-    // penyerahan alat
+    // user - penyerahan alat
     Route::get('/penyerahan-alat', [PenyerahanAlatController::class, 'viewPenyerahanAlat'])->name('user.penyerahan-alat');
     Route::post('/penyerahan-alat', [PenyerahanAlatController::class, 'createPenyerahanAlat'])->name('user.create-penyerahan-alat');
 
-    // profile
+    // user - profile
     Route::get('/profile', [ProfileController::class, 'viewProfile'])->name('user.profile');
     Route::post('/profile', [ProfileController::class, 'createProfile'])->name('user.create-profile');
+
+    // admin - manajemen KPS
+    Route::get('/manajemen-kps', [ManajemenKPSController::class, 'viewManajemenKPS'])->name('admin.manajemen-kps');
+    
+    // admin - manajemen Dosen Pembimbing
+    Route::get('/manajemen-dosen', [ManajemenDosenController::class, 'viewManajemenDosen'])->name('admin.manajemen-dosen');
+
 });
 
 
@@ -136,13 +144,13 @@ Route::get("/admin/manajemen-mahasiswa", function () {
     return view('admin.manajemenMahasiswa');
 })->name('admin.manajemen-mahasiswa');
 
-Route::get("/admin/manajemen-dosen", function () {
-    return view('admin.manajemenDosen');
-})->name('admin.manajemen-dosen');
+// Route::get("/admin/manajemen-dosen", function () {
+//     return view('admin.manajemenDosen');
+// })->name('admin.manajemen-dosen');
 
-Route::get("/admin/manajemen-kps", function () {
-    return view('admin.manajemenKPS');
-})->name('admin.manajemen-kps');
+// Route::get("/admin/manajemen-kps", function () {
+//     return view('admin.manajemenKPS');
+// })->name('admin.manajemen-kps');
 
 Route::get("/admin/edit-konten", function () {
     return view('admin.editKonten');

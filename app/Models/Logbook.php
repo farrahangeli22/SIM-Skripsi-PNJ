@@ -10,7 +10,8 @@ class Logbook extends Model
     use HasFactory;
 
     protected $fillable = [
-        'kegiatan',
+        'rincian_kegiatan',
+        'rencana_pencapaian',
         'feedback',
         'status',
         'dokumentasi',

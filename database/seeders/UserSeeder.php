@@ -17,7 +17,7 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-
+        //admin
         $user1 = User::create([
             'username' => 'nip1',
             'password' => 'nip1',
@@ -43,6 +43,7 @@ class UserSeeder extends Seeder
                 ]
         );
 
+        //dosen pembimbing
         $user2 = User::create([
             'username' => 'nip2',
             'password' => 'nip2',
@@ -67,6 +68,7 @@ class UserSeeder extends Seeder
                 ]
         );
 
+        //mahasiswa
         $user3 = User::create([
             'username' => '1907411012',
             'password' => '123456',
@@ -94,6 +96,7 @@ class UserSeeder extends Seeder
                 ]
         );
 
+        //mahasiswa
         $user4 = User::create([
             'username' => '1907411032',
             'password' => '123456',
@@ -121,10 +124,11 @@ class UserSeeder extends Seeder
                 ]
         );
 
+        //KPS TI
         $user5 = User::create([
             'username' => 'nip3',
             'password' => 'nip3',
-            'email' => 'kps@gmail.com',
+            'email' => 'kps1@gmail.com',
             'nama' => 'Asep Taufik Muharram, S.Kom., M.Kom.',
             ]);
 
@@ -152,7 +156,133 @@ class UserSeeder extends Seeder
                     'email' => $user5->email,
                 ]
             );
+
+        //KPS TMD
+        $user6 = User::create([
+            'username' => 'nip4',
+            'password' => 'nip4',
+            'email' => 'kps2@gmail.com',
+            'nama' => 'Noorlela Marcheta, S.Kom., M.Kom.',
+            ]);
+
+            UserRole::create(
+                [
+                    'user_id' => $user6->id,
+                    'role_id' => 3
+                ]
+            );
+
+            //jika memiliki lebih dari 1 role, create userRole 
+            UserRole::create(
+                [
+                    'user_id' => $user6->id,
+                    'role_id' => 2
+                ]
+            );
+    
+            //buat data dosen
+            Dosen::create(
+                [
+                    'nip' => $user6->username,
+                    'user_id' => $user6->id,
+                    'nama' => $user6->nama,
+                    'email' => $user6->email,
+                ]
+            );
         
+        //KPS TMJ
+        $user7 = User::create([
+            'username' => 'nip5',
+            'password' => 'nip5',
+            'email' => 'kps3@gmail.com',
+            'nama' => 'Dr. Prihatin Oktivasari, S.Si., M.Si',
+            ]);
+
+            UserRole::create(
+                [
+                    'user_id' => $user7->id,
+                    'role_id' => 3
+                ]
+            );
+
+            //jika memiliki lebih dari 1 role, create userRole 
+            UserRole::create(
+                [
+                    'user_id' => $user7->id,
+                    'role_id' => 2
+                ]
+            );
+    
+            //buat data dosen
+            Dosen::create(
+                [
+                    'nip' => $user7->username,
+                    'user_id' => $user7->id,
+                    'nama' => $user7->nama,
+                    'email' => $user7->email,
+                ]
+            );
+
+        //KPS TKJ
+        $user8 = User::create([
+            'username' => 'nip6',
+            'password' => 'nip6',
+            'email' => 'kps4@gmail.com',
+            'nama' => 'Asep Kurniawan, S.Pd., M.Kom.',
+            ]);
+
+            UserRole::create(
+                [
+                    'user_id' => $user8->id,
+                    'role_id' => 3
+                ]
+            );
+
+            //jika memiliki lebih dari 1 role, create userRole 
+            UserRole::create(
+                [
+                    'user_id' => $user8->id,
+                    'role_id' => 2
+                ]
+            );
+    
+            //buat data dosen
+            Dosen::create(
+                [
+                    'nip' => $user8->username,
+                    'user_id' => $user8->id,
+                    'nama' => $user8->nama,
+                    'email' => $user8->email,
+                ]
+            );
+
+        //mahasiswa
+        $user9 = User::create([
+            'username' => '1907411027',
+            'password' => '123456',
+            'email' => 'dwi@gmail.com',
+            'nama' => 'Dwi Adyaksa',
+            ]);
+
+            UserRole::create(
+                [
+                    'user_id' => $user9->id,
+                    'role_id' => 4
+                ]
+            );
+
+            //buat data mahasiswa
+            Mahasiswa::create(
+                [
+                    'nim' => $user9->username,
+                    'user_id' => $user9->id,
+                    'status_id' => 6,
+                    'nama' => $user9->nama,
+                    'prodi' => 'Teknik Informatika',
+                    'kelas' => 'TI 8A',
+                    'email' => $user9->email,
+                ]
+        );
 
     }
 }

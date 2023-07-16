@@ -10,10 +10,12 @@
 				<th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Nama</th>
             </tr>
 		</thead>
+		<tbody>
+		@forelse($daftarKPS as $val)
 			<tr class="bg-white border border-grey-500 md:border-none block md:table-row text-sm">
 				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Prodi</span>Kepala Program Studi Teknik Informatika (D4 TI)</td>
-				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">NIP</span>1234567989</td>
-				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nama</span>Asep Taufik Muharram, S.Kom., M.Kom.</td>
+				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">NIP</span>{{$val->daftarKPS->nip}}</td>
+				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nama</span>{{$val->daftarKPS->nama}}</td>
             </tr>
 			<tr class="bg-white border border-grey-500 md:border-none block md:table-row text-sm">
 				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Prodi</span>Kepala Program Studi Teknik Multimedia dan Jaringan (D4 TMJ)</td>
@@ -28,6 +30,9 @@
 				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">NIP</span>1234567989</td>
 				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nama</span>Asep Kurniawan, S.Pd., M.Kom.</td>
             </tr>
+			@empty
+                <p>Daftar Kepala Program Studi masih kosong</p>
+            @endforelse
 		</tbody>
 	</table>
 </div>

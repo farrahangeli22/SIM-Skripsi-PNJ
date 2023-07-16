@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('sub_judul')->nullable();
             $table->string('anggota')->nullable();
             $table->text('file_f10');
-            $table->text('file_f11');
+            $table->text('file_f11')->nullable();
             $table->text('file_f12');
             $table->text('file_f13');
             $table->text('file_f14');

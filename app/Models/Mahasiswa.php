@@ -17,6 +17,7 @@ class Mahasiswa extends Model
         'email',
     ];
     protected $primaryKey = 'nim';
+    protected $keyType = "string";
 
     function Skripsi()
     {

@@ -15,6 +15,7 @@ class Dosen extends Model
         'email',
     ];
     protected $primaryKey = 'nip';
+    protected $keyType = "string";
 
     protected $table = 'dosen';
 }

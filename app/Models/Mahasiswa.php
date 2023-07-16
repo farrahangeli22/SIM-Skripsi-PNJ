@@ -22,6 +22,10 @@ class Mahasiswa extends Model
     {
         return $this->hasOne(Skripsi::class, 'nim', 'nim');
     }
+    function dosen()
+    {
+        return $this->belongsTo(dosen::class, 'nip_dospem', 'nip');
+    }
 
 
     protected $table = 'mahasiswa';

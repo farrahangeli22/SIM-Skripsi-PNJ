@@ -16,7 +16,7 @@
                 <p class="font-normal mt-2">{{$mahasiswa->kelas}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Dosen Pembimbing :  
-                <p class="font-normal mt-2">{{$mahasiswa->dosen->nama}}</p>
+                <p class="font-normal mt-2">{{$mahasiswa->dosen ? $mahasiswa->dosen->nama:""}}</p>
             </label>
         </div>
 

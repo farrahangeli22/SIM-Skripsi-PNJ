@@ -60,9 +60,10 @@
                                 <p class="text-red-600 pl-1">*</p>
                             </label>
                             <div class="relative">
+                               
                                 <select name="dosen1" class="w-96 h-10 text-sm text-gray-700 border border-black rounded-md px-3 mb-4" id="">
                                     @foreach($dosen as $val)
-                                    <option value="{{$val->nip}}">{{$val->nama}}</option>
+                                    <option value="{{$val->nip}}">{{$val->nama}} </option>
                                     @endforeach
                                 </select>
                             </div>

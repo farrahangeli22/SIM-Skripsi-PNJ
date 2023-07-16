@@ -46,8 +46,9 @@ Route::middleware('auth')->group(function () {
     // user - logbook mahasiswa 
     Route::get("/logbook", [LogBookController::class, 'viewLogBookMahasiswa'])->name('user.logbook');
 
-    // logbook mahasiswa
-    // Route::get("/form-logbook", [FormLogbookController::class, 'createFormLogbook'])->name('user.form-logbook');
+    // Form logbook mahasiswa
+    Route::get('/form-logbook', [FormLogbookController::class, 'viewFormLogbook'])->name('user.form-logbook');
+    Route::post('/form-logbook', [FormLogbookController::class, 'createFormLogbook'])->name('user.create-form-logbook');
     
     // user - pengajuan judul
     Route::get('/pengajuan-judul', [PengajuanJudulController::class, 'viewPengajuanJudul'])->name('user.pengajuan-judul');
@@ -87,9 +88,9 @@ Route::get("/home", function () {
     return view('user.home');
 })->name('user.home');
 
-Route::get("/form-logbook", function () {
-    return view('user.formLogbook');
-})->name('user.form-logbook');
+// Route::get("/form-logbook", function () {
+//     return view('user.formLogbook');
+// })->name('user.form-logbook');
 
 Route::get("/detail-logbook", function () {
     return view('user.detailLogbook');

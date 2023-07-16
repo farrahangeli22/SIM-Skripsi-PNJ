@@ -2,24 +2,42 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dosen;
+use App\Models\Mahasiswa;
+use App\Models\Logbook;
 use Illuminate\Http\Request;
+use Auth;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
+
 
 class FormLogbookController extends Controller
 {
+    function viewFormLogbook(Request $request)
+     {
+        // ambil data mahasiswa dari db
+        // where nim == username authenticated user
+        $mahasiswa = Mahasiswa::where('nim', $request->user()->username)->first();
+        // ambil data dosen dari db
+        $dosen = Dosen::all();
+        // mengembalikan view dengan data
+       return view('user.formlogbook')->with('mahasiswa', $mahasiswa)->with('dosen', $dosen);
+    }
     function createFormLogbook(Request $request)
     {
         // store uploaded file into storage
-        $path = $request->file('file_f4')->store('/file_f4');
+        $path = $request->file('dokumentasi')->store('/dokumentasi');
         // create reccord on table pengajuan sidang
-        $pengajuanSidang = PengajuanSidang::create([
-            'nim' => $request->user()->username,
-            'judul' => $request->judul,
-            'sub_judul' => isset($request->subJudul) ? $request->subJudul : null,
-            'anggota' => isset($request->anggota) ? $request->anggota : null,
-            'file_f4' => $path,
+        $nip = Mahasiswa::find(Auth::user()->username)->nip_dospem;
+        $logbook = Logbook::create([
+            'nim'=>Auth::user()->username,
+            'media' => $request->media,
+            'dokumentasi' => $path,
+            'rincian_kegiatan' => $request->rincian_kegiatan,
+            'rencana_pencapaian' => $request->rencana_pencapaian,
         ]);
         
-        Session::flash('message', 'Pengajuan sidang berhasil terkirim');
-        return redirect(route('user.pengajuan-sidang'));
+        Session::flash('message', 'logbook berhasil terkirim');
+        return redirect(route('user.form-logbook'));
     }
 }

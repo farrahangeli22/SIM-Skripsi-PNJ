@@ -4,24 +4,30 @@
         <div class="w-80 rounded bg-cardData p-6">
             <h1 class="flex justify-center font-bold text-xl text-font mb-6">Data Mahasiswa</h1>
             <label class="block mb-4 font-bold text-sm" for="">Nama : 
-                <p class="font-normal mt-2">Farrah Dillah Angeli</p>
+                <p class="font-normal mt-2">{{$mahasiswa->nama}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">NIM : 
-                <p class="font-normal mt-2">1907411012</p>
+                <p class="font-normal mt-2">{{$mahasiswa->nim}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Program Studi : 
-                <p class="font-normal mt-2">Teknik Informatika</p>
+                <p class="font-normal mt-2">{{$mahasiswa->prodi}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Kelas : 
-                <p class="font-normal mt-2">TI 8A</p>
+                <p class="font-normal mt-2">{{$mahasiswa->kelas}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Dosen Pembimbing : 
-                <p class="font-normal mt-2">Eriya, S.Kom., M.T</p>
+                <p class="font-normal mt-2">{{$mahasiswa->dosen ? $mahasiswa->dosen->nama:""}}</p>
             </label>
         </div>
 
         <!-- Form Pengajuan -->
         <form class="w-full">
+            @if(Session::has('message'))
+            <div class="w-full h-fit p-2 rounded bg-[#40C057] mb-4 font-bold text-white">
+                <p>{{ Session::get('message') }}</p>
+            </div>
+            @endif
+
             <h1 class="flex justify-center font-bold text-xl text-font mb-10">Pengajuan Seminar Proposal</h1>
             <div>
                 <div class="flex justify-between">

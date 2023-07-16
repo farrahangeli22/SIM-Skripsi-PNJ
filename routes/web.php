@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PengajuanJudulController;
+use App\Http\Controllers\PengajuanSemproController;
 use App\Http\Controllers\PengajuanSidangController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DaftarMahasiswaController;
@@ -46,6 +47,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/pengajuan-judul', [PengajuanJudulController::class, 'viewPengajuanJudul'])->name('user.pengajuan-judul');
     Route::post('/pengajuan-judul', [PengajuanJudulController::class, 'createPengajuanJudul'])->name('user.create-pengajuan-judul');
 
+    // pengajuan sempro
+    Route::get('/pengajuan-sempro', [PengajuanSemproController::class, 'viewPengajuanSempro'])->name('user.pengajuan-sempro');
+    Route::post('/pengajuan-sempro', [PengajuanSemproController::class, 'createPengajuanSempro'])->name('user.create-pengajuan-sempro');
+    
     // daftar mahasiswa
     Route::get('/daftar-mahasiswa', [DaftarMahasiswaController::class, 'viewDaftarMahasiswa'])->name('dosen.daftar-mahasiswa');
     Route::put('/terima-permintaan-judul/{idPengajuanJudul}', [DaftarMahasiswaController::class, 'terimaPermintaanBimbingan']);
@@ -54,10 +59,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/pengajuan-sidang', [PengajuanSidangController::class, 'viewPengajuanSidang'])->name('user.pengajuan-sidang');
     Route::post('/pengajuan-sidang', [PengajuanSidangController::class, 'createPengajuanSidang'])->name('user.create-pengajuan-sidang');
 
-    // // penyerahan alat
+    // penyerahan alat
     Route::get('/penyerahan-alat', [PenyerahanAlatController::class, 'viewPenyerahanAlat'])->name('user.penyerahan-alat');
     Route::post('/penyerahan-alat', [PenyerahanAlatController::class, 'createPenyerahanAlat'])->name('user.create-penyerahan-alat');
 
+    // profile
     Route::get('/profile', [ProfileController::class, 'viewProfile'])->name('user.profile');
     Route::post('/profile', [ProfileController::class, 'createProfile'])->name('user.create-profile');
 });
@@ -80,9 +86,9 @@ Route::get("/detail-logbook", function () {
 //     return view('user.profile');
 // })->name('user.profile');
 
-Route::get("/pengajuan-sempro", function () {
-    return view('user.pengajuanSempro');
-})->name('user.pengajuan-sempro');
+// Route::get("/pengajuan-sempro", function () {
+//     return view('user.pengajuanSempro');
+// })->name('user.pengajuan-sempro');
 
 // Route::get("/pengajuan-sidang", function () {
 //     return view('user.pengajuanSidang');

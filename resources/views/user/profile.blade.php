@@ -4,27 +4,33 @@
         <div class="w-80 rounded bg-cardData p-6">
             <h1 class="flex justify-center font-bold text-xl text-font mb-6">Data Mahasiswa</h1>
             <label class="block mb-4 font-bold text-sm" for="">Nama : 
-                <p class="font-normal mt-2">Farrah Dillah Angeli</p>
+                <p class="font-normal mt-2">{{$mahasiswa->nama}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">NIM : 
-                <p class="font-normal mt-2">1907411012</p>
+                <p class="font-normal mt-2">{{$mahasiswa->nim}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Program Studi : 
-                <p class="font-normal mt-2">Teknik Informatika</p>
+                <p class="font-normal mt-2">{{$mahasiswa->prodi}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Kelas : 
-                <p class="font-normal mt-2">TI 8A</p>
+                <p class="font-normal mt-2">{{$mahasiswa->kelas}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Dosen Pembimbing : 
-                <p class="font-normal mt-2">Eriya, S.Kom., M.T</p>
+                <p class="font-normal mt-2"></p>
             </label>
         </div>
 
         <div>
+                 <!-- Notif pengiriman berhasil -->
+            @if(Session::has('message'))
+            <div class="w-full h-fit p-2 rounded bg-[#40C057] mb-4 font-bold text-white">
+                <p>{{ Session::get('message') }}</p>
+            </div>
+            @endif
             <!-- Form Unggah Dokumen Skripsi -->
             <div class="mb-8">
                 <h1 class="font-bold text-xl text-font mb-8">Unggah Dokumen Skripsi</h1>
-                <form class="w-full">
+                <form class="w-full" method="POST" enctype="multipart/form-data">
                     <div class="flex space-x-10">
                         <div>
                             <label class="block text-sm mb-2" for="">
@@ -34,9 +40,9 @@
                         </div>
                         <div>
                             <label class="block text-sm mb-2" for="">
-                                Dokumen Skripsi
+                                Dokumen Proposal/Skripsi
                             </label>
-                            <x-text-input id="dokumenSkripsi" class="block w-80 h-10 p-1 border border-black cursor-pointer" type="file" name="anggota" placeholder="Masukkan teks..." required autofocus/>
+                            <x-text-input id="dokumenSkripsi" class="block w-80 h-10 p-1 border border-black cursor-pointer" type="file" accept=".pdf" name="anggota" placeholder="Masukkan teks..." required autofocus/>
                         </div>
                         <div class="mt-7">
                             <x-primary-button class="flex justify-center w-fit h-10">

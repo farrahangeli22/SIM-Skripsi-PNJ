@@ -18,6 +18,11 @@ class Mahasiswa extends Model
     ];
     protected $primaryKey = 'nim';
 
+    function Skripsi()
+    {
+        return $this->hasOne(Skripsi::class, 'nim', 'nim');
+    }
+
 
     protected $table = 'mahasiswa';
 }

@@ -30,7 +30,8 @@
             <!-- Form Unggah Dokumen Skripsi -->
             <div class="mb-8">
                 <h1 class="font-bold text-xl text-font mb-8">Unggah Dokumen Skripsi</h1>
-                <form class="w-full" method="POST" enctype="multipart/form-data">
+                <form class="w-full" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="flex space-x-10">
                         <div>
                             <label class="block text-sm mb-2" for="">
@@ -42,12 +43,10 @@
                             <label class="block text-sm mb-2" for="">
                                 Dokumen Proposal/Skripsi
                             </label>
-                            <x-text-input id="dokumenSkripsi" class="block w-80 h-10 p-1 border border-black cursor-pointer" type="file" accept=".pdf" name="anggota" placeholder="Masukkan teks..." required autofocus/>
+                            <x-text-input id="dokumenSkripsi" class="block w-80 h-10 p-1 border border-black cursor-pointer" type="file" accept=".pdf" name="skripsi" placeholder="Masukkan teks..." required autofocus/>
                         </div>
                         <div class="mt-7">
-                            <x-primary-button class="flex justify-center w-fit h-10">
-                                {{ __('Kirim') }}
-                            </x-primary-button>
+                            <input type="submit" name="submit" class="btn btn-primary" id="">
                         </div>
                     </div>
                 </form>

@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
+use App\Models\PengajuanDospem;
 use App\Models\Profile;
+use Illuminate\Support\Facades\Storage;
+use App\Models\Skripsi;
+use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -28,9 +32,21 @@ class ProfileController extends Controller
      function createProfile(Request $request)
     {
         // store uploaded file into storage
-        dd($request);
+        $request->validate([
+            'judul' => 'required',
+            'skripsi' => 'required',
+        ]);
+        $nip = Mahasiswa::find(Auth::user()->username)->nip_dospem;
+        $name = time() . "_" . $request->skripsi->getClientOriginalName();
+        Storage::disk('dokumen_skripsi')->put($name, file_get_contents($request->skripsi));
+        Skripsi::create([
+            "nim"=>Auth::user()->username,
+            "nip_dospem"=>$nip,
+            "judul"=>$request->judul,
+            "file_skripsi"=>$name,
+        ]);
+
         
-        Session::flash('message', 'Pengajuan sidang berhasil terkirim');
         return redirect(route('user.pengajuan-sidang'));
     } 
 }

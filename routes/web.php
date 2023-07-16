@@ -7,6 +7,7 @@ use App\Http\Controllers\PenyerahanAlatController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DaftarMahasiswaController;
 use App\Http\Controllers\LogBookController;
+use App\Http\Controllers\FormLogbookController;
 use App\Http\Controllers\RoleController;
 use App\Models\PengajuanJudul;
 use App\Models\PengajuanSidang;
@@ -44,6 +45,9 @@ Route::middleware('auth')->group(function () {
     // logbook mahasiswa
     Route::get("/logbook", [LogBookController::class, 'viewLogBookMahasiswa'])->name('user.logbook');
 
+    // logbook mahasiswa
+    // Route::get("/form-logbook", [FormLogbookController::class, 'createFormLogbook'])->name('user.form-logbook');
+    
     // pengajuan judul
     Route::get('/pengajuan-judul', [PengajuanJudulController::class, 'viewPengajuanJudul'])->name('user.pengajuan-judul');
     Route::post('/pengajuan-judul', [PengajuanJudulController::class, 'createPengajuanJudul'])->name('user.create-pengajuan-judul');

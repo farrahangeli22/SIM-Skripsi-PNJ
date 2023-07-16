@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('nim');
             $table->foreign('nim')->references('nim')->on('mahasiswa');
-            $table->text('kegiatan');
+            $table->text('rincian_kegiatan');
+            $table->text('rencana_pencapaian');
             $table->text('feedback');
             $table->string('status');
             $table->text('dokumentasi');

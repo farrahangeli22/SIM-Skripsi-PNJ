@@ -13,6 +13,7 @@ class PengajuanSempro extends Model
         'nim',
         'judul',
         'sub_judul',
+        'anggota',
         'jadwal_sempro',
         'status',
         'file_f1',

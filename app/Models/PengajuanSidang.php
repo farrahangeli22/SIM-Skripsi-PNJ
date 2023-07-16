@@ -13,6 +13,7 @@ class PengajuanSidang extends Model
         'nim',
         'judul',
         'sub_judul',
+        'anggota',
         'jadwal_sidang',
         'status',
         'file_f4',

@@ -16,6 +16,8 @@ class Mahasiswa extends Model
         'kelas',
         'email',
     ];
+    protected $primaryKey = 'nim';
+
 
     protected $table = 'mahasiswa';
 }

@@ -45,8 +45,12 @@
                             </label>
                             <x-text-input id="dokumenSkripsi" class="block w-80 h-10 p-1 border border-black cursor-pointer" type="file" accept=".pdf" name="skripsi" placeholder="Masukkan teks..." required autofocus/>
                         </div>
+                        
                         <div class="mt-7">
-                            <input type="submit" name="submit" class="btn btn-primary" id="">
+                            <x-primary-button class="flex justify-center w-fit" type="submit" name="submit" id="">
+                                {{ __('Kirim') }}
+                            </x-primary-button>
+
                         </div>
                     </div>
                 </form>

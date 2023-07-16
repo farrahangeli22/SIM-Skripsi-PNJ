@@ -16,10 +16,17 @@
                 <p class="font-normal mt-2">{{$mahasiswa->kelas}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Dosen Pembimbing : 
-                <p class="font-normal mt-2"></p>
+                <p class="font-normal mt-2">{{$mahasiswa->dosen ? $mahasiswa->dosen->nama:""}}</p>
             </label>
         </div>
-
+        
+        <div class="flex-wrap">
+            <!-- Notif pengiriman berhasil -->
+            @if(Session::has('message'))
+            <div class="w-full h-fit p-2 rounded bg-[#40C057] mb-4 font-bold text-white">
+                <p>{{ Session::get('message') }}</p>
+            </div>
+            @endif
         <!-- Form Pengajuan -->
        <form class="w-full" enctype='multipart/form-data' action="{{route('user.create-penyerahan-alat')}}" method="post">
             @csrf

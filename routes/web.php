@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PengajuanJudulController;
 use App\Http\Controllers\PengajuanSidangController;
+use App\Http\Controllers\PenyerahanAlatController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DaftarMahasiswaController;
 use App\Http\Controllers\LogBookController;

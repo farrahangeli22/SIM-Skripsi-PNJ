@@ -10,6 +10,10 @@ class PenyerahanAlat extends Model
     use HasFactory;
 
     protected $fillable = [
+        'nim',
+        'judul',
+        'sub_judul',
+        'anggota',
         'file_f10',
         'file_f11',
         'file_f12',

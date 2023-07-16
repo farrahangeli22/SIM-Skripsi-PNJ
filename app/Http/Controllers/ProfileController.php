@@ -46,7 +46,7 @@ class ProfileController extends Controller
             "file_skripsi"=>$name,
         ]);
 
-        
-        return redirect(route('user.pengajuan-sidang'));
+        Session::flash('message', 'Upload file berhasil');
+        return redirect(route('user.profile'));
     } 
 }

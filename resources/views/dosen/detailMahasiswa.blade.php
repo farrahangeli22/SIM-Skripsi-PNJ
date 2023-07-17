@@ -24,10 +24,9 @@
             </div>
             @endif
             <!-- Form Unggah Nilai Proposal dan Skripsi -->
-            <form class="w-full">
+             <form class="w-full" enctype="multipart/form-data" action="{{route('dosen.create-detail-mahasiswa', ['id'=>$mahasiswa->nim])}}" method="post">
             <h1 class="font-bold text-xl text-font mb-8">Unggah Penilaian Mahasiswa</h1>
              @csrf
-            <form class="w-full mb-8">
                 <div class="flex space-x-10">
                     <div>
                         <label class="block text-sm mb-2" for="">
@@ -39,7 +38,7 @@
                         <label class="block text-sm mb-2" for="">
                             F6 (Penilai Skripsi)
                         </label>
-                        <x-text-input id="file_f6" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="file" name="file_f6" placeholder="Masukkan teks..." required autofocus/>
+                        <x-text-input id="file_f6" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="file" name="file_f6" placeholder="Masukkan teks..." autofocus/>
                     </div>
                     <div class="mt-7">
                         <x-primary-button class="flex justify-center w-fit h-10">

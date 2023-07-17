@@ -28,6 +28,7 @@ class DetailMahasiswaController extends Controller
     {
         // store uploaded file into storage
         $path = $request->file('file_f2')->store('/file_f2');
+        // dd($request);
         // create reccord on table pengajuan sidang
         $pengajuanSempro = PengajuanSempro::create([
             'file_f2' => $path,

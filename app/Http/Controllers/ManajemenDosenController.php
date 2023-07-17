@@ -14,10 +14,9 @@ class ManajemenDosenController extends Controller
     function viewManajemenDosen(Request $request)
     {
         // ambil data mahasiswa bimbingan dari table dosen
-        $daftarMahasiswa = Mahasiswa::get();
-
+        $daftarDosen = UserRole::where("role_id",2)->get();
         // mengembalikan view dengan data
         // dd($daftarDosen);
-        return view('admin.manajemenDosen')->with('daftarMahasiswa', $daftarMahasiswa);
+        return view('admin.manajemenDosen')->with('daftarDosen', $daftarDosen);
     }
 }

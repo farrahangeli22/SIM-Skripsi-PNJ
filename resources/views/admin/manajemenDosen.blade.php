@@ -11,11 +11,15 @@
             </tr>
 		</thead>
 		<tbody>
-			@foreach($daftarMahasiswa as $mahasiswa)
+			@foreach($daftarDosen as $dosen)
 				<tr class="bg-white border border-grey-500 md:border-none block md:table-row text-sm">
-				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nama</span>{{$mahasiswa->dosen ? $mahasiswa->dosen->nama:""}}</td>
-				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">NIP</span>{{$mahasiswa->dosen ? $mahasiswa->nip_dospem:""}}</td>
-				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Mahasiswa Bimbingan</span>{{$mahasiswa->nama}}</td>
+				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nama</span>{{$dosen->user->dosen->nama}}</td>
+				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">NIP</span>{{$dosen->user->dosen->nip}}</td>
+				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">
+				@foreach($dosen->user->dosen->mahasiswa as $mahasiswa)
+					{{$mahasiswa->nama}} <br>
+				@endforeach
+				</td>
             </tr>
 			@endforeach
 		</tbody>

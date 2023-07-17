@@ -4,16 +4,16 @@
         <div class="w-96 rounded bg-cardData p-6">
             <h1 class="flex justify-center font-bold text-xl text-font mb-6">Data Mahasiswa</h1>
             <label class="block mb-4 font-bold text-sm" for="">Nama : 
-                <p class="font-normal mt-2">Farrah Dillah Angeli</p>
+                <p class="font-normal mt-2">{{$mahasiswa->nama}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">NIM : 
-                <p class="font-normal mt-2">1907411012</p>
+                <p class="font-normal mt-2">{{$mahasiswa->nim}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Program Studi : 
-                <p class="font-normal mt-2">Teknik Informatika</p>
+                <p class="font-normal mt-2">{{$mahasiswa->prodi}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Kelas : 
-                <p class="font-normal mt-2">TI 8A</p>
+                <p class="font-normal mt-2">{{$mahasiswa->kelas}}</p>
             </label>
         </div>
 

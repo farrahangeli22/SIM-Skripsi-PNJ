@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DaftarMahasiswaController;
 use App\Http\Controllers\LogBookController;
 use App\Http\Controllers\FormLogbookController;
+use App\Http\Controllers\DetailMahasiswaController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ManajemenKPSController;
 use App\Http\Controllers\ManajemenDosenController;
@@ -80,6 +81,8 @@ Route::middleware('auth')->group(function () {
     // admin - manajemen Dosen Pembimbing
     Route::get('/manajemen-dosen', [ManajemenDosenController::class, 'viewManajemenDosen'])->name('admin.manajemen-dosen');
 
+    // dosen - detail mahasiswa
+    Route::get('/detail-mahasiswa', [DetailMahasiswaController::class, 'viewDetailMahasiswa'])->name('dosen.detail-mahasiswa');
 });
 
 
@@ -131,9 +134,9 @@ Route::get("/dosen/detail-logbook", function () {
     return view('dosen.detailLogbook');
 })->name('dosen.detail-logbook');
 
-Route::get("/dosen/detail-mahasiswa", function () {
-    return view('dosen.detailMahasiswa');
-})->name('dosen.detail-mahasiswa');
+// Route::get("/dosen/detail-mahasiswa", function () {
+//     return view('dosen.detailMahasiswa');
+// })->name('dosen.detail-mahasiswa');
 
 
 // routes for user admin

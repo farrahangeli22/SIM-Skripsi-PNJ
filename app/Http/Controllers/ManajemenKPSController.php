@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mahasiswa;
 use App\Models\Dosen;
 use App\Models\UserRole;
 use App\Http\Controllers\Controller;
@@ -19,5 +20,11 @@ class ManajemenKPSController extends Controller
         // // mengembalikan view dengan data
         // dd($daftarKPS);
         // return view('admin.manajemenKPS')->with('daftarKPS', $daftarKPS);
+
+        $daftarKPS = UserRole::where('role_id', 3)->get();;
+        // mengembalikan view dengan data
+        // dd($daftarDosen);
+      
+        return view('admin.manajemenKPS',['daftarKPS'=> $daftarKPS]);
     }
 }

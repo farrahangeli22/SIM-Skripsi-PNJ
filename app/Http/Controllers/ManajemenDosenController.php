@@ -17,6 +17,7 @@ class ManajemenDosenController extends Controller
         $daftarDosen = UserRole::where("role_id",2)->get();
         // mengembalikan view dengan data
         // dd($daftarDosen);
-        return view('admin.manajemenDosen')->with('daftarDosen', $daftarDosen);
+        $mahasiswa = new Mahasiswa();
+        return view('admin.manajemenDosen',['daftarDosen'=> $daftarDosen,"mahasiswa"=>$mahasiswa]);
     }
 }

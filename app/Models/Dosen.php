@@ -19,8 +19,9 @@ class Dosen extends Model
 
     protected $table = 'dosen';
 
-    public function Mahasiswa()
+    public function mahasiswa()
     {
-        return $this->hasMany(Mahasiswa::class, "nip_dospem", "nip");
+        // return Mahasiswa::where("nip_dospem",$this->nip)->get();
+        return $this->hasMany(Mahasiswa::class, "nip", "nip_dospem");
     }
 }

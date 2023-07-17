@@ -88,6 +88,7 @@ Route::middleware('auth')->group(function () {
     // dosen - detail mahasiswa
     Route::get('/detail-mahasiswa/{id}', [DetailMahasiswaController::class, 'viewDetailMahasiswa'])->name('dosen.detail-mahasiswa');
     Route::post('/detail-mahasiswa/{id}', [DetailMahasiswaController::class, 'createDetailSempro'])->name('dosen.create-detail-mahasiswa');
+    Route::post('/detail-mahasiswa/{id}', [DetailMahasiswaController::class, 'createDetailSidang'])->name('dosen.create-detail-mahasiswa');
 });
 
 

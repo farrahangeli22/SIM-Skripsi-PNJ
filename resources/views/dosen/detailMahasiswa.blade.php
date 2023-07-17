@@ -33,7 +33,7 @@
                         <label class="block text-sm mb-2" for="">
                             F2 (Penilai Proposal)
                         </label>
-                        <x-text-input id="file_f2" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="file" name="file_f2" placeholder="Masukkan teks..." required autofocus/>
+                        <x-text-input id="file_f2" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="file" name="file_f2" placeholder="Masukkan teks..." autofocus/>
                     </div>
                     <div>
                         <label class="block text-sm mb-2" for="">

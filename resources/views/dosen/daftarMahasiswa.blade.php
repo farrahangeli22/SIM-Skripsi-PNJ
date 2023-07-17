@@ -102,7 +102,7 @@
                         {{$val->judul}}
                     </td>
                     <td class="px-6 py-4 flex justify-center">
-                        <a class="block h-fit w-fit p-2 rounded-lg bg-primary flex text-sm font-bold text-white shadow hover:bg-hover" href="{{route('dosen.detail-mahasiswa',["id",$val->nim])}}">Detail</a>
+                        <a class="block h-fit w-fit p-2 rounded-lg bg-primary flex text-sm font-bold text-white shadow hover:bg-hover" href="{{route('dosen.detail-mahasiswa',['id'=>$val->nim])}}">Detail</a>
                     </td>
                 </tr>
                 @empty

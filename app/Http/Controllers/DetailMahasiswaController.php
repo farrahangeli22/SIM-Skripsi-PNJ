@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
 use App\Models\PengajuanSempro;
+use App\Models\PengajuanSidang;
 use App\Models\Skripsi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -37,19 +38,19 @@ class DetailMahasiswaController extends Controller
         ]);
 
         Session::flash('message', 'File penilaian berhasil terkirim');
-        return redirect(route('dosen.detail-mahasiswa'));
+        return redirect(route('dosen.detail-mahasiswa', ['id'=>$id]));
     } 
 
-     function createDetailSidang(Request $request )
+     function createDetailSidang(Request $request,$id)
     {
         // store uploaded file into storage
         $path = $request->file('file_f6')->store('/file_f6');
         // create reccord on table pengajuan sidang
-        $pengajuanSidang = PengajuanSidang::create([
+        $pengajuanSidang = PengajuanSidang::where("nim",$id)->orderBy("id","DESC")->first()->update([
             'file_f6' => $path,
         ]);
         
         Session::flash('message', 'File penilaian berhasil terkirim');
-        return redirect(route('dosen.detail-mahasiswa'));
+        return redirect(route('dosen.detail-mahasiswa', ['id'=>$id]));
     } 
 }

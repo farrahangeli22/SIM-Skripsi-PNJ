@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
+use App\Models\PengajuanSempro;
 use App\Models\Skripsi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -20,17 +21,18 @@ class DetailMahasiswaController extends Controller
         // $skripsi = Skripsi::where('judul', $request->user()->username)->first();
         // ambil data dosen dari db
         $dosen = Dosen::all();
+        $sempro = PengajuanSempro::where("nim",$id)->get()->count();
         // mengembalikan view dengan data
-        return view('dosen.detailMahasiswa')->with('mahasiswa', $mahasiswa)->with('dosen', $dosen);
+        return view('dosen.detailMahasiswa')->with('mahasiswa', $mahasiswa)->with('dosen', $dosen)->with('sempro', $sempro);
     }
 
-     function createDetailSempro(Request $request )
+     function createDetailSempro(Request $request,$id)
     {
         // store uploaded file into storage
         $path = $request->file('file_f2')->store('/file_f2');
         // dd($request);
         // create reccord on table pengajuan sidang
-        $pengajuanSempro = PengajuanSempro::create([
+        $pengajuanSempro = PengajuanSempro::where("nim",$id)->orderBy("id","DESC")->first()->update([
             'file_f2' => $path,
         ]);
 

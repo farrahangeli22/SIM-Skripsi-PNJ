@@ -4,37 +4,49 @@ namespace App\Http\Controllers;
 
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
+use App\Models\Skripsi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class DetailMahasiswaController extends Controller
 {
      // function buat return view pengajuan sidang
-    function viewDetailMahasiswa(Request $request)
+    function viewDetailMahasiswa(Request $request, $id )
      {
         // ambil data mahasiswa dari db
         // where nim == username authenticated user
-        $mahasiswa = Mahasiswa::where('nim', $request->user()->username)->first();
+        $mahasiswa = Mahasiswa::where('nim', $id)->first();
+        // dd($mahasiswa);
+        // $skripsi = Skripsi::where('judul', $request->user()->username)->first();
         // ambil data dosen dari db
         $dosen = Dosen::all();
         // mengembalikan view dengan data
         return view('dosen.detailMahasiswa')->with('mahasiswa', $mahasiswa)->with('dosen', $dosen);
     }
 
-     function createDetailMahasiswa(Request $request)
+     function createDetailSempro(Request $request )
     {
         // store uploaded file into storage
-        $path = $request->file('file_f4')->store('/file_f4');
+        $path = $request->file('file_f2')->store('/file_f2');
+        // create reccord on table pengajuan sidang
+        $pengajuanSempro = PengajuanSempro::create([
+            'file_f2' => $path,
+        ]);
+
+        Session::flash('message', 'File penilaian berhasil terkirim');
+        return redirect(route('dosen.detail-mahasiswa'));
+    } 
+
+     function createDetailSidang(Request $request )
+    {
+        // store uploaded file into storage
+        $path = $request->file('file_f6')->store('/file_f6');
         // create reccord on table pengajuan sidang
         $pengajuanSidang = PengajuanSidang::create([
-            'nim' => $request->user()->username,
-            'judul' => $request->judul,
-            'sub_judul' => isset($request->subJudul) ? $request->subJudul : null,
-            'anggota' => isset($request->anggota) ? $request->anggota : null,
-            'file_f4' => $path,
+            'file_f6' => $path,
         ]);
         
-        Session::flash('message', 'Pengajuan sidang berhasil terkirim');
-        return redirect(route('user.pengajuan-sidang'));
+        Session::flash('message', 'File penilaian berhasil terkirim');
+        return redirect(route('dosen.detail-mahasiswa'));
     } 
 }

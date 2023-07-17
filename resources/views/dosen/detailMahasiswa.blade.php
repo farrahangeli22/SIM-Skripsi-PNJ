@@ -18,21 +18,28 @@
         </div>
 
         <div>
+            @if(Session::has('message'))
+            <div class="w-full h-fit p-2 rounded bg-[#40C057] mb-4 font-bold text-white">
+                <p>{{ Session::get('message') }}</p>
+            </div>
+            @endif
             <!-- Form Unggah Nilai Proposal dan Skripsi -->
+            @if($sempro > 0)
+            <form class="w-full" enctype="multipart/form-data" action="{{route('dosen.create-detail-mahasiswa', ['id'=>$mahasiswa->nim])}}" method="post">
             <h1 class="font-bold text-xl text-font mb-8">Unggah Penilaian Mahasiswa</h1>
-            <form class="w-full mb-8">
+             @csrf
                 <div class="flex space-x-10">
                     <div>
                         <label class="block text-sm mb-2" for="">
                             F2 (Penilai Proposal)
                         </label>
-                        <x-text-input id="dokumenSkripsi" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="file" name="anggota" placeholder="Masukkan teks..." required autofocus/>
+                        <x-text-input id="file_f2" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="file" name="file_f2" placeholder="Masukkan teks..." autofocus/>
                     </div>
                     <div>
                         <label class="block text-sm mb-2" for="">
                             F6 (Penilai Skripsi)
                         </label>
-                        <x-text-input id="dokumenSkripsi" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="file" name="anggota" placeholder="Masukkan teks..." required autofocus/>
+                        <x-text-input id="file_f6" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="file" name="file_f6" placeholder="Masukkan teks..." autofocus/>
                     </div>
                     <div class="mt-7">
                         <x-primary-button class="flex justify-center w-fit h-10">
@@ -41,6 +48,7 @@
                     </div>
                 </div>
             </form>
+            @endif
 
 
             <!-- Dokumen Skripsi Mahsiswa-->
@@ -52,14 +60,14 @@
                             <label class="font-bold" for="">
                                 Judul Skripsi :
                             </label>
-                            <p>Rancang Bangun Sistem Informasi Manajemen Skripsi Terintegrasi Berbasis Web </p>
+                            <p>{{$mahasiswa->skripsi->judul}}</p>
                         </div>
                         <div>
                             <label class="block text-sm font-bold mb-2" for="">
                                 Dokumen Skripsi :
                             </label>
                             <!-- pdf viewer -->
-                            <iframe src="/assets/fileSkripsi.pdf" width="600" height="400"></iframe>
+                            <iframe src="{{ url('/dokumen_skripsi/'.$mahasiswa->skripsi->file_skripsi) }}" width="600" height="400"></iframe>
                         </div>
                     </div>
                 </div>

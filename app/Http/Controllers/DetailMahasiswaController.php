@@ -4,37 +4,53 @@ namespace App\Http\Controllers;
 
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
+use App\Models\PengajuanSempro;
+use App\Models\PengajuanSidang;
+use App\Models\Skripsi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
 class DetailMahasiswaController extends Controller
 {
      // function buat return view pengajuan sidang
-    function viewDetailMahasiswa(Request $request)
+    function viewDetailMahasiswa(Request $request, $id )
      {
         // ambil data mahasiswa dari db
         // where nim == username authenticated user
-        $mahasiswa = Mahasiswa::where('nim', $request->user()->username)->first();
+        $mahasiswa = Mahasiswa::where('nim', $id)->first();
+        // dd($mahasiswa);
+        // $skripsi = Skripsi::where('judul', $request->user()->username)->first();
         // ambil data dosen dari db
         $dosen = Dosen::all();
+        $sempro = PengajuanSempro::where("nim",$id)->get()->count();
         // mengembalikan view dengan data
-        return view('dosen.detailMahasiswa')->with('mahasiswa', $mahasiswa)->with('dosen', $dosen);
+        return view('dosen.detailMahasiswa')->with('mahasiswa', $mahasiswa)->with('dosen', $dosen)->with('sempro', $sempro);
     }
 
-     function createDetailMahasiswa(Request $request)
+     function createDetailSempro(Request $request,$id)
     {
         // store uploaded file into storage
-        $path = $request->file('file_f4')->store('/file_f4');
+        $path = $request->file('file_f2')->store('/file_f2');
+        // dd($request);
         // create reccord on table pengajuan sidang
-        $pengajuanSidang = PengajuanSidang::create([
-            'nim' => $request->user()->username,
-            'judul' => $request->judul,
-            'sub_judul' => isset($request->subJudul) ? $request->subJudul : null,
-            'anggota' => isset($request->anggota) ? $request->anggota : null,
-            'file_f4' => $path,
+        $pengajuanSempro = PengajuanSempro::where("nim",$id)->orderBy("id","DESC")->first()->update([
+            'file_f2' => $path,
+        ]);
+
+        Session::flash('message', 'File penilaian berhasil terkirim');
+        return redirect(route('dosen.detail-mahasiswa', ['id'=>$id]));
+    } 
+
+     function createDetailSidang(Request $request,$id)
+    {
+        // store uploaded file into storage
+        $path = $request->file('file_f6')->store('/file_f6');
+        // create reccord on table pengajuan sidang
+        $pengajuanSidang = PengajuanSidang::where("nim",$id)->orderBy("id","DESC")->first()->update([
+            'file_f6' => $path,
         ]);
         
-        Session::flash('message', 'Pengajuan sidang berhasil terkirim');
-        return redirect(route('user.pengajuan-sidang'));
+        Session::flash('message', 'File penilaian berhasil terkirim');
+        return redirect(route('dosen.detail-mahasiswa', ['id'=>$id]));
     } 
 }

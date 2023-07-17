@@ -10,6 +10,7 @@ use App\Http\Controllers\LogBookController;
 use App\Http\Controllers\FormLogbookController;
 use App\Http\Controllers\DetailMahasiswaController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\ManajemenMahasiswaController;
 use App\Http\Controllers\ManajemenKPSController;
 use App\Http\Controllers\ManajemenDosenController;
 use App\Models\PengajuanJudul;
@@ -81,6 +82,9 @@ Route::middleware('auth')->group(function () {
     // admin - manajemen Dosen Pembimbing
     Route::get('/manajemen-dosen', [ManajemenDosenController::class, 'viewManajemenDosen'])->name('admin.manajemen-dosen');
 
+    // admin - manajemen Mahasiswa
+    Route::get('/manajemen-mahasiswa', [ManajemenMahasiswaController::class, 'viewManajemenMahasiswa'])->name('admin.manajemen-mahasiswa');
+
     // dosen - detail mahasiswa
     Route::get('/detail-mahasiswa', [DetailMahasiswaController::class, 'viewDetailMahasiswa'])->name('dosen.detail-mahasiswa');
 });
@@ -144,9 +148,9 @@ Route::get("/admin/dashboard-admin", function () {
     return view('admin.dashboardAdmin');
 })->name('admin.dashboard-admin');
 
-Route::get("/admin/manajemen-mahasiswa", function () {
-    return view('admin.manajemenMahasiswa');
-})->name('admin.manajemen-mahasiswa');
+// Route::get("/admin/manajemen-mahasiswa", function () {
+//     return view('admin.manajemenMahasiswa');
+// })->name('admin.manajemen-mahasiswa');
 
 // Route::get("/admin/manajemen-dosen", function () {
 //     return view('admin.manajemenDosen');

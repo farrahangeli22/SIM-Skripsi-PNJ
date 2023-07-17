@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mahasiswa;
 use App\Models\Dosen;
 use App\Models\UserRole;
 use App\Http\Controllers\Controller;
@@ -12,11 +13,11 @@ class ManajemenDosenController extends Controller
 {
     function viewManajemenDosen(Request $request)
     {
-        // // ambil data dosen bimbingan dari table dosen
-        // $daftarDosen = Dosen->get();
+        // ambil data mahasiswa bimbingan dari table dosen
+        $daftarMahasiswa = Mahasiswa::get();
 
-        // // mengembalikan view dengan data
-        // // dd($daftarDosen);
-        // return view('admin.manajemenDosen')->with('daftarDosen', $daftarDosen);
+        // mengembalikan view dengan data
+        // dd($daftarDosen);
+        return view('admin.manajemenDosen')->with('daftarMahasiswa', $daftarMahasiswa);
     }
 }

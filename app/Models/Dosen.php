@@ -18,4 +18,9 @@ class Dosen extends Model
     protected $keyType = "string";
 
     protected $table = 'dosen';
+
+    public function mahasiswa()
+    {
+        return $this->hashMany(Mahasiswa::class, 'nip_dospem', 'nip');
+    }
 }

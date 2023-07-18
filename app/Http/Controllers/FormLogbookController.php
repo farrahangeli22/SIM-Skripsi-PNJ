@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
 use App\Models\Logbook;
+use App\Models\Notifikasi;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Session;
@@ -37,6 +39,14 @@ class FormLogbookController extends Controller
             'feedback' => $request->rincian_kegiatan,
             'kegiatan' => $request->rencana_pencapaian,
             'status' => "-",
+        ]);
+
+        Notifikasi::create([
+            "user_id"=>User::where("username",Mahasiswa::find(Auth::user()->username)->nip_dospem)->first()->id,
+            "judul"=>"permintaan review logbook",
+            "deskripsi"=>"permintaan review logbook ".Auth::user()->nama,
+            "url"=>"-",
+            "baca"=>false,
         ]);
         
         Session::flash('message', 'logbook berhasil terkirim');

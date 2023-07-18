@@ -9,5 +9,11 @@ class Konten extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'judul',
+        'deskripsi',
+        'file_konten',
+    ];
+
     protected $table = 'konten';
 }

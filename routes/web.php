@@ -13,6 +13,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ManajemenMahasiswaController;
 use App\Http\Controllers\ManajemenKPSController;
 use App\Http\Controllers\ManajemenDosenController;
+use App\Http\Controllers\TambahKontenController;
 use App\Models\PengajuanJudul;
 use App\Models\PengajuanSidang;
 use Illuminate\Support\Facades\Route;
@@ -89,6 +90,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/detail-mahasiswa/{id}', [DetailMahasiswaController::class, 'viewDetailMahasiswa'])->name('dosen.detail-mahasiswa');
     Route::post('/detail-mahasiswa/{id}', [DetailMahasiswaController::class, 'createDetailSempro'])->name('dosen.create-detail-mahasiswa');
     Route::post('/detail-mahasiswa/{id}', [DetailMahasiswaController::class, 'createDetailSidang'])->name('dosen.create-detail-mahasiswa');
+
+    // admin - tambah konten
+    Route::get('/tambah-konten', [TambahKontenController::class, 'viewTambahKonten'])->name('admin.tambah-konten');
+    Route::post('/tambah-konten', [TambahKontenController::class, 'createTambahKonten'])->name('admin.create-tambah-konten');
+
 });
 
 
@@ -166,9 +172,9 @@ Route::get("/admin/edit-konten", function () {
     return view('admin.editKonten');
 })->name('admin.edit-konten');
 
-Route::get("/admin/tambah-konten", function () {
-    return view('admin.tambahKonten');
-})->name('admin.tambah-konten');
+// Route::get("/admin/tambah-konten", function () {
+//     return view('admin.tambahKonten');
+// })->name('admin.tambah-konten');
 
 Route::get("/admin/pengajuan-judul", function () {
     return view('admin.adminJudul');

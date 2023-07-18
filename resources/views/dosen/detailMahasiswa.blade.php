@@ -67,7 +67,15 @@
                                 Dokumen Skripsi :
                             </label>
                             <!-- pdf viewer -->
-                            <iframe src="{{ url('/dokumen_skripsi/'.$mahasiswa->skripsi->file_skripsi) }}" width="600" height="400"></iframe>
+                            
+                        
+                        <iframe src="{{ url('/skripsi/', $mahasiswa->skripsi->file_skripsi) }}" width="600" height="400"></iframe>
+
+
+
+
+
+
                         </div>
                     </div>
                 </div>

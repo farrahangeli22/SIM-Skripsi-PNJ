@@ -31,14 +31,14 @@ class ProfileController extends Controller
     
      function createProfile(Request $request)
     {
-        // store uploaded file into storage
-        // $request->validate([
-        //     'judul' => 'required',
-        //     'skripsi' => 'required',
-        // ]);
+       $request->validate([
+            'judul' => 'required',
+            'skripsi' => 'required',
+        ]);
         $nip = Mahasiswa::find(Auth::user()->username)->nip_dospem;
         $name = time() . "_" . $request->skripsi->getClientOriginalName();
-        Storage::disk('dokumen_skripsi')->put($name, file_get_contents($request->skripsi));
+        // $path = $request->file('skripsi')->store('/skripsi');
+        Storage::disk('skripsi')->put($name, file_get_contents($request->skripsi));
         Skripsi::create([
             "nim"=>Auth::user()->username,
             "nip_dospem"=>$nip,

@@ -43,6 +43,12 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+
+        'skripsi' => [
+            'driver' => 'local',
+            'root'   => public_path() . '/skripsi',
+        ],
+        
         'dokumen_skripsi' => [
             'driver' => 'local',
             'root'   => public_path() . '/dokumen_skripsi',

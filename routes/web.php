@@ -14,6 +14,7 @@ use App\Http\Controllers\ManajemenMahasiswaController;
 use App\Http\Controllers\ManajemenKPSController;
 use App\Http\Controllers\ManajemenDosenController;
 use App\Http\Controllers\TambahKontenController;
+use App\Http\Controllers\KontenController;
 use App\Models\PengajuanJudul;
 use App\Models\PengajuanSidang;
 use Illuminate\Support\Facades\Route;
@@ -95,6 +96,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/tambah-konten', [TambahKontenController::class, 'viewTambahKonten'])->name('admin.tambah-konten');
     Route::post('/tambah-konten', [TambahKontenController::class, 'createTambahKonten'])->name('admin.create-tambah-konten');
 
+    // admin - konten
+    Route::get("/konten", [KontenController::class, 'viewKonten'])->name('admin.konten');
+
 });
 
 
@@ -168,9 +172,9 @@ Route::get("/admin/dashboard-admin", function () {
 //     return view('admin.manajemenKPS');
 // })->name('admin.manajemen-kps');
 
-Route::get("/admin/edit-konten", function () {
-    return view('admin.editKonten');
-})->name('admin.edit-konten');
+// Route::get("/admin/konten", function () {
+//     return view('admin.Konten');
+// })->name('admin.konten');
 
 // Route::get("/admin/tambah-konten", function () {
 //     return view('admin.tambahKonten');

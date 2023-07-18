@@ -29,12 +29,14 @@ class FormLogbookController extends Controller
         $path = $request->file('dokumentasi')->store('/dokumentasi');
         // create reccord on table pengajuan sidang
         $nip = Mahasiswa::find(Auth::user()->username)->nip_dospem;
+        // mark
         $logbook = Logbook::create([
             'nim'=>Auth::user()->username,
             'media' => $request->media,
             'dokumentasi' => $path,
-            'rincian_kegiatan' => $request->rincian_kegiatan,
-            'rencana_pencapaian' => $request->rencana_pencapaian,
+            'feedback' => $request->rincian_kegiatan,
+            'kegiatan' => $request->rencana_pencapaian,
+            'status' => "-",
         ]);
         
         Session::flash('message', 'logbook berhasil terkirim');

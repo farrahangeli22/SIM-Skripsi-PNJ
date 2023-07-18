@@ -37,19 +37,24 @@
         </a>
       </div>
       <!-- history logbook -->
+      @foreach ($logbook as $item)
       <div class="flex mt-8 bg-header p-4 rounded-t-lg rounded-tr-lg text-white justify-between">
-        <h3 class="font-bold">15 Februari</h3>
+        <h3 class="font-bold">{{$item->created_at}}</h3>
         <div class="flex">
           <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 mt-1" height="1em" viewBox="0 0 512 512" fill="white"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
             <path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
           </svg>
-          <h3 class="font-bold">Menunggu Persetujuan</h3>
+          <h3 class="font-bold">{{$item->status}}</h3>
         </div>
       </div>
       <div class="text-center bg-card p-8 rounded-b-lg rounded-br-lg shadow">
-        <p class="text-sm text-justify">Bimbingan hari ini adalah review proposal penelitian bab 1 yang telah dibuat oleh mahasiswa bimbingan. Dosen memberikan catatan dari kekurangan yang ada, sebagai berikut...</p>
+        <p class="text-sm text-justify">{{$item->feedback}}</p>
         <a href="{{route('user.detail-logbook')}}" class="text-header text-sm font-bold underline flex justify-end">Detail</a>
       </div>
+          
+      @endforeach
+
+      
     </div>
   </div>
 </x-user-layout>

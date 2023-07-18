@@ -36,14 +36,14 @@ class ProfileController extends Controller
             'skripsi' => 'required',
         ]);
         $nip = Mahasiswa::find(Auth::user()->username)->nip_dospem;
-        $name = time() . "_" . $request->skripsi->getClientOriginalName();
-        // $path = $request->file('skripsi')->store('/skripsi');
-        Storage::disk('skripsi')->put($name, file_get_contents($request->skripsi));
+        // $name = time() . "_" . $request->skripsi->getClientOriginalName();
+        $path = $request->file('skripsi')->store('/skripsi');
+        // Storage::disk('skripsi')->put($name, file_get_contents($request->skripsi));
         Skripsi::create([
             "nim"=>Auth::user()->username,
             "nip_dospem"=>$nip,
             "judul"=>$request->judul,
-            "file_skripsi"=>$name,
+            "file_skripsi"=>$path,
         ]);
 
         Session::flash('message', 'Upload file berhasil');

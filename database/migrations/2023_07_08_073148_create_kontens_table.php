@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('konten', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->text('deskripsi');
+            $table->text('deskripsi')->nullable();
             $table->text('file_konten');
             $table->timestamps();
         });

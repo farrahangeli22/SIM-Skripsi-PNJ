@@ -30,4 +30,9 @@ class PenyerahanAlat extends Model
     ];
 
     protected $table = 'penyerahan_alat';
+
+    public function mahasiswa()
+    {
+        return $this->hasOne(Mahasiswa::class, "nim", "nim");
+    }
 }

@@ -21,4 +21,9 @@ class PengajuanDospem extends Model
     {
         return $this->belongsTo(PengajuanJudul::class, 'pengajuan_judul_id', 'id');
     }
+
+    function dosen()
+    {
+        return $this->belongsTo(dosen::class, 'nip_dospem', 'nip');
+    }
 }

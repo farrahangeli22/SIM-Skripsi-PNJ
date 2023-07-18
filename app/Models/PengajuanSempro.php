@@ -21,4 +21,9 @@ class PengajuanSempro extends Model
     ];
 
     protected $table = 'pengajuan_sempro';
+
+    public function mahasiswa()
+    {
+        return $this->hasOne(Mahasiswa::class, "nim", "nim");
+    }
 }

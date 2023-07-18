@@ -1,9 +1,14 @@
 <?php
 
+use App\Http\Controllers\StorageController;
 use App\Http\Controllers\PengajuanJudulController;
+use App\Http\Controllers\DaftarPengajuanJudulController;
 use App\Http\Controllers\PengajuanSemproController;
+use App\Http\Controllers\DaftarPengajuanSemproController;
 use App\Http\Controllers\PengajuanSidangController;
+use App\Http\Controllers\DaftarPengajuanSidangController;
 use App\Http\Controllers\PenyerahanAlatController;
+use App\Http\Controllers\DaftarPenyerahanAlatController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DaftarMahasiswaController;
 use App\Http\Controllers\LogBookController;
@@ -13,6 +18,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ManajemenMahasiswaController;
 use App\Http\Controllers\ManajemenKPSController;
 use App\Http\Controllers\ManajemenDosenController;
+use App\Http\Controllers\TambahKontenController;
+use App\Http\Controllers\KontenController;
 use App\Models\PengajuanJudul;
 use App\Models\PengajuanSidang;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +51,8 @@ Route::get('/dashboard', function () {
 
 
 Route::middleware('auth')->group(function () {
+    // untuk storage jurnal
+    Route::get('/storage/{folder}/{filename}',[StorageController::class,'getFile']);
 
     // user - logbook mahasiswa 
     Route::get("/logbook", [LogBookController::class, 'viewLogBookMahasiswa'])->name('user.logbook');
@@ -90,7 +99,25 @@ Route::middleware('auth')->group(function () {
     Route::post('/detail-mahasiswa/{id}', [DetailMahasiswaController::class, 'createDetailSempro'])->name('dosen.create-detail-mahasiswa');
     Route::post('/detail-mahasiswa/{id}', [DetailMahasiswaController::class, 'createDetailSidang'])->name('dosen.create-detail-mahasiswa');
 
-    
+    // admin - tambah konten
+    Route::get('/tambah-konten', [TambahKontenController::class, 'viewTambahKonten'])->name('admin.tambah-konten');
+    Route::post('/tambah-konten', [TambahKontenController::class, 'createTambahKonten'])->name('admin.create-tambah-konten');
+
+    // admin - konten
+    Route::get("/konten", [KontenController::class, 'viewKonten'])->name('admin.konten');
+
+    // admin - daftar pengajuan judul
+    Route::get('/daftar-pengajuan-judul', [DaftarPengajuanJudulController::class, 'viewDaftarPengajuanJudul'])->name('admin.daftar-pengajuan-judul');
+
+    // admin - daftar pengajuan sempro
+    Route::get('/daftar-pengajuan-sempro', [DaftarPengajuanSemproController::class, 'viewDaftarPengajuanSempro'])->name('admin.daftar-pengajuan-sempro');
+
+    // admin - daftar pengajuan sidang
+    Route::get('/daftar-pengajuan-sidang', [DaftarPengajuanSidangController::class, 'viewDaftarPengajuanSidang'])->name('admin.daftar-pengajuan-sidang');
+
+    // admin - daftar pengajuan sempro
+    Route::get('/daftar-penyerahan-alat', [DaftarPenyerahanAlatController::class, 'viewDaftarPenyerahanAlat'])->name('admin.daftar-penyerahan-alat');
+
 });
 
 
@@ -164,29 +191,29 @@ Route::get("/admin/dashboard-admin", function () {
 //     return view('admin.manajemenKPS');
 // })->name('admin.manajemen-kps');
 
-Route::get("/admin/edit-konten", function () {
-    return view('admin.editKonten');
-})->name('admin.edit-konten');
+// Route::get("/admin/konten", function () {
+//     return view('admin.Konten');
+// })->name('admin.konten');
 
-Route::get("/admin/tambah-konten", function () {
-    return view('admin.tambahKonten');
-})->name('admin.tambah-konten');
+// Route::get("/admin/tambah-konten", function () {
+//     return view('admin.tambahKonten');
+// })->name('admin.tambah-konten');
 
-Route::get("/admin/pengajuan-judul", function () {
-    return view('admin.adminJudul');
-})->name('admin.pengajuan-judul');
+// Route::get("/admin/pengajuan-judul", function () {
+//     return view('admin.adminJudul');
+// })->name('admin.pengajuan-judul');
 
-Route::get("/admin/pengajuan-seminar", function () {
-    return view('admin.adminSeminar');
-})->name('admin.pengajuan-seminar');
+// Route::get("/admin/pengajuan-seminar", function () {
+//     return view('admin.adminSeminar');
+// })->name('admin.pengajuan-seminar');
 
-Route::get("/admin/pengajuan-sidang", function () {
-    return view('admin.adminSidang');
-})->name('admin.pengajuan-sidang');
+// Route::get("/admin/pengajuan-sidang", function () {
+//     return view('admin.adminSidang');
+// })->name('admin.pengajuan-sidang');
 
-Route::get("/admin/penyerahan-alat", function () {
-    return view('admin.adminAlat');
-})->name('admin.penyerahan-alat');
+// Route::get("/admin/penyerahan-alat", function () {
+//     return view('admin.adminAlat');
+// })->name('admin.penyerahan-alat');
 
 Route::get('/role/switch/{roleId}', [RoleController::class, 'switchRole'])->name('switch-role');
 

@@ -91,16 +91,16 @@
         </div>
         <ul id="dropdown-pengajuan" class="hidden py-2 space-y-2">
             <li>
-                <a href="{{route('admin.pengajuan-judul')}}" class="flex items-center w-full p-2 text-left text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Judul dan Dosen Pembimbing</a>
+                <a href="{{route('admin.daftar-pengajuan-judul')}}" class="flex items-center w-full p-2 text-left text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Judul dan Dosen Pembimbing</a>
             </li>
             <li>
-                <a href="{{route('admin.pengajuan-seminar')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Seminar Proposal</a>
+                <a href="{{route('admin.daftar-pengajuan-sempro')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Seminar Proposal</a>
             </li>
             <li>
-                <a href="{{route('admin.pengajuan-sidang')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Sidang Skripsi</a>
+                <a href="{{route('admin.daftar-pengajuan-sidang')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Sidang Skripsi</a>
             </li>
             <li>
-                <a href="{{route('admin.penyerahan-alat')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Penyerahan Alat</a>
+                <a href="{{route('admin.daftar-penyerahan-alat')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Penyerahan Alat</a>
             </li>
         </ul>
     </div>

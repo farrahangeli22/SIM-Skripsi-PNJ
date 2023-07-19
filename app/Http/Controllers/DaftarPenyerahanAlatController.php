@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use App\Models\PenyerahanAlat;
 use Illuminate\Http\Request;
 

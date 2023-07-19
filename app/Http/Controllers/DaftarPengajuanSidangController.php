@@ -9,10 +9,8 @@ class DaftarPengajuanSidangController extends Controller
 {
     function viewDaftarPengajuanSidang(Request $request)
     {
-        $daftarPengajuanSidang = PengajuanSidang::with(["mahasiswa"=>function($query){
-            return $query->with("dosen");
-            }])->get();;
-        // dd($daftarPengajuanSidang);
+        $daftarPengajuanSidang = PengajuanSidang::get();
+        
         return view('admin.daftarPengajuanSidang',['daftarPengajuanSidang'=> $daftarPengajuanSidang]);
     }
 }

@@ -34,66 +34,70 @@
 				<td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">NIM</span>{{$PenyerahanAlat->mahasiswa->nim}}</td>
                 <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Judul</span>{{$PenyerahanAlat->judul}}</td>
                 <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Sub Judul</span>{{$PenyerahanAlat->sub_judul}}</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Anggota Kelompok</span>{{$PenyerahanAlat->anggota}}</td>
-                <td>
+                <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Anggota Kelompok</span>{{$PenyerahanAlat->anggota}}</td>
+                <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="padding: 0.5rem; text-align: center;">
-                        <a href="{{ url('/storage/'. $PenyerahanAlat->file_f10) }}" target="_blank" class="text-blue-500">F10</a>
+                        <a href="{{ url('/storage/'. $PenyerahanAlat->file_f10) }}" target="_blank" class="text-blue-500 ">F10</a>
                     </div>
                     </td>
-                    <td></td>
-                    <td>
+                    <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell"></td>
+                    <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="padding: 0.5rem; text-align: center;">
                         <a href="{{ url('/storage/'. $PenyerahanAlat->file_f12) }}" target="_blank" class="text-blue-500">F12</a>
                     </div>
                     </td>
-                    <td>
+                    <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="padding: 0.5rem; text-align: center;">
                         <a href="{{ url('/storage/'. $PenyerahanAlat->file_f13) }}" target="_blank" class="text-blue-500">F13</a>
                     </div>
                     </td>
-                    <td>
+                    <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="padding: 0.5rem; text-align: center;">
                         <a href="{{ url('/storage/'. $PenyerahanAlat->file_f14) }}" target="_blank" class="text-blue-500">F14</a>
                     </div>
                     </td>
-                    <td>
+                    <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="padding: 0.5rem; text-align: center;">
                         <a href="{{ url('/storage/'. $PenyerahanAlat->file_f15) }}" target="_blank" class="text-blue-500">F15</a>
                     </div>
                     </td>
-                    <td>
+                    <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="padding: 0.5rem; text-align: center;">
                         <a href="{{ url('/storage/'. $PenyerahanAlat->file_f16) }}" target="_blank" class="text-blue-500">F16</a>
                     </div>
                     </td>
-                    <td>
+                    <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="padding: 0.5rem;">
-                        <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Link Vidio</a>
+                        <a href="{{ url('/storage/'. $PenyerahanAlat->link_video) }}" target="_blank" class="text-blue-500"> {{ $PenyerahanAlat->link_video }}</a>
                     </div>
                     </td>
-                    <td>
+                    <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                      <div style="padding: 0.5rem;">
                         <a href="{{ url('/storage/'. $PenyerahanAlat->sertifikat_pkkp) }}" target="_blank" class="text-blue-500">Link Sertifikat PPKP</a>
                     </div>
                     </td>
-                    <td>
+                    <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                      <div style="padding: 0.5rem;">
                         <a href="{{ url('/storage/'. $PenyerahanAlat->sertifikat_toeic) }}" target="_blank" class="text-blue-500">Link Sertifikat TOEIC</a>
                     </div>
                     </td>
-                    <td>
+                    <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                      <div style="padding: 0.5rem;">
                         <a href="{{ url('/storage/'. $PenyerahanAlat->sertifikat_lomba) }}" target="_blank" class="text-blue-500">Link Sertifikat Lomba</a>
                     </div>
                     </td>
-                    <td>
+                    <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                      <div style="padding: 0.5rem;">
+                      @if ($PenyerahanAlat->sertifikat_kejuaraan && Storage::exists($PenyerahanAlat->sertifikat_kejuaraan)) 
                         <a href="{{ url('/storage/'. $PenyerahanAlat->sertifikat_kejuaraan) }}" target="_blank" class="text-blue-500">Link Sertifikat Kejuaraan</a>
+                    @endif 
                     </div>
                     </td>
-                    <td>
+                    <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                      <div style="padding: 0.5rem;">
+                    @if ($PenyerahanAlat->sertifikat_organisasi && Storage::exists($PenyerahanAlat->sertifikat_organisasi))
                         <a href="{{ url('/storage/'. $PenyerahanAlat->sertifikat_organisasi) }}" target="_blank" class="text-blue-500">Link Sertifikat Organisasi</a>
+                    @endif
                     </div>
                     </td>
                     <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">

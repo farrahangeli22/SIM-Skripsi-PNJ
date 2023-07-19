@@ -30,7 +30,7 @@
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Judul</span>{{$PengajuanSidang->judul}}</td>
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Sub Judul</span>{{$PengajuanSidang->sub_judul}}</td>
 				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Anggota Kelompok</span>{{$PengajuanSidang->anggota}}</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Dosen Pembimbing</span>{{$PengajuanSidang->mahasiswa->dosen->nama}}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Dosen Pembimbing</span>{{$PengajuanSidang->mahasiswa->dosen ? $PengajuanSidang->mahasiswa->dosen->nama:'' }}</td>
 				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <span class="inline-block md:hidden font-bold">Calon Dosen Penguji</span>
                         <ul class="list-disc ml-1 list-inside">
@@ -39,13 +39,13 @@
                             <li style="list-style-wtype: disc;">Penguji 3</li> -->
                         </ul>
                 </td>
-                    <td>
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="text-align: center;">
                         <a href="{{ url('/storage/'. $PengajuanSidang->file_f4) }}" target="_blank" class="text-blue-500">F4</a>
                     </div>
                     </td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"></td>
-                    <td>
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="text-align: center;">
                         <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">F6</a>
                     </div>

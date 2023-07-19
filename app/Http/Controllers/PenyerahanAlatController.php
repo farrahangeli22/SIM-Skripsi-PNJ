@@ -30,7 +30,7 @@ class PenyerahanAlatController extends Controller
         // store uploaded file into storage
         $pathPkkp = $request->file('sertifikat_pkkp')->store('/sertifikat_pkkp4');
         $pathLomba = $request->file('sertifikat_lomba')->store('/sertifikat_lomba');
-        $pathKejuaran = $request->hasFile('sertifikat_kejuaran') ? $request->file('sertifikat_kejuaran')->store('/sertifikat_kejuaran') : null;
+        $pathKejuaraan = $request->hasFile('sertifikat_kejuaraan') ? $request->file('sertifikat_kejuaraan')->store('/sertifikat_kejuaraan') : null;
         $pathToeic = $request->file('sertifikat_toeic')->store('/sertifikat_toeic');
         $pathF10 = $request->file('file_f10')->store('/file_f10');
         $pathF12 = $request->file('file_f12')->store('/file_f12');
@@ -48,7 +48,7 @@ class PenyerahanAlatController extends Controller
         "link_video" => $request->link_video,
         'sertifikat_pkkp' => $pathPkkp,
         'sertifikat_lomba' => $pathLomba,
-        'sertifikat_kejuaran' => $pathKejuaran,
+        'sertifikat_kejuaraan' => $pathKejuaraan,
         'sertifikat_toeic' => $pathToeic,
         'file_f10' => $pathF10,
         'file_f12' => $pathF12,

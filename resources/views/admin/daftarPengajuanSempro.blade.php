@@ -36,17 +36,17 @@
                             <li style="list-style-type: disc;">Penguji 3</li> -->
                         </ul>
                 </td>
-                <td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="text-align: center;">
                         <a href="{{ url('/storage/'. $PengajuanSempro->file_f1) }}" target="_blank" class="text-blue-500">F1</a>
                     </div>
                 </td>
-                <td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="text-align: center;">
                         <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">F2</a>
                     </div>
                 </td>
-                <td></td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"></td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
 					<span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
 					<button class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>

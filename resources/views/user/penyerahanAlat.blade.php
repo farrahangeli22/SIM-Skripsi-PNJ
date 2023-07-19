@@ -67,7 +67,7 @@
                         <label class="block text-sm mb-1" for="">
                             Sertifikat Kejuaraan (jika ada)
                         </label>
-                        <x-text-input id="sertifikat_kejuaran" class="block w-96 h-10 p-1 border border-black cursor-pointer mb-6" type="file" accept=".pdf" name="sertifikat_kejuaran" autofocus/>
+                        <x-text-input id="sertifikat_kejuaraan" class="block w-96 h-10 p-1 border border-black cursor-pointer mb-6" type="file" accept=".pdf" name="sertifikat_kejuaraan" autofocus/>
                          <label class="flex flex-wrap text-sm mb-1" for="">
                             Sertifikat Toeic
                             <p class="text-red-600 pl-1">*</p>

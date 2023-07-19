@@ -46,8 +46,12 @@
                         <a href="{{ url('/storage/'. $PengajuanSempro->file_f2) }}" target="_blank" class="text-blue-500">F2</a>
                     </div>
                 </td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"></td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                <!-- section untuk data f3 -->
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                    <div style="text-align: center;">
+                    </div>
+                </td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
 					<span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
 					<button onclick="editButton({{$PengajuanSempro->id}})" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>
                 </td>
@@ -69,19 +73,19 @@
                                     </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Prodi:</label>
-                                        <p>Teknik Informatika</p>
+                                        <p id="prodiMahasiswa"></p>
                                     </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Kelas:</label>
-                                        <p>TI 8A</p>
+                                        <p id="kelasMahasiswa"></p>
                                     </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Judul:</label>
-                                        <p>Rancang Bangun Sistem Informasi Manajemen Skripsi</p>
+                                        <p id="judul"></p>
                                     </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Sub Judul:</label>
-                                        <p>Rancang Bangun Sistem Informasi Manajemen Skripsi Terintegrasi Berbasis Web (Modul: Pengajuan Sidang Skripsi & Penyerahan Alat)</p>
+                                        <p id="subJudul"></p>
                                     </div>
                                 </div>
                                 @csrf
@@ -192,6 +196,10 @@
         $('#idPengajuan').val(id)
         $('#namaMahasiswa').text(res.nama)
         $('#nimMahasiswa').text(res.nim)
+        $('#prodiMahasiswa').text(res.prodi)
+        $('#kelasMahasiswa').text(res.kelas)
+        $('#judul').text(res.judul)
+        $('#subJudul').text(res.subJudul)
     })
   }
       

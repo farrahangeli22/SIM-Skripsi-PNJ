@@ -16,4 +16,9 @@ class HasilSempro extends Model
     ];
 
     protected $table = 'hasil_sempro';
+
+    function pengajuanSempro()
+    {
+        return $this->hasOne(pengajuan_sempro::class, 'pengajuan_sempro_id', 'id');
+    }
 }

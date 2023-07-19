@@ -29,13 +29,10 @@ class DetailMahasiswaController extends Controller
 
      function createDetailSempro(Request $request,$id)
     {
+        dd("tet");
         // store uploaded file into storage
-        $path = $request->file('file_f2')->store('/file_f2');
-        // dd($request);
-        // create reccord on table pengajuan sidang
-        $pengajuanSempro = PengajuanSempro::where("nim",$id)->orderBy("id","DESC")->first()->update([
-            'file_f2' => $path,
-        ]);
+       
+
 
         Session::flash('message', 'File penilaian berhasil terkirim');
         return redirect(route('dosen.detail-mahasiswa', ['id'=>$id]));
@@ -43,12 +40,23 @@ class DetailMahasiswaController extends Controller
 
      function createDetailSidang(Request $request,$id)
     {
-        // store uploaded file into storage
-        $path = $request->file('file_f6')->store('/file_f6');
-        // create reccord on table pengajuan sidang
-        $pengajuanSidang = PengajuanSidang::where("nim",$id)->orderBy("id","DESC")->first()->update([
-            'file_f6' => $path,
-        ]);
+        if($request->file('file_f2')){
+            $path = $request->file('file_f2')->store('/file_f2');
+            // dd($request);
+            // create reccord on table pengajuan sidang
+            $pengajuanSempro = PengajuanSempro::where("nim",$id)->orderBy("id","DESC")->first()->update([
+                'file_f2' => $path,
+            ]);     
+        }
+
+        if($request->file('file_f6')){
+            // store uploaded file into storage
+            $path = $request->file('file_f6')->store('/file_f6');
+            // create reccord on table pengajuan sidang
+            $pengajuanSidang = PengajuanSidang::where("nim",$id)->orderBy("id","DESC")->first()->update([
+                'file_f6' => $path,
+            ]);
+        }
         
         Session::flash('message', 'File penilaian berhasil terkirim');
         return redirect(route('dosen.detail-mahasiswa', ['id'=>$id]));

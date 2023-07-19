@@ -16,7 +16,6 @@ class Logbook extends Model
         'feedback',
         'status',
         'dokumentasi',
-        'kegiatan',
         'media',
     ];
 

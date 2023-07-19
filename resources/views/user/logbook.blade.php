@@ -48,7 +48,7 @@
         </div>
       </div>
       <div class="text-center bg-card p-8 rounded-b-lg rounded-br-lg shadow">
-        <p class="text-sm text-justify">{{$item->feedback}}</p>
+        <p class="text-sm text-justify">{{$item->rincian_kegiatan}}</p>
         <a href="{{route('user.detail-logbook')}}" class="text-header text-sm font-bold underline flex justify-end">Detail</a>
       </div>
           

@@ -36,8 +36,8 @@ class FormLogbookController extends Controller
             'nim'=>Auth::user()->username,
             'media' => $request->media,
             'dokumentasi' => $path,
-            'feedback' => $request->rincian_kegiatan,
-            'kegiatan' => $request->rencana_pencapaian,
+            'rincian_kegiatan' => $request->rincian_kegiatan,
+            'rencana_pencapaian' => $request->rincian_kegiatan,
             'status' => "-",
         ]);
 

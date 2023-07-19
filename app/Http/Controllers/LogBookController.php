@@ -14,8 +14,16 @@ class LogBookController extends Controller
     function viewLogBookMahasiswa(Request $request)
     {
        $logbook = Logbook::where("nim",Auth::user()->username)->get();
-        return view('user.logbook', [
-            'logbook' => $logbook
-        ]);
+        // return view('user.logbook', [
+        //     'logbook' => $logbook
+        // ]);
+
+        $dospem = null;
+        $skripsi = Skripsi::where('nim', $request->user()->username)->first();
+        if ($skripsi != null) {
+            $dospem = Dosen::where('nip', $skripsi->nip_dospem)->first();
+        }
+        return view('user.logbook', ['dospem' => $dospem,'logbook' => $logbook]);
+
     }
 }

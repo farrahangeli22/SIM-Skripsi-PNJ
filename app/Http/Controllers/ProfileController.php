@@ -39,7 +39,10 @@ class ProfileController extends Controller
         // $name = time() . "_" . $request->skripsi->getClientOriginalName();
         $path = $request->file('skripsi')->store('/skripsi');
         // Storage::disk('skripsi')->put($name, file_get_contents($request->skripsi));
-        Skripsi::create([
+        Skripsi::updateOrCreatr([
+            "nim"=>Auth::user()->username,
+            "nip_dospem"=>$nip,
+        ],[
             "nim"=>Auth::user()->username,
             "nip_dospem"=>$nip,
             "judul"=>$request->judul,

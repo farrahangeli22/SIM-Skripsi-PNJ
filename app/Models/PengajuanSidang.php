@@ -21,4 +21,10 @@ class PengajuanSidang extends Model
     ];
 
     protected $table = 'pengajuan_sidang';
+
+    public function mahasiswa()
+    {
+        return $this->hasOne(Mahasiswa::class, "nim", "nim");
+    }
+
 }

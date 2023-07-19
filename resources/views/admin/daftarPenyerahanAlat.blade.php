@@ -26,42 +26,44 @@
                 <th class="padding: 0.5rem; bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Aksi</th>
             </tr>
 		</thead>
+        <tbody>
+        @forelse($daftarPenyerahanAlat as $PenyerahanAlat)
 			<tr class="bg-white border border-grey-500 md:border-none block md:table-row" style="font-size: 0.5rem;">
-				<td class="padding: 0.5rem;  md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Tanggal</span>8 Februari 2023</td>
-				<td class="padding: 0.5rem;  md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nama</span>Niyara Arinda</td>
-				<td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">NIM</span>1907411032</td>
-                <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Judul</span>Rancang Bangun Sistem Informasi Manajemen Skripsi Terintegrasi Berbasis Web</td>
-                <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Sub Judul</span>Rancang Bangun Sistem Informasi Manajemen Skripsi Terintegrasi Berbasis Web (Modul: Pengajuan Sidang Skripsi & Penyerahan Alat)</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Anggota Kelompok</span>Farrah Dillah Angeli</td>
+				<td class="padding: 0.5rem;  md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Tanggal</span>{{$PenyerahanAlat->created_at}}</td>
+				<td class="padding: 0.5rem;  md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nama</span>{{$PenyerahanAlat->mahasiswa->nama}}</td>
+				<td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">NIM</span>{{$PenyerahanAlat->mahasiswa->nim}}</td>
+                <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Judul</span>{{$PenyerahanAlat->judul}}</td>
+                <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Sub Judul</span>{{$PenyerahanAlat->sub_judul}}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Anggota Kelompok</span>{{$PenyerahanAlat->anggota}}</td>
                 <td>
                     <div style="padding: 0.5rem; text-align: center;">
-                        <a href="https://s.pnj.ac.id/FormF10" target="_blank" class="text-blue-500">F10</a>
+                        <a href="{{ url('/storage/'. $PenyerahanAlat->file_f10) }}" target="_blank" class="text-blue-500">F10</a>
                     </div>
                     </td>
                     <td></td>
                     <td>
                     <div style="padding: 0.5rem; text-align: center;">
-                        <a href="https://s.pnj.ac.id/FormF12" target="_blank" class="text-blue-500">F12</a>
+                        <a href="{{ url('/storage/'. $PenyerahanAlat->file_f12) }}" target="_blank" class="text-blue-500">F12</a>
                     </div>
                     </td>
                     <td>
                     <div style="padding: 0.5rem; text-align: center;">
-                        <a href="https://s.pnj.ac.id/FormF13" target="_blank" class="text-blue-500">F13</a>
+                        <a href="{{ url('/storage/'. $PenyerahanAlat->file_f13) }}" target="_blank" class="text-blue-500">F13</a>
                     </div>
                     </td>
                     <td>
                     <div style="padding: 0.5rem; text-align: center;">
-                        <a href="https://s.pnj.ac.id/FormF14" target="_blank" class="text-blue-500">F14</a>
+                        <a href="{{ url('/storage/'. $PenyerahanAlat->file_f14) }}" target="_blank" class="text-blue-500">F14</a>
                     </div>
                     </td>
                     <td>
                     <div style="padding: 0.5rem; text-align: center;">
-                        <a href="https://s.pnj.ac.id/FormF15" target="_blank" class="text-blue-500">F15</a>
+                        <a href="{{ url('/storage/'. $PenyerahanAlat->file_f15) }}" target="_blank" class="text-blue-500">F15</a>
                     </div>
                     </td>
                     <td>
                     <div style="padding: 0.5rem; text-align: center;">
-                        <a href="https://s.pnj.ac.id/FormF16" target="_blank" class="text-blue-500">F16</a>
+                        <a href="{{ url('/storage/'. $PenyerahanAlat->file_f16) }}" target="_blank" class="text-blue-500">F16</a>
                     </div>
                     </td>
                     <td>
@@ -71,27 +73,27 @@
                     </td>
                     <td>
                      <div style="padding: 0.5rem;">
-                        <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Link Sertifikat PPKP</a>
+                        <a href="{{ url('/storage/'. $PenyerahanAlat->sertifikat_pkkp) }}" target="_blank" class="text-blue-500">Link Sertifikat PPKP</a>
                     </div>
                     </td>
                     <td>
                      <div style="padding: 0.5rem;">
-                        <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Link Sertifikat TOEIC</a>
+                        <a href="{{ url('/storage/'. $PenyerahanAlat->sertifikat_toeic) }}" target="_blank" class="text-blue-500">Link Sertifikat TOEIC</a>
                     </div>
                     </td>
                     <td>
                      <div style="padding: 0.5rem;">
-                        <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Link Sertifikat Lomba</a>
+                        <a href="{{ url('/storage/'. $PenyerahanAlat->sertifikat_lomba) }}" target="_blank" class="text-blue-500">Link Sertifikat Lomba</a>
                     </div>
                     </td>
                     <td>
                      <div style="padding: 0.5rem;">
-                        <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Link Sertifikat Kejuaraan</a>
+                        <a href="{{ url('/storage/'. $PenyerahanAlat->sertifikat_kejuaraan) }}" target="_blank" class="text-blue-500">Link Sertifikat Kejuaraan</a>
                     </div>
                     </td>
                     <td>
                      <div style="padding: 0.5rem;">
-                        <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Link Sertifikat Organisasi</a>
+                        <a href="{{ url('/storage/'. $PenyerahanAlat->sertifikat_organisasi) }}" target="_blank" class="text-blue-500">Link Sertifikat Organisasi</a>
                     </div>
                     </td>
                     <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
@@ -206,6 +208,9 @@
                     </div>
                 </td>
             </tr>
+            @empty
+                <p>Daftar penyerahan alat masih kosong</p>
+            @endforelse
 		</tbody>
 	</table>
 </div>

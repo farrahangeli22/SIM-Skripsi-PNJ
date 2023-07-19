@@ -18,25 +18,27 @@
                 <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Aksi</th>
             </tr>
 		</thead>
+        <tbody>
+        @forelse($daftarPengajuanSempro as $PengajuanSempro)
 			<tr class="bg-white border border-grey-500 md:border-none block md:table-row text-xs">
-				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Tanggal</span>8 Februari 2023</td>
-				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nama</span>Niyara Arinda</td>
-				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">NIM</span>1907411032</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Judul</span>Rancang Bangun Sistem Informasi Manajemen Skripsi Terintegrasi Berbasis Web</td>
-				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Sub Judul</span>Rancang Bangun Sistem Informasi Manajemen Skripsi Terintegrasi Berbasis Web (Modul: Pengajuan Sidang Skripsi & Penyerahan Alat)</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Anggota Kelompok</span>Farrah Dillah Angeli</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Dosen Pembimbing</span>Eriya,S.Kom., M.T.</td>
-				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Tanggal</span>{{$PengajuanSempro->created_at}}</td>
+				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nama</span>{{$PengajuanSempro->mahasiswa->nama}}</td>
+				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">NIM</span>{{$PengajuanSempro->mahasiswa->nim}}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Judul</span>{{$PengajuanSempro->judul}}</td>
+				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Sub Judul</span>{{$PengajuanSempro->sub_judul}}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Anggota Kelompok</span>{{$PengajuanSempro->anggota}}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Dosen Pembimbing</span>{{$PengajuanSempro->mahasiswa->dosen->nama}}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <span class="inline-block md:hidden font-bold">Calon Dosen Penguji</span>
                         <ul class="list-disc ml-1 list-inside">
-                        <li style="list-style-type: disc;">Penguji 1</li>
-                        <li style="list-style-type: disc;">Penguji 2</li>
-                        <li style="list-style-type: disc;">Penguji 3</li>
+                            <!-- <li style="list-style-type: disc;">Penguji 1</li>
+                            <li style="list-style-type: disc;">Penguji 2</li>
+                            <li style="list-style-type: disc;">Penguji 3</li> -->
                         </ul>
                 </td>
                 <td>
                     <div style="text-align: center;">
-                        <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">F1</a>
+                        <a href="{{ url('/storage/'. $PengajuanSempro->file_f1) }}" target="_blank" class="text-blue-500">F1</a>
                     </div>
                 </td>
                 <td>
@@ -145,6 +147,9 @@
                     </div>
                 </td>
             </tr>
+            @empty
+                <p>Daftar pengajuan seminar proposal masih kosong</p>
+            @endforelse
 		</tbody>
 	</table>
 </div>

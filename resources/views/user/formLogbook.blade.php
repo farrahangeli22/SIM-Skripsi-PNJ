@@ -18,7 +18,7 @@
                 <label class="block text-sm mb-2" for="">
                     Dokumentasi
                 </label>
-                <x-text-input id="dokumentasi" class="block w-80 h-10 p-1 border border-black cursor-pointer" type="file" name="dokumentasi" required autofocus/>
+                <x-text-input id="dokumentasi" class="block w-80 h-10 p-1 border border-black cursor-pointer" type="file" accept="image/*" name="dokumentasi" required autofocus/>
             </div>
             <div>
             <label class="block text-sm mb-2" for="">

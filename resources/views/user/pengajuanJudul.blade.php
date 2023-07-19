@@ -52,7 +52,8 @@
                                 Jurnal Referensi
                                 <p class="text-red-600 pl-1">*</p>
                             </label>
-                            <x-text-input id="jurnal" class="block w-96 h-10 p-1 border border-black mb-4 cursor-pointer" type="file" name="jurnal" accept=".pdf" required autofocus />
+                            <x-text-input id="jurnal" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="jurnal" accept=".pdf" required autofocus />
+                            <p class="text-xs text-gray-500 mb-2">Format file PDF </p>
                         </div>
                         <div>
                             <label class="flex flex-wrap text-sm mb-2" for="">

@@ -12,7 +12,10 @@ use App\Http\Controllers\DaftarPenyerahanAlatController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DaftarMahasiswaController;
 use App\Http\Controllers\LogBookController;
+use App\Http\Controllers\DaftarLogBookController;
+use App\Http\Controllers\DetailLogBookController;
 use App\Http\Controllers\FormLogbookController;
+use App\Http\Controllers\DetailLogBookMahasiswaController;
 use App\Http\Controllers\DetailMahasiswaController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ManajemenMahasiswaController;
@@ -57,10 +60,13 @@ Route::middleware('auth')->group(function () {
     // user - logbook mahasiswa 
     Route::get("/logbook", [LogBookController::class, 'viewLogBookMahasiswa'])->name('user.logbook');
 
-    // Form logbook mahasiswa
+    // user - Form logbook mahasiswa
     Route::get('/form-logbook', [FormLogbookController::class, 'viewFormLogbook'])->name('user.form-logbook');
     Route::post('/form-logbook', [FormLogbookController::class, 'createFormLogbook'])->name('user.create-form-logbook');
     
+    // user - detail logbook
+    Route::get('/detail-logbook-mahasiswa/{id}', [DetailLogbookMahasiswaController::class, 'viewDetailLogbookMahasiswa'])->name('user.detail-logbook-mahasiswa');
+   
     // user - pengajuan judul
     Route::get('/pengajuan-judul', [PengajuanJudulController::class, 'viewPengajuanJudul'])->name('user.pengajuan-judul');
     Route::post('/pengajuan-judul', [PengajuanJudulController::class, 'createPengajuanJudul'])->name('user.create-pengajuan-judul');
@@ -72,6 +78,14 @@ Route::middleware('auth')->group(function () {
     // dosen - daftar mahasiswa
     Route::get('/daftar-mahasiswa', [DaftarMahasiswaController::class, 'viewDaftarMahasiswa'])->name('dosen.daftar-mahasiswa');
     Route::put('/terima-permintaan-judul/{idPengajuanJudul}', [DaftarMahasiswaController::class, 'terimaPermintaanBimbingan']);
+
+    // dosen - daftar logbook
+    Route::get('/daftar-logbook', [DaftarLogbookController::class, 'viewDaftarLogbook'])->name('dosen.daftar-logbook');
+
+    // dosen - detail logbook
+    Route::get('/detail-logbook/{id}', [DetailLogbookController::class, 'viewDetailLogbook'])->name('dosen.detail-logbook');
+    Route::post('/detail-logbook/{id}', [DetailLogbookController::class, 'updateDetailLogbook'])->name('dosen.detail-logbook');
+
 
     // user - pengajuan sidang
     Route::get('/pengajuan-sidang', [PengajuanSidangController::class, 'viewPengajuanSidang'])->name('user.pengajuan-sidang');
@@ -130,9 +144,9 @@ Route::get("/home", function () {
 //     return view('user.formLogbook');
 // })->name('user.form-logbook');
 
-Route::get("/detail-logbook", function () {
-    return view('user.detailLogbook');
-})->name('user.detail-logbook');
+// Route::get("/detail-logbook", function () {
+//     return view('user.detailLogbook');
+// })->name('user.detail-logbook');
 
 // Route::get("/profile", function () {
 //     return view('user.profile');
@@ -161,13 +175,13 @@ Route::get("/notification", function () {
 //     return view('dosen.daftarMahasiswa');
 // })->name('dosen.daftar-mahasiswa');
 
-Route::get("/dosen/logbook", function () {
-    return view('dosen.logbookMahasiswa');
-})->name('dosen.logbook');
+// Route::get("/dosen/logbook", function () {
+//     return view('dosen.logbookMahasiswa');
+// })->name('dosen.logbook');
 
-Route::get("/dosen/detail-logbook", function () {
-    return view('dosen.detailLogbook');
-})->name('dosen.detail-logbook');
+// Route::get("/dosen/detail-logbook", function () {
+//     return view('dosen.detailLogbook');
+// })->name('dosen.detail-logbook');
 
 // Route::get("/dosen/detail-mahasiswa", function () {
 //     return view('dosen.detailMahasiswa');

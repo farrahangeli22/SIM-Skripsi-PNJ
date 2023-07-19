@@ -20,4 +20,9 @@ class Logbook extends Model
     ];
 
     protected $table = 'logbook';
+
+    function mahasiswa()
+    {
+        return $this->belongsTo(mahasiswa::class, 'nim', 'nim');
+    }
 }

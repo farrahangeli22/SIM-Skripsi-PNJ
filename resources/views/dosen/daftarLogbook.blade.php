@@ -19,20 +19,24 @@
                 </tr>
             </thead>
             <tbody>
+            @forelse($daftarLogbook as $Logbook)
                 <tr class="bg-white border-b">
                     <td class="px-6 py-4 border">
-                        15 Februari 2023
+                        {{$Logbook->created_at}}
                     </td>
                     <td class="px-6 py-4 border">
-                        Farrah Dillah Angeli
+                        {{$Logbook->mahasiswa->nama}}
                     </td>
                     <td class="px-6 py-4 border">
-                        Menunggu Persetujuan
+                        {{$Logbook->status}}
                     </td>
                     <td class="px-6 py-4 flex justify-center">
-                        <a class="block h-fit w-fit p-2 rounded-lg bg-primary flex text-sm font-bold text-white shadow hover:bg-hover" href="{{route('dosen.detail-logbook')}}">Detail</a>
+                        <a class="block h-fit w-fit p-2 rounded-lg bg-primary flex text-sm font-bold text-white shadow hover:bg-hover" href="{{route('dosen.detail-logbook',['id' => $Logbook->id])}}">Detail</a>
                     </td>
                 </tr>
+                @empty
+                <p>Daftar pengajuan sidang masih kosong</p>
+                @endforelse
             </tbody>
         </table>
     </div>

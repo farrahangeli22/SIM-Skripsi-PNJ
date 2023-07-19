@@ -61,11 +61,11 @@
                                     <!-- Konten kiri -->
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Nama:</label>
-                                        <p>Niyara Arinda</p>
+                                        <p id="namaMahasiswa"></p>
                                     </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">NIM:</label>
-                                        <p>1907411032</p>
+                                        <p id="nimMahasiswa"></p>
                                     </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Prodi:</label>
@@ -86,7 +86,7 @@
                                 </div>
                                 @csrf
                                 <input type="hidden" name="id" id="idPengajuan">
-                                <input type="hidden" name="nim" value="1907411012" id="idPengajuan">
+                                <input type="hidden" name="nim" value="" id="nim">
                                 <div class="w-1/2">
                                     <!-- Konten kanan -->
                                     <div class="flex flex-col mb-4 text-sm">
@@ -188,7 +188,10 @@
     }).done(function(res){
         
         $('#namaDosen').val(res.namaDosen)
+        $('#nim').val(res.nim)
         $('#idPengajuan').val(id)
+        $('#namaMahasiswa').text(res.nama)
+        $('#nimMahasiswa').text(res.nim)
     })
   }
       

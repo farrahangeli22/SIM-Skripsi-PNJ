@@ -42,7 +42,8 @@ class PengajuanSemproController extends Controller
 
     function getApi($id){
         $pengajuanSempro = PengajuanSempro::find($id);
-        $data = ["namaDosen"=>$pengajuanSempro->mahasiswa->dosen->nama];
+        $mahasiswa = Mahasiswa::where("nim",$pengajuanSempro->nim)->first();
+        $data = ["nim"=>$mahasiswa->nim,"nama"=>$mahasiswa->nama,"namaDosen"=>$pengajuanSempro->mahasiswa->dosen->nama];
         return response($data,200);
     }
      

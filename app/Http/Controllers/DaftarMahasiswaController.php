@@ -22,7 +22,6 @@ class DaftarMahasiswaController extends Controller
                 $query->with('mahasiswa');
             }])->get();
 
-
         // ambil data mahasiswa bimbingan dari table skripsi
         $mahasiswaBimbingan = Skripsi::where('nip_dospem', $request->user()->username)->with('mahasiswa')->get();
 

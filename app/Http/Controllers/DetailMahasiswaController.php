@@ -17,7 +17,7 @@ class DetailMahasiswaController extends Controller
      {
         // ambil data mahasiswa dari db
         // where nim == username authenticated user
-        $mahasiswa = Mahasiswa::where('nim', $id)->first();
+        $mahasiswa = Mahasiswa::where('nim', $id)->orderby('id', 'desc')->first();
         // dd($mahasiswa);
         // $skripsi = Skripsi::where('judul', $request->user()->username)->first();
         // ambil data dosen dari db

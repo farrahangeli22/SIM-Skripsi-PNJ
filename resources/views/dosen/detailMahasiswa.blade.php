@@ -69,7 +69,7 @@
                             <!-- pdf viewer -->
                             
                         
-                        <iframe src="{{ asset('skripsi/'.$mahasiswa->skripsi->file_skripsi) }}" width="600" height="400"></iframe>
+                        <iframe src="{{ url('/storage/'. $mahasiswa->skripsi->file_skripsi) }}" width="600" height="400"></iframe>
 
 
 

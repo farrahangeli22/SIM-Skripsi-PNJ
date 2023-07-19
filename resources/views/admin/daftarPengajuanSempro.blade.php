@@ -43,7 +43,7 @@
                 </td>
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="text-align: center;">
-                        <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">F2</a>
+                        <a href="{{ url('/storage/'. $PengajuanSempro->file_f2) }}" target="_blank" class="text-blue-500">F2</a>
                     </div>
                 </td>
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"></td>

@@ -39,5 +39,11 @@ class PengajuanSemproController extends Controller
         Session::flash('message', 'Pengajuan sempro berhasil terkirim');
         return redirect(route('user.pengajuan-sempro'));
     } 
+
+    function getApi($id){
+        $pengajuanSempro = PengajuanSempro::find($id);
+        $data = ["namaDosen"=>$pengajuanSempro->mahasiswa->dosen->nama];
+        return response($data,200);
+    }
      
 }

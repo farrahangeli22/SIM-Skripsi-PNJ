@@ -18,6 +18,9 @@ class PengajuanSempro extends Model
         'status',
         'file_f1',
         'file_f2',
+        'dosen_penguji1',
+        'dosen_penguji2',
+        'dosen_penguji3',
     ];
 
     protected $table = 'pengajuan_sempro';

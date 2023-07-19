@@ -49,10 +49,11 @@
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"></td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
 					<span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
-					<button class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>
+					<button onclick="editButton({{$PengajuanSempro->id}})" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>
                 </td>
                     <!-- modal -->
                     <div id="modal" class=" z-50 fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto hidden">
+                        <form method="post" enctype="multipart/form-data">
                         <div class="bg-white p-6 rounded-lg">
                             <div class="flex ">
                                 <div class="w-1/2">
@@ -83,38 +84,38 @@
                                         <p>Rancang Bangun Sistem Informasi Manajemen Skripsi Terintegrasi Berbasis Web (Modul: Pengajuan Sidang Skripsi & Penyerahan Alat)</p>
                                     </div>
                                 </div>
+                                @csrf
+                                <input type="hidden" name="id" id="idPengajuan">
+                                <input type="hidden" name="nim" value="1907411012" id="idPengajuan">
                                 <div class="w-1/2">
                                     <!-- Konten kanan -->
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Dosen Pembimbing:</label>
-                                        <select class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
-                                            <option>Dosen 1</option>
-                                            <option>Dosen 2</option>
-                                            <option>Dosen 3</option>
-                                        </select>
+                                        <input id="namaDosen" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
+
                                     </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Dosen Penguji 1:</label>
-                                        <select class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
-                                            <option>Dosen 1</option>
-                                            <option>Dosen 2</option>
-                                            <option>Dosen 3</option>
+                                        <select name="dosen1" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
+                                            @foreach($dosen as $item)
+                                            <option value="{{$item->nip}}">{{$item->nama}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Dosen Penguji 2:</label>
-                                        <select class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
-                                            <option>Dosen 1</option>
-                                            <option>Dosen 2</option>
-                                            <option>Dosen 3</option>
+                                        <select name="dosen2" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
+                                            @foreach($dosen as $item)
+                                            <option value="{{$item->nip}}">{{$item->nama}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Dosen Penguji 3:</label>
-                                        <select class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
-                                            <option>Dosen 1</option>
-                                            <option>Dosen 2</option>
-                                            <option>Dosen 3</option>
+                                        <select name="dosen3" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
+                                            @foreach($dosen as $item)
+                                            <option value="{{$item->nip}}">{{$item->nama}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                      <div class="flex flex-col mb-4 text-sm">
@@ -125,10 +126,10 @@
                                         <label class="font-bold">Form F1:</label>
                                          <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Form-F2.pdf</a>
                                      </div>
-                                      <label class="block font-bold" for="">
+                                      <label name="f3" class="block font-bold" for="">
                                         Form F3:
                                     </label>
-                                    <x-text-input id="judul" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
+                                    <input id="f3" name="f3" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer" type="file" autofocus/>
                                 </div>
                             </div>
                             <div class="flex">
@@ -144,6 +145,7 @@
                                 </div>
                             </div>
                         </div>
+                    </form>
                     </div>
                 </td>
             </tr>
@@ -153,6 +155,7 @@
 		</tbody>
 	</table>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
       
 <script>
         // Ambil elemen modal dan tombol-tombolnya
@@ -177,6 +180,17 @@
 
   // Tambahkan event listener untuk tombol tutup modal
   closeModalBtn.addEventListener('click', closeModal);
+
+  function editButton(id){
+    $.ajax({
+        type: 'GET',
+        url: '/getPengajuanSempro/'+id,
+    }).done(function(res){
+        
+        $('#namaDosen').val(res.namaDosen)
+        $('#idPengajuan').val(id)
+    })
+  }
       
 </script>       
 </x-admin-layout>

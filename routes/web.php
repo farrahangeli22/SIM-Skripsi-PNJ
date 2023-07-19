@@ -59,7 +59,6 @@ Route::middleware('auth')->group(function () {
 
     // user - logbook mahasiswa 
     Route::get("/logbook", [LogBookController::class, 'viewLogBookMahasiswa'])->name('user.logbook');
-
     // user - Form logbook mahasiswa
     Route::get('/form-logbook', [FormLogbookController::class, 'viewFormLogbook'])->name('user.form-logbook');
     Route::post('/form-logbook', [FormLogbookController::class, 'createFormLogbook'])->name('user.create-form-logbook');
@@ -125,12 +124,16 @@ Route::middleware('auth')->group(function () {
 
     // admin - daftar pengajuan sempro
     Route::get('/daftar-pengajuan-sempro', [DaftarPengajuanSemproController::class, 'viewDaftarPengajuanSempro'])->name('admin.daftar-pengajuan-sempro');
+    Route::post("/daftar-pengajuan-sempro", [DaftarPengajuanSemproController::class, 'createDaftarPengajuanSempro'])->name('admin.create-daftar-pengajuan-sempro');
 
     // admin - daftar pengajuan sidang
     Route::get('/daftar-pengajuan-sidang', [DaftarPengajuanSidangController::class, 'viewDaftarPengajuanSidang'])->name('admin.daftar-pengajuan-sidang');
 
     // admin - daftar pengajuan sempro
     Route::get('/daftar-penyerahan-alat', [DaftarPenyerahanAlatController::class, 'viewDaftarPenyerahanAlat'])->name('admin.daftar-penyerahan-alat');
+
+    //api
+    Route::get("/getPengajuanSempro/{id}", [PengajuanSemproController::class, 'getApi'])->name('pengajuanSempro.getApi');
 
 });
 

@@ -47,7 +47,8 @@
                             <label class="block text-sm mb-2" for="">
                                 Anggota Kelompok
                             </label>
-                            <x-text-input id="anggota" class="block mt-1 w-96 border-black mb-4" type="text" name="anggota" placeholder="Masukkan teks..." autofocus />
+                            <x-text-input id="anggota" class="block mt-1 w-96 border-black" type="text" name="anggota" placeholder="Masukkan teks..." autofocus />
+                            <p class="text-xs text-gray-500 mb-2">Format penulisan (nama anggota 1, nama anggota 2)</p>
                             <label class="flex flex-wrap text-sm mb-2" for="">
                                 Jurnal Referensi
                                 <p class="text-red-600 pl-1">*</p>

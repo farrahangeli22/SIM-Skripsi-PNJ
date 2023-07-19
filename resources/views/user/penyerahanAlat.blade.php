@@ -41,14 +41,13 @@
                         <x-text-input id="judul" class="block mt-1 w-96 border-black mb-5" type="text" name="judul" placeholder="Masukkan teks..." required autofocus />
                         <label class="flex flex-wrap text-sm mb-1" for="">
                             Sub Judul Skripsi
-                            <p class="text-red-600 pl-1">*</p>
                         </label>
-                        <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-6" type="text" name="subJudul" placeholder="Masukkan teks..." required autofocus/>
+                        <x-text-input id="subJudul" class="block mt-1 w-96 border-black mb-6" type="text" name="subJudul" placeholder="Masukkan teks..." autofocus/>
                         <label class="flex flex-wrap text-sm mb-1" for="">
                             Anggota Kelompok
-                            <p class="text-red-600 pl-1">*</p>
                         </label>
-                        <x-text-input id="anggota" class="block mt-1 w-96 border-black mb-6" type="text" name="anggota" placeholder="Masukkan teks..." required autofocus/>
+                        <x-text-input id="anggota" class="block mt-1 w-96 border-black" type="text" name="anggota" placeholder="Masukkan teks..." autofocus/>
+                        <p class="text-xs text-gray-500 mb-2">Format penulisan (nama anggota 1, nama anggota 2)</p>
                         <label class="flex flex-wrap text-sm mb-1" for="">
                             Link Video Demo
                             <p class="text-red-600 pl-1">*</p>
@@ -116,7 +115,7 @@
                         <x-text-input id="file_f16" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" accept=".pdf" name="file_f16" required autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF16" target="_blank" class="text-blue-500">Download disini</a>)</p>
                         <label class="block text-sm mb-1" for="">
-                            Sertifikat Organisai (jika ada)
+                            Sertifikat Organisasi (jika ada)
                         </label>
                         <x-text-input id="sertifikat_organisasi" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" accept=".pdf"  name="sertifikat_organisasi" autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF</p>

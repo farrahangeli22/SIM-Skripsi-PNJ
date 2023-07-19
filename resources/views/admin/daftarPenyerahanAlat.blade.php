@@ -17,7 +17,7 @@
                 <th class="padding: 0.5rem; bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F14</th>
                 <th class="padding: 0.5rem; bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F15</th>
                 <th class="padding: 0.5rem; bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F16</th>
-                <th class="padding: 0.5rem; bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Link Vidio Demo</th>
+                <th class="padding: 0.1rem; bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Link Vidio Demo</th>
                 <th class="padding: 0.5rem; bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Sertifikat PKKP</th>
                 <th class="padding: 0.5rem; bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Sertifikat TOEIC</th>
                 <th class="padding: 0.5rem; bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Sertifikat Lomba</th>
@@ -68,7 +68,8 @@
                     </td>
                     <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="padding: 0.5rem;">
-                        <a href="{{ url('/storage/'. $PenyerahanAlat->link_video) }}" target="_blank" class="text-blue-500"> {{ $PenyerahanAlat->link_video }}</a>
+                        <a href="{{ $PenyerahanAlat->link_video }}" target="_blank" class="text-blue-500">Video</a>
+
                     </div>
                     </td>
                     <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">

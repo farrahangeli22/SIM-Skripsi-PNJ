@@ -26,7 +26,6 @@ class PenyerahanAlatController extends Controller
 
     function createPenyerahanAlat(Request $request)
     {
-      
         // store uploaded file into storage
         $pathPkkp = $request->file('sertifikat_pkkp')->store('/sertifikat_pkkp4');
         $pathLomba = $request->file('sertifikat_lomba')->store('/sertifikat_lomba');
@@ -66,5 +65,13 @@ class PenyerahanAlatController extends Controller
 
     Session::flash('message', 'Penyerahan Alat berhasil terkirim');
     return redirect(route('user.penyerahan-alat'));
-}  
+    }  
+
+    function getApi($id){
+        $penyerahanAlat = PenyerahanAlat::find($id);
+        $mahasiswa = Mahasiswa::where("nim",$penyerahanAlat->nim)->first();
+        $data = ["nim"=>$mahasiswa->nim,"nama"=>$mahasiswa->nama,"prodi"=>$mahasiswa->prodi,"kelas"=>$mahasiswa->kelas,"judul"=>$penyerahanAlat->judul,"subJudul"=>$penyerahanAlat->sub_judul];
+        return response($data,200);
+    }
+     
 }

@@ -79,9 +79,12 @@ function createDaftarPengajuanSidang(Request $request)
              Mahasiswa::find($request->nim)->update([
             'status_id' => '6',
         ]);
+        }elseif ($request->status == 'Tidak Lulus') {
+            Mahasiswa::find($request->nim)->update([
+            'status_id' => '7',]);
        }else{
              Mahasiswa::find($request->nim)->update([
-            'status_id' => '7',
+            'status_id' => '5',
         ]);
     }
         

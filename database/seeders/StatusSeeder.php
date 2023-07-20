@@ -15,35 +15,35 @@ class StatusSeeder extends Seeder
     public function run(): void
     {
         Status::create([
-            'nama' => 'pengajuan judul',
+            'nama' => 'Pengajuan Judul',
         ]);
 
         Status::create([
-            'nama' => 'pengajuan sempro',
+            'nama' => 'Pengajuan Seminar Proposal',
         ]);
 
         Status::create([
-            'nama' => 'lulus sempro',
+            'nama' => 'Lulus Seminar Proposal',
         ]);
 
         Status::create([
-            'nama' => 'tidak lulus sempro',
+            'nama' => 'Tidak Lulus Seminar Proposal',
         ]);
 
         Status::create([
-            'nama' => 'pengajuan sidang',
+            'nama' => 'Pengajuan Sidang',
         ]);
 
         Status::create([
-            'nama' => 'lulus sidang',
+            'nama' => 'Lulus Sidang',
         ]);
 
         Status::create([
-            'nama' => 'tidak lulus sidang',
+            'nama' => 'Tidak Lulus Sidang',
         ]);
 
         Status::create([
-            'nama' => 'penyerahan alat',
+            'nama' => 'Penyerahan Alat',
         ]);
     }
 }

@@ -15,6 +15,9 @@
             <label class="block mb-4 font-bold text-sm" for="">Kelas : 
                 <p class="font-normal mt-2">{{$mahasiswa->kelas}}</p>
             </label>
+            <label class="block mb-4 font-bold text-sm" for="">Status : 
+                <p class="font-normal mt-2">{{$mahasiswa->status->nama}}</p>
+            </label>
         </div>
 
         <div>

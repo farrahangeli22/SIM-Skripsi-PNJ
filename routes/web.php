@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StorageController;
 use App\Http\Controllers\PengajuanJudulController;
 use App\Http\Controllers\DaftarPengajuanJudulController;
@@ -42,9 +44,13 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard', [DashboardController::class, 'viewDashboard'])->middleware(['auth', 'verified'])->name('admin.dashboard-admin');
+Route::post('/dashboard', [DashboardController::class, 'viewDashboardFilter'])->middleware(['auth', 'verified'])->name('admin.dashboard-admin-filter');
+
 
 // Route::middleware('auth')->group(function () {
 //     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -57,8 +63,13 @@ Route::middleware('auth')->group(function () {
     // untuk storage jurnal
     Route::get('/storage/{folder}/{filename}',[StorageController::class,'getFile']);
 
+    // user - home mahasiswa 
+    Route::get("/home", [HomeController::class, 'viewHome'])->name('user.home');
+
+
     // user - logbook mahasiswa 
     Route::get("/logbook", [LogBookController::class, 'viewLogBookMahasiswa'])->name('user.logbook');
+
     // user - Form logbook mahasiswa
     Route::get('/form-logbook', [FormLogbookController::class, 'viewFormLogbook'])->name('user.form-logbook');
     Route::post('/form-logbook', [FormLogbookController::class, 'createFormLogbook'])->name('user.create-form-logbook');
@@ -142,9 +153,9 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::get("/home", function () {
-    return view('user.home');
-})->name('user.home');
+// Route::get("/home", function () {
+//     return view('user.home');
+// })->name('user.home');
 
 // Route::get("/form-logbook", function () {
 //     return view('user.formLogbook');
@@ -195,9 +206,9 @@ Route::get("/notification", function () {
 
 
 // routes for user admin
-Route::get("/admin/dashboard-admin", function () {
-    return view('admin.dashboardAdmin');
-})->name('admin.dashboard-admin');
+// Route::get("/admin/dashboard-admin", function () {
+//     return view('admin.dashboardAdmin');
+// })->name('admin.dashboard-admin');
 
 // Route::get("/admin/manajemen-mahasiswa", function () {
 //     return view('admin.manajemenMahasiswa');

@@ -143,7 +143,7 @@
                                     </button>
                                 </div>
                                 <div class="w-full">
-                                    <button id="closeModal" class="mt-4 ml-4 bg-delete hover:bg-hoverDelete text-white font-bold py-2 px-4 rounded">
+                                    <button type="button" id="closeModal" class="mt-4 ml-4 bg-delete hover:bg-hoverDelete text-white font-bold py-2 px-4 rounded">
                                         Tutup
                                     </button>
                                 </div>
@@ -162,7 +162,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
       
 <script>
-        // Ambil elemen modal dan tombol-tombolnya
+  // Ambil elemen modal dan tombol-tombolnya
   const modal = document.getElementById('modal');
   const closeModalBtn = document.getElementById('closeModal');
   const editBtns = document.querySelectorAll('.bg-edit');

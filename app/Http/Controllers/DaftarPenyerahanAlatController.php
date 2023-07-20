@@ -21,19 +21,17 @@ class DaftarPenyerahanAlatController extends Controller
 {  
     // Cari atau buat data PenyerahanAlat berdasarkan nim
     $penyerahanAlat = PenyerahanAlat::updateOrCreate(
-         ['nim' => $request->nim]
+         ['nim' => $request->nim],
     );
     
 
-    // Jika ada file f11 yang diupload, simpan file tersebut ke kolom file_f11
-     if ($request->hasFile('f11')) {
+    if ($request->hasFile('f11')) {
         $path = $request->file('f11')->store('/file_f11');
-        PenyerahanAlat::updateOrCreate(
-            [
-                'file_f11' => $path,
-            ]
-        );
+        // Simpan path file di kolom 'file_f11' dalam tabel 'penyerahan_alat'
+        $penyerahanAlat->file_f11 = $path;
+        $penyerahanAlat->save();
     }
+    
 
     Session::flash('message', 'Penyerahan alat berhasil terkirim');
     return redirect(route('admin.daftar-penyerahan-alat'));

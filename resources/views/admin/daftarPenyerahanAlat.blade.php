@@ -251,7 +251,7 @@
  function editButton(id){
     $.ajax({
         type: 'GET',
-        url: '/getpenyerahanAlat/'+id,
+        url: '/getPenyerahanAlat/'+id,
     }).done(function(res){
         console.log(res.nim)
         $('#nim').val(res.nim)

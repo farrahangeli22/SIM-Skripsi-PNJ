@@ -22,6 +22,9 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->text('file_f4');
             $table->text('file_f6')->nullable();
+            $table->string('dosen_penguji1')->nullable();
+            $table->string('dosen_penguji2')->nullable();
+            $table->string('dosen_penguji3')->nullable();
             $table->timestamps();
         });
     }

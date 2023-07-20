@@ -49,9 +49,12 @@ class DaftarPengajuanSemproController extends Controller
              Mahasiswa::find($request->nim)->update([
             'status_id' => '3',
         ]);
+       }elseif ($request->status == 'Tidak Lulus') {
+            Mahasiswa::find($request->nim)->update([
+            'status_id' => '4',]);
        }else{
              Mahasiswa::find($request->nim)->update([
-            'status_id' => '4',
+            'status_id' => '2',
         ]);
         }
        

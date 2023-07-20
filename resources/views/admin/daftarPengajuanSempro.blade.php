@@ -142,18 +142,19 @@
                                         Simpan
                                     </button>
                                 </div>
-                                <div class="flex justify-end w-full">
-                                    <button type="submit" name="status" value="Lulus" class="mt-4 bg-[#40C057] hover:bg-font text-white font-bold py-2 px-4 rounded">
-                                        Lulus
-                                    </button>
+                                <div class="flex justify-center w-full">
+                                    <!-- Tombol "Lulus" dan "Tidak Lulus" berada dalam satu div yang sama -->
+                                    <div class="flex">
+                                        <button type="submit" name="status" value="Lulus" class="mt-4 bg-[#40C057] hover:bg-font text-white font-bold py-2 px-4 rounded">
+                                            Lulus
+                                        </button>
+                                        <button type="submit" name="status" value="Tidak Lulus" class="mt-4 bg-[#E03131] hover:bg-hoverDelete text-white font-bold py-2 px-4 rounded ml-4">
+                                            Tidak Lulus
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="flex justify-end w-full">
-                                    <button  type="submit" name="status" value="Tidak Lulus"class="mt-4 bg-[#E03131] hover:bg-font text-white font-bold py-2 px-4 rounded">
-                                        Tidak Lulus
-                                    </button>
-                                </div>
-                                <div class="w-full">
-                                    <button type="button" id="closeModal" class="mt-4 ml-4 bg-delete hover:bg-hoverDelete text-white font-bold py-2 px-4 rounded">
+                                <div class="flex justify-center w-full">
+                                    <button type="button" id="closeModal" class="mt-4 bg-delete hover:bg-hoverDelete text-white font-bold py-2 px-4 rounded">
                                         Tutup
                                     </button>
                                 </div>

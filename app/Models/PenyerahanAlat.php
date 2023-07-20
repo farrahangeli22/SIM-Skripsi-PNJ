@@ -35,4 +35,5 @@ class PenyerahanAlat extends Model
     {
         return $this->hasOne(Mahasiswa::class, "nim", "nim");
     }
+
 }

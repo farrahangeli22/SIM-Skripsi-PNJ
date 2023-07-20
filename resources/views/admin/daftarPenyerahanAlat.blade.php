@@ -69,7 +69,6 @@
                     <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="padding: 0.5rem;">
                         <a href="{{ $PenyerahanAlat->link_video }}" target="_blank" class="text-blue-500">Video</a>
-
                     </div>
                     </td>
                     <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
@@ -101,12 +100,13 @@
                     @endif
                     </div>
                     </td>
-                    <td class="padding: 0.5rem; md:border md:border-grey-500 text-left block md:table-cell">
-					<span class="padding: 0.5rem; inline-block w-1/3 md:hidden font-bold">Aksi</span>
-					<button class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>
-                     </td>
+                   <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+					<span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
+					<button onclick="editButton({{$PenyerahanAlat->id}})" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>
+                </td>
                     <!-- modal -->
                     <div id="modal" class="z-50 fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto hidden">
+                        <form method="post" enctype="multipart/form-data">
                         <div class="bg-white p-6 rounded-lg">
                             <div class="flex ">
                                 <div class="w-2/3 p-4" >
@@ -114,86 +114,89 @@
                                     <!-- Konten kiri -->
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Nama:</label>
-                                        <p>Niyara Arinda</p>
+                                         <p id="namaMahasiswa"></p>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">NIM:</label>
-                                        <p>1907411032</p>
+                                        <p id="nimMahasiswa"></p>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Prodi:</label>
-                                        <p>Teknik Informatika</p>
+                                       <p id="prodiMahasiswa"></p>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Kelas:</label>
-                                        <p>TI 8A</p>
+                                        <p id="kelasMahasiswa"></p>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Judul:</label>
-                                        <p>Rancang Bangun Sistem Informasi Manajemen Skripsi</p>
+                                        <p id="judul"></p>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
-                                        <label class="font-bold">Judul:</label>
-                                        <p>Rancang Bangun Sistem Informasi Manajemen Skripsi Terintegrasi Berbasis Web (Modul: Pengajuan Sidang Skripsi & Penyerahan Alat)</p>
+                                        <label class="font-bold">Sub Judul:</label>
+                                        <p id="subJudul"></p>
                                     </div>
+                                    @csrf
+                                    <input type="hidden" name="id" id="idPenyerahan">
+                                    <input type="hidden" name="nim" value="" id="nim">
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Form F10:</label>
-                                         <a href="https://s.pnj.ac.id/FormF10" target="_blank" class="text-blue-500">Form-F10.pdf</a>
+                                         <a href="#"  class="text-blue-500">Form-F10.pdf</a>
                                     </div>
-                                     <label class="block font-bold text-xs" for="">
+                                     <label name="f11" class="block font-bold" for="">
                                         Form F11:
                                     </label>
-                                    <x-text-input id="judul" class="w-full h-10 text-xs block p-1 mt-1 mb-2 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
+                                    <input id="f11" name="f11" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer" type="file" autofocus/>
                                      <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Form F12:</label>
-                                         <a href="https://s.pnj.ac.id/FormF12" target="_blank" class="text-blue-500">Form-F12.pdf</a>
+                                         <a href="#" class="text-blue-500">Form-F12.pdf</a>
                                     </div>
                                 </div>
                                 <div class="w-1/3">
                                     <!-- Konten kanan -->
                                      <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Form F13:</label>
-                                         <a href="https://s.pnj.ac.id/FormF13" target="_blank" class="text-blue-500">Form-F13.pdf</a>
+                                         <a href="#"  class="text-blue-500">Form-F13.pdf</a>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Form F14:</label>
-                                         <a href="https://s.pnj.ac.id/FormF14" target="_blank" class="text-blue-500">Form-F14.pdf</a>
+                                         <a href="#"  class="text-blue-500">Form-F14.pdf</a>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Form F15:</label>
-                                         <a href=" https://s.pnj.ac.id/FormF15" target="_blank" class="text-blue-500">Form-F15.pdf</a>
+                                         <a href="#" class="text-blue-500">Form-F15.pdf</a>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Form F16:</label>
-                                         <a href="https://s.pnj.ac.id/FormF16" target="_blank" class="text-blue-500">Form-F16.pdf</a>
+                                         <a href="#"  class="text-blue-500">Form-F16.pdf</a>
                                     </div>
                                      <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Form F16:</label>
-                                         <a href="https://s.pnj.ac.id/FormF16" target="_blank" class="text-blue-500">Form-F16.pdf</a>
+                                         <a href="#" class="text-blue-500">Form-F16.pdf</a>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Link Vidio Demo:</label>
-                                         <a href="https://youtu.be/nOiwf1u6qbc" target="_blank" class="text-blue-500">Link Vidio Demo</a>
+                                         <a href="{{ $PenyerahanAlat->link_video }}" target="_blank" class="text-blue-500">Link Vidio Demo</a>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Sertifikat PKKP:</label>
-                                         <a href="https://s.pnj.ac.id/FormF16" target="_blank" class="text-blue-500">Sertifikat-PKKP.pdf</a>
+                                         <a href="#"  class="text-blue-500">Sertifikat-PKKP.pdf</a>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Sertifikat TOEIC:</label>
-                                         <a href="https://s.pnj.ac.id/FormF16" target="_blank" class="text-blue-500">Sertifikat-TOEIC.pdf</a>
+                                         <a href="#" " class="text-blue-500">Sertifikat-TOEIC.pdf</a>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Sertifikat Lomba:</label>
-                                         <a href="https://s.pnj.ac.id/FormF16" target="_blank" class="text-blue-500">Sertifikat-Lomba.pdf</a>
+                                         <a href="#"  class="text-blue-500">Sertifikat-Lomba.pdf</a>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Sertifikat Kejuaraan:</label>
-                                         <a href="https://s.pnj.ac.id/FormF16" target="_blank" class="text-blue-500">Sertifikat-Kejuaraan.pdf</a>
+                                         <a href="#"  class="text-blue-500">Sertifikat-Kejuaraan.pdf</a>
                                     </div>
                                      <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Sertifikat Organisasi:</label>
-                                         <a href="https://s.pnj.ac.id/FormF16" target="_blank" class="text-blue-500">Sertifikat-Organisasi.pdf</a>
+                                         <a href="#" class="text-blue-500">Sertifikat-Organisasi.pdf</a>
                                     </div>
                                 </div>
                             </div>
@@ -203,13 +206,14 @@
                                         Simpan
                                     </button>
                                 </div>
-                                <div class="w-full">
-                                    <button id="closeModal" class="mt-4 ml-4 bg-delete hover:bg-hoverDelete text-white font-bold py-2 px-4 rounded text-xs">
+                              <div class="flex justify-center w-full">
+                                    <button type="button" id="closeModal" class="mt-4 bg-delete hover:bg-hoverDelete text-white font-bold py-2 px-4 rounded">
                                         Tutup
                                     </button>
                                 </div>
                             </div>
                         </div>
+                        </form>
                     </div>
                 </td>
             </tr>
@@ -219,7 +223,7 @@
 		</tbody>
 	</table>
 </div>
-      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
         // Ambil elemen modal dan tombol-tombolnya
   const modal = document.getElementById('modal');
@@ -244,5 +248,22 @@
   // Tambahkan event listener untuk tombol tutup modal
   closeModalBtn.addEventListener('click', closeModal);
       
+ function editButton(id){
+    $.ajax({
+        type: 'GET',
+        url: '/getpenyerahanAlat/'+id,
+    }).done(function(res){
+        console.log(res.nim)
+        $('#nim').val(res.nim)
+        $('#idPenyerahan').val(id)
+        $('#namaMahasiswa').text(res.nama)
+        $('#nimMahasiswa').text(res.nim)
+        $('#prodiMahasiswa').text(res.prodi)
+        $('#kelasMahasiswa').text(res.kelas)
+        $('#judul').text(res.judul)
+        $('#subJudul').text(res.subJudul)
+    })
+  }
+
 </script>       
 </x-admin-layout>

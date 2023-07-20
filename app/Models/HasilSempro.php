@@ -19,6 +19,6 @@ class HasilSempro extends Model
 
     function pengajuanSempro()
     {
-        return $this->hasOne(pengajuan_sempro::class, 'pengajuan_sempro_id', 'id');
+        return $this->belongsTo(PengajuanSempro::class, 'pengajuan_sempro_id', 'id');
     }
 }

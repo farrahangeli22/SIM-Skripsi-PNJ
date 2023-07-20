@@ -31,9 +31,9 @@
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <span class="inline-block md:hidden font-bold">Calon Dosen Penguji</span>
                         <ul class="list-disc ml-1 list-inside">
-                            <!-- <li style="list-style-type: disc;">Penguji 1</li>
-                            <li style="list-style-type: disc;">Penguji 2</li>
-                            <li style="list-style-type: disc;">Penguji 3</li> -->
+                            <li style="list-style-type: disc;">{{$PengajuanSempro->dosenPenguji1->nama}}</li>
+                            <li style="list-style-type: disc;">{{$PengajuanSempro->dosenPenguji2->nama}}</li>
+                            <li style="list-style-type: disc;">{{$PengajuanSempro->dosenPenguji3->nama}}</li>
                         </ul>
                 </td>
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
@@ -49,6 +49,7 @@
                 <!-- section untuk data f3 -->
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="text-align: center;">
+                        <a href="{{ url( $PengajuanSempro->hasilSempro ? '/storage/'.$PengajuanSempro->hasilSempro->file_f3:'') }}" target="_blank" class="text-blue-500">F3</a>
                     </div>
                 </td>
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">

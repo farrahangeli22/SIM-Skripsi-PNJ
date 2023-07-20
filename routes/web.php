@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StorageController;
 use App\Http\Controllers\PengajuanJudulController;
@@ -62,8 +63,13 @@ Route::middleware('auth')->group(function () {
     // untuk storage jurnal
     Route::get('/storage/{folder}/{filename}',[StorageController::class,'getFile']);
 
+    // user - home mahasiswa 
+    Route::get("/home", [HomeController::class, 'viewHome'])->name('user.home');
+
+
     // user - logbook mahasiswa 
     Route::get("/logbook", [LogBookController::class, 'viewLogBookMahasiswa'])->name('user.logbook');
+
     // user - Form logbook mahasiswa
     Route::get('/form-logbook', [FormLogbookController::class, 'viewFormLogbook'])->name('user.form-logbook');
     Route::post('/form-logbook', [FormLogbookController::class, 'createFormLogbook'])->name('user.create-form-logbook');
@@ -145,9 +151,9 @@ Route::middleware('auth')->group(function () {
 
 
 
-Route::get("/home", function () {
-    return view('user.home');
-})->name('user.home');
+// Route::get("/home", function () {
+//     return view('user.home');
+// })->name('user.home');
 
 // Route::get("/form-logbook", function () {
 //     return view('user.formLogbook');

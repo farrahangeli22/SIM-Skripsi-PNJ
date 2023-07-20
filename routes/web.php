@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StorageController;
 use App\Http\Controllers\PengajuanJudulController;
 use App\Http\Controllers\DaftarPengajuanJudulController;
@@ -42,9 +43,13 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::get('/dashboard', [DashboardController::class, 'viewDashboard'])->middleware(['auth', 'verified'])->name('admin.dashboard-admin');
+Route::post('/dashboard', [DashboardController::class, 'viewDashboardFilter'])->middleware(['auth', 'verified'])->name('admin.dashboard-admin-filter');
+
 
 // Route::middleware('auth')->group(function () {
 //     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -193,9 +198,9 @@ Route::get("/notification", function () {
 
 
 // routes for user admin
-Route::get("/admin/dashboard-admin", function () {
-    return view('admin.dashboardAdmin');
-})->name('admin.dashboard-admin');
+// Route::get("/admin/dashboard-admin", function () {
+//     return view('admin.dashboardAdmin');
+// })->name('admin.dashboard-admin');
 
 // Route::get("/admin/manajemen-mahasiswa", function () {
 //     return view('admin.manajemenMahasiswa');

@@ -14,10 +14,35 @@ class ManajemenMahasiswaController extends Controller
     function viewManajemenMahasiswa(Request $request)
     {
         // ambil data mahasiswa bimbingan dari table Mahasiswa
+        
         $daftarMahasiswa = Mahasiswa::get();
-
+         $dosen = Dosen::all();
         // mengembalikan view dengan data
-        // dd($daftarMahasiswa);
-        return view('admin.manajemenMahasiswa')->with('daftarMahasiswa', $daftarMahasiswa);
+        return view('admin.manajemenMahasiswa')->with('daftarMahasiswa', $daftarMahasiswa)->with('dosen', $dosen);;
     }
+
+    function createManajemenMahasiswa(Request $request)
+    {   
+        $mahasiswa = Mahasiswa::updateOrCreate(
+        ['nim' => $request->nim],
+        [
+            'nim' => $request->nim,
+            'dosen_pembimbing' => $request->dosenPembimbing,
+        ]
+    );
+        return redirect(route('admin.create.manajemen-mahasiswa'));
+    }
+
+    function getApi($nim){
+    $mahasiswa = Mahasiswa::where("nim", $nim)->first();
+    $data = [
+            "nim" => $mahasiswa->nim,
+            "nama" => $mahasiswa->nama,
+            "prodi" => $mahasiswa->prodi,
+            "kelas" => $mahasiswa->kelas,
+            "judul" => $mahasiswa->judul,
+        ];
+        return response($data, 200);
+}
+
 }

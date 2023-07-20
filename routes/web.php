@@ -117,6 +117,7 @@ Route::middleware('auth')->group(function () {
 
     // admin - manajemen Mahasiswa
     Route::get('/manajemen-mahasiswa', [ManajemenMahasiswaController::class, 'viewManajemenMahasiswa'])->name('admin.manajemen-mahasiswa');
+    Route::post('/manajemen-mahasiswa', [ManajemenMahasiswaController::class, 'createManajemenMahasiswa'])->name('admin.create.manajemen-mahasiswa');
 
     // dosen - detail mahasiswa
     Route::get('/detail-mahasiswa/{id}', [DetailMahasiswaController::class, 'viewDetailMahasiswa'])->name('dosen.detail-mahasiswa');
@@ -149,6 +150,7 @@ Route::middleware('auth')->group(function () {
     Route::get("/getPengajuanSempro/{id}", [PengajuanSemproController::class, 'getApi'])->name('pengajuanSempro.getApi');
     Route::get("/getPengajuanSidang/{id}", [PengajuanSidangController::class, 'getApi'])->name('pengajuanSidang.getApi');
     Route::get("/getPenyerahanAlat/{id}", [PenyerahanAlatController::class, 'getApi'])->name('penyerahanAlat.getApi');
+    Route::get("/getManajemenMahasiswa/{nim}", [ManajemenMahasiswaController::class, 'getApi'])->name('manajemenMahasiswa.getApi');
 });
 
 

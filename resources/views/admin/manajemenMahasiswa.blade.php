@@ -27,44 +27,48 @@
                 </td><td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Judul</span>{{$mahasiswa->skripsi ? $mahasiswa->skripsi->judul:""}}</td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
 					<span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
-					<button class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>
-				  
+					<button onclick="editButton({{$mahasiswa->id}})" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>
+                </td>
                     <!-- modal -->
                     <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto hidden">
+                    <form method="post" enctype="multipart/form-data">
                         <div class="bg-white p-6 rounded-lg">
                             <div class="flex ">
                                 <div class="">
                                     <h2 class="text-xl font-bold mb-4">Edit Data Mahasiswa</h2>
                                     <!-- Konten kiri -->
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Nama:</label>
-                                        <p>Niyara Arinda</p>
+                                         <p id="namaMahasiswa"></p>
                                     </div>
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">NIM:</label>
-                                        <p>1907411032</p>
+                                        <p id="nimMahasiswa"></p>
                                     </div>
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Prodi:</label>
-                                        <p>Teknik Informatika</p>
+                                       <p id="prodiMahasiswa"></p>
                                     </div>
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Kelas:</label>
-                                        <p>TI 8A</p>
+                                        <p id="kelasMahasiswa"></p>
                                     </div>
-                                    <div class="flex flex-col mb-4">
+                                    <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Judul:</label>
-                                        <p>Rancang Bangun Sistem Informasi Manajemen Skripsi</p>
+                                        <p id="judul"></p>
                                     </div>
+                                     @csrf
+                                    <input type="hidden" name="id" id="idManajemen">
+                                    <input type="hidden" name="nim" value="" id="nim">
                                 </div>
                                 <div class="">
                                     <!-- Konten kanan -->
                                     <div class="flex flex-col mb-4">
                                         <label class="font-bold">Dosen Pembimbing:</label>
-                                        <select class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
-                                            <option>Dosen 1</option>
-                                            <option>Dosen 2</option>
-                                            <option>Dosen 3</option>
+                                           <select name="dosenPembimbing" class="h-10 text-xs text-gray-700 border border-black rounded-md" >
+                                            @foreach($dosen as $item)
+                                            <option value="{{$item->nip}}">{{$item->nama}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="flex flex-col mb-4">
@@ -97,6 +101,7 @@
                                 </div>
                             </div>
                         </div>
+                    </form>
                     </div>
                 </td>
             </tr>
@@ -104,7 +109,7 @@
 		</tbody>
 	</table>
 </div>
-      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
         // Ambil elemen modal dan tombol-tombolnya
   const modal = document.getElementById('modal');
@@ -128,6 +133,22 @@
 
   // Tambahkan event listener untuk tombol tutup modal
   closeModalBtn.addEventListener('click', closeModal);
+
+  function editButton(nim){
+    $.ajax({
+        type: 'GET',
+        url: '/getManajemenMahasiswa/'+nim,
+    }).done(function(res){
+        console.log(res.nim)
+        $('#nim').val(res.nim)
+        $('#idManajemen').val(id)
+        $('#namaMahasiswa').text(res.nama)
+        $('#nimMahasiswa').text(res.nim)
+        $('#prodiMahasiswa').text(res.prodi)
+        $('#kelasMahasiswa').text(res.kelas)
+        $('#judul').text(res.judul)
+    })
+}
       
 </script>       
 </x-admin-layout>

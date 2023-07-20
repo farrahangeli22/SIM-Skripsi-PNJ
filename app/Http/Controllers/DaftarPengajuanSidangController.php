@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mahasiswa;
 use App\Models\Dosen;
 use App\Models\HasilSidang;
 use App\Models\PengajuanSidang;
@@ -20,8 +21,8 @@ class DaftarPengajuanSidangController extends Controller
         
         return view('admin.daftarPengajuanSidang',['daftarPengajuanSidang'=> $daftarPengajuanSidang, 'dosen'=> $dosen]);
     }
-    function createDaftarPengajuanSidang(Request $request)
-{
+function createDaftarPengajuanSidang(Request $request)
+{ 
     $pengajuanSidang = PengajuanSidang::updateOrCreate(
         ['nim' => $request->nim],
         [
@@ -42,7 +43,7 @@ class DaftarPengajuanSidangController extends Controller
                 'status' => "pengajuan",
             ]
         );
-    } elseif ($request->hasFile('f7')) {
+    } if ($request->hasFile('f7')) {
         $path = $request->file('f7')->store('/file_f7');
         HasilSidang::updateOrCreate(
             ['pengajuan_sidang_id' => $pengajuanSidang->id],
@@ -52,7 +53,7 @@ class DaftarPengajuanSidangController extends Controller
                 'status' => "pengajuan",
             ]
         );
-    } elseif ($request->hasFile('f8')) {
+    } if ($request->hasFile('f8')) {
         $path = $request->file('f8')->store('/file_f8');
         HasilSidang::updateOrCreate(
             ['pengajuan_sidang_id' => $pengajuanSidang->id],
@@ -62,7 +63,7 @@ class DaftarPengajuanSidangController extends Controller
                 'status' => "pengajuan",
             ]
         );
-    } elseif ($request->hasFile('f9')) {
+    } if ($request->hasFile('f9')) {
         $path = $request->file('f9')->store('/file_f9');
         HasilSidang::updateOrCreate(
             ['pengajuan_sidang_id' => $pengajuanSidang->id],
@@ -72,6 +73,16 @@ class DaftarPengajuanSidangController extends Controller
                 'status' => "pengajuan",
             ]
         );
+    }
+
+     if($request->status == 'Lulus'){
+             Mahasiswa::find($request->nim)->update([
+            'status_id' => '6',
+        ]);
+       }else{
+             Mahasiswa::find($request->nim)->update([
+            'status_id' => '7',
+        ]);
     }
         
         Session::flash('message', 'Pengajuan sidang berhasil terkirim');

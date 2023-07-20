@@ -45,9 +45,5 @@ class StatusSeeder extends Seeder
         Status::create([
             'nama' => 'penyerahan alat',
         ]);
-
-        Status::create([
-            'nama' => 'yudisium',
-        ]);
     }
 }

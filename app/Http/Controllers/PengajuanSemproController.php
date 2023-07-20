@@ -35,6 +35,10 @@ class PengajuanSemproController extends Controller
             'anggota' => isset($request->anggota) ? $request->anggota : null,
             'file_f1' => $path,
         ]);
+
+        Mahasiswa::find($request->user()->username)->update([
+            'status_id' => '2',
+        ]);
              
         Session::flash('message', 'Pengajuan sempro berhasil terkirim');
         return redirect(route('user.pengajuan-sempro'));

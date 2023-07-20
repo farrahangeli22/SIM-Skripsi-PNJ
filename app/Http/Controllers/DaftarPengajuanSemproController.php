@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mahasiswa;
 use App\Models\Dosen;
 use App\Models\HasilSempro;
 use App\Models\PengajuanSempro;
@@ -43,7 +44,17 @@ class DaftarPengajuanSemproController extends Controller
                 'status' => "pengajuan",
             ]);
         }
-             
+        
+       if($request->status == 'Lulus'){
+             Mahasiswa::find($request->nim)->update([
+            'status_id' => '3',
+        ]);
+       }else{
+             Mahasiswa::find($request->nim)->update([
+            'status_id' => '4',
+        ]);
+        }
+       
         Session::flash('message', 'Pengajuan sempro berhasil terkirim');
         return redirect(route('admin.daftar-pengajuan-sempro'));
     } 

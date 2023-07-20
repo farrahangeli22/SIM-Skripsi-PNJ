@@ -27,12 +27,17 @@ class PengajuanSidangController extends Controller
         // store uploaded file into storage
         $path = $request->file('file_f4')->store('/file_f4');
         // create reccord on table pengajuan sidang
+        
         $pengajuanSidang = PengajuanSidang::create([
             'nim' => $request->user()->username,
             'judul' => $request->judul,
             'sub_judul' => isset($request->subJudul) ? $request->subJudul : null,
             'anggota' => isset($request->anggota) ? $request->anggota : null,
             'file_f4' => $path,
+        ]);
+
+         Mahasiswa::find($request->user()->username)->update([
+            'status_id' => '5',
         ]);
         
         Session::flash('message', 'Pengajuan sidang berhasil terkirim');

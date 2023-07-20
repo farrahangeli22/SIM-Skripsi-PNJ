@@ -58,6 +58,10 @@ class PenyerahanAlatController extends Controller
         'file_f16' => $pathF16,
         'sertifikat_organisasi' => $pathOrganisasi,
     ]);
+
+     Mahasiswa::find($request->user()->username)->update([
+            'status_id' => '8',
+        ]);
         
 
     Session::flash('message', 'Penyerahan Alat berhasil terkirim');

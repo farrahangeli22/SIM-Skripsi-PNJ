@@ -88,7 +88,6 @@ class UserSeeder extends Seeder
                 [
                     'nim' => $user3->username,
                     'user_id' => $user3->id,
-                    'status_id' => 6,
                     'nama' => $user3->nama,
                     'prodi' => 'Teknik Informatika',
                     'kelas' => 'TI 8A',
@@ -116,7 +115,6 @@ class UserSeeder extends Seeder
                 [
                     'nim' => $user4->username,
                     'user_id' => $user4->id,
-                    'status_id' => 8,
                     'nama' => $user4->nama,
                     'prodi' => 'Teknik Informatika',
                     'kelas' => 'TI 8A',
@@ -276,7 +274,6 @@ class UserSeeder extends Seeder
                 [
                     'nim' => $user9->username,
                     'user_id' => $user9->id,
-                    'status_id' => 6,
                     'nama' => $user9->nama,
                     'prodi' => 'Teknik Informatika',
                     'kelas' => 'TI 8A',

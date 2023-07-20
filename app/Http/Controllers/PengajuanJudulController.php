@@ -40,6 +40,10 @@ class PengajuanJudulController extends Controller
             'file_referensi' => $path,
         ]);
 
+        Mahasiswa::find($request->user()->username)->update([
+            'status_id' => '1',
+        ]);
+        
         // create reccord on table pengajuan dospem
         PengajuanDospem::create([
             'pengajuan_judul_id' => $pengajuanJudul->id,

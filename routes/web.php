@@ -135,7 +135,7 @@ Route::middleware('auth')->group(function () {
 
     //api
     Route::get("/getPengajuanSempro/{id}", [PengajuanSemproController::class, 'getApi'])->name('pengajuanSempro.getApi');
-    Route::get("/getPengajuanSidang/{id}", [PengajuanSemproController::class, 'getApi'])->name('pengajuanSidang.getApi');
+    Route::get("/getPengajuanSidang/{id}", [PengajuanSidangController::class, 'getApi'])->name('pengajuanSidang.getApi');
 });
 
 

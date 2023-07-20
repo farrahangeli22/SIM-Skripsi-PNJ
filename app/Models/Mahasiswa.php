@@ -15,6 +15,7 @@ class Mahasiswa extends Model
         'prodi',
         'kelas',
         'email',
+        'status_id',
     ];
     protected $primaryKey = 'nim';
     protected $keyType = "string";
@@ -26,6 +27,11 @@ class Mahasiswa extends Model
     function dosen()
     {
         return $this->belongsTo(dosen::class, 'nip_dospem', 'nip');
+    }
+
+    function status()
+    {
+        return $this->belongsTo(status::class, 'status_id', 'id');
     }
 
 

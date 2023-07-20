@@ -71,7 +71,7 @@
                     </td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                         <span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
-                        <button onclick="editButton({{$PengajuanSidang->id}})" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>
+                        <a href="#" onclick="editButton({{$PengajuanSidang->id}})" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</a>
                     </td>
                     <!-- modal -->
                     <div id="modal" class=" z-50 fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto hidden">
@@ -107,7 +107,7 @@
                                     </div>
                                     @csrf
                                 <input type="hidden" name="id" id="idPengajuan">
-                                <input type="hidden" name="nim" value="" id="nim">
+                                <input type="hidden" name="nim" value="123" id="nim">
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Dosen Pembimbing:</label>
                                         <input id="namaDosen" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
@@ -173,6 +173,16 @@
                                         Simpan
                                     </button>
                                 </div>
+                                <div class="flex justify-end w-full">
+                                    <button type="submit" name="status" value="Lulus" class="mt-4 bg-[#40C057] hover:bg-font text-white font-bold py-2 px-4 rounded">
+                                        Lulus
+                                    </button>
+                                </div>
+                                <div class="flex justify-end w-full">
+                                    <button  type="submit" name="status" value="Tidak Lulus"class="mt-4 bg-[#E03131] hover:bg-font text-white font-bold py-2 px-4 rounded">
+                                        Tidak Lulus
+                                    </button>
+                                </div>
                                 <div class="w-full">
                                      <button type="button" id="closeModal" class="mt-4 ml-4 bg-delete hover:bg-hoverDelete text-white font-bold py-2 px-4 rounded">
                                         Tutup
@@ -181,6 +191,7 @@
                             </div>
                         </div>
                     </div>
+                    </form>
                 </td>
             </tr>
             @empty
@@ -219,7 +230,7 @@
         type: 'GET',
         url: '/getPengajuanSidang/'+id,
     }).done(function(res){
-        
+        console.log(res.nim)
         $('#namaDosen').val(res.namaDosen)
         $('#nim').val(res.nim)
         $('#idPengajuan').val(id)

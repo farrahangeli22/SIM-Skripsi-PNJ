@@ -128,13 +128,14 @@ Route::middleware('auth')->group(function () {
 
     // admin - daftar pengajuan sidang
     Route::get('/daftar-pengajuan-sidang', [DaftarPengajuanSidangController::class, 'viewDaftarPengajuanSidang'])->name('admin.daftar-pengajuan-sidang');
+    Route::post("/daftar-pengajuan-sidang", [DaftarPengajuanSidangController::class, 'createDaftarPengajuanSidang'])->name('admin.create-daftar-pengajuan-sidang');
 
-    // admin - daftar pengajuan sempro
+    // admin - daftar penyerahan alat
     Route::get('/daftar-penyerahan-alat', [DaftarPenyerahanAlatController::class, 'viewDaftarPenyerahanAlat'])->name('admin.daftar-penyerahan-alat');
 
     //api
     Route::get("/getPengajuanSempro/{id}", [PengajuanSemproController::class, 'getApi'])->name('pengajuanSempro.getApi');
-
+    Route::get("/getPengajuanSidang/{id}", [PengajuanSemproController::class, 'getApi'])->name('pengajuanSidang.getApi');
 });
 
 

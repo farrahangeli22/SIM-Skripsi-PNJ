@@ -30,124 +30,141 @@
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Judul</span>{{$PengajuanSidang->judul}}</td>
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Sub Judul</span>{{$PengajuanSidang->sub_judul}}</td>
 				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Anggota Kelompok</span>{{$PengajuanSidang->anggota}}</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Dosen Pembimbing</span>{{$PengajuanSidang->mahasiswa->dosen ? $PengajuanSidang->mahasiswa->dosen->nama:'' }}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Dosen Pembimbing</span>{{$PengajuanSidang->mahasiswa->dosen->nama}}</td>
 				<td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <span class="inline-block md:hidden font-bold">Calon Dosen Penguji</span>
-                        <ul class="list-disc ml-1 list-inside">
-                            <!-- <li style="list-style-type: disc;">Penguji 1</li>
-                            <li style="list-style-type: disc;">Penguji 2</li>
-                            <li style="list-style-wtype: disc;">Penguji 3</li> -->
-                        </ul>
+                    <ul class="list-disc ml-1 list-inside">
+                        <li style="list-style-type: disc;">{{$PengajuanSidang->dosenPenguji1 ? $PengajuanSidang->dosenPenguji1->nama:""}}</li>
+                        <li style="list-style-type: disc;">{{$PengajuanSidang->dosenPenguji2 ? $PengajuanSidang->dosenPenguji2->nama:""}}</li>
+                        <li style="list-style-type: disc;">{{$PengajuanSidang->dosenPenguji3 ? $PengajuanSidang->dosenPenguji3->nama:""}}</li>
+                    </ul>
                 </td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="text-align: center;">
                         <a href="{{ url('/storage/'. $PengajuanSidang->file_f4) }}" target="_blank" class="text-blue-500">F4</a>
                     </div>
                     </td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"></td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                    <div style="text-align: center;">
-                        <a href="{{ url('/storage/'. $PengajuanSidang->file_f6) }}" target="_blank" class="text-blue-500">F6</a>
-                    </div>
+                        <div style="text-align: center;">
+                            <a href="{{ url( $PengajuanSidang->hasilSidang ? '/storage/'.$PengajuanSidang->hasilSidang->file_f5:'') }}" target="_blank" class="text-blue-500">F5</a>
+                        </div>
                     </td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"></td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"></td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"></td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-					<span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
-					<button class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>
-                     </td>
+                        <div style="text-align: center;">
+                            <a href="{{ url('/storage/'. $PengajuanSidang->file_f6) }}" target="_blank" class="text-blue-500">F6</a>
+                        </div>
+                    </td>
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                        <div style="text-align: center;">
+                            <a href="{{ url( $PengajuanSidang->hasilSidang ? '/storage/'.$PengajuanSidang->hasilSidang->file_f7:'') }}" target="_blank" class="text-blue-500">F7</a>
+                        </div>
+                    </td>
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                        <div style="text-align: center;">
+                            <a href="{{ url( $PengajuanSidang->hasilSidang ? '/storage/'.$PengajuanSidang->hasilSidang->file_f8:'') }}" target="_blank" class="text-blue-500">F8</a>
+                        </div>
+                    </td>
+                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                        <div style="text-align: center;">
+                            <a href="{{ url( $PengajuanSidang->hasilSidang ? '/storage/'.$PengajuanSidang->hasilSidang->file_f9:'') }}" target="_blank" class="text-blue-500">F9</a>
+                        </div>
+                    </td>
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                        <span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
+                        <button onclick="editButton({{$PengajuanSidang->id}})" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>
+                    </td>
                     <!-- modal -->
-                    <div id="modal" class="max-width z-50 fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto hidden">
+                    <div id="modal" class=" z-50 fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto hidden">
+                        <form method="post" enctype="multipart/form-data">
                         <div class="bg-white p-6 rounded-lg">
                             <div class="flex ">
                                 <div class="w-1/2 p-3">
                                     <h2 class="text-xl font-bold mb-4">Edit Data Mahasiswa</h2>
                                     <!-- Konten kiri -->
-                                    <div class="flex flex-col mb-4 text-xs">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Nama:</label>
-                                        <p>Niyara Arinda</p>
+                                        <p id="namaMahasiswa"></p>
                                     </div>
-                                    <div class="flex flex-col mb-4 text-xs">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">NIM:</label>
-                                        <p>1907411032</p>
+                                        <p id="nimMahasiswa"></p>
                                     </div>
-                                    <div class="flex flex-col mb-4 text-xs">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Prodi:</label>
-                                        <p>Teknik Informatika</p>
+                                        <p id="prodiMahasiswa"></p>
                                     </div>
-                                    <div class="flex flex-col mb-4 text-xs">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Kelas:</label>
-                                        <p>TI 8A</p>
+                                        <p id="kelasMahasiswa"></p>
                                     </div>
-                                    <div class="flex flex-col mb-4 text-xs">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Judul:</label>
-                                        <p>Rancang Bangun Sistem Informasi Manajemen Skripsi</p>
+                                        <p id="judul"></p>
                                     </div>
-                                     <div class="flex flex-col mb-6 text-xs">
+                                    <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Sub Judul:</label>
-                                        <p>Rancang Bangun Sistem Informasi Manajemen Skripsi Terintegrasi Berbasis Web (Modul: Pengajuan Sidang Skripsi & Penyerahan Alat)</p>
+                                        <p id="subJudul"></p>
                                     </div>
+                                    @csrf
+                                <input type="hidden" name="id" id="idPengajuan">
+                                <input type="hidden" name="nim" value="" id="nim">
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Dosen Pembimbing:</label>
-                                        <select class="h-10 text-xs text-gray-700 border border-black rounded-md">
-                                        <option>Dosen 1</option>
-                                        <option>Dosen 2</option>
-                                        <option>Dosen 3</option>
-                                        </select>
+                                        <input id="namaDosen" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
 
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Dosen Penguji 1:</label>
-                                        <select class="h-10 text-xs text-gray-700 border border-black rounded-md px-3">
-                                            <option>Dosen 1</option>
-                                            <option>Dosen 2</option>
-                                            <option>Dosen 3</option>
+                                        <select name="dosen1" class="h-10 text-xs text-gray-700 border border-black rounded-md px-3">
+                                            @foreach($dosen as $item)
+                                            <option value="{{$item->nip}}">{{$item->nama}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
+                                
                                 <div class="w-1/2">
                                     <!-- Konten kanan -->
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Dosen Penguji 2:</label>
-                                        <select class="h-10 text-xs text-gray-700 border border-black rounded-md" >
-                                            <option>Dosen 1</option>
-                                            <option>Dosen 2</option>
-                                            <option>Dosen 3</option>
+                                        <select name="dosen2" class="h-10 text-xs text-gray-700 border border-black rounded-md" >
+                                            @foreach($dosen as $item)
+                                            <option value="{{$item->nip}}">{{$item->nama}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Dosen Penguji 3:</label>
-                                        <select class="h-10 text-xs text-gray-700 border border-black rounded-md px-3"
-                                            <option>Dosen 1</option>
-                                            <option>Dosen 2</option>
-                                            <option>Dosen 3</option>
+                                        <select name="dosen3" class="h-10 text-xs text-gray-700 border border-black rounded-md px-3"
+                                            @foreach($dosen as $item)
+                                            <option value="{{$item->nip}}">{{$item->nama}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Form F4:</label>
-                                         <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Form-F4.pdf</a>
+                                         <a href="#" class="text-blue-500">Form-F4.pdf</a>
                                     </div>
                                      <label class="block font-bold text-xs" for="">
                                         Form F5:
                                     </label>
-                                    <x-text-input id="judul" class="w-full h-10 text-xs block p-1 mt-1 mb-3 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
+                                    <x-text-input id="f5" class="w-full h-10 text-xs block p-1 mt-1 mb-3 border border-black cursor-pointer" type="file" name="f5" autofocus/>
                                     <div class="flex flex-col mb-2 text-xs">
                                         <label class="font-bold">Form F6:</label>
-                                         <a href="https://s.pnj.ac.id/FormF6" target="_blank" class="text-blue-500">Form-F6.pdf</a>
+                                         <a href="#" class="text-blue-500">Form-F6.pdf</a>
                                     </div>
                                      <label class="block font-bold text-xs" for="">
                                         Form F7:
                                     </label>
-                                    <x-text-input id="judul" class="w-full h-10 text-xs block p-1 mb-2 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
+                                    <x-text-input id="f7" class="w-full h-10 text-xs block p-1 mb-2 border border-black cursor-pointer" type="file" name="f7" autofocus/>
                                      <label class="block font-bold text-xs" for="">
                                         Form F8:
                                     </label>
-                                    <x-text-input id="judul" class="w-full h-10 text-xs block p-1 mb-4 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
+                                    <x-text-input id="f8" class="w-full h-10 text-xs block p-1 mb-4 border border-black cursor-pointer" type="file" name="f8" autofocus/>
                                      <label class="block font-bold text-xs" for="">
                                         Form F9:
                                     </label>
-                                    <x-text-input id="judul" class="w-full h-10 text-xs block p-1 mb-2 border border-black cursor-pointer" type="file" name="judul" required autofocus/>
+                                    <x-text-input id="f9" class="w-full h-10 text-xs block p-1 mb-2 border border-black cursor-pointer" type="file" name="f9" autofocus/>
                                 </div>
                             </div>
                             <div class="flex">
@@ -157,7 +174,7 @@
                                     </button>
                                 </div>
                                 <div class="w-full">
-                                    <button id="closeModal" class="mt-4 ml-4 bg-delete hover:bg-hoverDelete text-white font-bold py-2 px-4 rounded text-sm">
+                                     <button type="button" id="closeModal" class="mt-4 ml-4 bg-delete hover:bg-hoverDelete text-white font-bold py-2 px-4 rounded">
                                         Tutup
                                     </button>
                                 </div>
@@ -172,7 +189,7 @@
 		</tbody>
 	</table>
 </div>
-      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
         // Ambil elemen modal dan tombol-tombolnya
   const modal = document.getElementById('modal');
@@ -196,6 +213,24 @@
 
   // Tambahkan event listener untuk tombol tutup modal
   closeModalBtn.addEventListener('click', closeModal);
+
+   function editButton(id){
+    $.ajax({
+        type: 'GET',
+        url: '/getPengajuanSidang/'+id,
+    }).done(function(res){
+        
+        $('#namaDosen').val(res.namaDosen)
+        $('#nim').val(res.nim)
+        $('#idPengajuan').val(id)
+        $('#namaMahasiswa').text(res.nama)
+        $('#nimMahasiswa').text(res.nim)
+        $('#prodiMahasiswa').text(res.prodi)
+        $('#kelasMahasiswa').text(res.kelas)
+        $('#judul').text(res.judul)
+        $('#subJudul').text(res.subJudul)
+    })
+  }
       
 </script>       
 </x-admin-layout>

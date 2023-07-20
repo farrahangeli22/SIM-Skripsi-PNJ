@@ -11,6 +11,7 @@ class HasilSidang extends Model
 
     protected $fillable = [
         'status',
+        'pengajuan_sidang_id',
         'file_f5',
         'file_f7',
         'file_f8',
@@ -18,4 +19,9 @@ class HasilSidang extends Model
     ];
 
     protected $table = 'hasil_sidang';
+
+    function pengajuanSidang()
+    {
+        return $this->belongsTo(PengajuanSidang::class, 'pengajuan_sidang_id', 'id');
+    }
 }

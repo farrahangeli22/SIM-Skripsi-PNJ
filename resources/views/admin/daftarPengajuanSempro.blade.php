@@ -124,11 +124,11 @@
                                     </div>
                                      <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Form F1:</label>
-                                         <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Form-F1.pdf</a>
+                                         <a href="#" class="text-blue-500">Form-F1.pdf</a>
                                      </div>
                                      <div class="flex flex-col mb-4 text-sm">
-                                        <label class="font-bold">Form F1:</label>
-                                         <a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Form-F2.pdf</a>
+                                        <label class="font-bold">Form F2:</label>
+                                         <a href="#" class="text-blue-500">Form-F2.pdf</a>
                                      </div>
                                       <label name="f3" class="block font-bold" for="">
                                         Form F3:

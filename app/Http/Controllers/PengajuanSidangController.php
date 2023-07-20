@@ -38,4 +38,11 @@ class PengajuanSidangController extends Controller
         Session::flash('message', 'Pengajuan sidang berhasil terkirim');
         return redirect(route('user.pengajuan-sidang'));
     } 
+
+    function getApi($id){
+        $pengajuanSidang = PengajuanSidang::find($id);
+        $mahasiswa = Mahasiswa::where("nim",$pengajuanSidang->nim)->first();
+        $data = ["nim"=>$mahasiswa->nim,"nama"=>$mahasiswa->nama,"prodi"=>$mahasiswa->prodi,"kelas"=>$mahasiswa->kelas,"namaDosen"=>$pengajuanSidang->mahasiswa->dosen->nama,"judul"=>$pengajuanSidang->judul,"subJudul"=>$pengajuanSidang->sub_judul];
+        return response($data,200);
+    }
 }

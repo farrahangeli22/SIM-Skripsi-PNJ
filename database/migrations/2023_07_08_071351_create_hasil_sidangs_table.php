@@ -16,10 +16,10 @@ return new class extends Migration
             $table->unsignedBigInteger('pengajuan_sidang_id');
             $table->foreign('pengajuan_sidang_id')->references('id')->on('pengajuan_sidang');
             $table->string('status');
-            $table->text('file_f5');
-            $table->text('file_f7');
-            $table->text('file_f8');
-            $table->text('file_f9');
+            $table->text('file_f5')->nullable();
+            $table->text('file_f7')->nullable();
+            $table->text('file_f8')->nullable();
+            $table->text('file_f9')->nullable();
             $table->timestamps();
         });
     }

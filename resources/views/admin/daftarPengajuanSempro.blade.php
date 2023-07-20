@@ -30,11 +30,11 @@
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Dosen Pembimbing</span>{{$PengajuanSempro->mahasiswa->dosen->nama}}</td>
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <span class="inline-block md:hidden font-bold">Calon Dosen Penguji</span>
-                        <ul class="list-disc ml-1 list-inside">
-                            <li style="list-style-type: disc;">{{$PengajuanSempro->dosenPenguji1->nama}}</li>
-                            <li style="list-style-type: disc;">{{$PengajuanSempro->dosenPenguji2->nama}}</li>
-                            <li style="list-style-type: disc;">{{$PengajuanSempro->dosenPenguji3->nama}}</li>
-                        </ul>
+                    <ul class="list-disc ml-1 list-inside">
+                        <li style="list-style-type: disc;">{{$PengajuanSempro->dosenPenguji1 ? $PengajuanSempro->dosenPenguji1->nama:""}}</li>
+                        <li style="list-style-type: disc;">{{$PengajuanSempro->dosenPenguji2 ? $PengajuanSempro->dosenPenguji2->nama:""}}</li>
+                        <li style="list-style-type: disc;">{{$PengajuanSempro->dosenPenguji3 ? $PengajuanSempro->dosenPenguji3->nama:""}}</li>
+                    </ul>
                 </td>
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="text-align: center;">
@@ -46,7 +46,6 @@
                         <a href="{{ url('/storage/'. $PengajuanSempro->file_f2) }}" target="_blank" class="text-blue-500">F2</a>
                     </div>
                 </td>
-                <!-- section untuk data f3 -->
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <div style="text-align: center;">
                         <a href="{{ url( $PengajuanSempro->hasilSempro ? '/storage/'.$PengajuanSempro->hasilSempro->file_f3:'') }}" target="_blank" class="text-blue-500">F3</a>

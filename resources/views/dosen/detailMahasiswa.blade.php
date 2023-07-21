@@ -28,7 +28,7 @@
             @endif
             <!-- Form Unggah Nilai Proposal dan Skripsi -->
             @if($sempro > 0)
-            <form class="w-full" enctype="multipart/form-data" action="{{route('dosen.create-detail-mahasiswa', ['id'=>$mahasiswa->nim])}}" method="post">
+            <form class="w-full" enctype="multipart/form-data" action="{{route('dosen.create-detail-mahasiswa', ['id'=>$mahasiswa->nim])}}" method="post" action="/proses-data" onsubmit="return confirm('Apakah Anda yakin ingin mengirim data ini?')">
             <h1 class="font-bold text-xl text-font mb-8">Unggah Penilaian Mahasiswa</h1>
              @csrf
                 <div class="flex space-x-10">

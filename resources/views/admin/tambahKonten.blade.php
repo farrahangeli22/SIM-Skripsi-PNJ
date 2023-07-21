@@ -5,7 +5,7 @@
             </div>
     @endif
 
-    <form class="w-full space-y-4" enctype='multipart/form-data' action="{{route('admin.create-tambah-konten')}}" method="POST">
+    <form class="w-full space-y-4" enctype='multipart/form-data' action="{{route('admin.create-tambah-konten')}}" method="POST" action="/proses-data" onsubmit="return confirm('Apakah Anda yakin ingin mengirim data ini?')">
         @csrf
         <h1 class="font-bold text-xl">Unggah Konten</h1>
         <div class="flex justify-between mb-2">

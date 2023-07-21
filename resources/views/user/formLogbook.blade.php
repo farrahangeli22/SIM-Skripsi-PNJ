@@ -4,7 +4,7 @@
                 <p>{{ Session::get('message') }}</p>
             </div>
     @endif
-    <form class="w-full" enctype='multipart/form-data' action="{{route('user.create-form-logbook')}}" method="POST">
+    <form class="w-full" enctype='multipart/form-data' action="{{route('user.create-form-logbook')}}" method="POST"  action="/proses-data" onsubmit="return confirm('Apakah Anda yakin ingin mengirim data ini?')">
         @csrf
         <h1 class="font-bold text-xl text-font">Logbook Bimbingan</h1>
         <div class="flex justify-between mb-2">

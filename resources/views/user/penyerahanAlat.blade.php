@@ -28,7 +28,7 @@
             </div>
             @endif
         <!-- Form Pengajuan -->
-       <form class="w-full" enctype="multipart/form-data" action="{{route('user.create-penyerahan-alat')}}" method="post">
+       <form class="w-full" enctype="multipart/form-data" action="{{route('user.create-penyerahan-alat')}}" method="post" action="/proses-data" onsubmit="return confirm('Apakah Anda yakin ingin mengirim data ini?')">
             @csrf
             <h1 class="flex justify-center font-bold text-xl text-font mb-10">Penyerahan Alat</h1>
             <div>

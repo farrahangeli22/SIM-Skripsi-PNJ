@@ -29,7 +29,7 @@
             @endif
             
             <!-- Form Pengajuan -->
-            <form class="w-full" enctype='multipart/form-data' action="{{route('user.create-pengajuan-judul')}}" method="post">
+            <form class="w-full" enctype='multipart/form-data' action="{{route('user.create-pengajuan-judul')}}" method="post" action="/proses-data" onsubmit="return confirm('Apakah Anda yakin ingin mengirim data ini?')">
                 @csrf
                 <h1 class="flex justify-center font-bold text-xl text-font mb-10">Pengajuan Judul dan Dosen Pembimbing</h1>
                 <div>

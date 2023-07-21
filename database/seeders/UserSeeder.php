@@ -275,8 +275,8 @@ class UserSeeder extends Seeder
                     'nim' => $user9->username,
                     'user_id' => $user9->id,
                     'nama' => $user9->nama,
-                    'prodi' => 'Teknik Informatika',
-                    'kelas' => 'TI 8A',
+                    'prodi' => 'Teknik Multimedia Digital',
+                    'kelas' => 'TMD 8A',
                     'email' => $user9->email,
                 ]
         );

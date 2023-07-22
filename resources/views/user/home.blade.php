@@ -1,13 +1,13 @@
 <x-user-layout :title="'Home'">
-    <div class="mt-8 mb-8" >
+    <div class="mb-8" >
     @foreach($daftarKonten as $konten)
         <a class="text-xl" href="{{ url('/storage/'. $konten->file_konten) }}" target="_blank">{{$konten->judul}}</a>
         <hr class="mt-2 mb-8 border-2 border-primary">
-        <p>{{$konten->deskripsi}}</p>
+        <p class="mb-8">{{$konten->deskripsi}}</p>
     @endforeach
     </div>
     <!-- timeline skripsi -->
-    <a class="mt-8 text-xl" href="#">Timeline Skripsi JTIK 2022/2023</a>
+    <a class="text-xl" href="#">Timeline Skripsi JTIK 2022/2023</a>
     <hr class="mt-2 mb-8 border-2 border-primary">
     <img src="/assets/timeline-skripsi.png" />
 

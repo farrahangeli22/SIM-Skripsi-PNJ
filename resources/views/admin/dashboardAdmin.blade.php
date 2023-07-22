@@ -1,25 +1,12 @@
 <x-admin-layout :title="'Dashboard Admin'">
     <div class="col-span-2 bg-white rounded-lg shadow-md p-4">
         <h3 class="text-lg font-medium">Filter by :</h3>
-        <!-- <div class="flex justify-end mb-4">
-            <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-                Reset Filter
-            </button>
-        </div> -->
         <form method="post" action="{{ route('admin.dashboard-admin-filter') }}"enctype="multipart/form-data" class="flex flex-col mt-4">
             @csrf
             <div class="flex justify-between space-x-10">
                 <div class="w-1/2 mb-4">
                     <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
                     <select id="status" name="status" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                        <!-- <option value="pengajuanJudul">Pengajuan Judul dan Dosen Pembimbing</option>
-                        <option value="pengajuanSempro">Pengajuan Seminar Proposal</option>
-                        <option value="lulusSempro">Lulus Seminar Proposal</option>
-                        <option value="tidakLulusSempro">Tidak Lulus Seminar Proposal</option>
-                        <option value="pengajuanSidang">Pengajuan Sidang Skripsi</option>
-                        <option value="lulusSidang">Lulus Sidang Skripsi</option>
-                        <option value="tidakLulusSidang">Tidak Lulus Sidang Skripsi</option>
-                        <option value="penyerahanAlat" >Penyerahan Alat</option> -->
                         <option value="">pilih status</option>
                         <option value="pengajuanJudul" {{ request('status') == 'pengajuanJudul' ? 'selected' : '' }}>Pengajuan Judul dan Dosen Pembimbing</option>
                         <option value="pengajuanSempro" {{ request('status') == 'pengajuanSempro' ? 'selected' : '' }}>Pengajuan Seminar Proposal</option>
@@ -31,7 +18,7 @@
                         <option value="penyerahanAlat" {{ request('status') == 'penyerahanAlat' ? 'selected' : '' }}>Penyerahan Alat</option>
                     </select>
                 </div>
-                <!-- <div class="w-1/2 mb-4">
+                <div class="w-1/2 mb-4">
                     <label for="option2" class="block text-sm font-medium text-gray-700">Program Studi</label>
                     <select id="option2" name="option2" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <option value="">Seluruh Pordi</option>
@@ -39,19 +26,14 @@
                         <option value="option2">Option 2</option>
                         <option value="option3">Option 3</option>
                     </select>
-                </div> -->
+                </div>
                 <div class="">
                 <button type="submit" class="mt-4 w-fit bg-edit hover:bg-hoverEdit hover:bg-font text-white font-bold py-2 px-4 rounded">
                     Cari
                 </button>
             </div>
             </div>
-            <!-- <div class="flex justify-end">
-                <button type="submit" class="mt-4 w-fit bg-edit hover:bg-hoverEdit hover:bg-font text-white font-bold py-2 px-4 rounded">
-                    Cari
-                </button>
-            </div>
-        </form> -->
+        </form>
     </div>
 
     <!-- component -->

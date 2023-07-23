@@ -16,6 +16,7 @@ class Mahasiswa extends Model
         'kelas',
         'email',
         'status_id',
+        'nip_dospem',
     ];
     protected $primaryKey = 'nim';
     protected $keyType = "string";

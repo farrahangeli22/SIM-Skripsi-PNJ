@@ -14,28 +14,30 @@ class ManajemenMahasiswaController extends Controller
     function viewManajemenMahasiswa(Request $request)
     {
         // ambil data mahasiswa bimbingan dari table Mahasiswa
-        
+
         $daftarMahasiswa = Mahasiswa::get();
-         $dosen = Dosen::all();
+        $dosen = Dosen::all();
         // mengembalikan view dengan data
-        return view('admin.manajemenMahasiswa')->with('daftarMahasiswa', $daftarMahasiswa)->with('dosen', $dosen);;
+        return view('admin.manajemenMahasiswa')->with('daftarMahasiswa', $daftarMahasiswa)->with('dosen', $dosen);
     }
 
     function createManajemenMahasiswa(Request $request)
-    {   
+    {
+        // dd($request);
         $mahasiswa = Mahasiswa::updateOrCreate(
-        ['nim' => $request->nim],
-        [
-            'nim' => $request->nim,
-            'dosen_pembimbing' => $request->dosenPembimbing,
-        ]
-    );
+            ['nim' => $request->nim],
+            [
+                'nim' => $request->nim,
+                'nip_dospem' => $request->dosenPembimbing,
+            ]
+        );
         return redirect(route('admin.create.manajemen-mahasiswa'));
     }
 
-    function getApi($nim){
-    $mahasiswa = Mahasiswa::where("nim", $nim)->first();
-    $data = [
+    function getApi($nim)
+    {
+        $mahasiswa = Mahasiswa::where("nim", $nim)->first();
+        $data = [
             "nim" => $mahasiswa->nim,
             "nama" => $mahasiswa->nama,
             "prodi" => $mahasiswa->prodi,
@@ -43,6 +45,5 @@ class ManajemenMahasiswaController extends Controller
             "judul" => $mahasiswa->judul,
         ];
         return response($data, 200);
-}
-
+    }
 }

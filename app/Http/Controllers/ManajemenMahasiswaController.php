@@ -23,7 +23,6 @@ class ManajemenMahasiswaController extends Controller
 
     function createManajemenMahasiswa(Request $request)
     {
-        // dd($request);
         $mahasiswa = Mahasiswa::updateOrCreate(
             ['nim' => $request->nim],
             [
@@ -42,7 +41,7 @@ class ManajemenMahasiswaController extends Controller
             "nama" => $mahasiswa->nama,
             "prodi" => $mahasiswa->prodi,
             "kelas" => $mahasiswa->kelas,
-            "judul" => $mahasiswa->judul,
+            "judul" => $mahasiswa->skripsi->judul,
         ];
         return response($data, 200);
     }

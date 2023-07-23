@@ -41,7 +41,7 @@ class ManajemenMahasiswaController extends Controller
             "nama" => $mahasiswa->nama,
             "prodi" => $mahasiswa->prodi,
             "kelas" => $mahasiswa->kelas,
-            "judul" => $mahasiswa->skripsi->judul,
+            "judul" => isset($mahasiswa->skripsi->judul) ? $mahasiswa->skripsi->judul : "",
         ];
         return response($data, 200);
     }

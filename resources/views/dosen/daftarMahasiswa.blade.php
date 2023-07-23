@@ -48,7 +48,11 @@
                             @method('PUT')
                             <button class="block h-fit w-fit p-2 rounded-lg bg-[#40C057] flex text-sm font-bold text-white shadow hover:bg-[#17952E]">Terima</button>
                         </form>
-                        <button class="block h-fit w-fit p-2 rounded-lg bg-[#E03131] flex text-sm font-bold text-white shadow hover:bg-[#B51A1A]">Tolak</button>
+                        <form action="/tolak-permintaan-judul/{{$val->pengajuanJudul->id}}" method="post">
+                            @csrf
+                            @method('PUT')
+                            <button class="block h-fit w-fit p-2 rounded-lg bg-[#E03131] flex text-sm font-bold text-white shadow hover:bg-[#B51A1A]">Tolak</button>
+                        </form>
                     </td>
                 </tr>
                 @empty

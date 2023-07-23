@@ -60,4 +60,18 @@ class DaftarMahasiswaController extends Controller
 
         return redirect()->back();
     }
+
+    function tolakPermintaanBimbingan(Request $request, $idPengajuanJudul)
+    {
+        // ubah status pengajuan dospem dari table pengajuan judul
+        $pengajuanDospem = PengajuanDospem::where('pengajuan_judul_id', $idPengajuanJudul)->get();
+        foreach ($pengajuanDospem as $val) {
+            if ($val->nip_dospem == $request->user()->username) {
+                $val->status = 'ditolak';
+                $val->save();
+                break;
+            }
+        }
+        return redirect()->back();
+    }
 }

@@ -61,7 +61,7 @@ Route::post('/dashboard', [DashboardController::class, 'viewDashboardFilter'])->
 
 Route::middleware('auth')->group(function () {
     // untuk storage jurnal
-    Route::get('/storage/{folder}/{filename}',[StorageController::class,'getFile']);
+    Route::get('/storage/{folder}/{filename}', [StorageController::class, 'getFile']);
 
     // user - home mahasiswa 
     Route::get("/home", [HomeController::class, 'viewHome'])->name('user.home');
@@ -73,10 +73,10 @@ Route::middleware('auth')->group(function () {
     // user - Form logbook mahasiswa
     Route::get('/form-logbook', [FormLogbookController::class, 'viewFormLogbook'])->name('user.form-logbook');
     Route::post('/form-logbook', [FormLogbookController::class, 'createFormLogbook'])->name('user.create-form-logbook');
-    
+
     // user - detail logbook
     Route::get('/detail-logbook-mahasiswa/{id}', [DetailLogbookMahasiswaController::class, 'viewDetailLogbookMahasiswa'])->name('user.detail-logbook-mahasiswa');
-   
+
     // user - pengajuan judul
     Route::get('/pengajuan-judul', [PengajuanJudulController::class, 'viewPengajuanJudul'])->name('user.pengajuan-judul');
     Route::post('/pengajuan-judul', [PengajuanJudulController::class, 'createPengajuanJudul'])->name('user.create-pengajuan-judul');
@@ -84,7 +84,7 @@ Route::middleware('auth')->group(function () {
     // user - pengajuan sempro
     Route::get('/pengajuan-sempro', [PengajuanSemproController::class, 'viewPengajuanSempro'])->name('user.pengajuan-sempro');
     Route::post('/pengajuan-sempro', [PengajuanSemproController::class, 'createPengajuanSempro'])->name('user.create-pengajuan-sempro');
-    
+
     // dosen - daftar mahasiswa
     Route::get('/daftar-mahasiswa', [DaftarMahasiswaController::class, 'viewDaftarMahasiswa'])->name('dosen.daftar-mahasiswa');
     Route::put('/terima-permintaan-judul/{idPengajuanJudul}', [DaftarMahasiswaController::class, 'terimaPermintaanBimbingan']);
@@ -111,7 +111,7 @@ Route::middleware('auth')->group(function () {
 
     // admin - manajemen KPS
     Route::get('/manajemen-kps', [ManajemenKPSController::class, 'viewManajemenKPS'])->name('admin.manajemen-kps');
-    
+
     // admin - manajemen Dosen Pembimbing
     Route::get('/manajemen-dosen', [ManajemenDosenController::class, 'viewManajemenDosen'])->name('admin.manajemen-dosen');
 
@@ -130,6 +130,7 @@ Route::middleware('auth')->group(function () {
 
     // admin - konten
     Route::get("/konten", [KontenController::class, 'viewKonten'])->name('admin.konten');
+    Route::delete('/konten/{kontenId}', [KontenController::class, 'deleteKonten']);
 
     // admin - daftar pengajuan judul
     Route::get('/daftar-pengajuan-judul', [DaftarPengajuanJudulController::class, 'viewDaftarPengajuanJudul'])->name('admin.daftar-pengajuan-judul');

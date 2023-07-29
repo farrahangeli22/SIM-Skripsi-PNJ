@@ -8,7 +8,7 @@
                 <p>Belum memiliki dosen pembimbing</p>
                 @else
                 <div class="w-20 h-20 mr-5 mt-5 rounded-full flex items-center justify-center overflow-hidden">
-                    <img class="w-full h-full object-cover" src="/assets/gambar.jpg" alt="Gambar">
+                    <img class="w-full h-full object-cover" src="/assets/user.png" alt="Gambar">
                 </div>
                 <p class="mt-4 text-xs">{{$dospem->nama}}</p>
                 <p class="text-xs">NIP. {{$dospem->nip}}</p>

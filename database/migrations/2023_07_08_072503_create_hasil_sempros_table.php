@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreign('pengajuan_sempro_id')->references('id')->on('pengajuan_sempro');
             $table->string('status');
             $table->text('file_f3');
+            $table->text('keterangan')->nullable();
             $table->timestamps();
         });
     }

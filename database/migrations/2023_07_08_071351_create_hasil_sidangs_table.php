@@ -20,6 +20,8 @@ return new class extends Migration
             $table->text('file_f7')->nullable();
             $table->text('file_f8')->nullable();
             $table->text('file_f9')->nullable();
+            $table->integer('nilai')->nullable();
+            $table->text('keterangan')->nullable();
             $table->timestamps();
         });
     }

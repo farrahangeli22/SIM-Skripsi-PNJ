@@ -34,7 +34,6 @@ class DaftarPengajuanSemproController extends Controller
             'dosen_penguji3' => $request->dosen3,
             'jadwal_sempro' => $request->jadwal_sempro,
             'ruang' => $request->ruang,
-            'keterangan' => $request->keterangan,
         ]);
 
         if($request->f3){
@@ -43,6 +42,7 @@ class DaftarPengajuanSemproController extends Controller
                 'id' => $pengajuanSempro->id
             ],[
                 'pengajuan_sempro_id' => $pengajuanSempro->id,
+                'keterangan' => $request->keterangan,
                 'file_f3' => $path,
                 'status' => "pengajuan",
             ]);

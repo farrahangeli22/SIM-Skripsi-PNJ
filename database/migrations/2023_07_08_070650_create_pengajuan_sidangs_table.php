@@ -20,9 +20,6 @@ return new class extends Migration
             $table->string('anggota')->nullable();
             $table->dateTime('jadwal_sidang')->nullable();
             $table->string('ruang')->nullable();
-            $table->string('status')->nullable();
-            $table->integer('nilai')->nullable();
-            $table->text('keterangan')->nullable();
             $table->text('file_f4');
             $table->text('file_f6')->nullable();
             $table->string('dosen_penguji1')->nullable();

@@ -16,6 +16,8 @@ class HasilSidang extends Model
         'file_f7',
         'file_f8',
         'file_f9',
+        'keterangan',
+        'nilai',
     ];
 
     protected $table = 'hasil_sidang';

@@ -13,6 +13,7 @@ class HasilSempro extends Model
         'status',
         'pengajuan_sempro_id',
         'file_f3',
+        'keterangan',
     ];
 
     protected $table = 'hasil_sempro';

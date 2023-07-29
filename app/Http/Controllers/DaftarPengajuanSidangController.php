@@ -32,8 +32,6 @@ function createDaftarPengajuanSidang(Request $request)
             'dosen_penguji3' => $request->dosen3,
             'jadwal_sidang' => $request->jadwal_sidang,
             'ruang' => $request->ruang,
-            'keterangan' => $request->keterangan,
-            'nilai' => $request->nilai,
         ]
     );
 
@@ -44,6 +42,8 @@ function createDaftarPengajuanSidang(Request $request)
             [
                 'pengajuan_sidang_id' => $pengajuanSidang->id,
                 'file_f5' => $path,
+                'keterangan' => $request->keterangan,
+                'nilai' => $request->nilai,
                 'status' => "pengajuan",
             ]
         );

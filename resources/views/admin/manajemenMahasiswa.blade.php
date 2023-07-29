@@ -35,7 +35,7 @@
             </tbody>
         </table>
         <!-- modal -->
-        <div id="modal" class="z-50  fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto hidden">
+        <div id="modal" class="z-50 fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto hidden">
             <form method="post" enctype="multipart/form-data">
                 <div class="bg-white p-6 rounded-lg">
                     <div class="flex ">
@@ -74,21 +74,6 @@
                                     @foreach($dosen as $item)
                                     <option value="{{$item->nip}}">{{$item->nama}}</option>
                                     @endforeach
-                                </select>
-                            </div>
-                            <div class="flex flex-col mb-4">
-                                <label class="font-bold">Status:</label>
-                                <select class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
-                                    <option>Pilih Status</option>
-                                    <option>Pengajuan Judul dan Dosen Pembimbing</option>
-                                    <option>Pengajuan Seminar Proposal</option>
-                                    <option>Lulus Seminar Proposal</option>
-                                    <option>Tidak Lulus Seminar Proposal</option>
-                                    <option>Pengajuan Sidang Skripsi</option>
-                                    <option>Lulus Sidang Skripsi</option>
-                                    <option>Tidak Lulus Sidang Skripsi</option>
-                                    <option>Penyerahat Alat</option>
-                                    <option>Yudisium</option>
                                 </select>
                             </div>
                         </div>

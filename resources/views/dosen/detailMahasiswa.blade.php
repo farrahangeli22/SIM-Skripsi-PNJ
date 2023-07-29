@@ -60,7 +60,7 @@
                 <div class="">
                     <div class="">
                         <div class="flex space-x-1 text-sm mb-2">
-                            <label class="font-bold" for="">
+                            <label class="font-bold" for="" style="display: inline-block; white-space: nowrap;">
                                 Judul Skripsi :
                             </label>
                             <p>{{$mahasiswa->skripsi->judul}}</p>

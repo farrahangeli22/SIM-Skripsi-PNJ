@@ -18,13 +18,13 @@ class FormLogbookController extends Controller
     function viewFormLogbook(Request $request)
      {
         // ambil data mahasiswa dari db
-        // where nim == username authenticated user
         $mahasiswa = Mahasiswa::where('nim', $request->user()->username)->first();
         // ambil data dosen dari db
         $dosen = Dosen::all();
         // mengembalikan view dengan data
        return view('user.formlogbook')->with('mahasiswa', $mahasiswa)->with('dosen', $dosen);
     }
+
     function createFormLogbook(Request $request)
     {
         // store uploaded file into storage

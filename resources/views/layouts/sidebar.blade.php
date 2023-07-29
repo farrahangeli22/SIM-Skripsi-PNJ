@@ -86,21 +86,21 @@
                 <svg xmlns="http://www.w3.org/2000/svg" height="1.25em" viewBox="0 0 384 512" class="ml-1 mb-1" fill="white"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                     <path d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM216 408c0 13.3-10.7 24-24 24s-24-10.7-24-24V305.9l-31 31c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l72-72c9.4-9.4 24.6-9.4 33.9 0l72 72c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-31-31V408z" />
                 </svg>
-                <a class="text-[15px] ml-4 text-gray-200 font-bold">Daftar Pengajuan</a>
+                <a class="text-[15px] ml-4 text-gray-200 font-bold">Manajemen Prosedur Skripsi</a>
             </button>
         </div>
         <ul id="dropdown-pengajuan" class="hidden py-2 space-y-2">
             <li>
-                <a href="{{route('admin.daftar-pengajuan-judul')}}" class="flex items-center w-full p-2 text-left text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Judul dan Dosen Pembimbing</a>
+                <a href="{{route('admin.daftar-pengajuan-judul')}}" class="flex items-center w-full p-2 text-left text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Manajemen Pengajuan Judul dan Dosen Pembimbing</a>
             </li>
             <li>
-                <a href="{{route('admin.daftar-pengajuan-sempro')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Seminar Proposal</a>
+                <a href="{{route('admin.daftar-pengajuan-sempro')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Manajemen Seminar Proposal</a>
             </li>
             <li>
-                <a href="{{route('admin.daftar-pengajuan-sidang')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Pengajuan Sidang Skripsi</a>
+                <a href="{{route('admin.daftar-pengajuan-sidang')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Manajemen Sidang Skripsi</a>
             </li>
             <li>
-                <a href="{{route('admin.daftar-penyerahan-alat')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Penyerahan Alat</a>
+                <a href="{{route('admin.daftar-penyerahan-alat')}}" class="flex items-center w-full p-2 text-sm font-bold text-white transition duration-75 rounded-lg group hover:bg-hover  pl-11">Manajemen Penyerahan Alat</a>
             </li>
         </ul>
     </div>

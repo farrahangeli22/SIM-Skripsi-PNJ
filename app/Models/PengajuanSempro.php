@@ -21,6 +21,8 @@ class PengajuanSempro extends Model
         'dosen_penguji1',
         'dosen_penguji2',
         'dosen_penguji3',
+        'ruang',
+        'keterangan',
     ];
 
     protected $table = 'pengajuan_sempro';

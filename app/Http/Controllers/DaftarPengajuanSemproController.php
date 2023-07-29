@@ -32,6 +32,8 @@ class DaftarPengajuanSemproController extends Controller
             'dosen_penguji1' => $request->dosen1,
             'dosen_penguji2' => $request->dosen2,
             'dosen_penguji3' => $request->dosen3,
+            'jadwal_sempro' => $request->jadwal_sempro,
+            'ruang' => $request->ruang,
         ]);
 
         if($request->f3){

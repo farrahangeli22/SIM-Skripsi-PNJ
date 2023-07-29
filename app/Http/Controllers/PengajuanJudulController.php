@@ -11,13 +11,10 @@ use Illuminate\Support\Facades\Session;
 
 class PengajuanJudulController extends Controller
 {
-    //
-
     // function buat return view pengajuan judul
     function viewPengajuanJudul(Request $request)
     {
         // ambil data mahasiswa dari db
-        // where nim == username authenticated user
         $mahasiswa = Mahasiswa::where('nim', $request->user()->username)->first();
         // ambil data dosen dari db
         $dosen = Dosen::all();

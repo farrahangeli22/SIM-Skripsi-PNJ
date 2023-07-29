@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('ruang')->nullable();
             $table->string('status')->nullable();
             $table->integer('nilai')->nullable();
-            $table->string('keterangan')->nullable();
+            $table->text('keterangan')->nullable();
             $table->text('file_f4');
             $table->text('file_f6')->nullable();
             $table->string('dosen_penguji1')->nullable();

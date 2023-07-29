@@ -21,7 +21,7 @@ return new class extends Migration
             $table->dateTime('jadwal_sempro')->nullable();
             $table->string('ruang')->nullable();
             $table->string('status')->nullable();
-            $table->string('keterangan')->nullable();
+            $table->text('keterangan')->nullable();
             $table->text('file_f1');
             $table->text('file_f2')->nullable();
             $table->timestamps();

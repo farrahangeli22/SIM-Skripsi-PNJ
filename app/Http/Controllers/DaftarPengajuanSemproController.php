@@ -34,6 +34,7 @@ class DaftarPengajuanSemproController extends Controller
             'dosen_penguji3' => $request->dosen3,
             'jadwal_sempro' => $request->jadwal_sempro,
             'ruang' => $request->ruang,
+            'keterangan' => $request->keterangan,
         ]);
 
         if($request->f3){
@@ -49,11 +50,11 @@ class DaftarPengajuanSemproController extends Controller
         
        if($request->status == 'Lulus'){
              Mahasiswa::find($request->nim)->update([
-            'status_id' => '3',
+            'status_id' => '4',
         ]);
        }elseif ($request->status == 'Tidak Lulus') {
             Mahasiswa::find($request->nim)->update([
-            'status_id' => '4',]);
+            'status_id' => '5',]);
        }else{
              Mahasiswa::find($request->nim)->update([
             'status_id' => '2',

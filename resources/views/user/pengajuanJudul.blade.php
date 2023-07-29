@@ -98,7 +98,7 @@
                             Deskripsi/Abstrak
                             <p class="text-red-600 pl-1">*</p>
                         </label>
-                        <textarea name="deskripsi" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Tuliskan deskripsi skripsi anda..."></textarea>
+                        <textarea name="deskripsi" id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Tuliskan deskripsi skripsi anda..."></textarea>
                     </div>
                     <div class="flex justify-end">
                         <x-primary-button class="flex justify-center w-fit">

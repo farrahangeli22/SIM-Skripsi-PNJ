@@ -153,15 +153,22 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- section keterangan hasil sidang -->
+                            <div>
+                                <label name="keterangan" class="block font-bold" for="">
+                                    Keterangan Hasil Seminar:
+                                </label>
+                                <textarea id="keterangan" name="keterangan" class="w-full text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" placeholder="Masukkan keterangan hasil seminar..."></textarea>
+                            </div>
                             <div class="flex">
                                 <div class="flex justify-center w-full">
                                     <button id="saveModal" class="mt-4 bg-primary hover:bg-font text-white font-bold py-2 px-4 rounded">
                                         Simpan
                                     </button>
                                 </div>
-                                <!-- <div class="flex justify-center w-full"> -->
+                                <div class="flex justify-center w-full">
                                     <!-- Tombol "Lulus" dan "Tidak Lulus" berada dalam satu div yang sama -->
-                                    <!-- <div class="flex">
+                                    <div class="flex">
                                         <button type="submit" name="status" value="Lulus" class="mt-4 bg-[#40C057] hover:bg-font text-white font-bold py-2 px-4 rounded">
                                             Lulus
                                         </button>
@@ -169,7 +176,7 @@
                                             Tidak Lulus
                                         </button>
                                     </div>
-                                </div> -->
+                                </div>
                                 <div class="flex justify-center w-full">
                                     <button type="button" id="closeModal" class="mt-4 bg-delete hover:bg-hoverDelete text-white font-bold py-2 px-4 rounded">
                                         Tutup

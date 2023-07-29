@@ -40,14 +40,6 @@ class FormLogbookController extends Controller
             'rencana_pencapaian' => $request->rincian_kegiatan,
             'status' => "-",
         ]);
-
-        Notifikasi::create([
-            "user_id"=>User::where("username",Mahasiswa::find(Auth::user()->username)->nip_dospem)->first()->id,
-            "judul"=>"permintaan review logbook",
-            "deskripsi"=>"permintaan review logbook ".Auth::user()->nama,
-            "url"=>"-",
-            "baca"=>false,
-        ]);
         
         Session::flash('message', 'logbook berhasil terkirim');
         return redirect(route('user.form-logbook'));

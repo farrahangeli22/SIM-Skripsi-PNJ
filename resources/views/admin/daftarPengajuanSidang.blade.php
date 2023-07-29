@@ -79,7 +79,7 @@
                         <div class="bg-white p-6 rounded-lg">
                             <div class="flex ">
                                 <div class="w-1/2 p-3">
-                                    <h2 class="text-xl font-bold mb-4">Edit Data Mahasiswa</h2>
+                                    <h2 class="text-xl font-bold mb-4">Edit Data Pengajuan Sidang Skripsi</h2>
                                     <!-- Konten kiri -->
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Nama:</label>

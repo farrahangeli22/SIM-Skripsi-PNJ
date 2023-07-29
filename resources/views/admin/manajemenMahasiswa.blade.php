@@ -35,7 +35,7 @@
             </tbody>
         </table>
         <!-- modal -->
-        <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto hidden">
+        <div id="modal" class="z-50  fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto hidden">
             <form method="post" enctype="multipart/form-data">
                 <div class="bg-white p-6 rounded-lg">
                     <div class="flex ">

@@ -106,7 +106,7 @@
                                             <label class="font-bold">Form F2:</label>
                                             <a href="#" class="text-blue-500">Form-F2.pdf</a>
                                         </div>
-                                     </div>
+                                    </div>
                                 </div>
                                 @csrf
                                 <input type="hidden" name="id" id="idPengajuan">

@@ -21,6 +21,7 @@ class PengajuanSidang extends Model
         'dosen_penguji1',
         'dosen_penguji2',
         'dosen_penguji3',
+        'ruang',
     ];
 
     protected $table = 'pengajuan_sidang';

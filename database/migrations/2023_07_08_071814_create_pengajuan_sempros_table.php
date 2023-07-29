@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->text('file_f1');
             $table->text('file_f2')->nullable();
+            $table->string('ruang')->nullable();
             $table->timestamps();
         });
     }

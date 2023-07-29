@@ -14,8 +14,6 @@ class DetailLogbookMahasiswaController extends Controller
         $mahasiswa = Mahasiswa::where('nim', $id)->first();
 
         $detailLogbook = Logbook::find($id);
-        // mengembalikan view dengan data
-        // dd($Dosen);
       
         return view('user.detailLogbookMahasiswa')->with('detailLogbook', $detailLogbook)->with('mahasiswa', $mahasiswa);
     }

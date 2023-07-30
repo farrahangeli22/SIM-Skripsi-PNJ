@@ -58,13 +58,15 @@ class PengajuanSemproController extends Controller
             "judul" => $pengajuanSempro->judul,
             "subJudul" => $pengajuanSempro->sub_judul,
             "dosenPenguji" => [
-                $pengajuanSempro->dosenPenguji1->nip,
-                $pengajuanSempro->dosenPenguji2->nip,
-                $pengajuanSempro->dosenPenguji3->nip,
+                $pengajuanSempro->dosenPenguji1 ? $pengajuanSempro->dosenPenguji1->nip:"",
+                $pengajuanSempro->dosenPenguji2 ? $pengajuanSempro->dosenPenguji2->nip:"",
+                $pengajuanSempro->dosenPenguji3 ? $pengajuanSempro->dosenPenguji3->nip:"",
             ],
             "jadwalSempro" => Carbon::parse($pengajuanSempro->jadwal_sempro)->format("Y-m-d h:m"),
             "ruang" => $pengajuanSempro->ruang,
-        ];
+            "status" => $pengajuanSempro->hasilSempro? $pengajuanSempro->hasilSempro->status:"",
+
+            ];
         return response($data, 200);
     }
 }

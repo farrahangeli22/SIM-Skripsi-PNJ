@@ -151,11 +151,11 @@
                                         </div>
                                         <div class="flex flex-col mt-4 text-sm">
                                             <label class="font-bold">Hasil Seminar:</label>
-                                            <select name="status" id="status" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
+                                            <select name="statusHasil" id="statusHasil" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
                                                 <option value="">Pilih Status</option>
-                                                <option value="Lulus">Lulus Seminar Proposal</option>
-                                                <option value="Revisi">Lulus Seminar Proposal dengan Revisi</option>
-                                                <option value="Tidak lulus">Tidak Lulus Seminar Proposal</option>
+                                                <option value="Lulus Seminar">Lulus Seminar Proposal</option>
+                                                <option value="Lulus dengan Revisi">Lulus Seminar Proposal dengan Revisi</option>
+                                                <option value="Tidak Lulus Seminar">Tidak Lulus Seminar Proposal</option>
                                             </select>
                                         </div>
                                     </div>
@@ -247,6 +247,7 @@
                 $('#dosen3').val(res.dosenPenguji[2])
                 $('#jadwal_sempro').val(res.jadwalSempro)
                 $('#ruang').val(res.ruang)
+                $('#statusHasil').val(res.status)
             })
         }
     </script>

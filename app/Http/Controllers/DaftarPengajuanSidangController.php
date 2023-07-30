@@ -41,7 +41,7 @@ function createDaftarPengajuanSidang(Request $request)
             'pengajuan_sidang_id' => $pengajuanSidang->id,
             'keterangan' => $request->keterangan,
             'nilai' => $request->nilai,
-            'status' => $request->status,
+            'status' => $request->statusHasil,
         ]
     );
 
@@ -85,14 +85,14 @@ function createDaftarPengajuanSidang(Request $request)
 
      if($request->status == 'Lulus'){
              Mahasiswa::find($request->nim)->update([
-            'status_id' => '8',
+            'status_id' => '6',
         ]);
         }elseif ($request->status == 'Tidak Lulus') {
             Mahasiswa::find($request->nim)->update([
-            'status_id' => '9',]);
+            'status_id' => '7',]);
        }else{
              Mahasiswa::find($request->nim)->update([
-            'status_id' => '6',
+            'status_id' => '5',
         ]);
     }
         

@@ -41,7 +41,7 @@ class DaftarPengajuanSemproController extends Controller
         ],[
             'pengajuan_sempro_id' => $pengajuanSempro->id,
             'keterangan' => $request->keterangan,
-            'status' => $request->status,
+            'status' => $request->statusHasil,
         ]);
 
         if($request->f3){
@@ -56,11 +56,11 @@ class DaftarPengajuanSemproController extends Controller
         
        if($request->status == 'Lulus'){
              Mahasiswa::find($request->nim)->update([
-            'status_id' => '4',
+            'status_id' => '3',
         ]);
        }elseif ($request->status == 'Tidak Lulus') {
             Mahasiswa::find($request->nim)->update([
-            'status_id' => '5',
+            'status_id' => '4',
         ]);
        }else{
              Mahasiswa::find($request->nim)->update([

@@ -23,10 +23,6 @@ class StatusSeeder extends Seeder
         ]);
 
         Status::create([
-            'nama' => 'Lulus Seminar Proposal dengan Revisi',
-        ]);
-
-        Status::create([
             'nama' => 'Lulus Seminar Proposal',
         ]);
 
@@ -36,10 +32,6 @@ class StatusSeeder extends Seeder
 
         Status::create([
             'nama' => 'Pengajuan Sidang',
-        ]);
-
-        Status::create([
-            'nama' => 'Lulus Sidang dengan revisi',
         ]);
 
         Status::create([

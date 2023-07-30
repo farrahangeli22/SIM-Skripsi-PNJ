@@ -75,7 +75,7 @@
                             <a href="{{ url( $PengajuanSidang->hasilSidang ? '/storage/'.$PengajuanSidang->hasilSidang->file_f9:'') }}" target="_blank" class="text-blue-500">F9</a>
                         </div>
                     </td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Status</span>{{$PengajuanSidang->mahasiswa->status->nama}}</td>
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Status</span>{{$PengajuanSidang->hasilSidang ? $PengajuanSidang->hasilSidang->status:""}}</td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nilai</span>{{$PengajuanSidang->hasilSidang ? $PengajuanSidang->hasilSidang->nilai:""}}</td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                         <span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
@@ -132,7 +132,7 @@
                                     </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Jadwal Sidang Skripsi:</label>
-                                        <input id="jadwal_sidang" name="jadwal_sidang" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="date" autofocus/>
+                                        <input id="jadwal_sidang" name="jadwal_sidang" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="datetime-local" autofocus/>
                                     </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Ruang:</label>
@@ -144,7 +144,7 @@
                                     <!-- Konten kanan -->
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Dosen Penguji 1:</label>
-                                        <select name="dosen1" class="h-10 text-xs text-gray-700 border border-black rounded-md px-3">
+                                        <select name="dosen1" id="dosen1" class="h-10 text-xs text-gray-700 border border-black rounded-md px-3">
                                             @foreach($dosen as $item)
                                             <option value="{{$item->nip}}">{{$item->nama}}</option>
                                             @endforeach
@@ -152,7 +152,7 @@
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Dosen Penguji 2:</label>
-                                        <select name="dosen2" class="h-10 text-xs text-gray-700 border border-black rounded-md" >
+                                        <select name="dosen2" id="dosen2" class="h-10 text-xs text-gray-700 border border-black rounded-md" >
                                             @foreach($dosen as $item)
                                             <option value="{{$item->nip}}">{{$item->nama}}</option>
                                             @endforeach
@@ -160,7 +160,7 @@
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Dosen Penguji 3:</label>
-                                        <select name="dosen3" class="h-10 text-xs text-gray-700 border border-black rounded-md px-3">
+                                        <select name="dosen3" id="dosen3" class="h-10 text-xs text-gray-700 border border-black rounded-md px-3">
                                             @foreach($dosen as $item)
                                             <option value="{{$item->nip}}">{{$item->nama}}</option>
                                             @endforeach
@@ -182,6 +182,15 @@
                                         Form F9:
                                     </label>
                                     <x-text-input id="f9" class="w-full h-10 text-xs block p-1 mb-2 border border-black cursor-pointer" type="file" name="f9" autofocus/>
+                                    <div class="flex flex-col mt-4 text-sm">
+                                        <label class="font-bold">Hasil Sidang:</label>
+                                        <select name="statusHasil" id="statusHasil" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
+                                            <option value="">Pilih Status</option>    
+                                            <option value="Lulus Sidang">Lulus Sidang</option>
+                                            <option value="Lulus dengan Revisi">Lulus Sidang dengan Revisi</option>
+                                            <option value="Tidak Lulus Sidang">Tidak Lulus Sidang</option>
+                                        </select>
+                                    </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Rekap Nilai:</label>
                                         <input id="nilai" name="nilai" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
@@ -259,7 +268,7 @@
         type: 'GET',
         url: '/getPengajuanSidang/'+id,
     }).done(function(res){
-        console.log(res.nim)
+        console.log(res)
         $('#namaDosen').val(res.namaDosen)
         $('#nim').val(res.nim)
         $('#idPengajuan').val(id)
@@ -269,6 +278,13 @@
         $('#kelasMahasiswa').text(res.kelas)
         $('#judul').text(res.judul)
         $('#subJudul').text(res.subJudul)
+        $('#dosen1').val(res.dosenPenguji[0])
+        $('#dosen2').val(res.dosenPenguji[1])
+        $('#dosen3').val(res.dosenPenguji[2])
+        $('#jadwal_sidang').val(res.jadwalSidang)
+        $('#ruang').val(res.ruang)
+        $('#nilai').val(res.nilai)
+        $('#statusHasil').val(res.status)
     })
   }
       

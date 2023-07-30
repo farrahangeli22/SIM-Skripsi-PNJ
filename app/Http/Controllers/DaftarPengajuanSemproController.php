@@ -36,25 +36,31 @@ class DaftarPengajuanSemproController extends Controller
             'ruang' => $request->ruang,
         ]);
 
+        HasilSempro::updateOrCreate([
+            'id' => $pengajuanSempro->id
+        ],[
+            'pengajuan_sempro_id' => $pengajuanSempro->id,
+            'keterangan' => $request->keterangan,
+            'status' => $request->statusHasil,
+        ]);
+
         if($request->f3){
             $path = $request->file('f3')->store('/file_f3');
             HasilSempro::updateOrCreate([
                 'id' => $pengajuanSempro->id
             ],[
                 'pengajuan_sempro_id' => $pengajuanSempro->id,
-                'keterangan' => $request->keterangan,
                 'file_f3' => $path,
-                'status' => "pengajuan",
             ]);
         }
         
        if($request->status == 'Lulus'){
              Mahasiswa::find($request->nim)->update([
-            'status_id' => '4',
+            'status_id' => '3',
         ]);
        }elseif ($request->status == 'Tidak Lulus') {
             Mahasiswa::find($request->nim)->update([
-            'status_id' => '5',
+            'status_id' => '4',
         ]);
        }else{
              Mahasiswa::find($request->nim)->update([

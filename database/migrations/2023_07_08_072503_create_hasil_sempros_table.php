@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('pengajuan_sempro_id');
             $table->foreign('pengajuan_sempro_id')->references('id')->on('pengajuan_sempro');
-            $table->string('status');
-            $table->text('file_f3');
+            $table->string('status')->nullable();;
+            $table->text('file_f3')->nullable();;
             $table->text('keterangan')->nullable();
             $table->timestamps();
         });

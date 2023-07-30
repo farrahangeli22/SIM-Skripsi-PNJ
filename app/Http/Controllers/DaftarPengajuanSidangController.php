@@ -35,6 +35,16 @@ function createDaftarPengajuanSidang(Request $request)
         ]
     );
 
+    HasilSidang::updateOrCreate(
+        ['pengajuan_sidang_id' => $pengajuanSidang->id],
+        [
+            'pengajuan_sidang_id' => $pengajuanSidang->id,
+            'keterangan' => $request->keterangan,
+            'nilai' => $request->nilai,
+            'status' => $request->statusHasil,
+        ]
+    );
+
     if ($request->hasFile('f5')) {
         $path = $request->file('f5')->store('/file_f5');
         HasilSidang::updateOrCreate(
@@ -42,9 +52,6 @@ function createDaftarPengajuanSidang(Request $request)
             [
                 'pengajuan_sidang_id' => $pengajuanSidang->id,
                 'file_f5' => $path,
-                'keterangan' => $request->keterangan,
-                'nilai' => $request->nilai,
-                'status' => "pengajuan",
             ]
         );
     } if ($request->hasFile('f7')) {
@@ -54,7 +61,6 @@ function createDaftarPengajuanSidang(Request $request)
             [
                 'pengajuan_sidang_id' => $pengajuanSidang->id,
                 'file_f7' => $path,
-                'status' => "pengajuan",
             ]
         );
     } if ($request->hasFile('f8')) {
@@ -64,7 +70,6 @@ function createDaftarPengajuanSidang(Request $request)
             [
                 'pengajuan_sidang_id' => $pengajuanSidang->id,
                 'file_f8' => $path,
-                'status' => "pengajuan",
             ]
         );
     } if ($request->hasFile('f9')) {
@@ -74,21 +79,20 @@ function createDaftarPengajuanSidang(Request $request)
             [
                 'pengajuan_sidang_id' => $pengajuanSidang->id,
                 'file_f9' => $path,
-                'status' => "pengajuan",
             ]
         );
     }
 
      if($request->status == 'Lulus'){
              Mahasiswa::find($request->nim)->update([
-            'status_id' => '8',
+            'status_id' => '6',
         ]);
         }elseif ($request->status == 'Tidak Lulus') {
             Mahasiswa::find($request->nim)->update([
-            'status_id' => '9',]);
+            'status_id' => '7',]);
        }else{
              Mahasiswa::find($request->nim)->update([
-            'status_id' => '6',
+            'status_id' => '5',
         ]);
     }
         

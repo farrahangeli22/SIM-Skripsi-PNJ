@@ -36,15 +36,21 @@ class DaftarPengajuanSemproController extends Controller
             'ruang' => $request->ruang,
         ]);
 
+        HasilSempro::updateOrCreate([
+            'id' => $pengajuanSempro->id
+        ],[
+            'pengajuan_sempro_id' => $pengajuanSempro->id,
+            'keterangan' => $request->keterangan,
+            'status' => $request->status,
+        ]);
+
         if($request->f3){
             $path = $request->file('f3')->store('/file_f3');
             HasilSempro::updateOrCreate([
                 'id' => $pengajuanSempro->id
             ],[
                 'pengajuan_sempro_id' => $pengajuanSempro->id,
-                'keterangan' => $request->keterangan,
                 'file_f3' => $path,
-                'status' => $request->status,
             ]);
         }
         

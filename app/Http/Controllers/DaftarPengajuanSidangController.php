@@ -44,7 +44,7 @@ function createDaftarPengajuanSidang(Request $request)
                 'file_f5' => $path,
                 'keterangan' => $request->keterangan,
                 'nilai' => $request->nilai,
-                'status' => "pengajuan",
+                'status' => $request->status,
             ]
         );
     } if ($request->hasFile('f7')) {

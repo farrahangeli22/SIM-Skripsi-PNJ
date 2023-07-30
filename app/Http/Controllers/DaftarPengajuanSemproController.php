@@ -44,7 +44,7 @@ class DaftarPengajuanSemproController extends Controller
                 'pengajuan_sempro_id' => $pengajuanSempro->id,
                 'keterangan' => $request->keterangan,
                 'file_f3' => $path,
-                'status' => "pengajuan",
+                'status' => $request->status,
             ]);
         }
         

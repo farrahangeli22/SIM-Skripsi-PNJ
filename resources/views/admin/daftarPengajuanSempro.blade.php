@@ -56,7 +56,7 @@
                         <a href="{{ url( $PengajuanSempro->hasilSempro ? '/storage/'.$PengajuanSempro->hasilSempro->file_f3:'') }}" target="_blank" class="text-blue-500">F3</a>
                     </div>
                 </td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Status</span>{{$PengajuanSempro->mahasiswa->status->nama}}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Status</span>{{$PengajuanSempro->hasilSempro ? $PengajuanSempro->hasilSempro->status:""}}</td>
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
 					<span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
 					<button onclick="editButton({{$PengajuanSempro->id}})" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>
@@ -97,15 +97,13 @@
                                         <label class="font-bold">Dosen Pembimbing:</label>
                                         <input id="namaDosen" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
                                     </div>
-                                    <div class="flex justify-between mb-4 text-sm">
-                                        <div class="flex flex-col ">
-                                            <label class="font-bold">Form F1:</label>
-                                            <a href="#" class="text-blue-500">Form-F1.pdf</a> 
-                                        </div>
-                                        <div class="flex flex-col ">
-                                            <label class="font-bold">Form F2:</label>
-                                            <a href="#" class="text-blue-500">Form-F2.pdf</a>
-                                        </div>
+                                    <div class="flex flex-col mb-4 text-sm">
+                                        <label class="font-bold">Form F1:</label>
+                                        <a href="#" class="text-blue-500">Form-F1.pdf</a> 
+                                    </div>
+                                    <div class="flex flex-col mb-4 text-sm">
+                                        <label class="font-bold">Form F2:</label>
+                                        <a href="#" class="text-blue-500">Form-F2.pdf</a>
                                     </div>
                                 </div>
                                 @csrf
@@ -150,6 +148,15 @@
                                             Form F3:
                                         </label>
                                         <input id="f3" name="f3" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="file" autofocus/>
+                                    </div>
+                                    <div class="flex flex-col mt-4 text-sm">
+                                        <label class="font-bold">Hasil Seminar:</label>
+                                        <select name="status" id="status" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
+                                            <option value="">Pilih Status</option>    
+                                            <option value="Lulus">Lulus Seminar Proposal</option>
+                                            <option value="Revisi">Lulus Seminar Proposal dengan Revisi</option>
+                                            <option value="Tidak lulus">Tidak Lulus Seminar Proposal</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

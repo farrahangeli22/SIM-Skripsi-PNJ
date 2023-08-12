@@ -185,9 +185,9 @@ Route::middleware('auth')->group(function () {
 //     return view('user.penyerahanAlat');
 // })->name('user.penyerahan-alat');
 
-Route::get("/notification", function () {
-    return view('user.notification');
-})->name('user.notification');
+// Route::get("/notification", function () {
+//     return view('user.notification');
+// })->name('user.notification');
 
 
 
@@ -207,6 +207,22 @@ Route::get("/notification", function () {
 // Route::get("/dosen/detail-mahasiswa", function () {
 //     return view('dosen.detailMahasiswa');
 // })->name('dosen.detail-mahasiswa');
+
+
+
+// routes for user penguji
+Route::get("/penguji/penilaian-seminar", function () {
+    return view('penguji.penilaianSempro');
+})->name('penguji.penilaian-seminar');
+
+Route::get("/penguji/penilaian-sidang", function () {
+    return view('penguji.penilaianSidang');
+})->name('penguji.penilaian-sidang');
+
+Route::get("/penguji/approve-revisi", function () {
+    return view('penguji.approveRevisi');
+})->name('penguji.approve-revisi');
+
 
 
 // routes for user admin

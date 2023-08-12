@@ -33,6 +33,13 @@ class UserSeeder extends Seeder
                 ]
             );
 
+            UserRole::create(
+                [
+                    'user_id' => $user1->id,
+                    'role_id' => 5
+                ]
+            );
+
             //buat data dosen
             Dosen::create(
                 [
@@ -142,6 +149,13 @@ class UserSeeder extends Seeder
                 [
                     'user_id' => $user5->id,
                     'role_id' => 2
+                ]
+            );
+
+            UserRole::create(
+                [
+                    'user_id' => $user5->id,
+                    'role_id' => 5
                 ]
             );
 

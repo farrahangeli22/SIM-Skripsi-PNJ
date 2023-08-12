@@ -1,5 +1,5 @@
-<x-penguji-layout :title="'Penilaian Semniar Proposal'">
+<x-penguji-layout :title="'Penilaian Sempro Skripsi'">
 
-    ini buat nilai sempro
+    ini buat penilaian Sempro
 
 </x-penguji-layout>

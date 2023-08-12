@@ -1,5 +1,5 @@
 <x-penguji-layout :title="'Penilaian Sidang Skripsi'">
 
-    ini buat nilai sidang
+    ini buat penilaian sidang
 
 </x-penguji-layout>

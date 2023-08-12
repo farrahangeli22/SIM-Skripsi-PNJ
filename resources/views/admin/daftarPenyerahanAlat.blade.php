@@ -143,7 +143,7 @@
                                         <label class="font-bold">Form F10:</label>
                                          <a href="#"  class="text-blue-500">Form-F10.pdf</a>
                                     </div>
-                                     <label name="f11" class="block font-bold" for="">
+                                     <label name="f11" class="block font-bold text-xs" for="">
                                         Form F11:
                                     </label>
                                     <input id="f11" name="f11" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer" type="file" autofocus/>

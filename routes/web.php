@@ -185,9 +185,9 @@ Route::middleware('auth')->group(function () {
 //     return view('user.penyerahanAlat');
 // })->name('user.penyerahan-alat');
 
-// Route::get("/notification", function () {
-//     return view('user.notification');
-// })->name('user.notification');
+Route::get("/notification", function () {
+     return view('user.notification');
+ })->name('user.notification');
 
 
 

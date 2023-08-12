@@ -211,13 +211,25 @@ Route::middleware('auth')->group(function () {
 
 
 // routes for user penguji
-Route::get("/penguji/penilaian-seminar", function () {
+Route::get("/penguji/daftar-sempro", function () {
+    return view('penguji.daftarSempro');
+})->name('penguji.daftar-sempro');
+
+Route::get("/penguji/penilaian-sempro", function () {
     return view('penguji.penilaianSempro');
-})->name('penguji.penilaian-seminar');
+})->name('penguji.penilaian-sempro');
+
+Route::get("/penguji/daftar-sidang", function () {
+    return view('penguji.daftarSidang');
+})->name('penguji.daftar-sidang');
 
 Route::get("/penguji/penilaian-sidang", function () {
     return view('penguji.penilaianSidang');
 })->name('penguji.penilaian-sidang');
+
+Route::get("/penguji/daftar-revisi", function () {
+    return view('penguji.daftarRevisi');
+})->name('penguji.daftar-revisi');
 
 Route::get("/penguji/approve-revisi", function () {
     return view('penguji.approveRevisi');

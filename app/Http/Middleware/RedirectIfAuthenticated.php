@@ -36,7 +36,7 @@ class RedirectIfAuthenticated
                     return redirect(route('user.home'));
                 }
                 if ($role->role_id == 5) {
-                    return redirect(route('penguji.penilaian-sempro'));
+                    return redirect(route('penguji.daftar-sempro'));
                 }
                 // return redirect(RouteServiceProvider::HOME);
             }

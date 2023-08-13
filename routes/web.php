@@ -157,8 +157,8 @@ Route::middleware('auth')->group(function () {
     Route::post("/daftar-sidang", [DaftarSidangController::class, 'createDaftarSidang'])->name('penguji.create-daftar-sidang');
 
     // penguji - penilaian sidang
-    Route::get('/penilaian-sidang', [PenilaianSidangController::class, 'viewPenilaianSidang'])->name('penguji.penilaian-sidang');
-    Route::post("/penilaian-sidang", [PenilaianSidangController::class, 'createPenilaianSidang'])->name('penguji.create-penilaian-sidang');
+    Route::get('/penilaian-sidang/{id}', [PenilaianSidangController::class, 'viewPenilaianSidang'])->name('penguji.penilaian-sidang');
+    Route::post("/penilaian-sidang/{id}", [PenilaianSidangController::class, 'createPenilaianSidang'])->name('penguji.create-penilaian-sidang');
 
     // admin - daftar pengajuan sidang
     Route::get('/daftar-pengajuan-sidang', [DaftarPengajuanSidangController::class, 'viewDaftarPengajuanSidang'])->name('admin.daftar-pengajuan-sidang');

@@ -24,4 +24,9 @@ class HasilSidang extends Model
     {
         return $this->belongsTo(PengajuanSidang::class, 'pengajuan_sidang_id', 'id');
     }
+
+    public function revisi()
+    {
+        return $this->hasOne(Revisi::class);
+    }
 }

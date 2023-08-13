@@ -10,6 +10,7 @@ class revisi extends Model
     use HasFactory;
 
     protected $fillable = [
+        'hasil_sidang_id',
         'nim',
         'nip_penguji',
         'judul',
@@ -29,6 +30,11 @@ class revisi extends Model
     public function penguji()
     {
         return $this->belongsTo(Dosen::class, "nip_penguji", "nip");
+    }
+
+    function hasilSidang()
+    {
+        return $this->belongsTo(HasilSidang::class, 'hasil_sidang_id', 'id');
     }
 }
 

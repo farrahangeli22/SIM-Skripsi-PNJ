@@ -31,7 +31,7 @@ class PengajuanSidang extends Model
     }
     public function hasilSidang()
     {
-        return $this->hasOne(HasilSidang::class);
+        return $this->hasOne(HasilSidang::class, "pengajuan_sidang_id", "id");
     }
 
     public function dosenPenguji1()

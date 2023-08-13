@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('revisi', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('hasil_sidang_id');
+            $table->foreign('hasil_sidang_id')->references('id')->on('hasil_sidang');
             $table->string('nim');
             $table->foreign('nim')->references('nim')->on('mahasiswa');
             $table->string('nip_penguji')->nullable();

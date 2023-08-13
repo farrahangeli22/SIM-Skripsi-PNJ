@@ -27,7 +27,7 @@
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Poin Revisi</span></td>     
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
-                    <a href="{{ route('penguji.penilaian-sidang') }}" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Aksi</a>
+                    <a href="{{ route('penguji.penilaian-sidang',['id'=>$Sidang->id]) }}" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Aksi</a>
                 </td>
             </tr>
                 @empty

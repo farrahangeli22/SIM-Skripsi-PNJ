@@ -17,7 +17,7 @@ class PenilaianSemproController extends Controller
     {
         $penilaianSempro = pengajuanSempro::find($id);
 
-        // dd($penilaianSempro);
+        //dd($penilaianSempro);
         return view('penguji.penilaianSempro',['penilaianSempro'=> $penilaianSempro]);
     }
 

@@ -15,7 +15,7 @@ class DaftarPengajuanSidangController extends Controller
     {
         $daftarPengajuanSidang = PengajuanSidang::with(["mahasiswa"=>function($query){
             return $query->with("dosen");
-            }])->get();;
+            }])->get();
 
             $dosen = Dosen::get();
         
@@ -40,9 +40,6 @@ function createDaftarPengajuanSidang(Request $request)
         [
             'pengajuan_sidang_id' => $pengajuanSidang->id,
             'keterangan' => $request->keterangan,
-            'nilai_penguji1' => $request->nilai_penguji1,
-            'nilai_penguji2' => $request->nilai_penguji2,
-            'nilai_penguji3' => $request->nilai_penguji3,
             'nilai' => $request->nilai,
             'status' => $request->statusHasil,
         ]

@@ -9,6 +9,8 @@ use App\Http\Controllers\PengajuanSemproController;
 use App\Http\Controllers\DaftarPengajuanSemproController;
 use App\Http\Controllers\DaftarSemproController;
 use App\Http\Controllers\PenilaianSemproController;
+use App\Http\Controllers\DaftarSidangController;
+use App\Http\Controllers\PenilaianSidangController;
 use App\Http\Controllers\PengajuanSidangController;
 use App\Http\Controllers\DaftarPengajuanSidangController;
 use App\Http\Controllers\PenyerahanAlatController;
@@ -150,6 +152,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/penilaian-sempro', [PenilaianSemproController::class, 'viewPenilaianSempro'])->name('penguji.penilaian-sempro');
     Route::post("/penilaian-sempro", [PenilaianSemproController::class, 'createPenilaianSempro'])->name('penguji.create-penilaian-sempro');
 
+    // penguji - daftar sidang
+    Route::get('/daftar-sidang', [DaftarSidangController::class, 'viewDaftarSidang'])->name('penguji.daftar-sidang');
+    Route::post("/daftar-sidang", [DaftarSidangController::class, 'createDaftarSidang'])->name('penguji.create-daftar-sidang');
+
+    // penguji - penilaian sidang
+    Route::get('/penilaian-sidang', [PenilaianSidangController::class, 'viewPenilaianSidang'])->name('penguji.penilaian-sidang');
+    Route::post("/penilaian-sidang", [PenilaianSidangController::class, 'createPenilaianSidang'])->name('penguji.create-penilaian-sidang');
+
     // admin - daftar pengajuan sidang
     Route::get('/daftar-pengajuan-sidang', [DaftarPengajuanSidangController::class, 'viewDaftarPengajuanSidang'])->name('admin.daftar-pengajuan-sidang');
     Route::post("/daftar-pengajuan-sidang", [DaftarPengajuanSidangController::class, 'createDaftarPengajuanSidang'])->name('admin.create-daftar-pengajuan-sidang');
@@ -239,13 +249,13 @@ Route::get("/notification", function () {
 //     return view('penguji.penilaianSempro');
 // })->name('penguji.penilaian-sempro');
 
-Route::get("/penguji/daftar-sidang", function () {
-    return view('penguji.daftarSidang');
-})->name('penguji.daftar-sidang');
+// Route::get("/penguji/daftar-sidang", function () {
+//     return view('penguji.daftarSidang');
+// })->name('penguji.daftar-sidang');
 
-Route::get("/penguji/penilaian-sidang", function () {
-    return view('penguji.penilaianSidang');
-})->name('penguji.penilaian-sidang');
+// Route::get("/penguji/penilaian-sidang", function () {
+//     return view('penguji.penilaianSidang');
+// })->name('penguji.penilaian-sidang');
 
 Route::get("/penguji/daftar-revisi", function () {
     return view('penguji.daftarRevisi');

@@ -7,6 +7,8 @@ use App\Http\Controllers\PengajuanJudulController;
 use App\Http\Controllers\DaftarPengajuanJudulController;
 use App\Http\Controllers\PengajuanSemproController;
 use App\Http\Controllers\DaftarPengajuanSemproController;
+use App\Http\Controllers\DaftarSemproController;
+use App\Http\Controllers\PenilaianSemproController;
 use App\Http\Controllers\PengajuanSidangController;
 use App\Http\Controllers\DaftarPengajuanSidangController;
 use App\Http\Controllers\PenyerahanAlatController;
@@ -140,6 +142,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/daftar-pengajuan-sempro', [DaftarPengajuanSemproController::class, 'viewDaftarPengajuanSempro'])->name('admin.daftar-pengajuan-sempro');
     Route::post("/daftar-pengajuan-sempro", [DaftarPengajuanSemproController::class, 'createDaftarPengajuanSempro'])->name('admin.create-daftar-pengajuan-sempro');
 
+    // penguji - daftar sempro
+    Route::get('/daftar-sempro', [DaftarSemproController::class, 'viewDaftarSempro'])->name('penguji.daftar-sempro');
+    Route::post("/daftar-sempro", [DaftarSemproController::class, 'createDaftarSempro'])->name('penguji.create-daftar-sempro');
+
+    // penguji - penilaian sempro
+    Route::get('/penilaian-sempro', [PenilaianSemproController::class, 'viewPenilaianSempro'])->name('penguji.penilaian-sempro');
+    Route::post("/penilaian-sempro", [PenilaianSemproController::class, 'createPenilaianSempro'])->name('penguji.create-penilaian-sempro');
+
     // admin - daftar pengajuan sidang
     Route::get('/daftar-pengajuan-sidang', [DaftarPengajuanSidangController::class, 'viewDaftarPengajuanSidang'])->name('admin.daftar-pengajuan-sidang');
     Route::post("/daftar-pengajuan-sidang", [DaftarPengajuanSidangController::class, 'createDaftarPengajuanSidang'])->name('admin.create-daftar-pengajuan-sidang');
@@ -211,13 +221,13 @@ Route::get("/notification", function () {
 
 
 // routes for user penguji
-Route::get("/penguji/daftar-sempro", function () {
-    return view('penguji.daftarSempro');
-})->name('penguji.daftar-sempro');
+// Route::get("/penguji/daftar-sempro", function () {
+//     return view('penguji.daftarSempro');
+// })->name('penguji.daftar-sempro');
 
-Route::get("/penguji/penilaian-sempro", function () {
-    return view('penguji.penilaianSempro');
-})->name('penguji.penilaian-sempro');
+// Route::get("/penguji/penilaian-sempro", function () {
+//     return view('penguji.penilaianSempro');
+// })->name('penguji.penilaian-sempro');
 
 Route::get("/penguji/daftar-sidang", function () {
     return view('penguji.daftarSidang');

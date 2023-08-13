@@ -5,16 +5,16 @@
         <div class="w-72 rounded bg-cardData p-6">
             <h1 class="flex justify-center font-bold text-xl text-font mb-6">Data Mahasiswa</h1>
             <label class="block mb-4 font-bold text-sm" for="">Nama : 
-                <p class="font-normal mt-2">Farrah Dillah Angeli</p>
+                <p class="font-normal mt-2">{{$penilaianSempro->mahasiswa->nama}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">NIM : 
-                <p class="font-normal mt-2">1907411012</p>
+                <p class="font-normal mt-2">{{$penilaianSempro->mahasiswa->nim}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Program Studi : 
-                <p class="font-normal mt-2">Teknik Informatika</p>
+                <p class="font-normal mt-2">{{$penilaianSempro->mahasiswa->prodi}}</p>
             </label>
             <label class="block mb-4 font-bold text-sm" for="">Kelas : 
-                <p class="font-normal mt-2">TI 8A</p>
+                <p class="font-normal mt-2">{{$penilaianSempro->mahasiswa->kelas}}</p>
             </label>
         </div>
 
@@ -25,16 +25,22 @@
             </div>
             @endif -->
             <!-- Form Unggah Nilai Proposal dan Skripsi -->
+            @if(Session::has('message'))
+            <div class="w-full h-fit p-2 rounded bg-[#40C057] mb-4 font-bold text-white">
+                <p>{{ Session::get('message') }}</p>
+            </div>
+            @endif
             <form class="" enctype="multipart/form-data" action="" method="post" action="/proses-data" onsubmit="">
             <h1 class="font-bold text-xl text-font mb-8">Penilaian Hasil Seminar</h1>
-                <!-- <div class="flex space-x-10"> -->
+            @csrf
+            <!-- <div class="flex space-x-10"> -->
                     <div class="flex space-x-10">
                         <div class="w-20">
                             <label class="block text-sm" for="">
                                 Nilai :
                             </label>
                         </div>
-                        <x-text-input id="" class="block mb-2 w-full h-10 p-1 border border-black cursor-pointer bg-white" type="text" name="" placeholder="Masukkan nilai..." autofocus/>
+                        <x-text-input id=""  name="nilai_penguji" class="block mb-2 w-full h-10 p-1 border border-black cursor-pointer bg-white" type="text" placeholder="Masukkan nilai..." autofocus/>
                     </div>
                     <div class="flex space-x-6">
                         <div class="w-24">
@@ -42,7 +48,7 @@
                                 Poin Revisi :
                             </label>
                         </div>
-                        <textarea id="" class="block mt-4 w-full h-36 p-1 border border-gray-300 rounded cursor-pointer bg-white" type="text" name="" placeholder="Tuliskan poin revisi disini..." autofocus></textarea>
+                        <textarea id="" name="revisi" class="block mt-4 w-full h-36 p-1 border border-gray-300 rounded cursor-pointer bg-white" type="text" name="" placeholder="Tuliskan poin revisi disini..." autofocus></textarea>
                     </div>
                     <div class="mt-7 flex justify-end">
                         <x-primary-button class="flex justify-center w-fit h-10">

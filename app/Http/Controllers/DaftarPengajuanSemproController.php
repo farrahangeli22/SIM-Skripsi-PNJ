@@ -15,7 +15,7 @@ class DaftarPengajuanSemproController extends Controller
     {
         $daftarPengajuanSempro = PengajuanSempro::with(["mahasiswa"=>function($query){
             return $query->with("dosen");
-            }])->get();;
+            }])->get();
 
         $dosen = Dosen::get();
         // dd($daftarPengajuanSempro);
@@ -41,9 +41,6 @@ class DaftarPengajuanSemproController extends Controller
         ],[
             'pengajuan_sempro_id' => $pengajuanSempro->id,
             'keterangan' => $request->keterangan,
-            'nilai_penguji1' => $request->nilai_penguji1,
-            'nilai_penguji2' => $request->nilai_penguji2,
-            'nilai_penguji3' => $request->nilai_penguji3,
             'nilai' => $request->nilai,
             'status' => $request->statusHasil,
         ]);

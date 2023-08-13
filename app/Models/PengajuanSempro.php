@@ -32,7 +32,7 @@ class PengajuanSempro extends Model
 
     public function hasilSempro()
     {
-        return $this->hasOne(HasilSempro::class);
+        return $this->hasOne(HasilSempro::class, "pengajuan_sempro_id", "id");
     }
 
     public function dosenPenguji1()

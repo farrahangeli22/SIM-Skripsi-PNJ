@@ -62,6 +62,9 @@ class PengajuanSemproController extends Controller
             "jadwalSempro" => Carbon::parse($pengajuanSempro->jadwal_sempro)->format("Y-m-d h:m"),
             "ruang" => $pengajuanSempro->ruang,
             "nilaiPembimbing" => $pengajuanSempro->nilai_pembimbing,
+            "nilai_penguji1" => $pengajuanSempro->hasilSempro? $pengajuanSempro->hasilSempro->nilai_penguji1:"",
+            "nilai_penguji2" => $pengajuanSempro->hasilSempro? $pengajuanSempro->hasilSempro->nilai_penguji2:"",
+            "nilai_penguji3" => $pengajuanSempro->hasilSempro? $pengajuanSempro->hasilSempro->nilai_penguji3:"",
             "nilai" => $pengajuanSempro->hasilSempro? $pengajuanSempro->hasilSempro->nilai:"",
             "status" => $pengajuanSempro->hasilSempro? $pengajuanSempro->hasilSempro->status:"",
             ];

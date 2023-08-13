@@ -147,8 +147,8 @@ Route::middleware('auth')->group(function () {
     Route::post("/daftar-sempro", [DaftarSemproController::class, 'createDaftarSempro'])->name('penguji.create-daftar-sempro');
 
     // penguji - penilaian sempro
-    Route::get('/penilaian-sempro', [PenilaianSemproController::class, 'viewPenilaianSempro'])->name('penguji.penilaian-sempro');
-    Route::post("/penilaian-sempro", [PenilaianSemproController::class, 'createPenilaianSempro'])->name('penguji.create-penilaian-sempro');
+    Route::get('/penilaian-sempro/{id}', [PenilaianSemproController::class, 'viewPenilaianSempro'])->name('penguji.penilaian-sempro');
+    Route::post("/penilaian-sempro/{id}", [PenilaianSemproController::class, 'createPenilaianSempro'])->name('penguji.create-penilaian-sempro');
 
     // admin - daftar pengajuan sidang
     Route::get('/daftar-pengajuan-sidang', [DaftarPengajuanSidangController::class, 'viewDaftarPengajuanSidang'])->name('admin.daftar-pengajuan-sidang');

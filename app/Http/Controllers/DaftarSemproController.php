@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Models\Mahasiswa;
 use App\Models\Dosen;
 use App\Models\HasilSempro;
@@ -13,12 +14,10 @@ class DaftarSemproController extends Controller
 {
     function viewDaftarSempro(Request $request)
     {
-        $daftarSempro = pengajuanSempro::with(["mahasiswa"=>function($query){
-            return $query->with("dosen");
-            }])->get();;
+        $daftarSempro = pengajuanSempro::where('dosen_penguji1', auth::user()->username) -> orWhere('dosen_penguji2', auth::user()->username) -> orWhere('dosen_penguji3', auth::user()->username)->
+        get();
 
-        $dosen = Dosen::get();
         // dd($daftarSempro);
-        return view('penguji.daftarSempro',['daftarSempro'=> $daftarSempro,'dosen'=> $dosen]);
+        return view('penguji.daftarSempro',['daftarSempro'=> $daftarSempro]);
     }
 }

@@ -23,6 +23,9 @@
                         Judul
                     </th>
                     <th scope="col" class="px-6 py-3 border">
+                        Deskripsi
+                    </th>
+                    <th scope="col" class="px-6 py-3 border">
                         Status
                     </th>
                 </tr>
@@ -41,6 +44,9 @@
                     </td>
                     <td class="px-6 py-4 border">
                         {{$val->pengajuanJudul->judul}}
+                    </td>
+                    <td class="px-6 py-4 border">
+                        {{$val->pengajuanJudul->deskripsi}}
                     </td>
                     <td class="px-6 py-4 space-x-2 flex">
                         <form action="/terima-permintaan-judul/{{$val->pengajuanJudul->id}}" method="post">

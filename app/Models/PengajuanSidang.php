@@ -15,12 +15,12 @@ class PengajuanSidang extends Model
         'sub_judul',
         'anggota',
         'jadwal_sidang',
-        'file_f4',
-        'file_f6',
         'dosen_penguji1',
         'dosen_penguji2',
         'dosen_penguji3',
         'ruang',
+        'status',
+        'nilai_pembimbing',
     ];
 
     protected $table = 'pengajuan_sidang';

@@ -53,16 +53,16 @@
     </div> -->
 
     <!-- button action -->
-    <div class="flex space-x-4 mt-8">
+    <div class="flex justify-center mt-8">
         <!-- button terima -->
-        <div class="flex justify-end w-full">
+        <div class="w-full">
             <input type="submit" name="status" value="terima" class="block h-fit w-fit p-2 rounded-lg bg-[#40C057] flex text-sm font-bold text-white shadow hover:bg-[#17952E]">
         </div>
 
         <!-- button tolak -->
-        <div class="w-full">
+        <!-- <div class="w-full">
             <input type="submit" name="status" value="tolak" class="block h-fit w-fit p-2 rounded-lg bg-[#E03131] flex text-sm font-bold text-white shadow hover:bg-[#B51A1A]">
-        </div>
+        </div> -->
     </div>
     @csrf
     </form>

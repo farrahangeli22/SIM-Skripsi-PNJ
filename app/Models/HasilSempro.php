@@ -12,8 +12,10 @@ class HasilSempro extends Model
     protected $fillable = [
         'status',
         'pengajuan_sempro_id',
-        'file_f3',
-        'keterangan',
+        'nilai_penguji1',
+        'nilai_penguji2',
+        'nilai_penguji3',
+        'nilai',
     ];
 
     protected $table = 'hasil_sempro';

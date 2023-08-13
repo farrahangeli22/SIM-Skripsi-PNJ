@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div class="mb-4">
-                        <label for="message" class="flex flex-wrap mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <label for="message" class="flex flex-wrap mb-2 text-sm font-medium text-gray-900">
                             Deskripsi/Abstrak
                             <p class="text-red-600 pl-1">*</p>
                         </label>

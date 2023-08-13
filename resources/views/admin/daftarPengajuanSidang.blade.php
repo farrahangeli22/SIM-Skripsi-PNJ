@@ -14,12 +14,6 @@
                 <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Dosen Penguji</th>
                 <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Jadwal</th>
                 <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Ruang</th>
-                <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F4</th>
-                <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F5</th>
-                <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F6</th>
-                <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F7</th>
-                <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F8</th>
-                <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F9</th>
                 <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Status</th>
                 <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Nilai</th>
                 <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Aksi</th>
@@ -45,36 +39,6 @@
                 </td>
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Jadwal</span>{{$PengajuanSidang->jadwal_sidang}}</td>
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Ruang</span>{{$PengajuanSidang->ruang}}</td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                    <div style="text-align: center;">
-                        <a href="{{ url('/storage/'. $PengajuanSidang->file_f4) }}" target="_blank" class="text-blue-500">F4</a>
-                    </div>
-                    </td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                        <div style="text-align: center;">
-                            <a href="{{ url( $PengajuanSidang->hasilSidang ? '/storage/'.$PengajuanSidang->hasilSidang->file_f5:'') }}" target="_blank" class="text-blue-500">F5</a>
-                        </div>
-                    </td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                        <div style="text-align: center;">
-                            <a href="{{ url('/storage/'. $PengajuanSidang->file_f6) }}" target="_blank" class="text-blue-500">F6</a>
-                        </div>
-                    </td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                        <div style="text-align: center;">
-                            <a href="{{ url( $PengajuanSidang->hasilSidang ? '/storage/'.$PengajuanSidang->hasilSidang->file_f7:'') }}" target="_blank" class="text-blue-500">F7</a>
-                        </div>
-                    </td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                        <div style="text-align: center;">
-                            <a href="{{ url( $PengajuanSidang->hasilSidang ? '/storage/'.$PengajuanSidang->hasilSidang->file_f8:'') }}" target="_blank" class="text-blue-500">F8</a>
-                        </div>
-                    </td>
-                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                        <div style="text-align: center;">
-                            <a href="{{ url( $PengajuanSidang->hasilSidang ? '/storage/'.$PengajuanSidang->hasilSidang->file_f9:'') }}" target="_blank" class="text-blue-500">F9</a>
-                        </div>
-                    </td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Status</span>{{$PengajuanSidang->hasilSidang ? $PengajuanSidang->hasilSidang->status:""}}</td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nilai</span>{{$PengajuanSidang->hasilSidang ? $PengajuanSidang->hasilSidang->nilai:""}}</td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">

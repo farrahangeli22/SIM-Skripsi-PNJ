@@ -25,8 +25,6 @@ class PengajuanSidangController extends Controller
      // create pengajuan sidang
     function createPengajuanSidang(Request $request)
     {
-        // store uploaded file into storage
-        $path = $request->file('file_f4')->store('/file_f4');
         // create reccord on table pengajuan sidang
         
         $pengajuanSidang = PengajuanSidang::create([
@@ -34,7 +32,6 @@ class PengajuanSidangController extends Controller
             'judul' => $request->judul,
             'sub_judul' => isset($request->subJudul) ? $request->subJudul : null,
             'anggota' => isset($request->anggota) ? $request->anggota : null,
-            'file_f4' => $path,
         ]);
 
          Mahasiswa::find($request->user()->username)->update([

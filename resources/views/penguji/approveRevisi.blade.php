@@ -13,17 +13,17 @@
                 <label class="block text-sm mb-2" for="">
                     Link Demo
                 </label>
-                <a href="youtube.com" target="_blank" >Ini link demo</a>
+                <a style="color: blue; text-decoration: underline;" href="https://youtu.be/uB4F9U1aLxo" target="_blank">Link Vidio Demo Aplikasi</a>
             </div>
         </div>
         <div>
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900">
                 Poin-poin revisi
             </label>
             <textarea id="message" rows="4" class="block p-2.5 w-full h-60 text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Catatan bimbingan blablabla" readonly></textarea>
         </div>
         <div>
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900">
                 Dokumen Skripsi
             </label>
             <iframe src="{{ asset('asset/fileSkripsi.pdf') }}" class="w-full h-80"></iframe>

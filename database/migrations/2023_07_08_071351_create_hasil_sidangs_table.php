@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('pengajuan_sidang_id');
             $table->foreign('pengajuan_sidang_id')->references('id')->on('pengajuan_sidang');
-            $table->integer('nilai_pembimbing')->nullable();
             $table->integer('nilai_penguji1')->nullable();
             $table->integer('nilai_penguji2')->nullable();
             $table->integer('nilai_penguji3')->nullable();

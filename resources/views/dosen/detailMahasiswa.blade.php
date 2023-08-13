@@ -34,15 +34,15 @@
                 <div class="flex space-x-10">
                     <div>
                         <label class="block text-sm mb-2" for="">
-                            F2 (Penilai Proposal)
+                            Nilai Proposal
                         </label>
-                        <x-text-input id="file_f2" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="file" name="file_f2" placeholder="Masukkan teks..." autofocus/>
+                        <x-text-input id="nilai_sempro" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="text" name="nilai_sempro" autofocus/>
                     </div>
                     <div>
                         <label class="block text-sm mb-2" for="">
-                            F6 (Penilai Skripsi)
+                            Nilai Skripsi
                         </label>
-                        <x-text-input id="file_f6" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="file" name="file_f6" placeholder="Masukkan teks..." autofocus/>
+                        <x-text-input id="nilai_skripsi" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="text" name="nilai_skripsi" autofocus/>
                     </div>
                     <div class="mt-7">
                         <x-primary-button class="flex justify-center w-fit h-10">
@@ -56,7 +56,7 @@
 
             <!-- Dokumen Skripsi Mahsiswa-->
             <div class="mb-8">
-                <h1 class="font-bold text-xl text-font mb-8">Dokumen Skripsi Mahasiswa</h1>
+                <h1 class="font-bold text-xl text-font mb-8 mt-8">Dokumen Skripsi Mahasiswa</h1>
                 <div class="">
                     <div class="">
                         <div class="flex space-x-1 text-sm mb-2">

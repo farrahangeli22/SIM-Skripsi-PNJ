@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('dosen_penguji2')->nullable();
             $table->string('dosen_penguji3')->nullable();
             $table->string('status')->nullable();
+            $table->integer('nilai_pembimbing')->nullable();
             $table->timestamps();
         });
     }

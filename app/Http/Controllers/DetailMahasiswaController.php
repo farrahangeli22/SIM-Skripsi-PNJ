@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
 use App\Models\PengajuanSempro;
+use App\Models\HasilSempro;
 use App\Models\PengajuanSidang;
+use App\Models\HasilSidang;
 use App\Models\Skripsi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -40,21 +42,20 @@ class DetailMahasiswaController extends Controller
 
      function createDetailSidang(Request $request,$id)
     {
-        if($request->file('file_f2')){
-            $path = $request->file('file_f2')->store('/file_f2');
-            // dd($request);
-            // create reccord on table pengajuan sidang
+        if($request->has('nilai_sempro')){
+            $nilai = $request->nilai_sempro;
+            // dd($nilai);
+            // create reccord on table hasil sempro
             $pengajuanSempro = PengajuanSempro::where("nim",$id)->orderBy("id","DESC")->first()->update([
-                'file_f2' => $path,
-            ]);     
+                'nilai_pembimbing' => $nilai
+            ]); 
         }
 
-        if($request->file('file_f6')){
-            // store uploaded file into storage
-            $path = $request->file('file_f6')->store('/file_f6');
-            // create reccord on table pengajuan sidang
+        elseif($request->has('nilai_skripsi')){
+            $nilai = $request->nilai_skripsi;
+            // create reccord on table hasil sidang
             $pengajuanSidang = PengajuanSidang::where("nim",$id)->orderBy("id","DESC")->first()->update([
-                'file_f6' => $path,
+                'nilai_pembimbing' => $nilai
             ]);
         }
         

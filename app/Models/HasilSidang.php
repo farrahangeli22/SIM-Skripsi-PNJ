@@ -12,7 +12,6 @@ class HasilSidang extends Model
     protected $fillable = [
         'status',
         'pengajuan_sidang_id',
-        'nilai_pembimbing',
         'nilai_penguji1',
         'nilai_penguji2',
         'nilai_penguji3',

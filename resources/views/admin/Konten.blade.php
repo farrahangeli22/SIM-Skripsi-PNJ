@@ -10,7 +10,6 @@
       </a>
     </div>
     <h1 class="font-bold"> Daftar Konten</h1>
-    <!-- Tabel Manajemen User - Dosen -->
     <div class="w-full h-full mt-5">
       <table class="min-w-full border-collapse block md:table">
         <thead class="block md:table-header-group">

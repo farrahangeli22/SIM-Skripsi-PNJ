@@ -189,7 +189,17 @@ Route::get("/notification", function () {
      return view('user.notification');
  })->name('user.notification');
 
+ Route::get("/persetujuan-revisi", function (){
+    return view('user.persetujuanRevisi');
+ })->name('user.persetujuan-revisi');
 
+ Route::get("/form-revisi", function (){
+    return view('user.formRevisi');
+ })->name('user.form-revisi');
+
+ Route::get("/detail-revisi", function (){
+    return view('user.detailRevisi');
+ })->name('user.detail-revisi');
 
 // routes for user dosen
 // Route::get("/dosen/daftar-mahasiswa", function () {

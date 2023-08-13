@@ -1,5 +1,4 @@
 <x-user-layout :title="'Detail Logbook Bimbingan'">
-
     <div class="w-full space-y-4">
         <div class="flex justify-between">
             <h1 class="font-bold text-xl text-font">Logbook Bimbingan</h1>

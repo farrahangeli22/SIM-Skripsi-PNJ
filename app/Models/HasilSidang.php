@@ -12,11 +12,10 @@ class HasilSidang extends Model
     protected $fillable = [
         'status',
         'pengajuan_sidang_id',
-        'file_f5',
-        'file_f7',
-        'file_f8',
-        'file_f9',
-        'keterangan',
+        'nilai_pembimbing',
+        'nilai_penguji1',
+        'nilai_penguji2',
+        'nilai_penguji3',
         'nilai',
     ];
 

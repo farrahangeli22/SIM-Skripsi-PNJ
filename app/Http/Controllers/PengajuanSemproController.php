@@ -26,15 +26,12 @@ class PengajuanSemproController extends Controller
     // create pengajuan sempro
     function createPengajuanSempro(Request $request)
     {
-        // store uploaded file into storage
-        $path = $request->file('file_f1')->store('/file_f1');
         // create reccord on table pengajuan sempro
         $pengajuanSempro = PengajuanSempro::create([
             'nim' => $request->user()->username,
             'judul' => $request->judul,
             'sub_judul' => isset($request->subJudul) ? $request->subJudul : null,
             'anggota' => isset($request->anggota) ? $request->anggota : null,
-            'file_f1' => $path,
         ]);
 
         Mahasiswa::find($request->user()->username)->update([

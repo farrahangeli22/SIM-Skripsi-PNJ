@@ -51,12 +51,12 @@
                             </label>
                             <x-text-input id="anggota" class="block mt-1 w-96 border-black" type="text" name="anggota" placeholder="Masukkan teks..." autofocus/>
                             <p class="text-xs text-gray-500 mb-5">Format penulisan (nama anggota 1, nama anggota 2)</p>
-                            <label class="flex flex-wrap text-sm mb-2" for="">
+                            <!-- <label class="flex flex-wrap text-sm mb-2" for="">
                                 Form F4
                                 <p class="text-red-600 pl-1">*</p>
                             </label>
                             <x-text-input id="file_f4" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" name="file_f4" accept=".pdf" required autofocus/>
-                            <p class="text-xs text-gray-500 mb-5">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p>
+                            <p class="text-xs text-gray-500 mb-5">Format file PDF (<a href="https://s.pnj.ac.id/FormF4" target="_blank" class="text-blue-500">Download disini</a>)</p> -->
                         </div>
                     </div>
                     <div class="flex justify-end">

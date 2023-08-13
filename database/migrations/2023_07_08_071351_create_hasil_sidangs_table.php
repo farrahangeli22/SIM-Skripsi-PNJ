@@ -15,13 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('pengajuan_sidang_id');
             $table->foreign('pengajuan_sidang_id')->references('id')->on('pengajuan_sidang');
-            $table->string('status')->nullable();;
-            $table->text('file_f5')->nullable();
-            $table->text('file_f7')->nullable();
-            $table->text('file_f8')->nullable();
-            $table->text('file_f9')->nullable();
+            $table->integer('nilai_pembimbing')->nullable();
+            $table->integer('nilai_penguji1')->nullable();
+            $table->integer('nilai_penguji2')->nullable();
+            $table->integer('nilai_penguji3')->nullable();
+            $table->string('status')->nullable();
             $table->integer('nilai')->nullable();
-            $table->text('keterangan')->nullable();
             $table->timestamps();
         });
     }

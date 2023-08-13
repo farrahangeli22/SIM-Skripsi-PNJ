@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pengajuan_sempro', function (Blueprint $table) {
+        Schema::create('revisi', function (Blueprint $table) {
             $table->id();
             $table->string('nim');
             $table->foreign('nim')->references('nim')->on('mahasiswa');
-            $table->string('judul');
+            $table->string('nip_penguji')->nullable();
+            $table->string('judul')->nullable();
             $table->string('sub_judul')->nullable();
-            $table->string('anggota')->nullable();
-            $table->dateTime('jadwal_sempro')->nullable();
-            $table->string('ruang')->nullable();
+            $table->string('poin_revisi')->nullable();
+            $table->string('feedback')->nullable();
             $table->string('status')->nullable();
             $table->timestamps();
         });
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('pengajuan_sempro');
+        Schema::dropIfExists('revisis');
     }
 };

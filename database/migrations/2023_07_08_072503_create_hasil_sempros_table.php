@@ -15,9 +15,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('pengajuan_sempro_id');
             $table->foreign('pengajuan_sempro_id')->references('id')->on('pengajuan_sempro');
-            $table->string('status')->nullable();;
-            $table->text('file_f3')->nullable();;
-            $table->text('keterangan')->nullable();
+            $table->integer('nilai_pembimbing')->nullable();
+            $table->integer('nilai_penguji1')->nullable();
+            $table->integer('nilai_penguji2')->nullable();
+            $table->integer('nilai_penguji3')->nullable();
+            $table->string('status')->nullable();
+            $table->integer('nilai')->nullable();
             $table->timestamps();
         });
     }

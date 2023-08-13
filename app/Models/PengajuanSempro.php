@@ -15,12 +15,11 @@ class PengajuanSempro extends Model
         'sub_judul',
         'anggota',
         'jadwal_sempro',
-        'file_f1',
-        'file_f2',
         'dosen_penguji1',
         'dosen_penguji2',
         'dosen_penguji3',
         'ruang',
+        'status',
     ];
 
     protected $table = 'pengajuan_sempro';

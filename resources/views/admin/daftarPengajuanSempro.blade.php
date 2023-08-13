@@ -14,10 +14,8 @@
                     <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Dosen Penguji</th>
                     <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Jadwal</th>
                     <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Ruang</th>
-                    <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F1</th>
-                    <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F2</th>
-                    <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Form F3</th>
                     <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Status</th>
+                    <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Nilai</th>
                     <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Aksi</th>
                 </tr>
             </thead>
@@ -41,22 +39,8 @@
                     </td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Jadwal</span>{{$PengajuanSempro->jadwal_sempro}}</td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Ruang</span>{{$PengajuanSempro->ruang}}</td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                        <div style="text-align: center;">
-                            <a href="{{ url('/storage/'. $PengajuanSempro->file_f1) }}" target="_blank" class="text-blue-500">F1</a>
-                        </div>
-                    </td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                        <div style="text-align: center;">
-                            <a href="{{ url('/storage/'. $PengajuanSempro->file_f2) }}" target="_blank" class="text-blue-500">F2</a>
-                        </div>
-                    </td>
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                        <div style="text-align: center;">
-                            <a href="{{ url( $PengajuanSempro->hasilSempro ? '/storage/'.$PengajuanSempro->hasilSempro->file_f3:'') }}" target="_blank" class="text-blue-500">F3</a>
-                        </div>
-                    </td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Status</span>{{$PengajuanSempro->hasilSempro ? $PengajuanSempro->hasilSempro->status:""}}</td>
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nilai</span>{{$PengajuanSempro->hasilSempro ? $PengajuanSempro->hasilSempro->nilai:""}}</td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                         <span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
                         <button onclick="editButton({{$PengajuanSempro->id}})" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Edit</button>
@@ -95,15 +79,15 @@
                                         </div>
                                         <div class="flex flex-col mb-4 text-sm">
                                             <label class="font-bold">Dosen Pembimbing:</label>
-                                            <input id="namaDosen" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
+                                            <input id="namaDosen" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3" readonly>
                                         </div>
                                         <div class="flex flex-col mb-4 text-sm">
-                                            <label class="font-bold">Form F1:</label>
-                                            <a href="#" class="text-blue-500">Form-F1.pdf</a>
+                                            <label class="font-bold">Jadwal Seminar Proposal:</label>
+                                            <input id="jadwal_sempro" name="jadwal_sempro" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="datetime-local" autofocus />
                                         </div>
                                         <div class="flex flex-col mb-4 text-sm">
-                                            <label class="font-bold">Form F2:</label>
-                                            <a href="#" class="text-blue-500">Form-F2.pdf</a>
+                                            <label class="font-bold">Ruang:</label>
+                                            <input id="ruang" name="ruang" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus />
                                         </div>
                                     </div>
                                     @csrf
@@ -135,19 +119,31 @@
                                                 @endforeach
                                             </select>
                                         </div>
-                                        <div class="flex flex-col mb-4 text-sm">
-                                            <label class="font-bold">Jadwal Seminar Proposal:</label>
-                                            <input id="jadwal_sempro" name="jadwal_sempro" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="datetime-local" autofocus />
-                                        </div>
-                                        <div class="flex flex-col mb-4 text-sm">
-                                            <label class="font-bold">Ruang:</label>
-                                            <input id="ruang" name="ruang" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus />
-                                        </div>
-                                        <div>
+                                        <!-- <div>
                                             <label name="f3" class="block font-bold" for="">
                                                 Form F3:
                                             </label>
                                             <input id="f3" name="f3" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="file" autofocus />
+                                        </div> -->
+                                        <div class="flex flex-col mb-4 text-sm">
+                                            <label class="font-bold">Nilai Dosen Pembimbing:</label>
+                                            <input id="nilaiPembimbing" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3" readonly>
+                                        </div>
+                                        <div class="flex flex-col mb-4 text-sm">
+                                            <label class="font-bold">Nilai Penguji 1:</label>
+                                            <input id="nilai_penguji1" name="nilai_penguji1" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3" readonly>
+                                        </div>
+                                        <div class="flex flex-col mb-4 text-sm">
+                                            <label class="font-bold">Nilai Penguji 2:</label>
+                                            <input id="nilai_penguji2" name="nilai_penguji2" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3" readonly>
+                                        </div>
+                                        <div class="flex flex-col mb-4 text-sm">
+                                            <label class="font-bold">Nilai Penguji 3:</label>
+                                            <input id="nilai_penguji3" name="nilai_penguji3" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3" readonly>
+                                        </div>
+                                        <div class="flex flex-col mb-4 text-sm">
+                                            <label class="font-bold">Rekap Nilai:</label>
+                                            <input id="nilai" name="nilai" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
                                         </div>
                                         <div class="flex flex-col mt-4 text-sm">
                                             <label class="font-bold">Hasil Seminar:</label>
@@ -161,12 +157,12 @@
                                     </div>
                                 </div>
                                 <!-- section keterangan hasil sidang -->
-                                <div>
+                                <!-- <div>
                                     <label name="keterangan" class="block font-bold" for="">
                                         Keterangan Hasil Seminar:
                                     </label>
                                     <textarea id="keterangan" name="keterangan" class="w-full text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" placeholder="Masukkan keterangan hasil seminar..."></textarea>
-                                </div>
+                                </div> -->
                                 <div class="flex">
                                     <div class="flex justify-center w-full">
                                         <button id="saveModal" class="mt-4 bg-primary hover:bg-font text-white font-bold py-2 px-4 rounded">
@@ -247,6 +243,8 @@
                 $('#dosen3').val(res.dosenPenguji[2])
                 $('#jadwal_sempro').val(res.jadwalSempro)
                 $('#ruang').val(res.ruang)
+                $('#nilaiPembimbing').val(res.nilaiPembimbing)
+                $('#nilai').val(res.nilai)
                 $('#statusHasil').val(res.status)
             })
         }

@@ -16,17 +16,23 @@
             </thead>
             <tbody>
                 <!-- Data mahasiswa seminar proposal akan ditampilkan di sini -->
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nama</span>Niyara Arinda</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">NIM</span>1907411032</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Program Studi</span>Teknik Informatika</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Judul</span>Rancang Bangun Sistem Informasi Manajemen Skrpsi Terintegrasi untuk modul sidang skripsi dan penyerahan alat berbasis web</td>   
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Jadwal</span>31 Agustus 2023</td>    
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nilai</span>79</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Poin Revisi</span>Abstrak: Perbaiki abstrak untuk mencerminkan tujuan, metodologi, hasil, dan kontribusi skripsi secara akurat dan ringkas..</td>    
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                    <span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
-                    <a href="{{ route('penguji.penilaian-sempro') }}" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Aksi</a>
-                </td>        
+                @forelse($daftarSempro as $Sempro)
+                <tr class="bg-white border border-grey-500 md:border-none block md:table-row text-xs">
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nama</span>{{$Sempro->mahasiswa->nama}}</td>
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">NIM</span>{{$Sempro->mahasiswa->nim}}</td>
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Program Studi</span>{{$Sempro->mahasiswa->prodi}}</td>
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Judul</span>{{$Sempro->judul}}</td>   
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Jadwal</span>{{$Sempro->jadwal_sempro}}</td>    
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nilai</span>{{$Sempro->hasilSempro ? $Sempro->hasilSempro->nilai_penguji1:""}}</td>
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Poin Revisi</span></td>    
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
+                        <span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
+                        <a href="{{ route('penguji.penilaian-sempro') }}" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Aksi</a>
+                    </td>
+                </tr>
+                @empty
+                <p>Daftar seminar proposal masih kosong</p>
+                @endforelse        
             </tbody>
         </table>
     </div>

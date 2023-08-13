@@ -40,48 +40,13 @@ function createDaftarPengajuanSidang(Request $request)
         [
             'pengajuan_sidang_id' => $pengajuanSidang->id,
             'keterangan' => $request->keterangan,
+            'nilai_penguji1' => $request->nilai_penguji1,
+            'nilai_penguji2' => $request->nilai_penguji2,
+            'nilai_penguji3' => $request->nilai_penguji3,
             'nilai' => $request->nilai,
             'status' => $request->statusHasil,
         ]
     );
-
-    if ($request->hasFile('f5')) {
-        $path = $request->file('f5')->store('/file_f5');
-        HasilSidang::updateOrCreate(
-            ['pengajuan_sidang_id' => $pengajuanSidang->id],
-            [
-                'pengajuan_sidang_id' => $pengajuanSidang->id,
-                'file_f5' => $path,
-            ]
-        );
-    } if ($request->hasFile('f7')) {
-        $path = $request->file('f7')->store('/file_f7');
-        HasilSidang::updateOrCreate(
-            ['pengajuan_sidang_id' => $pengajuanSidang->id],
-            [
-                'pengajuan_sidang_id' => $pengajuanSidang->id,
-                'file_f7' => $path,
-            ]
-        );
-    } if ($request->hasFile('f8')) {
-        $path = $request->file('f8')->store('/file_f8');
-        HasilSidang::updateOrCreate(
-            ['pengajuan_sidang_id' => $pengajuanSidang->id],
-            [
-                'pengajuan_sidang_id' => $pengajuanSidang->id,
-                'file_f8' => $path,
-            ]
-        );
-    } if ($request->hasFile('f9')) {
-        $path = $request->file('f9')->store('/file_f9');
-        HasilSidang::updateOrCreate(
-            ['pengajuan_sidang_id' => $pengajuanSidang->id],
-            [
-                'pengajuan_sidang_id' => $pengajuanSidang->id,
-                'file_f9' => $path,
-            ]
-        );
-    }
 
      if($request->status == 'Lulus'){
              Mahasiswa::find($request->nim)->update([

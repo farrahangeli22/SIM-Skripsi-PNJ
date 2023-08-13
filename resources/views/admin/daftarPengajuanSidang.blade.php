@@ -84,16 +84,6 @@
                                         <label class="font-bold">Dosen Pembimbing:</label>
                                         <input id="namaDosen" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
                                     </div>
-                                    <div class="flex justify-between mb-4 text-sm">
-                                        <div class="flex flex-col">
-                                            <label class="font-bold">Form F4:</label>
-                                            <a href="#" class="text-blue-500">Form-F4.pdf</a>
-                                        </div>
-                                        <div class="flex flex-col">
-                                            <label class="font-bold">Form F6:</label>
-                                            <a href="#" class="text-blue-500">Form-F6.pdf</a>
-                                        </div>
-                                    </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Jadwal Sidang Skripsi:</label>
                                         <input id="jadwal_sidang" name="jadwal_sidang" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="datetime-local" autofocus/>
@@ -130,22 +120,26 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <label class="block font-bold text-xs" for="">
-                                        Form F5:
-                                    </label>
-                                    <x-text-input id="f5" class="w-full h-10 text-xs block p-1 mt-1 mb-3 border border-black cursor-pointer" type="file" name="f5" autofocus/>
-                                     <label class="block font-bold text-xs" for="">
-                                        Form F7:
-                                    </label>
-                                    <x-text-input id="f7" class="w-full h-10 text-xs block p-1 mb-2 border border-black cursor-pointer" type="file" name="f7" autofocus/>
-                                     <label class="block font-bold text-xs" for="">
-                                        Form F8:
-                                    </label>
-                                    <x-text-input id="f8" class="w-full h-10 text-xs block p-1 mb-4 border border-black cursor-pointer" type="file" name="f8" autofocus/>
-                                     <label class="block font-bold text-xs" for="">
-                                        Form F9:
-                                    </label>
-                                    <x-text-input id="f9" class="w-full h-10 text-xs block p-1 mb-2 border border-black cursor-pointer" type="file" name="f9" autofocus/>
+                                    <div class="flex flex-col mb-4 text-xs">
+                                        <label class="font-bold">Nilai Dosen Pembimbing:</label>
+                                        <input id="nilaiPembimbing"  class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
+                                    </div>
+                                    <div class="flex flex-col mb-4 text-xs">
+                                        <label class="font-bold">Nilai Penguji 1:</label>
+                                        <input id="nilai_penguji1" name="nilai_penguji1" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
+                                    </div>
+                                    <div class="flex flex-col mb-4 text-xs">
+                                        <label class="font-bold">Nilai Dosen Penguji 2:</label>
+                                        <input id="nilai_penguji2" name="nilai_penguji2" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
+                                    </div>
+                                    <div class="flex flex-col mb-4 text-xs">
+                                        <label class="font-bold">Nilai Dosen Penguji 3:</label>
+                                        <input id="nilai_penguji3" name="nilai_penguji3" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
+                                    </div>
+                                    <div class="flex flex-col mb-4 text-sm">
+                                        <label class="font-bold">Rekap Nilai:</label>
+                                        <input id="nilai" name="nilai" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
+                                    </div>
                                     <div class="flex flex-col mt-4 text-sm">
                                         <label class="font-bold">Hasil Sidang:</label>
                                         <select name="statusHasil" id="statusHasil" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
@@ -155,18 +149,7 @@
                                             <option value="Tidak Lulus Sidang">Tidak Lulus Sidang</option>
                                         </select>
                                     </div>
-                                    <div class="flex flex-col mb-4 text-sm">
-                                        <label class="font-bold">Rekap Nilai:</label>
-                                        <input id="nilai" name="nilai" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
-                                    </div>
                                 </div>
-                            </div>
-                            <!-- section keterangan hasil sidang -->
-                            <div>
-                                <label name="keterangan" class="block font-bold" for="">
-                                    Keterangan Hasil Sidang:
-                                </label>
-                                <textarea id="keterangan" name="keterangan" class="w-full text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" placeholder="Masukkan keterangan hasil seminar..."></textarea>
                             </div>
                             <div class="flex">
                                 <div class="flex justify-end w-full">
@@ -247,6 +230,7 @@
         $('#dosen3').val(res.dosenPenguji[2])
         $('#jadwal_sidang').val(res.jadwalSidang)
         $('#ruang').val(res.ruang)
+        $('#nilaiPembimbing').val(res.nilaiPembimbing)
         $('#nilai').val(res.nilai)
         $('#statusHasil').val(res.status)
     })

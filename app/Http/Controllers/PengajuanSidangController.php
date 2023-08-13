@@ -60,6 +60,7 @@ class PengajuanSidangController extends Controller
             ],
             "jadwalSidang" => Carbon::parse($pengajuanSidang->jadwal_sidang)->format("Y-m-d h:m"),
             "ruang" => $pengajuanSidang->ruang,
+            "nilaiPembimbing" => $pengajuanSidang->nilai_pembimbing,
             "nilai" => $pengajuanSidang->hasilSidang ? $pengajuanSidang->hasilSidang->nilai:"",
             "status" => $pengajuanSidang->hasilSidang ? $pengajuanSidang->hasilSidang->status:"",
         ];

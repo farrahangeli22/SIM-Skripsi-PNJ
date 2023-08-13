@@ -42,22 +42,45 @@ class DetailMahasiswaController extends Controller
 
      function createDetailSidang(Request $request,$id)
     {
-        if($request->has('nilai_sempro')){
-            $nilai = $request->nilai_sempro;
-            // dd($nilai);
-            // create reccord on table hasil sempro
-            $pengajuanSempro = PengajuanSempro::where("nim",$id)->orderBy("id","DESC")->first()->update([
-                'nilai_pembimbing' => $nilai
-            ]); 
+        if ($request->has('nilai_sempro')) {
+            $nilaiSempro = $request->nilai_sempro;
+        
+            // Cari atau buat record PengajuanSempro
+            $pengajuanSempro = PengajuanSempro::firstOrNew(['nim' => $id]);
+        
+            // Memperbarui nilai_pembimbing pada model pengajuan sempro
+            $pengajuanSempro->nilai_pembimbing = $nilaiSempro;
+            $pengajuanSempro->save();
+        
+            // Debugging
+            if ($pengajuanSempro->wasRecentlyCreated) {
+                info("PengajuanSempro baru telah dibuat.");
+            } else {
+                info("PengajuanSempro telah ditemukan dan diperbarui.");
+            }
         }
-
-        elseif($request->has('nilai_skripsi')){
-            $nilai = $request->nilai_skripsi;
-            // create reccord on table hasil sidang
-            $pengajuanSidang = PengajuanSidang::where("nim",$id)->orderBy("id","DESC")->first()->update([
-                'nilai_pembimbing' => $nilai
-            ]);
+        
+        if ($request->has('nilai_skripsi')) {
+            $nilaiSkripsi = $request->nilai_skripsi;
+        
+            // Cari atau buat record PengajuanSidang
+            $pengajuanSidang = PengajuanSidang::firstOrNew(['nim' => $id]);
+        
+            // Memperbarui nilai_pembimbing pada model pengajuan sidang
+            $pengajuanSidang->nilai_pembimbing = $nilaiSkripsi;
+            $pengajuanSidang->save();
+        
+            // Debugging
+            if ($pengajuanSidang->wasRecentlyCreated) {
+                info("PengajuanSidang baru telah dibuat.");
+            } else {
+                info("PengajuanSidang telah ditemukan dan diperbarui.");
+            }
         }
+        
+        
+        
+        
         
         Session::flash('message', 'File penilaian berhasil terkirim');
         return redirect(route('dosen.detail-mahasiswa', ['id'=>$id]));

@@ -209,9 +209,14 @@ Route::get("/notification", function () {
      return view('user.notification');
  })->name('user.notification');
 
- Route::get("/persetujuan-revisi", function (){
-    return view('user.persetujuanRevisi');
- })->name('user.persetujuan-revisi');
+Route::get("/daftar-revisi-proposal", function (){
+    return view('user.daftarRevisiProposal');
+})->name('user.daftar-revisi-proposal');
+
+
+ Route::get("/daftar-revisi-skripsi", function (){
+    return view('user.daftarRevisiSkripsi');
+ })->name('user.daftar-revisi-skripsi');
 
  Route::get("/form-revisi", function (){
     return view('user.formRevisi');

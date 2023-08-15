@@ -14,7 +14,7 @@ class revisi extends Model
         'nim',
         'nip_penguji',
         'judul',
-        'link_demo',
+        'link_vidio',
         'poin_revisi',
         'feedback',
         'status',

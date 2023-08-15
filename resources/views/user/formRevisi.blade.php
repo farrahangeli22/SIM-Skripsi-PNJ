@@ -1,27 +1,15 @@
 <x-user-layout :title="'Form Persetujuan Revisi '">
-    <div class="flex w-full gap-5 space-x-10">
-        <!-- Card data mahasiswa -->
-        <div class="w-80 rounded bg-cardData p-6">
-            <h1 class="flex justify-center font-bold text-xl text-font mb-6">Data Mahasiswa</h1>
-            <label class="block mb-4 font-bold text-sm" for="">Nama : 
-                <p class="font-normal mt-2">Niyara Arinda</p>
-            </label>
-            <label class="block mb-4 font-bold text-sm" for="">NIM : 
-                <p class="font-normal mt-2">1907411032</p>
-            </label>
-            <label class="block mb-4 font-bold text-sm" for="">Program Studi : 
-                <p class="font-normal mt-2">Teknik Informatika</p>
-            </label>
-            <label class="block mb-4 font-bold text-sm" for="">Kelas : 
-                <p class="font-normal mt-2">TI 8A</p>
-            </label>
-            <label class="block mb-4 font-bold text-sm" for="">Dosen Pembimbing : 
-                <p class="font-normal mt-2">Eriya S.Kom., M.T.</p>
-            </label>
-        </div>
+    <div class="pl-11 pr-6">
+        @if(Session::has('message'))
+            <div class="w-full h-fit p-2 rounded bg-[#40C057] mb-4 font-bold text-white">
+                <p>{{ Session::get('message') }}</p>
+            </div>
+        @endif
         <!-- Form Pengajuan -->
-        <form class="w-full" enctype='multipart/form-data' action="/proses-data" method="post" onsubmit="return confirm('Apakah Anda yakin ingin mengirim data ini?')">
+        <form class="w-full" enctype="multipart/form-data" action="{{ route('user.create-form-revisi') }}" method="post">
             @csrf
+            <input type="hidden" name="id" id="idRevisi">
+            <input type="hidden" name="nim" value="123" id="nim">
             <h1 class="flex justify-center font-bold text-xl text-font mb-10">Form Pengajuan Persetujuan</h1>
             <div class="flex justify-between space-x-10">
                 <div>
@@ -29,14 +17,15 @@
                         Judul Skripsi
                         <p class="text-red-600 pl-1">*</p>
                     </label>
-                    <x-text-input id="judul" class="block mt-1 w-96 border-black mb-9" type="text" name="judul" placeholder="Masukkan teks..." required autofocus/>
+                    <x-text-input id="judul" class="block mt-1 w-96 border-black mb-9" type="text" name="judul" placeholder="Masukkan teks..." required autofocus value="{{ old('judul', $oldJudul) }}"/>
+
                 </div>
                 <div>
                     <label class="flex flex-wrap text-sm mb-2" for="">
                         Link Vidio Demo
                         <p class="text-red-600 pl-1">*</p>
                     </label>
-                    <x-text-input id="link_vidio" class="block w-96 border-black" type="text" name="link-vidio" placeholder="Masukkan link vidio.." autofocus/>
+                    <x-text-input id="link_vidio" class="block w-96 border-black" type="text" name="link_vidio" placeholder="Masukkan link vidio.." autofocus value="{{ old('link_vidio', $oldLinkVidio) }}"/>
                 </div>
             </div>
             <div class="mb-4">
@@ -44,13 +33,44 @@
                     Poin-poin revisi
                     <p class="text-red-600 pl-1">*</p>
                 </label>
-                <textarea name="poin_revisi" id="poin_revisi" rows="4" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Tuliskan poin-poin revisi anda..."></textarea>
+                <textarea name="poin_revisi" id="poin_revisi" rows="4" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Tuliskan poin-poin revisi anda..." disabled>
+                    <!-- Ini ntar poin nya dari dosen penguji-->
+                </textarea>
+            </div>
+            <!-- Umpan Balik -->
+            <div class="mt-12">
+                <div class="flex justify-center rounded-t-lg bg-header h-10 p-2">
+                    <p class="font-bold text-white">Umpan Balik</p>
+                </div>
+                <div class="border rounded-b-lg rounded-br-lg shadow p-4">
+                    <p>Ini adalah bagian umpan balik yang diberikan kepada Anda.</p>
+                </div>
             </div>
             <div class="flex justify-end">
-                <x-primary-button class="flex justify-center w-fit">
+            <x-primary-button id="kirimButton" class="flex justify-center w-fit mt-8" data-id="id_revisi">
                     {{ __('Kirim') }}
                 </x-primary-button>
             </div>
         </form>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        // Menyimpan data yang dimasukkan saat tombol Kirim ditekan
+        $('#kirimButton').on('click', function() {
+            var judul = $('#judul').val();
+            var link_vidio = $('#link_vidio').val();
+            
+            localStorage.setItem('saved_judul', judul);
+            localStorage.setItem('saved_link_vidio', link_vidio);
+        });
+
+        // Mengambil dan mengisi kembali data yang sudah disimpan saat halaman dimuat
+        $(document).ready(function() {
+            var savedJudul = localStorage.getItem('saved_judul');
+            var savedLinkVidio = localStorage.getItem('saved_link_vidio');
+            
+            $('#judul').val(savedJudul);
+            $('#link_vidio').val(savedLinkVidio);
+        });
+    </script>
 </x-user-layout>

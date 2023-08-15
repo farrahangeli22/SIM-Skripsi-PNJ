@@ -29,7 +29,7 @@
                 Dokumen Skripsi:
             </label>
             <!-- pdf viewer -->
-            <iframe src="{{ asset('asset/fileSkripsi.pdf') }}" width="100%" height="100vh"></iframe>
+            <iframe src="{{ asset('asset/fileSkripsi.pdf') }}" width="100%" height="300vh"></iframe>
         </div>
 
         <!-- Poin-poin Revisi -->

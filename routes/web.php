@@ -21,6 +21,7 @@ use App\Http\Controllers\LogBookController;
 use App\Http\Controllers\DaftarLogBookController;
 use App\Http\Controllers\DetailLogBookController;
 use App\Http\Controllers\FormLogbookController;
+use App\Http\Controllers\FormRevisiController;
 use App\Http\Controllers\DetailLogBookMahasiswaController;
 use App\Http\Controllers\DetailMahasiswaController;
 use App\Http\Controllers\RoleController;
@@ -110,6 +111,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/penyerahan-alat', [PenyerahanAlatController::class, 'viewPenyerahanAlat'])->name('user.penyerahan-alat');
     Route::post('/penyerahan-alat', [PenyerahanAlatController::class, 'createPenyerahanAlat'])->name('user.create-penyerahan-alat');
 
+     // user - penyerahan alat
+     Route::get('/form-revisi', [FormRevisiController::class, 'viewFormRevisi'])->name('user.form-revisi');
+     Route::post('/form-revisi', [FormRevisiController::class, 'createFormRevisi'])->name('user.create-form-revisi');
+
     // user - profile
     Route::get('/profile', [ProfileController::class, 'viewProfile'])->name('user.profile');
     Route::post('/profile', [ProfileController::class, 'createProfile'])->name('user.create-profile');
@@ -172,6 +177,7 @@ Route::middleware('auth')->group(function () {
     Route::get("/getPengajuanSempro/{id}", [PengajuanSemproController::class, 'getApi'])->name('pengajuanSempro.getApi');
     Route::get("/getPengajuanSidang/{id}", [PengajuanSidangController::class, 'getApi'])->name('pengajuanSidang.getApi');
     Route::get("/getPenyerahanAlat/{id}", [PenyerahanAlatController::class, 'getApi'])->name('penyerahanAlat.getApi');
+    Route::get('/getformRevisi/{id}', [FormRevisiController::class, 'getApi'])->name('formRevisi.getApi');;
     Route::get("/getManajemenMahasiswa/{nim}", [ManajemenMahasiswaController::class, 'getApi'])->name('manajemenMahasiswa.getApi');
 });
 
@@ -218,9 +224,9 @@ Route::get("/daftar-revisi-proposal", function (){
     return view('user.daftarRevisiSkripsi');
  })->name('user.daftar-revisi-skripsi');
 
- Route::get("/form-revisi", function (){
-    return view('user.formRevisi');
- })->name('user.form-revisi');
+//  Route::get("/form-revisi", function (){
+//     return view('user.formRevisi');
+//  })->name('user.form-revisi');
 
  Route::get("/detail-revisi", function (){
     return view('user.detailRevisi');

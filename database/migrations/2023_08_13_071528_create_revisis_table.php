@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('revisi', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('hasil_sidang_id');
+            $table->unsignedBigInteger('hasil_sidang_id')->nullable(); // Diubah menjadi nullable
             $table->foreign('hasil_sidang_id')->references('id')->on('hasil_sidang');
             $table->string('nim');
             $table->foreign('nim')->references('nim')->on('mahasiswa');
             $table->string('nip_penguji')->nullable();
             $table->string('judul')->nullable();
             $table->string('sub_judul')->nullable();
+            $table->text('link_vidio')->nullable();
             $table->string('poin_revisi')->nullable();
             $table->string('feedback')->nullable();
             $table->string('status')->nullable();

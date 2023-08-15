@@ -12,14 +12,19 @@
                 </tr>
             </thead>
             <tbody>
+            @forelse($daftarRevisiSkripsi as $Revisi)
                 <!-- Data mahasiswa yang mengajuan persetujuan revisi akan ditampilkan di sini -->
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Tanggal</span>14 Agustus 2023</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nama</span>Niyara Arinda</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Status</span>Diterima</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Tanggal</span> {{$Revisi->created_at}}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nama</span>{{$Revisi->mahasiswa->nama}}</td>
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Status</span> {{$Revisi->status}}</td>
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
                     <a href="{{ route('penguji.approve-revisi') }}" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Aksi</a>
-                </td>        
+                </td>    
+            </tr>
+            @empty
+                <p>Daftar pengajuan sidang masih kosong</p>
+            @endforelse    
             </tbody>
         </table>
     </div>

@@ -16,16 +16,18 @@
                 </tr>
             </thead>
             <tbody>
+            @forelse($daftarRevisiProposal as $RevisiProposal)
                 <tr class="bg-white border-b">
                     <td class="px-6 py-4 border w-1/3 text-center ">
-                        Asep Taufik Muharram, S.Kom., M.Kom.
+                <!-- manggil di dosen penguji -->
                     </td>
                     <td class="px-6 py-4 border">
-                        1. Latar belakang ditambah </br>
-                        2. Batasan masalah diperbarui </br>
-                        2. use case actornya ditambahkan </br>
+                    {{$RevisiProposal->poin_revisi}}
                     </td>
                 </tr>
+                @empty
+                    <p>Daftar pengajuan sidang masih kosong</p>
+                @endforelse    
             </tbody>
         </table>
     </div>

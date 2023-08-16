@@ -23,7 +23,7 @@
                 </td>    
             </tr>
             @empty
-                <p>Daftar pengajuan sidang masih kosong</p>
+                <p>Daftar pengajuan persetujuan revisi masih kosong</p>
             @endforelse    
             </tbody>
         </table>

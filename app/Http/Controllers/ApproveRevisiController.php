@@ -12,10 +12,16 @@ use Illuminate\Support\Facades\Session;
 class ApproveRevisiController extends Controller
 {
 
-public function viewApproveRevisi()
+public function viewApproveRevisi(Request $request, $id)
 {
     $mahasiswa = Mahasiswa::where('nim', Auth::user()->username)->first();
-    $detailRevisiSkripsi = Revisi::where('nim', Auth::user()->username)->first();
+    
+    $detailRevisiSkripsi = Revisi::find($id);
+
+    if($detailRevisiSkripsi->status!='menunggu persetujuan'){
+        return redirect()->back();
+    }
+    
     return view('penguji.approveRevisi')->with('detailRevisiSkripsi', $detailRevisiSkripsi)->with('mahasiswa', $mahasiswa);
 }
 function updateApproveRevisi(Request $request, $id)
@@ -26,6 +32,6 @@ function updateApproveRevisi(Request $request, $id)
         ]);
 
         Session::flash('message', 'Persetujuan revisi berhasil diupdate');
-        return redirect(route('penguji.approve-revisi'));
+        return redirect(route('penguji.daftar-revisi'));
     }
 }

@@ -6,7 +6,7 @@
             </div>
         @endif
         <!-- Form Pengajuan -->
-        <form class="w-full" enctype="multipart/form-data" action="{{ route('user.create-form-revisi') }}" method="post">
+        <form class="w-full" enctype="multipart/form-data" action="{{ route('user.create-form-revisi', ['id' => $revisi->id]) }}" method="post">
             @csrf
             <input type="hidden" name="id" id="idRevisi">
             <input type="hidden" name="nim" value="123" id="nim">
@@ -17,7 +17,7 @@
                         Judul Skripsi
                         <p class="text-red-600 pl-1">*</p>
                     </label>
-                    <x-text-input id="judul" class="block mt-1 w-96 border-black mb-9" type="text" name="judul" placeholder="Masukkan teks..." required autofocus value="{{ old('judul', $oldJudul) }}"/>
+                    <x-text-input id="judul" class="block mt-1 w-96 border-black mb-9" type="text" name="judul" placeholder="Masukkan teks..." required autofocus value="{{ $revisi->judul }}"/>
 
                 </div>
                 <div>
@@ -25,7 +25,7 @@
                         Link Vidio Demo
                         <p class="text-red-600 pl-1">*</p>
                     </label>
-                    <x-text-input id="link_vidio" class="block w-96 border-black" type="text" name="link_vidio" placeholder="Masukkan link vidio.." autofocus value="{{ old('link_vidio', $oldLinkVidio) }}"/>
+                    <x-text-input id="link_vidio" class="block w-96 border-black" type="text" name="link_vidio" placeholder="Masukkan link vidio.." autofocus value="{{ $revisi->link_vidio }}"/>
                 </div>
             </div>
             <div class="mb-4">
@@ -34,7 +34,7 @@
                     <p class="text-red-600 pl-1">*</p>
                 </label>
                 <textarea name="poin_revisi" id="poin_revisi" rows="4" class="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Tuliskan poin-poin revisi anda..." disabled>
-                    <!-- Ini ntar poin nya dari dosen penguji-->
+                {{ $revisi->poin_revisi }}
                 </textarea>
             </div>
             <!-- Umpan Balik -->
@@ -43,7 +43,7 @@
                     <p class="font-bold text-white">Umpan Balik</p>
                 </div>
                 <div class="border rounded-b-lg rounded-br-lg shadow p-4">
-                    <p>Ini adalah bagian umpan balik yang diberikan kepada Anda.</p>
+                {{ $revisi->feedback}}
                 </div>
             </div>
             <div class="flex justify-end">

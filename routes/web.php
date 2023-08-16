@@ -33,6 +33,7 @@ use App\Http\Controllers\KontenController;
 use App\Http\Controllers\RevisiProposalController;
 use App\Http\Controllers\RevisiSkripsiController;
 use App\Http\Controllers\ApproveRevisiController;
+use App\Http\Controllers\DaftarRevisiSkripsiController;
 use App\Models\PengajuanJudul;
 use App\Models\PengajuanSidang;
 use Illuminate\Support\Facades\Route;
@@ -105,7 +106,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/detail-logbook/{id}', [DetailLogbookController::class, 'viewDetailLogbook'])->name('dosen.detail-logbook');
     Route::post('/detail-logbook/{id}', [DetailLogbookController::class, 'updateDetailLogbook'])->name('dosen.detail-logbook');
 
-
     // user - pengajuan sidang
     Route::get('/pengajuan-sidang', [PengajuanSidangController::class, 'viewPengajuanSidang'])->name('user.pengajuan-sidang');
     Route::post('/pengajuan-sidang', [PengajuanSidangController::class, 'createPengajuanSidang'])->name('user.create-pengajuan-sidang');
@@ -114,12 +114,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/penyerahan-alat', [PenyerahanAlatController::class, 'viewPenyerahanAlat'])->name('user.penyerahan-alat');
     Route::post('/penyerahan-alat', [PenyerahanAlatController::class, 'createPenyerahanAlat'])->name('user.create-penyerahan-alat');
 
-    // user - penyerahan alat
-    Route::get('/form-revisi', [FormRevisiController::class, 'viewFormRevisi'])->name('user.form-revisi');
-    Route::post('/form-revisi', [FormRevisiController::class, 'createFormRevisi'])->name('user.create-form-revisi');
+    // user - form revisi
+    Route::get('/form-revisi/{id}', [FormRevisiController::class, 'viewFormRevisi'])->name('user.form-revisi');
+    Route::post('/form-revisi/{id}', [FormRevisiController::class, 'createFormRevisi'])->name('user.create-form-revisi');
 
     //user - revisi proposal
     Route::get('/daftar-revisi-proposal', [RevisiProposalController::class, 'viewRevisiProposal'])->name('user.daftar-revisi-proposal');
+
+    //user - revisi skripsi 
+    Route::get('/daftar-revisi-skripsi', [DaftarRevisiSkripsiController::class, 'viewDaftarRevisiSkripsi'])->name('user.daftar-revisi-skripsi');
     
     // user - profile
     Route::get('/profile', [ProfileController::class, 'viewProfile'])->name('user.profile');
@@ -176,7 +179,7 @@ Route::middleware('auth')->group(function () {
 
     // penguji - approve revisi
     Route::get('/approve-revisi/{id}', [ApproveRevisiController::class, 'viewApproveRevisi'])->name('penguji.approve-revisi');
-    Route::post("/approve-revisi/{id}", [ApproveRevisiController::class, 'createApproveRevisi'])->name('penguji.create-approve-revisi');
+    Route::post("/approve-revisi/{id}", [ApproveRevisiController::class, 'updateApproveRevisi'])->name('penguji.create-approve-revisi');
 
     // admin - daftar pengajuan sidang
     Route::get('/daftar-pengajuan-sidang', [DaftarPengajuanSidangController::class, 'viewDaftarPengajuanSidang'])->name('admin.daftar-pengajuan-sidang');
@@ -233,9 +236,9 @@ Route::get("/notification", function () {
 // })->name('user.daftar-revisi-proposal');
 
 
- Route::get("/daftar-revisi-skripsi", function (){
-    return view('user.daftarRevisiSkripsi');
- })->name('user.daftar-revisi-skripsi');
+//  Route::get("/daftar-revisi-skripsi", function (){
+//     return view('user.daftarRevisiSkripsi');
+//  })->name('user.daftar-revisi-skripsi');
 
 //  Route::get("/form-revisi", function (){
 //     return view('user.formRevisi');

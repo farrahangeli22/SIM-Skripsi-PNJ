@@ -32,6 +32,7 @@ use App\Http\Controllers\TambahKontenController;
 use App\Http\Controllers\KontenController;
 use App\Http\Controllers\RevisiProposalController;
 use App\Http\Controllers\RevisiSkripsiController;
+use App\Http\Controllers\ApproveRevisiController;
 use App\Models\PengajuanJudul;
 use App\Models\PengajuanSidang;
 use Illuminate\Support\Facades\Route;
@@ -173,6 +174,10 @@ Route::middleware('auth')->group(function () {
     //penguji- revisi skripsi
     Route::get('/daftar-revisi', [RevisiSkripsiController::class, 'viewRevisiSkripsi'])->name('penguji.daftar-revisi');
 
+    // penguji - approve revisi
+    Route::get('/approve-revisi/{id}', [ApproveRevisiController::class, 'viewApproveRevisi'])->name('penguji.approve-revisi');
+    Route::post("/approve-revisi/{id}", [ApproveRevisiController::class, 'createApproveRevisi'])->name('penguji.create-approve-revisi');
+
     // admin - daftar pengajuan sidang
     Route::get('/daftar-pengajuan-sidang', [DaftarPengajuanSidangController::class, 'viewDaftarPengajuanSidang'])->name('admin.daftar-pengajuan-sidang');
     Route::post("/daftar-pengajuan-sidang", [DaftarPengajuanSidangController::class, 'createDaftarPengajuanSidang'])->name('admin.create-daftar-pengajuan-sidang');
@@ -236,9 +241,9 @@ Route::get("/notification", function () {
 //     return view('user.formRevisi');
 //  })->name('user.form-revisi');
 
- Route::get("/detail-revisi", function (){
-    return view('user.detailRevisi');
- })->name('user.detail-revisi');
+//  Route::get("/detail-revisi", function (){
+//     return view('user.detailRevisi');
+//  })->name('user.detail-revisi');
 
 // routes for user dosen
 // Route::get("/dosen/daftar-mahasiswa", function () {
@@ -280,9 +285,9 @@ Route::get("/notification", function () {
 //     return view('penguji.daftarRevisi');
 // })->name('penguji.daftar-revisi');
 
-Route::get("/penguji/approve-revisi", function () {
-    return view('penguji.approveRevisi');
-})->name('penguji.approve-revisi');
+// Route::get("/penguji/approve-revisi", function () {
+//     return view('penguji.approveRevisi');
+// })->name('penguji.approve-revisi');
 
 
 

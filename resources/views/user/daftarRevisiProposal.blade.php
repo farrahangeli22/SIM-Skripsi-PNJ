@@ -16,18 +16,20 @@
                 </tr>
             </thead>
             <tbody>
-            @forelse($daftarRevisiProposal as $RevisiProposal)
-                <tr class="bg-white border-b">
-                    <td class="px-6 py-4 border w-1/3 text-center ">
-                <!-- manggil di dosen penguji -->
-                    </td>
-                    <td class="px-6 py-4 border">
-                    {{$RevisiProposal->poin_revisi}}
-                    </td>
-                </tr>
-                @empty
-                    <p>Daftar pengajuan sidang masih kosong</p>
-                @endforelse    
+                @foreach ($daftarRevisiProposal as $revisi)
+                    <tr class="revisi-item">
+                        <td class="px-6 py-3 border w-1/3">
+                            @php
+                                $dosenPenguji = $dosenPenguji->where('nip', $revisi->nip_penguji)->first();
+                                $namaDosenPenguji = $dosenPenguji ? $dosenPenguji->nama : 'Tidak ditemukan';
+                            @endphp
+                            {{ $namaDosenPenguji }}
+                        </td>
+                        <td class="px-6 py-3 border">
+                            {{ $revisi->poin_revisi }}
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

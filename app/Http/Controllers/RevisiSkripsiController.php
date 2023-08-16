@@ -19,7 +19,7 @@ public function viewRevisiSkripsi()
         // ambil data dosen dari db
         $dosen = Dosen::all();
 
-    $daftarRevisiSkripsi = Revisi::all(); // Ganti dengan query yang sesuai untuk mengambil data revisi proposal
+    $daftarRevisiSkripsi = Revisi::all(); // Ganti dengan query yang sesuai untuk mengambil data revisi 
     return view('penguji.daftarRevisi', ['daftarRevisiSkripsi' => $daftarRevisiSkripsi]);
 }
 }

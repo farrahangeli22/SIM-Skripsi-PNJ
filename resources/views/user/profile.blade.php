@@ -69,8 +69,14 @@
                                 <path d="M256 288A144 144 0 1 0 256 0a144 144 0 1 0 0 288zm-94.7 32C72.2 320 0 392.2 0 481.3c0 17 13.8 30.7 30.7 30.7H481.3c17 0 30.7-13.8 30.7-30.7C512 392.2 439.8 320 350.7 320H161.3z"/>
                             </svg>
                             <p class="text-center">Pengajuan Judul dan Dosen Pembimbing</p>
+        
+                            @if($mahasiswa->status_id >= 1)
                             <li class="flex w-full ml-20 items-center text-blue-600 after:content-[''] after:w-full after:h-1 after:border-b after:border-[#00A1A1] after:border-4 after:inline-block">
                                 <span class="flex items-center justify-center w-6 h-6 bg-[#00A1A1] rounded-full shrink-0"></span>
+                            @else
+                            <li class="flex w-full ml-20 items-center text-blue-600 after:content-[''] after:w-full after:h-1 after:border-b after:border-[#D9D9D9] after:border-4 after:inline-block">
+                                <span class="flex items-center justify-center w-6 h-6 bg-[#D9D9D9] rounded-full shrink-0"></span>
+                            @endif
                             </li>
                         </div>
                         <div class="flex flex-col w-44">
@@ -78,8 +84,14 @@
                                 <path d="M320 464c8.8 0 16-7.2 16-16V160H256c-17.7 0-32-14.3-32-32V48H64c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320zM0 64C0 28.7 28.7 0 64 0H229.5c17 0 33.3 6.7 45.3 18.7l90.5 90.5c12 12 18.7 28.3 18.7 45.3V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64z"/>
                             </svg>
                             <p class="text-center mb-3">Seminar Proposal</p>
+                            
+                            @if($mahasiswa->status_id >= 2)
+                            <li class="flex w-full ml-20 items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-[#00A1A1] after:border-4 after:inline-block">
+                                <span class="flex items-center justify-center w-6 h-6 bg-[#00A1A1] rounded-full shrink-0"></span>
+                            @else
                             <li class="flex w-full ml-20 items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-[#D9D9D9] after:border-4 after:inline-block">
                                 <span class="flex items-center justify-center w-6 h-6 bg-[#D9D9D9] rounded-full shrink-0"></span>
+                            @endif
                             </li>
                         </div>
                         <div class="flex flex-col w-44">
@@ -87,8 +99,27 @@
                                 <path d="M64 464c-8.8 0-16-7.2-16-16V64c0-8.8 7.2-16 16-16H224v80c0 17.7 14.3 32 32 32h80V448c0 8.8-7.2 16-16 16H64zM64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V154.5c0-17-6.7-33.3-18.7-45.3L274.7 18.7C262.7 6.7 246.5 0 229.5 0H64zm56 256c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24H264c13.3 0 24-10.7 24-24s-10.7-24-24-24H120z"/>
                             </svg>
                             <p class="text-center mb-3">Sidang Skripsi</p>
+                            
+                            @if($mahasiswa->status_id >= 5)
+                            <li class="flex items-center w-full ml-20 after:content-[''] after:w-full after:h-1 after:border-b after:border-[#00A1A1] after:border-4 after:inline-block">
+                                <span class="flex items-center justify-center w-6 h-6 bg-[#00A1A1] rounded-full shrink-0"></span>
+                            @else
+                            <li class="flex w-full ml-20 items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-[#D9D9D9] after:border-4 after:inline-block">
+                                <span class="flex items-center justify-center w-6 h-6 bg-[#D9D9D9] rounded-full shrink-0"></span>
+                            @endif
+                            </li>
+                        </div>
+                        <div class="flex flex-col w-44">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 384 512" class="mb-3"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z"/></svg>
+                            <p class="text-center mb-3">Revisi</p>
+                           
+                            @if($mahasiswa->status_id >= 8)
+                            <li class="flex items-center w-full ml-20 after:content-[''] after:w-full after:h-1 after:border-b after:border-[#00A1A1] after:border-4 after:inline-block">
+                                <span class="flex items-center justify-center w-6 h-6 bg-[#00A1A1] rounded-full shrink-0"></span>
+                            @else
                             <li class="flex items-center w-full ml-20 after:content-[''] after:w-full after:h-1 after:border-b after:border-[#D9D9D9] after:border-4 after:inline-block">
                                 <span class="flex items-center justify-center w-6 h-6 bg-[#D9D9D9] rounded-full shrink-0"></span>
+                            @endif
                             </li>
                         </div>
                         <div class="flex flex-col w-44">
@@ -97,7 +128,11 @@
                             </svg>
                             <p class="text-center mb-3">Penyerahan Alat</p>
                             <li class="flex items-center w-full ml-20">
+                            @if($mahasiswa->status_id >= 9)
+                                <span class="flex items-center justify-center w-6 h-6 bg-[#00A1A1] rounded-full shrink-0"></span>
+                            @else
                                 <span class="flex items-center justify-center w-6 h-6 bg-[#D9D9D9] rounded-full shrink-0"></span>
+                            @endif
                             </li>
                         </div>
                     </ol>

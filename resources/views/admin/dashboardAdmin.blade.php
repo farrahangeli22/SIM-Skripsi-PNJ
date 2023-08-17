@@ -31,7 +31,7 @@
                     <label for="prodi" class="block text-sm font-medium text-gray-700">Tahun Ajaran</label>
                     <select id="prodi" name="tahun_ajaran" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <option value="">Seluruh Tahun Ajaran</option>
-                        @foreach ($prodi as $item)
+                        @foreach ($tahun_ajaran as $item)
                             <option value="{{$item->tahun_ajaran}}">{{$item->tahun_ajaran}}</option>
                         @endforeach
                     </select>

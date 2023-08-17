@@ -79,18 +79,6 @@
                     </div>
                     <div>
                         <label class="flex flex-wrap text-sm mb-1" for="">
-                            Form F10
-                            <p class="text-red-600 pl-1">*</p>
-                        </label>
-                        <x-text-input id="file_f10" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" accept=".pdf" name="file_f10" required autofocus/>
-                        <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF10" target="_blank" class="text-blue-500">Download disini</a>)</p>
-                        <label class="flex flex-wrap text-sm mb-1" for="">
-                            Form F12
-                            <p class="text-red-600 pl-1">*</p>
-                        </label>
-                        <x-text-input id="file_f12" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" accept=".pdf" name="file_f12" required autofocus/>
-                        <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF12" target="_blank" class="text-blue-500">Download disini</a>)</p>
-                        <label class="flex flex-wrap text-sm mb-1" for="">
                             Form F13
                             <p class="text-red-600 pl-1">*</p>
                         </label>
@@ -102,18 +90,6 @@
                         </label>
                         <x-text-input id="file_f14" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" accept=".pdf" name="file_f14" required autofocus/>
                         <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF14" target="_blank" class="text-blue-500">Download disini</a>)</p>
-                        <label class="flex flex-wrap text-sm mb-1" for="">
-                            Form F15
-                            <p class="text-red-600 pl-1">*</p>
-                        </label>
-                        <x-text-input id="file_f15" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" accept=".pdf" name="file_f15" required autofocus/>
-                        <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF15" target="_blank" class="text-blue-500">Download disini</a>)</p>
-                        <label class="flex flex-wrap text-sm mb-1" for="">
-                            Form F16
-                            <p class="text-red-600 pl-1">*</p>
-                        </label>
-                        <x-text-input id="file_f16" class="block w-96 h-10 p-1 border border-black cursor-pointer" type="file" accept=".pdf" name="file_f16" required autofocus/>
-                        <p class="text-xs text-gray-500 mb-2">Format file PDF (<a href="https://s.pnj.ac.id/FormF16" target="_blank" class="text-blue-500">Download disini</a>)</p>
                         <label class="block text-sm mb-1" for="">
                             Sertifikat Organisasi (jika ada)
                         </label>

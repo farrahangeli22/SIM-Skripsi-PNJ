@@ -31,12 +31,8 @@ class PenyerahanAlatController extends Controller
         $pathLomba = $request->file('sertifikat_lomba')->store('/sertifikat_lomba');
         $pathKejuaraan = $request->hasFile('sertifikat_kejuaraan') ? $request->file('sertifikat_kejuaraan')->store('/sertifikat_kejuaraan') : null;
         $pathToeic = $request->file('sertifikat_toeic')->store('/sertifikat_toeic');
-        $pathF10 = $request->file('file_f10')->store('/file_f10');
-        $pathF12 = $request->file('file_f12')->store('/file_f12');
         $pathF13 = $request->file('file_f13')->store('/file_f13');
         $pathF14 = $request->file('file_f14')->store('/file_f14');
-        $pathF15 = $request->file('file_f15')->store('/file_f15');
-        $pathF16 = $request->file('file_f16')->store('/file_f16');
         $pathOrganisasi = $request->hasFile('sertifikat_organisasi') ? $request->file('sertifikat_organisasi')->store('/sertifikat_organisasi') : null;
         // create reccord on table pengajuan sidang
         $penyerahanAlat = PenyerahanAlat::create([
@@ -49,12 +45,8 @@ class PenyerahanAlatController extends Controller
         'sertifikat_lomba' => $pathLomba,
         'sertifikat_kejuaraan' => $pathKejuaraan,
         'sertifikat_toeic' => $pathToeic,
-        'file_f10' => $pathF10,
-        'file_f12' => $pathF12,
         'file_f13' => $pathF13,
         'file_f14' => $pathF14,
-        'file_f15' => $pathF15,
-        'file_f16' => $pathF16,
         'sertifikat_organisasi' => $pathOrganisasi,
     ]);
 

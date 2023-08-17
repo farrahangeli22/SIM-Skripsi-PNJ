@@ -18,13 +18,8 @@ return new class extends Migration
             $table->string('judul');
             $table->string('sub_judul')->nullable();
             $table->string('anggota')->nullable();
-            $table->text('file_f10');
-            $table->text('file_f11')->nullable();
-            $table->text('file_f12');
             $table->text('file_f13');
             $table->text('file_f14');
-            $table->text('file_f15');
-            $table->text('file_f16');
             $table->text('link_video');
             $table->text('sertifikat_pkkp');
             $table->text('sertifikat_toeic');

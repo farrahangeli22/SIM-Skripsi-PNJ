@@ -46,6 +46,13 @@ class PengajuanSemproController extends Controller
     {
         $pengajuanSempro = PengajuanSempro::find($id);
         $mahasiswa = Mahasiswa::where("nim", $pengajuanSempro->nim)->first();
+
+        $nilaiTotal = 0;
+
+        if ($pengajuanSempro->hasilSempro) {
+            $nilaiTotal = ((($pengajuanSempro->hasilSempro->nilai_penguji1 + $pengajuanSempro->hasilSempro->nilai_penguji2 + $pengajuanSempro->hasilSempro->nilai_penguji3)/3*2)+($pengajuanSempro->nilai_pembimbing))/3;
+        }
+
         $data = [
             "nim" => $mahasiswa->nim,
             "nama" => $mahasiswa->nama,
@@ -65,8 +72,8 @@ class PengajuanSemproController extends Controller
             "nilai_penguji1" => $pengajuanSempro->hasilSempro? $pengajuanSempro->hasilSempro->nilai_penguji1:"",
             "nilai_penguji2" => $pengajuanSempro->hasilSempro? $pengajuanSempro->hasilSempro->nilai_penguji2:"",
             "nilai_penguji3" => $pengajuanSempro->hasilSempro? $pengajuanSempro->hasilSempro->nilai_penguji3:"",
-            "nilai" => $pengajuanSempro->hasilSempro? $pengajuanSempro->hasilSempro->nilai:"",
             "status" => $pengajuanSempro->hasilSempro? $pengajuanSempro->hasilSempro->status:"",
+            "nilai" => $nilaiTotal,
             ];
         return response($data, 200);
     }

@@ -21,7 +21,7 @@ return new class extends Migration
             $table->dateTime('jadwal_sempro')->nullable();
             $table->string('ruang')->nullable();
             $table->string('status')->nullable();
-            $table->integer('nilai_pembimbing')->nullable();
+            $table->float('nilai_pembimbing')->nullable();
             $table->timestamps();
         });
     }

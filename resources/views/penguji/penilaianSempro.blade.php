@@ -40,7 +40,7 @@
                                 Nilai :
                             </label>
                         </div>
-                        <x-text-input id=""  name="nilai_penguji" class="block mb-2 w-full h-10 p-1 border border-black cursor-pointer bg-white" type="text" placeholder="Masukkan nilai..." autofocus/>
+                        <x-text-input id=""  name="nilai_penguji" class="block mb-2 w-full h-10 p-1 border border-black cursor-pointer bg-white" type="number" placeholder="Masukkan nilai..." autofocus/>
                     </div>
                     <div class="flex space-x-6">
                         <div class="w-24">

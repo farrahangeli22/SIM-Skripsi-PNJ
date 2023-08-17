@@ -36,6 +36,7 @@ class DaftarPengajuanSemproController extends Controller
             'ruang' => $request->ruang,
         ]);
 
+
         HasilSempro::updateOrCreate([
             'id' => $pengajuanSempro->id
         ],[
@@ -44,6 +45,8 @@ class DaftarPengajuanSemproController extends Controller
             'nilai' => $request->nilai,
             'status' => $request->statusHasil,
         ]);
+
+        
         
        if($request->status == 'Lulus'){
              Mahasiswa::find($request->nim)->update([

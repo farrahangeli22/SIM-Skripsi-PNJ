@@ -45,6 +45,14 @@ class PengajuanSidangController extends Controller
     function getApi($id){
         $pengajuanSidang = PengajuanSidang::find($id);
         $mahasiswa = Mahasiswa::where("nim",$pengajuanSidang->nim)->first();
+
+        $nilaiTotal = 0;
+
+        if ($pengajuanSidang->hasilSidang) {
+            $nilaiTotal = ((($pengajuanSidang->hasilSidang->nilai_penguji1 + $pengajuanSidang->hasilSidang->nilai_penguji2 + $pengajuanSidang->hasilSidang->nilai_penguji3)/3*2)+($pengajuanSidang->nilai_pembimbing))/3;
+        }
+
+
         $data = [
             "nim"=>$mahasiswa->nim,
             "nama"=>$mahasiswa->nama,
@@ -64,7 +72,7 @@ class PengajuanSidangController extends Controller
             "nilai_penguji1" => $pengajuanSidang->hasilSidang? $pengajuanSidang->hasilSidang->nilai_penguji1:"",
             "nilai_penguji2" => $pengajuanSidang->hasilSidang? $pengajuanSidang->hasilSidang->nilai_penguji2:"",
             "nilai_penguji3" => $pengajuanSidang->hasilSidang? $pengajuanSidang->hasilSidang->nilai_penguji3:"",
-            "nilai" => $pengajuanSidang->hasilSidang ? $pengajuanSidang->hasilSidang->nilai:"",
+            "nilai" => $nilaiTotal,
             "status" => $pengajuanSidang->hasilSidang ? $pengajuanSidang->hasilSidang->status:"",
         ];
         return response($data,200);

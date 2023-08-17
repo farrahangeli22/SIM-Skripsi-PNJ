@@ -19,7 +19,7 @@ public function viewRevisiSkripsi()
         // ambil data dosen dari db
         $dosen = Dosen::all();
 
-    $daftarRevisiSkripsi = Revisi::whereIn('status',['menunggu persetujuan', 'Revisi'])->where('nip_penguji', Auth::user()->username)->get(); 
+    $daftarRevisiSkripsi = Revisi::where('nip_penguji', Auth::user()->username)->get(); 
     return view('penguji.daftarRevisi', ['daftarRevisiSkripsi' => $daftarRevisiSkripsi]);
 }
 }

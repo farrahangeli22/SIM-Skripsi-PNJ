@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('pengajuan_sidang_id');
             $table->foreign('pengajuan_sidang_id')->references('id')->on('pengajuan_sidang');
-            $table->integer('nilai_penguji1')->nullable();
-            $table->integer('nilai_penguji2')->nullable();
-            $table->integer('nilai_penguji3')->nullable();
+            $table->float('nilai_penguji1')->nullable();
+            $table->float('nilai_penguji2')->nullable();
+            $table->float('nilai_penguji3')->nullable();
             $table->string('status')->nullable();
-            $table->integer('nilai')->nullable();
+            $table->float('nilai')->nullable();
             $table->timestamps();
         });
     }

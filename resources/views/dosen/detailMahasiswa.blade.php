@@ -39,13 +39,13 @@
                         <label class="block text-sm mb-2" for="">
                             Nilai Proposal
                         </label>
-                        <x-text-input id="nilai_sempro" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="text" name="nilai_sempro" autofocus/>
+                        <x-text-input id="nilai_sempro" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="number" name="nilai_sempro" autofocus/>
                     </div>
                     <div>
                         <label class="block text-sm mb-2" for="">
                             Nilai Skripsi
                         </label>
-                        <x-text-input id="nilai_skripsi" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="text" name="nilai_skripsi" autofocus/>
+                        <x-text-input id="nilai_skripsi" class="block w-60 h-10 p-1 border border-black cursor-pointer bg-white" type="number" name="nilai_skripsi" autofocus/>
                     </div>
                     <div class="mt-7">
                         <x-primary-button class="flex justify-center w-fit h-10">

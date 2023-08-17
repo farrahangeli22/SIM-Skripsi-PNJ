@@ -143,7 +143,7 @@
                                         </div>
                                         <div class="flex flex-col mb-4 text-sm">
                                             <label class="font-bold">Rekap Nilai:</label>
-                                            <input id="nilai" name="nilai" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
+                                            <input id="nilai" name="nilai" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="number" readonly/>
                                         </div>
                                         <div class="flex flex-col mt-4 text-sm">
                                             <label class="font-bold">Hasil Seminar:</label>

@@ -82,7 +82,7 @@
                                 <input type="hidden" name="nim" value="123" id="nim">
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Dosen Pembimbing:</label>
-                                        <input id="namaDosen" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3">
+                                        <input id="namaDosen" class="w-full h-10 text-sm text-gray-700 border border-black rounded-md px-3" readonly>
                                     </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Jadwal Sidang Skripsi:</label>
@@ -122,23 +122,23 @@
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Nilai Dosen Pembimbing:</label>
-                                        <input id="nilaiPembimbing"  class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
+                                        <input id="nilaiPembimbing"  class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" readonly/>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Nilai Penguji 1:</label>
-                                        <input id="nilai_penguji1" name="nilai_penguji1" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
+                                        <input id="nilai_penguji1" name="nilai_penguji1" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" readonly/>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Nilai Dosen Penguji 2:</label>
-                                        <input id="nilai_penguji2" name="nilai_penguji2" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
+                                        <input id="nilai_penguji2" name="nilai_penguji2" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" readonly/>
                                     </div>
                                     <div class="flex flex-col mb-4 text-xs">
                                         <label class="font-bold">Nilai Dosen Penguji 3:</label>
-                                        <input id="nilai_penguji3" name="nilai_penguji3" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
+                                        <input id="nilai_penguji3" name="nilai_penguji3" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" readonly/>
                                     </div>
                                     <div class="flex flex-col mb-4 text-sm">
                                         <label class="font-bold">Rekap Nilai:</label>
-                                        <input id="nilai" name="nilai" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="text" autofocus/>
+                                        <input id="nilai" name="nilai" class="w-full h-10 text-sm block p-1 mt-1 border border-black cursor-pointer rounded-md" type="number" readonly/>
                                     </div>
                                     <div class="flex flex-col mt-4 text-sm">
                                         <label class="font-bold">Hasil Sidang:</label>

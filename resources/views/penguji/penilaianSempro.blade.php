@@ -67,14 +67,14 @@
                             <label class="font-bold" for="" style="display: inline-block; white-space: nowrap;">
                                 Judul :
                             </label>
-                            <p>Rancang Bangun blablabla</p>
+                            {{$penilaianSempro->mahasiswa->skripsi->judul}}
                         </div>
                         <div>
                             <label class="block text-sm font-bold mb-2" for="">
                                 Dokumen Proposal :
                             </label>
                             <!-- pdf viewer -->
-                            <iframe src="{{ asset('asset/fileSkripsi.pdf') }}" width="600" height="400"></iframe>
+                            <iframe src="{{ url('/storage/'. $penilaianSempro->mahasiswa->skripsi->file_skripsi) }}" width="600" height="400"></iframe>
                         </div>
                     </div>
                 </div>

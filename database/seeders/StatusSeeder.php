@@ -43,6 +43,10 @@ class StatusSeeder extends Seeder
         ]);
 
         Status::create([
+            'nama' => 'Sedang Revisi',
+        ]);
+
+        Status::create([
             'nama' => 'Penyerahan Alat',
         ]);
     }

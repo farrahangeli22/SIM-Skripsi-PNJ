@@ -9,6 +9,7 @@ use App\Models\HasilSempro;
 use App\Models\PengajuanSidang;
 use App\Models\HasilSidang;
 use App\Models\Skripsi;
+use App\Models\Logbook;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -24,9 +25,10 @@ class DetailMahasiswaController extends Controller
         // $skripsi = Skripsi::where('judul', $request->user()->username)->first();
         // ambil data dosen dari db
         $dosen = Dosen::all();
-        $sempro = PengajuanSempro::where("nim",$id)->get()->count();
+        $logbook = Logbook::where("nim",$id)->get()->count();
+        $sempro = PengajuanSempro::where("nim", $id)->get()->count();
         // mengembalikan view dengan data
-        return view('dosen.detailMahasiswa')->with('mahasiswa', $mahasiswa)->with('dosen', $dosen)->with('sempro', $sempro);
+        return view('dosen.detailMahasiswa')->with('mahasiswa', $mahasiswa)->with('dosen', $dosen)->with('sempro', $sempro)->with('logbook', $logbook);
     }
 
      function createDetailSempro(Request $request,$id)
@@ -42,7 +44,7 @@ class DetailMahasiswaController extends Controller
 
      function createDetailSidang(Request $request,$id)
     {
-        if ($request->has('nilai_sempro')) {
+        if ($request->nilai_sempro !=null&&is_numeric($request->nilai_sempro)) {
             $nilaiSempro = $request->nilai_sempro;
         
             // Cari atau buat record PengajuanSempro
@@ -60,7 +62,7 @@ class DetailMahasiswaController extends Controller
             }
         }
         
-        if ($request->has('nilai_skripsi')) {
+        if ($request->nilai_skripsi !=null&&is_numeric($request->nilai_skripsi)) {
             $nilaiSkripsi = $request->nilai_skripsi;
         
             // Cari atau buat record PengajuanSidang

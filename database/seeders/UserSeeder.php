@@ -98,6 +98,7 @@ class UserSeeder extends Seeder
                     'nama' => $user3->nama,
                     'prodi' => 'Teknik Informatika',
                     'kelas' => 'TI 8A',
+                    'tahun_ajaran' => '2022/2023',
                     'email' => $user3->email,
                 ]
         );
@@ -125,6 +126,7 @@ class UserSeeder extends Seeder
                     'nama' => $user4->nama,
                     'prodi' => 'Teknik Informatika',
                     'kelas' => 'TI 8A',
+                    'tahun_ajaran' => '2022/2023',
                     'email' => $user4->email,
                 ]
         );
@@ -291,6 +293,7 @@ class UserSeeder extends Seeder
                     'nama' => $user9->nama,
                     'prodi' => 'Teknik Multimedia Digital',
                     'kelas' => 'TMD 8A',
+                    'tahun_ajaran' => '2021/2022',
                     'email' => $user9->email,
                 ]
         );

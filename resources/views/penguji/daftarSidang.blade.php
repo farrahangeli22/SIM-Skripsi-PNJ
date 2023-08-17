@@ -24,7 +24,11 @@
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Judul</span>{{$Sidang->judul}}</td>  
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Jadwal</span>{{$Sidang->jadwal_sidang}}</td>    
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nilai</span>{{$Sidang->hasilSidang ? $Sidang->hasilSidang->nilai_penguji1:""}}</td>
-                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Poin Revisi</span></td>     
+                <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Poin Revisi</span>
+                @foreach($Sidang->hasilSidang->revisi as $revisi)
+                    {{$revisi->poin_revisi}}
+                @endforeach
+            </td>     
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
                     <a href="{{ route('penguji.penilaian-sidang',['id'=>$Sidang->id]) }}" class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Aksi</a>

@@ -18,6 +18,7 @@ class DashboardController extends Controller
 
     function viewDashboardFilter(Request $request)
     {
+        dd($request);
         // if($request->status == 'pengajuanJudul'){
         //     $dataMahasiswa = Mahasiswa::where('status_id', '1')->get();
         // }elseif($request->status == 'pengajuanSempro') {
@@ -62,9 +63,12 @@ class DashboardController extends Controller
         } elseif ($request->status == 'tidakLulusSidang') {
             $dataMahasiswa = Mahasiswa::where('status_id', '7')->get();
             $statusId = 7;
-        } else {
-            $statusId = 8;
+        } elseif ($request->status == 'sedangRevisi') {
             $dataMahasiswa = Mahasiswa::where('status_id', '8')->get();
+            $statusId = 8;
+        } else {
+            $statusId = 9;
+            $dataMahasiswa = Mahasiswa::where('status_id', '9')->get();
         }
 
         // filter prodi

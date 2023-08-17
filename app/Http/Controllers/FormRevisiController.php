@@ -57,6 +57,10 @@ class FormRevisiController extends Controller
             'link_vidio' => $request->link_vidio,
             'status' => "menunggu persetujuan",
         ]);
+
+        Mahasiswa::find($request->user()->username)->update([
+            'status_id' => '8',
+        ]);
         
         Session::flash('message', 'pengajuan revisi berhasil terkirim');
         return redirect(route('user.daftar-revisi-skripsi'));

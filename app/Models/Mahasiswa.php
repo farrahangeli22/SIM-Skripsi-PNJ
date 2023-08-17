@@ -14,6 +14,7 @@ class Mahasiswa extends Model
         'nama',
         'prodi',
         'kelas',
+        'tahun_ajaran',
         'email',
         'status_id',
         'nip_dospem',

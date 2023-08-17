@@ -8,6 +8,7 @@ use App\Models\Dosen;
 use App\Models\HasilSempro;
 use App\Models\PengajuanSempro;
 use App\Models\RevisiProposal;
+use App\Models\Skripsi;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -15,10 +16,17 @@ class PenilaianSemproController extends Controller
 {
     function viewPenilaianSempro(Request $request, $id )
     {
-        $penilaianSempro = pengajuanSempro::find($id);
+        $mahasiswa = Mahasiswa::where('nim', $id)->first();
 
-        //dd($penilaianSempro);
-        return view('penguji.penilaianSempro',['penilaianSempro'=> $penilaianSempro]);
+        $penilaianSempro = pengajuanSempro::find($id);
+        
+        $skripsi = Skripsi::where('nim',  $penilaianSempro->nim)->first();
+
+        //dd($skripsi);
+
+        return view('penguji.penilaianSempro')
+        ->with('penilaianSempro', $penilaianSempro)
+        ->with('mahasiswa', $mahasiswa);
     }
 
     function createPenilaianSempro(Request $request, $id )

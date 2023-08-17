@@ -8,6 +8,7 @@ use App\Models\Dosen;
 use App\Models\HasilSidang;
 use App\Models\PengajuanSidang;
 use App\Models\revisi;
+use App\Models\Skripsi;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -15,9 +16,16 @@ class PenilaianSidangController extends Controller
 {
     function viewPenilaianSidang(Request $request, $id)
     {
+        $mahasiswa = Mahasiswa::where('nim', $id)->first();
+
         $penilaianSidang = pengajuanSidang::find($id);
+
+        $skripsi = Skripsi::where('nim',  $penilaianSidang->nim)->first();
+
         //dd($penilaianSidang);
-        return view('penguji.penilaianSidang',['penilaianSidang'=> $penilaianSidang]);
+        return view('penguji.penilaianSidang')
+        ->with('penilaianSidang', $penilaianSidang)
+        ->with('mahasiswa', $mahasiswa);
     }
 
     function createPenilaianSidang(Request $request, $id )

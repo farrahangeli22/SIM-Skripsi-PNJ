@@ -26,7 +26,7 @@ class HasilSempro extends Model
     }
 
     public function revisiProposal()
-    {
-        return $this->hasOne(RevisiProposal::class);
+    {  
+        return $this->hasMany(RevisiProposal::class);
     }
 }

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama');
             $table->string('prodi');
             $table->string('kelas');
+            $table->string('tahun_ajaran');
             $table->string('email')->unique();
             $table->timestamps();
         });

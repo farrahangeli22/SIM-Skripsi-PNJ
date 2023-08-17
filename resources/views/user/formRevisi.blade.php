@@ -10,7 +10,12 @@
             @csrf
             <input type="hidden" name="id" id="idRevisi">
             <input type="hidden" name="nim" value="123" id="nim">
-            <h1 class="flex justify-center font-bold text-xl text-font mb-10">Form Pengajuan Persetujuan</h1>
+            <div class="flex justify-between">
+            <h1 class=" font-bold text-xl text-font mb-10">Form Pengajuan Persetujuan</h1>
+            <div class="flex">
+                <h1 class="font-bold text-xl text-font">{{$revisi->status}}</h1>
+            </div>
+</div>
             <div class="flex justify-between space-x-10">
                 <div>
                     <label class="flex flex-wrap text-sm mb-2" for="">
@@ -47,10 +52,18 @@
                 </div>
             </div>
             <div class="flex justify-end">
-            <x-primary-button id="kirimButton" class="flex justify-center w-fit mt-8" data-id="id_revisi">
-                    {{ __('Kirim') }}
-                </x-primary-button>
-            </div>
+    @if ($revisi->status !== 'Diterima')
+        <x-primary-button id="kirimButton" class="flex justify-center w-fit mt-8" data-id="id_revisi">
+            {{ __('Kirim') }}
+        </x-primary-button>
+    @else
+        <x-primary-button id="kirimButton" class="flex justify-center w-fit mt-8" data-id="id_revisi" disabled style="background-color: #ccc;">
+            {{ __('Kirim') }}
+        </x-primary-button>
+    @endif
+</div>
+
+
         </form>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

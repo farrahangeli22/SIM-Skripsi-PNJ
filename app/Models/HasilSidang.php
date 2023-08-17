@@ -27,6 +27,6 @@ class HasilSidang extends Model
 
     public function revisi()
     {
-        return $this->hasOne(Revisi::class);
+        return $this->hasMany(Revisi::class);
     }
 }

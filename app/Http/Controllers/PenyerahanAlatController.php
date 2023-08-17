@@ -59,7 +59,7 @@ class PenyerahanAlatController extends Controller
     ]);
 
      Mahasiswa::find($request->user()->username)->update([
-            'status_id' => '8',
+            'status_id' => '9',
         ]);
         
 

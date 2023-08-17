@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
 use App\Models\revisi;
+use App\Models\Skripsi;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -17,6 +18,8 @@ public function viewApproveRevisi(Request $request, $id)
     $mahasiswa = Mahasiswa::where('nim', Auth::user()->username)->first();
     
     $detailRevisiSkripsi = Revisi::find($id);
+
+    $skripsi = Skripsi::where('nim',  $detailRevisiSkripsi->nim)->first();
 
     if($detailRevisiSkripsi->status!='menunggu persetujuan'){
         return redirect()->back();

@@ -9,6 +9,7 @@
                     <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">NIM</th>
                     <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Prodi</th>
                     <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Kelas</th>
+                    <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Tahun Ajaran</th>
                     <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Status</th>
                     <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Dosen Pembimbing</th>
                     <th class="bg-primary p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Judul</th>
@@ -22,6 +23,7 @@
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">NIM</span>{{$mahasiswa->nim}}</td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Prodi</span>{{$mahasiswa->prodi}}</td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Kelas</span>{{$mahasiswa->kelas}}</td>
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Kelas</span>{{$mahasiswa->tahun_ajaran}}</td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Status</span>{{$mahasiswa->status->nama}}</td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Dosen Pembimbing</span>{{$mahasiswa->dosen ? $mahasiswa->dosen->nama:""}}</td>
                     </td>
@@ -38,7 +40,7 @@
         <div id="modal" class="z-50 fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center overflow-y-auto hidden">
             <form method="post" enctype="multipart/form-data">
                 <div class="bg-white p-6 rounded-lg">
-                    <div class="flex ">
+                    <div class="flex">
                         <div class="">
                             <h2 class="text-xl font-bold mb-4">Edit Data Mahasiswa</h2>
                             <!-- Konten kiri -->
@@ -57,6 +59,10 @@
                             <div class="flex flex-col mb-4 text-xs">
                                 <label class="font-bold">Kelas:</label>
                                 <p id="kelasMahasiswa"></p>
+                            </div>
+                            <div class="flex flex-col mb-4 text-xs">
+                                <label class="font-bold">Tahun Ajaran:</label>
+                                <p id="tahunAjaran"></p>
                             </div>
                             <div class="flex flex-col mb-4 text-xs">
                                 <label class="font-bold">Judul:</label>
@@ -131,6 +137,7 @@
                 $('#nimMahasiswa').text(res.nim)
                 $('#prodiMahasiswa').text(res.prodi)
                 $('#kelasMahasiswa').text(res.kelas)
+                $('#tahunAjaranMahasiswa').text(res.tahun_ajaran)
                 $('#judul').text(res.judul)
             })
         }

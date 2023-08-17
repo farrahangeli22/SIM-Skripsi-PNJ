@@ -1,10 +1,11 @@
 <x-penguji-layout :title="'Approval Revisi Skripsi'">
 
     <div class="w-full space-y-4">
-        <h1 class="font-bold text-xl text-font mb-8">Persetujuan Revisi</h1>
+        
+            <form method="POST" class="mt-8">
+            <h1 class="font-bold text-xl text-font mb-8">Persetujuan Revisi</h1>
         <div class="flex justify-between space-x-20 mb-2">
             <div class="w-full">
-            <form method="POST" class="mt-8">
                 <label class="block text-sm mb-2" for="">
                     Tanggal Bimbingan
                 </label>
@@ -30,11 +31,11 @@
             <label for="message" class="block mb-2 text-sm font-medium text-gray-900">
                 Dokumen Skripsi
             </label>
-            <iframe src="{{ asset('asset/fileSkripsi.pdf') }}" class="w-full h-80"></iframe>
+            <iframe src="{{ url('/storage/'. $detailRevisiSkripsi->mahasiswa->skripsi->file_skripsi) }}" class="w-full h-80"></iframe>
         </div>
     </div>
     <!-- Feedback -->
-        <div class="flex justify-center rounded-t-lg bg-header h-10 p-2">
+        <div class="flex justify-center rounded-t-lg bg-header h-10 p-4 mt-6">
             <p class="font-bold text-white">Umpan Balik</p>
         </div>
         <div class="border rounded-b-lg rounded-br-lg shadow">

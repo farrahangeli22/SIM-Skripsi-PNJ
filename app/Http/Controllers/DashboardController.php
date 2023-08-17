@@ -14,7 +14,15 @@ class DashboardController extends Controller
             $prodi = $request->prodi;
             $tahun = $request->tahun_ajaran;
 
-            $dataMahasiswa = Mahasiswa::where('tahun_ajaran',$tahun)->where('prodi',$prodi)->get();
+            $mahasiswa = new Mahasiswa();
+            if($prodi != null && $prodi != ""){
+                $mahasiswa = $mahasiswa->where('prodi', $prodi);
+            }
+
+            if($tahun != null && $tahun != ""){
+                $mahasiswa = $mahasiswa->where('tahun_ajaran', $tahun);
+            }
+            $dataMahasiswa = $mahasiswa->get();
         }else{
             $dataMahasiswa = Mahasiswa::get();
         }

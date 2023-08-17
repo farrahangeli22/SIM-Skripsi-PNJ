@@ -87,4 +87,14 @@ class DetailMahasiswaController extends Controller
         Session::flash('message', 'File penilaian berhasil terkirim');
         return redirect(route('dosen.detail-mahasiswa', ['id'=>$id]));
     } 
+
+    function updateStatusPendaftaran(Request $request, $id)
+    {
+        pengajuanSempro::where('nim', $id)->update([
+            "status"=>$request->status,
+        ]);
+
+        Session::flash('message', 'Berhasil!');
+        return redirect(route('dosen.detail-mahasiswa'));
+    }
 }

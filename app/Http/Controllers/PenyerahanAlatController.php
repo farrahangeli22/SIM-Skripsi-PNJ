@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
 use App\Models\PenyerahanAlat;
+use App\Models\Revisi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
@@ -20,8 +21,16 @@ class PenyerahanAlatController extends Controller
         $mahasiswa = Mahasiswa::where('nim', Auth::user()->username)->first();
         // ambil data dosen dari db
         $dosen = Dosen::all();
+
+        $revisi = Revisi::where('nim', Auth::user()->username)->get();
+
+        foreach ($revisi as $revisi) {
+            $status = $revisi->status; // Ini akan bekerja
+        }
+
+        // $revisi = Revisi::where('nim', Auth::user()->username)->get();
         // mengembalikan view dengan data
-        return view('user.penyerahanAlat', compact('mahasiswa', 'dosen'));
+        return view('user.penyerahanAlat', compact('mahasiswa', 'dosen', 'revisi'));
     }
 
     function createPenyerahanAlat(Request $request)

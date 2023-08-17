@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Dosen;
 use App\Models\Mahasiswa;
 use App\Models\PengajuanSidang;
+use App\Models\PengajuanSempro;
+use App\Models\Logbook;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -19,8 +21,12 @@ class PengajuanSidangController extends Controller
         $mahasiswa = Mahasiswa::where('nim', $request->user()->username)->first();
         // ambil data dosen dari db
         $dosen = Dosen::all();
+
+        $pengajuanSempro = PengajuanSempro::where('nim', $request->user()->username)->get()->count();
+        $logbook = Logbook::where('nim', $request->user()->username)->where('status', 'terima')->get()->count();
+
         // mengembalikan view dengan data
-        return view('user.pengajuanSidang')->with('mahasiswa', $mahasiswa)->with('dosen', $dosen);
+        return view('user.pengajuanSidang')->with('mahasiswa', $mahasiswa)->with('dosen', $dosen)->with('pengajuanSempro', $pengajuanSempro)->with('logbook', $logbook);
     }
      // create pengajuan sidang
     function createPengajuanSidang(Request $request)

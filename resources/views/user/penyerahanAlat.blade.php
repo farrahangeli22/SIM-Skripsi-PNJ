@@ -27,6 +27,8 @@
                 <p>{{ Session::get('message') }}</p>
             </div>
             @endif
+
+        @if(($mahasiswa->status_id == 8) && ($revisi->status == "Diterima"))
         <!-- Form Pengajuan -->
        <form class="w-full" enctype="multipart/form-data" action="{{route('user.create-penyerahan-alat')}}" method="post" action="/proses-data" onsubmit="return confirm('Apakah Anda yakin ingin mengirim data ini?')">
             @csrf
@@ -104,5 +106,10 @@
                 </div>
             </div>
         </form>
+        @else
+            <div class="flex items-center w-full h-fit rounded bg-[#EF9C9C] border border-[#E03131] font-bold p-2">
+                <h1>Pastikan anda telah menyelesaikan tahapan revisi dan melengkapi berkas!</h1>
+            </div>
+        @endif
     </div>
 </x-user-layout>

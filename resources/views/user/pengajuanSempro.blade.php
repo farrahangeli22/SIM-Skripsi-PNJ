@@ -20,7 +20,7 @@
             </label>
         </div>
 
-        <div class="flex-wrap">
+        <div class="flex-wrap w-full">
              <!-- Notif pengiriman berhasil -->
             @if(Session::has('message'))
             <div class="w-full h-fit p-2 rounded bg-[#40C057] mb-4 font-bold text-white">
@@ -28,6 +28,7 @@
             </div>
             @endif
 
+            @if(($pengajuanJudul != 0) && ($logbook >= 3) )
             <!-- Form Pengajuan -->
             <form class="w-full" enctype='multipart/form-data' action="{{route('user.create-pengajuan-sempro')}}" method="post" action="/proses-data" onsubmit="return confirm('Apakah Anda yakin ingin mengirim data ini?')">
                 @csrf
@@ -66,6 +67,11 @@
                     </div>
                 </div>
             </form>
+            @else
+            <div class="flex items-center w-full h-fit rounded bg-[#EF9C9C] border border-[#E03131] font-bold p-2">
+                <h1>Anda belum mengajukan judul/melengkapi logbook!</h1>
+            </div>
+            @endif
         </div>
     </div>
 

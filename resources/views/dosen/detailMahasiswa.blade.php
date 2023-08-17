@@ -56,6 +56,26 @@
             </form>
             @endif
 
+            <!-- Persetujuan  -->
+            {{ dd ($sempro )}}
+            @if($sempro->status)
+            
+            <form method="POST" class="mt-8">
+                <h1 class="font-bold text-xl text-font mb-8 mt-8">Berikan Persetujuan Pendaftaran Seminar</h1>
+                <div class="flex space-x-10">
+                    <!-- button setuju -->
+                    <div class="w-full">
+                        <input type="submit" name="status" value="Setuju" class="block h-fit w-fit p-2 rounded-lg bg-[#40C057] flex text-sm font-bold text-white shadow hover:bg-[#17952E]">
+                    </div>
+
+                    <!-- button tolak -->
+                    <div class="w-full">
+                        <input type="submit" name="status" value="Tolak" class="block h-fit w-fit p-2 rounded-lg bg-[#E03131] flex text-sm font-bold text-white shadow hover:bg-[#B51A1A]">
+                    </div>
+                </div>
+                @csrf
+                @endif
+            </form>
 
             <!-- Dokumen Skripsi Mahsiswa-->
             <div class="mb-8">

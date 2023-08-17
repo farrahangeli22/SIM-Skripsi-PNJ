@@ -28,7 +28,7 @@
                 </div>
                 <div class="w-1/2 mb-4">
                     <label for="prodi" class="block text-sm font-medium text-gray-700">Tahun Ajaran</label>
-                    <select id="prodi" name="prodi" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                    <select id="prodi" name="tahun-ajaran" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                         <option value="">2022/2023</option>
                         <option value="Teknik Informatika" {{ request('prodi') == 'Teknik Informatika' ? 'selected' : '' }}>2021/2022</option>
                         <option value="Teknik Multimedia Digital" {{ request('prodi') == 'Teknik Multimedia Digital' ? 'selected' : '' }}>2020/2021</option>

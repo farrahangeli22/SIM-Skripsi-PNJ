@@ -10,7 +10,14 @@ class DashboardController extends Controller
 {
     function viewDashboard(Request $request)
     {
-        $dataMahasiswa = Mahasiswa::get();
+        if($request->isMethod('post')){
+            $prodi = $request->prodi;
+            $tahun = $request->tahun_ajaran;
+
+            $dataMahasiswa = Mahasiswa::where('tahun_ajaran',$tahun)->where('prodi',$prodi)->get();
+        }else{
+            $dataMahasiswa = Mahasiswa::get();
+        }
 
         return view('admin.dashboardAdmin', compact('dataMahasiswa'));
     }

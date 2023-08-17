@@ -58,7 +58,7 @@ Route::get('/', function () {
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', [DashboardController::class, 'viewDashboard'])->middleware(['auth', 'verified'])->name('admin.dashboard-admin');
-Route::post('/dashboard', [DashboardController::class, 'viewDashboardFilter'])->middleware(['auth', 'verified'])->name('admin.dashboard-admin-filter');
+Route::post('/dashboard', [DashboardController::class, 'viewDashboard'])->middleware(['auth', 'verified'])->name('admin.dashboard-admin-filter');
 
 
 // Route::middleware('auth')->group(function () {

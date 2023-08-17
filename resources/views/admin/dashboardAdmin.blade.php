@@ -21,17 +21,19 @@
                 <div class="w-1/2 mb-4">
                     <label for="prodi" class="block text-sm font-medium text-gray-700">Program Studi</label>
                     <select id="prodi" name="prodi" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                        <option value="">Seluruh Pordi</option>
-                        <option value="Teknik Informatika" {{ request('prodi') == 'Teknik Informatika' ? 'selected' : '' }}>Teknik Informatika</option>
-                        <option value="Teknik Multimedia Digital" {{ request('prodi') == 'Teknik Multimedia Digital' ? 'selected' : '' }}>Teknik Multimedia Digital</option>
+                        <option value="">Seluruh Prodi</option>
+                        @foreach ($prodi as $item)
+                            <option value="{{$item->prodi}}">{{$item->prodi}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="w-1/2 mb-4">
                     <label for="prodi" class="block text-sm font-medium text-gray-700">Tahun Ajaran</label>
-                    <select id="prodi" name="tahun-ajaran" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                        <option value="">2022/2023</option>
-                        <option value="Teknik Informatika" {{ request('prodi') == 'Teknik Informatika' ? 'selected' : '' }}>2021/2022</option>
-                        <option value="Teknik Multimedia Digital" {{ request('prodi') == 'Teknik Multimedia Digital' ? 'selected' : '' }}>2020/2021</option>
+                    <select id="prodi" name="tahun_ajaran" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">Seluruh Tahun Ajaran</option>
+                        @foreach ($prodi as $item)
+                            <option value="{{$item->tahun_ajaran}}">{{$item->tahun_ajaran}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="">
@@ -118,7 +120,7 @@
                     </div>
                     <div class="p-2 w-44">
                         <h1 class="pt-4">Total Penyerahan Alat</h1>
-                        <p class="text-2xl mt-4">{{count($dataMahasiswa->where('status_id', 8))}}</p>
+                        <p class="text-2xl mt-4">{{count($dataMahasiswa->where('status_id', 9))}}</p>
                     </div>
                 </div>
             </div>

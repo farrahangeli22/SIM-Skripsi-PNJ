@@ -23,6 +23,7 @@ class DashboardController extends Controller
                 $mahasiswa = $mahasiswa->where('tahun_ajaran', $tahun);
             }
             $dataMahasiswa = $mahasiswa->get();
+            dd($request->request->all());
         }else{
             $dataMahasiswa = Mahasiswa::get();
         }

@@ -26,8 +26,10 @@ class DashboardController extends Controller
         }else{
             $dataMahasiswa = Mahasiswa::get();
         }
+        $tahun_ajaran = Mahasiswa::select('tahun_ajaran')->distinct()->get();
+        $prodi = Mahasiswa::select('prodi')->distinct()->get();
 
-        return view('admin.dashboardAdmin', compact('dataMahasiswa'));
+        return view('admin.dashboardAdmin', ["dataMahasiswa" => $dataMahasiswa, "tahun_ajaran" => $tahun_ajaran, "prodi" => $prodi]);
     }
 
 

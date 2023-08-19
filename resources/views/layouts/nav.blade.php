@@ -37,7 +37,7 @@
                             {{ __('Pendaftaran Seminar Proposal') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('user.pengajuan-sidang')">
-                            {{ __('PengdaftaranSidang Skripsi') }}
+                            {{ __('Pengdaftaran Sidang Skripsi') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('user.penyerahan-alat')">
                             {{ __('Penyerahan Alat dan Dokumen Pelengkap Skripsi') }}

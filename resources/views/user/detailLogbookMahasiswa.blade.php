@@ -29,13 +29,13 @@
             </div>
         </div>
         <div>
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900">
                 Uraian Catatan Bimbingan
             </label>
             <textarea id="message" rows="4" class="block p-2.5 w-full h-60 text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Catatan bimbingan blablabla" readonly>{{$detailLogbook->rincian_kegiatan}}</textarea>
         </div>
         <div>
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900">
                 Rencana Pencapaian
             </label>
             <textarea id="message" rows="4" class="block p-2.5 w-full h-32 text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Target pencapaian blablabla" readonly>{{$detailLogbook->rencana_pencapaian}}</textarea>

@@ -14,9 +14,12 @@ class DaftarSemproController extends Controller
 {
     function viewDaftarSempro(Request $request)
     {
-        $daftarSempro = pengajuanSempro::where('dosen_penguji1', auth::user()->username) -> orWhere('dosen_penguji2', auth::user()->username) -> orWhere('dosen_penguji3', auth::user()->username)->
-        get();
-
+        $daftarSempro = pengajuanSempro::where('dosen_penguji1', auth::user()->username)
+        ->orWhere('dosen_penguji2', auth::user()->username)
+        ->orWhere('dosen_penguji3', auth::user()->username)
+        ->latest('created_at') // Mengurutkan berdasarkan created_at terbaru
+        ->get();
+        
         // dd($daftarSempro);
         return view('penguji.daftarSempro',['daftarSempro'=> $daftarSempro]);
     }

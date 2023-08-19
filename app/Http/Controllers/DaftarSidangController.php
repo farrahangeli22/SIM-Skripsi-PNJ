@@ -14,8 +14,11 @@ class DaftarSidangController extends Controller
 {
     function viewDaftarSidang(Request $request)
     {
-        $daftarSidang = pengajuanSidang::where('dosen_penguji1', auth::user()->username) -> orWhere('dosen_penguji2', auth::user()->username) -> orWhere('dosen_penguji3', auth::user()->username)->
-        get();
+    $daftarSidang = pengajuanSidang::where('dosen_penguji1', auth::user()->username)
+    ->orWhere('dosen_penguji2', auth::user()->username)
+    ->orWhere('dosen_penguji3', auth::user()->username)
+    ->latest('created_at') // Mengurutkan berdasarkan created_at terbaru
+    ->get();
 
         // dd($daftarSempro);
         return view('penguji.daftarSidang',['daftarSidang'=> $daftarSidang]);

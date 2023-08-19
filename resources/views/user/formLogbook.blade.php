@@ -30,13 +30,13 @@
             </div>
         </div>
         <div>
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 ">
                 Uraian Catatan Bimbingan
             </label>
             <textarea id="rincian_kegiatan" rows="4" class="block p-2.5 w-full h-60 text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 mb-6" name="rincian_kegiatan" placeholder="Tambahkan catatan..."></textarea>
         </div>
         <div>
-            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label for="message" class="block mb-2 text-sm font-medium text-gray-900 ">
                 Rencana Pencapaian
             </label>
             <textarea id="rencana_pencapaian" rows="4" class="block p-2.5 w-full h-32 text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 mb-6" name="rencana_pencapaian" placeholder="Tuliskan target pencapaian pada bimbingan berikutnya."></textarea>

@@ -83,7 +83,7 @@ class PengajuanSidang extends Model
             return $this->hasilSidang->nilai_penguji3 != null ? $this->hasilSidang->nilai_penguji3 : 0;
         }
 
-        return 0;
+        return "";
 
     }
 

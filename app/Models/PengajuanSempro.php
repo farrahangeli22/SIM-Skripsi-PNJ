@@ -86,7 +86,7 @@ class PengajuanSempro extends Model
             return $this->hasilSempro->nilai_penguji3 != null ? $this->hasilSempro->nilai_penguji3 : 0;
         }
 
-        return 0;
+        return "";
 
     }
 }

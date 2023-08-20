@@ -33,7 +33,7 @@
             </td>     
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
-                    @if ($Sidang->hasilSidang && $Sidang->hasilSidang->nilai_penguji1 && $Sidang->hasilSidang->revisi->count() > 0)
+                    @if ($Sidang->hasilSidang && $Sidang->isPengujiSudahMenilai() && $Sidang->hasilSidang->revisi->count() > 0)
                         <span class="bg-disabled text-gray-500 font-bold py-1 px-2 border border-edit rounded cursor-not-allowed border-gray-500">Aksi</span>
                     @else
                     <a href="{{ route('penguji.penilaian-sidang',['id'=>$Sidang->id]) }}" 

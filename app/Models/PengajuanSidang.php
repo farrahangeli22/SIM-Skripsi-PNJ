@@ -48,5 +48,24 @@ class PengajuanSidang extends Model
     {
         return $this->belongsTo(Dosen::class, "dosen_penguji3", "nip");
     }
+    public function isPengujiSudahMenilai(){
+        $nip = Auth::user()->username;
+
+        if($this->dosen_penguji1 == $nip){
+            return $this->hasilSidang->nilai_penguji1 != null ? true : false;
+        }
+
+        if($this->dosen_penguji2 == $nip){
+            return $this->hasilSidang->nilai_penguji2 != null ? true : false;
+        }
+
+        if($this->dosen_penguji3 == $nip){
+            return $this->hasilSidang->nilai_penguji3 != null ? true : false;
+        }
+
+        return false;
+
+
+    }
 
 }

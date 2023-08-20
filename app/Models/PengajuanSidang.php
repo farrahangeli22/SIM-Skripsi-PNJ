@@ -66,6 +66,24 @@ class PengajuanSidang extends Model
 
         return false;
 
+    }
+
+    public function nilaiPenguji(){
+        $nip = Auth::user()->username;
+
+        if($this->dosen_penguji1 == $nip){
+            return $this->hasilSidang->nilai_penguji1 != null ? $this->hasilSidang->nilai_penguji1 : 0;
+        }
+
+        if($this->dosen_penguji2 == $nip){
+            return $this->hasilSidang->nilai_penguji2 != null ? $this->hasilSidang->nilai_penguji2 : 0;
+        }
+
+        if($this->dosen_penguji3 == $nip){
+            return $this->hasilSidang->nilai_penguji3 != null ? $this->hasilSidang->nilai_penguji3 : 0;
+        }
+
+        return 0;
 
     }
 

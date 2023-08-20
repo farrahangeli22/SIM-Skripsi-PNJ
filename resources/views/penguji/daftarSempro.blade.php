@@ -25,7 +25,7 @@
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Program Studi</span>{{$Sempro->mahasiswa->prodi}}</td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Judul</span>{{$Sempro->judul}}</td>   
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Jadwal</span>{{$Sempro->jadwal_sempro}}</td>    
-                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nilai</span>{{$Sempro->hasilSempro ? $Sempro->hasilSempro->nilai_penguji1:""}}</td>
+                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Nilai</span>{{$Sempro->hasilSempro ? $Sempro->nilaiPenguji():""}}</td>
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"><span class="inline-block w-1/3 md:hidden font-bold">Poin Revisi</span>
                     @foreach($Sempro->hasilSempro->revisiProposal as $revisi)
                     {{$revisi->poin_revisi}}

@@ -7,6 +7,7 @@ use App\Models\Mahasiswa;
 use App\Models\Dosen;
 use App\Models\HasilSempro;
 use App\Models\PengajuanSempro;
+use App\Models\RevisiProposal;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -19,8 +20,10 @@ class DaftarSemproController extends Controller
         ->orWhere('dosen_penguji3', auth::user()->username)
         ->latest('created_at') // Mengurutkan berdasarkan created_at terbaru
         ->get();
+
+        $revisi = new RevisiProposal();
         
         // dd($daftarSempro);
-        return view('penguji.daftarSempro',['daftarSempro'=> $daftarSempro]);
+        return view('penguji.daftarSempro',['daftarSempro'=> $daftarSempro,'revisi'=> $revisi]);
     }
 }

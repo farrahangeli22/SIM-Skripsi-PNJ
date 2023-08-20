@@ -7,6 +7,7 @@ use App\Models\Mahasiswa;
 use App\Models\Dosen;
 use App\Models\HasilSidang;
 use App\Models\PengajuanSidang;
+use App\Models\Revisi;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,9 @@ class DaftarSidangController extends Controller
     ->latest('created_at') // Mengurutkan berdasarkan created_at terbaru
     ->get();
 
+    $revisi = new Revisi();
+
         // dd($daftarSempro);
-        return view('penguji.daftarSidang',['daftarSidang'=> $daftarSidang]);
+        return view('penguji.daftarSidang',['daftarSidang'=> $daftarSidang,'revisi'=> $revisi]);
     }
 }

@@ -33,11 +33,11 @@
                     </td>    
                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                         <span class="inline-block w-1/3 md:hidden font-bold">Aksi</span>
-                        @if ($Sempro->hasilSempro && $Sempro->hasilSempro->nilai_penguji1 && $Sempro->hasilSempro->revisiProposal->count() > 0)
+                        @if ($Sempro->hasilSempro && $Sempro->isPengujiSudahMenilai() && $Sempro->hasilSempro->revisiProposal->count() > 0)
                             <span class="bg-disabled text-gray-500 font-bold py-1 px-2 border border-edit rounded cursor-not-allowed border-gray-500">Aksi</span>
                         @else
-                            <a href="{{ route('penguji.penilaian-sempro',['id'=>$Sempro->id]) }}"
-                            class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Aksi</a>
+                            <a href="{{ route('penguji.penilaian-sempro',['id'=>$Sempro->id]) }}" 
+                             class="bg-edit hover:bg-hoverEdit text-white font-bold py-1 px-2 border border-edit rounded">Aksi</a>
                         @endif
                     </td>
                 </tr>

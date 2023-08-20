@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Auth;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -48,5 +49,25 @@ class PengajuanSempro extends Model
     public function dosenPenguji3()
     {
         return $this->belongsTo(Dosen::class, "dosen_penguji3", "nip");
+    }
+
+    public function isPengujiSudahMenilai(){
+        $nip = Auth::user()->username;
+
+        if($this->dosen_penguji1 == $nip){
+            return $this->hasilSempro->nilai_penguji1 != null ? true : false;
+        }
+
+        if($this->dosen_penguji2 == $nip){
+            return $this->hasilSempro->nilai_penguji2 != null ? true : false;
+        }
+
+        if($this->dosen_penguji3 == $nip){
+            return $this->hasilSempro->nilai_penguji3 != null ? true : false;
+        }
+
+        return false;
+
+
     }
 }

@@ -75,15 +75,15 @@ class PengajuanSempro extends Model
         $nip = Auth::user()->username;
 
         if($this->dosen_penguji1 == $nip){
-            return $this->hasilSempro->nilai_penguji1 != null ? $this->hasilSempro->nilai_penguji1 : 0;
+            return $this->hasilSempro->nilai_penguji1 != null ? $this->hasilSempro->nilai_penguji1 : "";
         }
 
         if($this->dosen_penguji2 == $nip){
-            return $this->hasilSempro->nilai_penguji2 != null ? $this->hasilSempro->nilai_penguji2 : 0;
+            return $this->hasilSempro->nilai_penguji2 != null ? $this->hasilSempro->nilai_penguji2 : "";
         }
 
         if($this->dosen_penguji3 == $nip){
-            return $this->hasilSempro->nilai_penguji3 != null ? $this->hasilSempro->nilai_penguji3 : 0;
+            return $this->hasilSempro->nilai_penguji3 != null ? $this->hasilSempro->nilai_penguji3 : "";
         }
 
         return "";
